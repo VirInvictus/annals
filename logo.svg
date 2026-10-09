@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" role="img" aria-label="annals">
+  <!-- Placeholder logo: framed ANNALS wordmark with the house fleuron.
+       Replace with a real mark before any public release. -->
+  <rect width="128" height="128" rx="14" fill="#181616"/>
+  <rect x="10" y="10" width="108" height="108" rx="8" fill="none" stroke="#b6927b" stroke-width="2"/>
+  <text x="64" y="58" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="19" letter-spacing="2" fill="#c5c9c5">ANNALS</text>
+  <text x="64" y="88" text-anchor="middle" font-size="22" fill="#8ea4a2">&#10086;</text>
+</svg>

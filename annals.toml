@@ -1,0 +1,39 @@
+# annals configuration.
+#
+# Discovery: every directory under [workspace] root that carries a
+# patchnotes.md is a release repo. Directories in stats_only are owned repos
+# without a patchnotes.md: tracked for commit activity only. Everything in
+# exclude is never touched (reference clones by policy, plus the two
+# local-only audit repos, which are worklists, not portfolio projects).
+# Directories matching none of those are surfaced in the run summary as
+# ignored, so a new owned repo is never silently missed.
+
+[workspace]
+root = "~/.gitrepos"
+
+# Reference clones (not Brandon's code) and the local-only audit repos.
+exclude = [
+    "annas-archive-outter", "Apostrophe", "Awful.app", "blightmud", "calibre",
+    "deadbeef", "DeDRM_tools", "developer-site", "ebook-fonts",
+    "godot-simplified-flightsim", "gtksourceview", "hyprland-wiki",
+    "jellyfin-tizen", "jellyfin-web", "kalker", "koreader", "llama.cpp",
+    "notecalc3", "numbat", "quickshell-refs", "quickshell-web", "SpookiUI",
+    "zelda3", "audit", "audit-final",
+]
+
+# Owned repos without a patchnotes.md: commits count, no releases.
+stats_only = [
+    "1-timezone", "dead-reckoning-bookend-preset", "VirInvictus",
+    "VirInvictus.github.io", "Coffer", "project-void", "project-yeschef",
+]
+
+[run]
+# Where the generated record lands; relative paths resolve against this
+# file's directory (the repo root).
+output = "ANNALS.md"
+
+[stats]
+# Commit statistics count work authored by these identities (git --author
+# patterns, OR). Empty the list to count every commit on HEAD; fork repos
+# carry upstream history that otherwise lands in the totals.
+authors = ["larocque.brandon@gmail.com"]

@@ -1,0 +1,13 @@
+# Python runtime artifacts
+__pycache__/
+*.py[cod]
+
+# Packaging (python -m build)
+build/
+dist/
+*.egg-info/
+
+# Test and lint caches; local virtualenvs
+.pytest_cache/
+.ruff_cache/
+.venv/
