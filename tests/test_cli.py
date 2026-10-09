@@ -89,6 +89,7 @@ def make_workspace(tmp_path: Path) -> Path:
 
 def make_config(ws: Path, output: Path) -> Path:
     cfg = ws.parent / "annals.toml"
+    site_out = ws.parent / "site" / "patchnotes.md"
     cfg.write_text(
         "[workspace]\n"
         f'root = "{ws}"\n'
@@ -97,7 +98,10 @@ def make_config(ws: Path, output: Path) -> Path:
         "\n[run]\n"
         f'output = "{output}"\n'
         "\n[stats]\n"
-        'authors = ["test@example.com"]\n',
+        'authors = ["test@example.com"]\n'
+        "\n[site]\n"
+        f'path = "{site_out}"\n'
+        'front_matter = "---\\nlayout: default\\npermalink: /patchnotes/\\n---"\n',
         encoding="utf-8",
     )
     return cfg
@@ -113,6 +117,17 @@ def test_config_load_and_output_resolution(tmp_path: Path) -> None:
     assert config.exclude == {"calibre"}
     assert config.stats_only == {"sb"}
     assert config.authors == ("test@example.com",)
+    assert config.site is not None
+    assert config.site.path == tmp_path / "site" / "patchnotes.md"
+    assert config.site.front_matter.startswith("---\n")
+
+
+def test_config_without_site_section(tmp_path: Path) -> None:
+    ws = make_workspace(tmp_path)
+    cfg = ws.parent / "plain.toml"
+    cfg.write_text(f'[workspace]\nroot = "{ws}"\n', encoding="utf-8")
+    config = load_config(cfg)
+    assert config.site is None
 
 
 def test_defaults_when_config_missing(tmp_path: Path) -> None:
@@ -121,6 +136,7 @@ def test_defaults_when_config_missing(tmp_path: Path) -> None:
     assert "calibre" in config.exclude
     assert "Coffer" in config.stats_only
     assert config.authors == ("larocque.brandon@gmail.com",)
+    assert config.site is None
 
 
 def test_cli_stdout_end_to_end(tmp_path: Path, capsys) -> None:
@@ -140,6 +156,7 @@ def test_cli_stdout_end_to_end(tmp_path: Path, capsys) -> None:
     assert "| sb | 0 |" in text
     assert "stray" in summary
     assert not output.exists()
+    assert not (tmp_path / "site" / "patchnotes.md").exists()
 
 
 def test_cli_write_then_check(tmp_path: Path, capsys) -> None:
@@ -149,6 +166,11 @@ def test_cli_write_then_check(tmp_path: Path, capsys) -> None:
 
     assert main(["--config", str(cfg)]) == 0
     assert output.exists()
+    site_out = tmp_path / "site" / "patchnotes.md"
+    site_text = site_out.read_text(encoding="utf-8")
+    assert site_text.startswith("---\nlayout: default\npermalink: /patchnotes/\n---\n")
+    assert "{% raw %}" in site_text and "{% endraw %}" in site_text
+    assert "# The Annals" in site_text
     capsys.readouterr()
 
     assert main(["--config", str(cfg), "--check"]) == 0

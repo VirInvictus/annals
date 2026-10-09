@@ -92,8 +92,8 @@ contributes nothing.
 
 `ANNALS.md` contains, in order:
 
-1. Masthead: what the file is, the generator version and generation date,
-   and the canonical-source note.
+1. Masthead: what the file is, the generator version, and the
+   canonical-source note.
 2. Dashboard: totals (repos, releases, commits, span), this-month numbers,
    a per-repo table (releases, latest version, last release, commits, active
    since) sorted by release count, and a month-by-month table with inline
@@ -110,17 +110,26 @@ Headlines are quoted verbatim from member patchnotes and may contain
 anything, including em-dashes. Prose the generator itself authors contains
 none.
 
-The generation stamp line is excluded from `--check` staleness comparison,
-so a same-data regeneration on a later day is still "current".
+The record anchors its span and current month to the newest activity date,
+never the generation date, so a quiet workspace regenerates byte-identical
+output and `--check` compares the whole file with no stamp exceptions.
+
+### Site copy
+
+When `[site]` is configured, the same record is also written to the target
+path, wrapped in Jekyll front matter (the VirInvictus site page at
+`/patchnotes/`) and a Liquid `{% raw %}` block, so no future headline can
+break the site build. The site copy is a pure projection: identical body,
+different wrapper.
 
 ## CLI
 
-- `annals` (default): regenerate `ANNALS.md`, write it, print a summary
-  (repos tracked, entries, duplicates collapsed, approximations, ignored
-  directories).
+- `annals` (default): regenerate `ANNALS.md`, write it, write the site copy
+  when `[site]` is configured, and print a summary (repos tracked, entries,
+  duplicates collapsed, approximations, ignored directories).
 - `annals --stdout`: print the record to stdout; write nothing.
-- `annals --check`: regenerate in memory and compare (stamp line excluded);
-  exit 0 when `ANNALS.md` is current, exit 1 when stale or missing.
+- `annals --check`: regenerate in memory and compare; exit 0 when
+  `ANNALS.md` is current, exit 1 when stale or missing.
 - `annals --config PATH`: use an alternate configuration file. Default:
   `annals.toml` in the current directory, else the one at the repo root.
 

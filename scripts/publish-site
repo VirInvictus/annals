@@ -1,0 +1,65 @@
+#!/usr/bin/env zsh
+# annals daily publish: regenerate the record, then push the site copy when
+# its content changed, verifying the Pages build and reverting the commit if
+# the build fails. The annals repo gets a local commit when its own record
+# changed (it has no remote and is never pushed). Read-only everywhere else;
+# never force-pushes; never deletes. Exit 0: published or quiet day. Exit 1:
+# build failed/reverted or timed out.
+
+set -euo pipefail
+
+ANNALS=$HOME/.gitrepos/annals
+SITE=$HOME/.gitrepos/VirInvictus.github.io
+REMOTE=VirInvictus/VirInvictus.github.io
+TODAY=$(date +%F)
+
+cd "$ANNALS"
+uv run annals >/dev/null
+
+if ! git diff --quiet -- ANNALS.md; then
+  git add ANNALS.md
+  git commit -q -m "annals: daily refresh, $TODAY"
+  print -r -- "annals: local record committed"
+fi
+
+cd "$SITE"
+git pull --ff-only -q
+if git diff --quiet -- patchnotes.md; then
+  print -r -- "annals: site copy unchanged; nothing to publish"
+  exit 0
+fi
+
+git add patchnotes.md
+git commit -q -m "docs: annals refresh, $TODAY"
+SHA=$(git rev-parse HEAD)
+git push -q
+print -r -- "annals: pushed $SHA; waiting for the Pages build"
+
+verdict=""
+for i in {1..48}; do
+  line=$(gh run list -R "$REMOTE" --commit "$SHA" --limit 1 \
+    --json status,conclusion \
+    --jq '.[0] | "\(.status)/\(.conclusion // "pending")"' 2>/dev/null \
+    || print -r -- "")
+  case "$line" in
+    "completed/success") verdict=success; break ;;
+    completed/*) verdict="$line"; break ;;
+  esac
+  sleep 10
+done
+
+if [[ "$verdict" == success ]]; then
+  print -r -- "annals: published; Pages build green"
+  exit 0
+fi
+
+if [[ -z "$verdict" ]]; then
+  print -r -- "annals: Pages build still pending after 8 minutes; leaving it to finish"
+  exit 1
+fi
+
+print -r -- "annals: Pages build failed ($verdict); reverting the site commit"
+git revert --no-edit HEAD >/dev/null
+git push -q
+print -r -- "annals: revert pushed; the deploy is back to the last good state"
+exit 1

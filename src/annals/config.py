@@ -55,6 +55,19 @@ DEFAULT_STATS_ONLY = frozenset(
 # the totals; empty the list to count every commit on HEAD.
 DEFAULT_AUTHORS: tuple[str, ...] = ("larocque.brandon@gmail.com",)
 
+# The published variant defaults: Jekyll front matter for the VirInvictus
+# site, then the record inside a Liquid raw block (see render_site).
+DEFAULT_SITE_PATH = "~/.gitrepos/VirInvictus.github.io/patchnotes.md"
+DEFAULT_SITE_FRONT_MATTER = (
+    "---\nlayout: default\ntitle: Patchnotes\npermalink: /patchnotes/\n---"
+)
+
+
+@dataclass(frozen=True)
+class SiteTarget:
+    path: Path
+    front_matter: str
+
 
 @dataclass(frozen=True)
 class Config:
@@ -63,6 +76,7 @@ class Config:
     exclude: frozenset[str]
     stats_only: frozenset[str]
     authors: tuple[str, ...] = DEFAULT_AUTHORS
+    site: SiteTarget | None = None
 
 
 def repo_root() -> Path:
@@ -87,11 +101,19 @@ def load_config(path: Path | None = None) -> Config:
     ws = data.get("workspace", {})
     run = data.get("run", {})
     stats = data.get("stats", {})
+    site = data.get("site", {})
     out = Path(run.get("output", "ANNALS.md"))
+    site_path = site.get("path", DEFAULT_SITE_PATH) if site else None
     return Config(
         workspace=Path(ws.get("root", "~/.gitrepos")).expanduser(),
         output=out if out.is_absolute() else resolved.parent / out,
         exclude=frozenset(ws.get("exclude", DEFAULT_EXCLUDE)),
         stats_only=frozenset(ws.get("stats_only", DEFAULT_STATS_ONLY)),
         authors=tuple(stats.get("authors", DEFAULT_AUTHORS)),
+        site=SiteTarget(
+            path=Path(site_path).expanduser(),
+            front_matter=site.get("front_matter", DEFAULT_SITE_FRONT_MATTER),
+        )
+        if site_path
+        else None,
     )

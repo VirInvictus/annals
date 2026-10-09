@@ -6,16 +6,22 @@ Guidance for any coding agent working in this repository.
 
 `annals` is the workspace work-record generator: it walks every repo under
 `~/.gitrepos/`, reads each owned repo's `patchnotes.md` and git history, and
-renders `ANNALS.md` at this repo's root: a dashboard plus a newest-first
-timeline of every release. Python 3.14, standard library only, no network.
+renders two files: `ANNALS.md` at this repo's root (the canonical projection)
+and the site copy at `~/.gitrepos/VirInvictus.github.io/patchnotes.md` (the
+same record wrapped in Jekyll front matter and a Liquid raw block, published
+at `/patchnotes/`). `scripts/publish-site` is the daily pipeline: regenerate,
+commit locally, commit and push the site copy when it changed, verify the
+Pages build, revert on failure. Python 3.14, standard library only, no
+network (the publish script's git/gh calls are its only outbound surface).
 
 ## Load-bearing distinction
 
 `patchnotes.md` in THIS repo is annals' own release log (house convention).
 The generated record is `ANNALS.md`, never hand-edited: every byte of it is
 reproducible with `uv run annals`, and `annals --check` exits 1 when the file
-on disk is stale (the generation stamp line is excluded from the comparison).
-Do not rename either file.
+on disk is stale. The site copy in the VirInvictus repo is generated the same
+way and equally never hand-edited; the daily automation owns both. Do not
+rename any of the three files.
 
 ## Read-only guarantee
 

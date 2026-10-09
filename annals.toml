@@ -37,3 +37,14 @@ output = "ANNALS.md"
 # patterns, OR). Empty the list to count every commit on HEAD; fork repos
 # carry upstream history that otherwise lands in the totals.
 authors = ["larocque.brandon@gmail.com"]
+
+[site]
+# The published copy: the same record wrapped in Jekyll front matter and a
+# Liquid raw block, so no future headline can break the site build. Remove
+# this section to generate ANNALS.md only.
+path = "~/.gitrepos/VirInvictus.github.io/patchnotes.md"
+front_matter = """---
+layout: default
+title: Patchnotes
+permalink: /patchnotes/
+---"""

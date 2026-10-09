@@ -1,5 +1,28 @@
 # Patchnotes
 
+## v0.1.1 (2026-10-09)
+
+The site edition: the record gains a published twin and loses its last
+nondeterminism.
+
+- **Site copy**: with a `[site]` target configured, `annals` also writes the
+  record wrapped in Jekyll front matter and a Liquid `{% raw %}` block, for
+  the VirInvictus site page at `/patchnotes/`. The wrapper guarantees no
+  future headline can break the site build; the body is identical to
+  `ANNALS.md`.
+- **Byte-stable regeneration**: the masthead drops the generation date, and
+  the span and current month anchor to the newest activity date instead of
+  today. A quiet workspace now regenerates byte-identical output, so
+  `--check` compares the whole file with no stamp exceptions, and the daily
+  publish commits only on real change.
+- **`scripts/publish-site`**: the daily pipeline the automation calls:
+  regenerate, commit the local record, pull the site repo (ff-only), commit
+  and push the site copy when its content changed, watch the Pages build for
+  the pushed SHA, and revert the site commit if the build fails. Timed-out
+  builds are reported, never reverted blind.
+
+41 repos, 1,467 entries, 4 duplicates collapsed; 43 tests green, ruff clean.
+
 ## v0.1.0 (2026-10-09)
 
 The first cut: the whole generator in one release.

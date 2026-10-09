@@ -20,7 +20,9 @@ so the volume and shape of the work is visible in one place.
   appendix reporting exactly how each date was resolved.
 
 The per-repo `patchnotes.md` files remain canonical. annals only reads them;
-`ANNALS.md` is a projection, always reproducible with one command.
+`ANNALS.md` is a projection, always reproducible with one command. With a
+`[site]` target configured, the same record is also written as a Jekyll page
+for publication (the Vir Invictus site serves it at `/patchnotes/`).
 
 ## Usage
 
