@@ -1,3 +1,3 @@
 """annals: the Vir Invictus workspace work-record generator."""
 
-__version__ = "0.1.2"
+__version__ = "0.1.3"

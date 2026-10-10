@@ -209,7 +209,8 @@ def _languages(record: Record) -> list[str]:
 
 def _stacked_bar(ranked: list[tuple[str, int]], total: int) -> list[str]:
     """One monospace bar: a distinct shade per top language, an interpunct
-    tail for the rest, so segments stay readable without colour."""
+    tail for the rest. Rendered as a fenced code block: the shade characters
+    only align in monospace, and the site's prose font is proportional."""
     head = ranked[: len(_STACK_CHARS)]
     weights = [lines for _, lines in head]
     tail = total - sum(weights)
@@ -226,7 +227,7 @@ def _stacked_bar(ranked: list[tuple[str, int]], total: int) -> list[str]:
     ]
     if tail > 0:
         legend.append(f"{_STACK_TAIL} other {tail / total * 100:.0f}%")
-    return [bar, "  ".join(legend)]
+    return ["```", bar, "  ".join(legend), "```"]
 
 
 def _largest_remainder(weights: list[int], width: int) -> list[int]:

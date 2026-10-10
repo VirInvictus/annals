@@ -60,6 +60,12 @@ def test_languages_section_bar_table_and_totals() -> None:
     assert "█ Python 60%" in text
     assert "▓ Rust 40%" in text
 
+    # the bar lives in a fenced code block: shade characters only align in
+    # monospace, and the site's prose font is proportional
+    lines = text.splitlines()
+    idx = lines.index(bar)
+    assert lines[idx - 1] == "```" and lines[idx + 2] == "```"
+
     assert "| Python |" in text
     assert "60.0%" in text
     assert "| Rust |" in text

@@ -1,5 +1,14 @@
 # Patchnotes
 
+## v0.1.3 (2026-10-09)
+
+The stacked language bar moves into a fenced code block: display fix, no
+data changes. The shade characters only align in monospace, and the site's
+prose font is proportional serif, so on /patchnotes/ the bar rendered as
+fallback glyphs with segments of drifting width and a legend that
+soft-wrapped into the bar. In a code block both lines render in IBM Plex
+Mono on the site and stay identical everywhere else.
+
 ## v0.1.2 (2026-10-09)
 
 The languages: a new section between the dashboard and the record.
