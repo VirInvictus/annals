@@ -117,6 +117,7 @@ def test_config_load_and_output_resolution(tmp_path: Path) -> None:
     assert config.exclude == {"calibre"}
     assert config.stats_only == {"sb"}
     assert config.authors == ("test@example.com",)
+    assert config.language_exclude == frozenset()
     assert config.site is not None
     assert config.site.path == tmp_path / "site" / "patchnotes.md"
     assert config.site.front_matter.startswith("---\n")

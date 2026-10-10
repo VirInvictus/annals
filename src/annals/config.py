@@ -77,6 +77,7 @@ class Config:
     stats_only: frozenset[str]
     authors: tuple[str, ...] = DEFAULT_AUTHORS
     site: SiteTarget | None = None
+    language_exclude: frozenset[str] = frozenset()
 
 
 def repo_root() -> Path:
@@ -102,6 +103,7 @@ def load_config(path: Path | None = None) -> Config:
     run = data.get("run", {})
     stats = data.get("stats", {})
     site = data.get("site", {})
+    langs = data.get("languages", {})
     out = Path(run.get("output", "ANNALS.md"))
     site_path = site.get("path", DEFAULT_SITE_PATH) if site else None
     return Config(
@@ -116,4 +118,5 @@ def load_config(path: Path | None = None) -> Config:
         )
         if site_path
         else None,
+        language_exclude=frozenset(langs.get("exclude", ())),
     )

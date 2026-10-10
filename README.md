@@ -14,10 +14,13 @@ so the volume and shape of the work is visible in one place.
   tags; entries with neither are listed per repo under Undated records in
   their true file order rather than scattered across guessed months.
 - Counts commits, first/last activity, and monthly totals per repo (read-only;
-  member repos are never touched).
-- Renders `ANNALS.md`: totals, a per-repo table, monthly activity bars, and a
-  newest-first timeline of every release grouped by month, plus a coverage
-  appendix reporting exactly how each date was resolved.
+  member repos are never touched), and measures the workspace's language
+  distribution by code lines with `tokei` (fork checkouts excludable per
+  config; the section degrades gracefully when tokei is absent).
+- Renders `ANNALS.md`: totals, a per-repo table, monthly activity bars, a
+  stacked language-distribution bar plus ranked table, a newest-first
+  timeline of every release grouped by month, and a coverage appendix
+  reporting exactly how each date was resolved.
 
 The per-repo `patchnotes.md` files remain canonical. annals only reads them;
 `ANNALS.md` is a projection, always reproducible with one command. With a

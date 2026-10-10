@@ -38,6 +38,11 @@ output = "ANNALS.md"
 # carry upstream history that otherwise lands in the totals.
 authors = ["larocque.brandon@gmail.com"]
 
+[languages]
+# Repos excluded from the language distribution only (commits and releases
+# still count them): fork checkouts whose trees carry upstream code.
+exclude = ["Carrel-calibre-web"]
+
 [site]
 # The published copy: the same record wrapped in Jekyll front matter and a
 # Liquid raw block, so no future headline can break the site build. Remove

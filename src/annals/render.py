@@ -24,6 +24,13 @@ _MONTH_NAMES = [
     "December",
 ]
 _BAR_WIDTH = 28
+# The stacked language bar: one shade per top language, interpuncts for the
+# tail, so segments stay distinguishable in monospace.
+_STACK_CHARS = ("█", "▓", "▒", "░")
+_STACK_TAIL = "·"
+_STACK_WIDTH = 40
+_LANG_TABLE_WIDTH = 22
+_LANG_TABLE_ROWS = 12
 
 
 @dataclass
@@ -32,6 +39,7 @@ class RepoRecord:
     entries: list[Entry]
     dupes: int = 0
     stats: RepoStats | None = None
+    languages: dict[str, int] | None = None
 
 
 def _anchored(entries: list[Entry]) -> list[Entry]:
@@ -54,6 +62,7 @@ def render(record: Record) -> str:
     parts = [
         _masthead(record),
         _dashboard(record),
+        _languages(record),
         _timeline(record),
         _coverage(record),
     ]
@@ -140,11 +149,98 @@ def _dashboard(record: Record) -> list[str]:
     return out
 
 
-def _bar(count: int, maximum: int) -> str:
+def _bar(count: int, maximum: int, width: int = _BAR_WIDTH) -> str:
     if count == 0:
         return "·"
-    width = max(1, round(count / maximum * _BAR_WIDTH))
-    return f"{'▇' * width} {count:,}"
+    scaled = max(1, round(count / maximum * width))
+    return f"{'▇' * scaled} {count:,}"
+
+
+def _bare_bar(count: int, maximum: int, width: int = _BAR_WIDTH) -> str:
+    """A proportion bar without the embedded count, for cells whose number
+    has a column of its own."""
+    if count == 0:
+        return "·"
+    return "▇" * max(1, round(count / maximum * width))
+
+
+def _languages(record: Record) -> list[str]:
+    merged: dict[str, int] = {}
+    repos_by_lang: Counter[str] = Counter()
+    measured = False
+    for r in record.repos:
+        if r.languages is None:
+            continue
+        measured = True
+        for lang, lines in r.languages.items():
+            merged[lang] = merged.get(lang, 0) + lines
+            repos_by_lang[lang] += 1
+    out = ["## The languages", ""]
+    if not measured:
+        return out + [
+            "_(Language distribution unavailable: `tokei` is not installed.)_",
+            "",
+        ]
+    if not merged:
+        return out + ["_No code measured in the tracked repos._", ""]
+    ranked = sorted(merged.items(), key=lambda kv: (-kv[1], kv[0]))
+    total = sum(merged.values())
+    repo_count = sum(1 for r in record.repos if r.languages is not None)
+    out.append(
+        f"{total:,} lines of code · {len(ranked)} languages · {repo_count} repos"
+    )
+    out += ["", *_stacked_bar(ranked, total), ""]
+    out += ["| Language | Share | Code lines | Repos |", "|---|---|---:|---:|"]
+    shown, rest = ranked[:_LANG_TABLE_ROWS], ranked[_LANG_TABLE_ROWS:]
+    for lang, lines in shown:
+        out.append(
+            f"| {lang} | {_bare_bar(lines, ranked[0][1], _LANG_TABLE_WIDTH)}"
+            f" {lines / total * 100:.1f}% | {lines:,} | {repos_by_lang[lang]} |"
+        )
+    if rest:
+        rest_lines = sum(lines for _, lines in rest)
+        out.append(
+            f"| other | {_bare_bar(rest_lines, ranked[0][1], _LANG_TABLE_WIDTH)}"
+            f" {rest_lines / total * 100:.1f}% | {rest_lines:,} | - |"
+        )
+    out.append("")
+    return out
+
+
+def _stacked_bar(ranked: list[tuple[str, int]], total: int) -> list[str]:
+    """One monospace bar: a distinct shade per top language, an interpunct
+    tail for the rest, so segments stay readable without colour."""
+    head = ranked[: len(_STACK_CHARS)]
+    weights = [lines for _, lines in head]
+    tail = total - sum(weights)
+    chars = list(_STACK_CHARS[: len(head)])
+    if tail > 0:
+        weights.append(tail)
+        chars.append(_STACK_TAIL)
+    counts = _largest_remainder(weights, _STACK_WIDTH)
+    bar = "".join(char * n for char, n in zip(chars, counts, strict=True))
+    head_chars = chars[: len(head)]
+    legend = [
+        f"{char} {lang} {lines / total * 100:.0f}%"
+        for (lang, lines), char in zip(head, head_chars, strict=True)
+    ]
+    if tail > 0:
+        legend.append(f"{_STACK_TAIL} other {tail / total * 100:.0f}%")
+    return [bar, "  ".join(legend)]
+
+
+def _largest_remainder(weights: list[int], width: int) -> list[int]:
+    """Split `width` cells across weights; leftover cells go to the largest
+    fractional remainders, so segments always sum to exactly the width."""
+    total = sum(weights)
+    exact = [w * width / total for w in weights]
+    counts = [int(e) for e in exact]
+    order = sorted(
+        range(len(weights)), key=lambda i: exact[i] - counts[i], reverse=True
+    )
+    for i in range(width - sum(counts)):
+        counts[order[i % len(order)]] += 1
+    return counts
 
 
 def _timeline(record: Record) -> list[str]:

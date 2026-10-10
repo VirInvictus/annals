@@ -7,3 +7,5 @@
 - [x] Phase 4: test suite green, ruff clean, first full workspace run
 - [x] Phase 5: site publication (Jekyll page copy, Liquid-safe wrapper,
   `scripts/publish-site`, the daily automation's `--check` gate)
+- [x] Phase 6: the language distribution (tokei measurement, fork exclusion,
+  stacked shade bar + ranked table)

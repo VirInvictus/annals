@@ -88,6 +88,22 @@ git `--author` patterns, OR) so fork histories count only this workspace's
 work; an empty list counts every commit. A repo with no matching commits
 contributes nothing.
 
+### The languages
+
+The language distribution measures code lines by shelling to `tokei`
+(one JSON invocation per repo). Data formats and prose in tokei's output —
+JSON, TOML, YAML, XML, SVG, CSV, Markdown, Org, Plain Text, PO files — are
+dropped; what remains are programming and build/scripting languages. Repos
+named in `[languages]` exclude are omitted from this section only: fork
+checkouts carry upstream code that is not this workspace's work. When tokei
+is unavailable the section renders a note instead of failing the run.
+
+The section renders a stacked proportion bar (a distinct shade character
+per top language, an interpunct tail, largest-remainder rounding so the
+segments sum exactly to the bar width) and a ranked table: top twelve
+languages plus an `other` row, each with share, code lines, and the number
+of repos using it.
+
 ### Output contract
 
 `ANNALS.md` contains, in order:

@@ -13,6 +13,9 @@ at `/patchnotes/`). `scripts/publish-site` is the daily pipeline: regenerate,
 commit locally, commit and push the site copy when it changed, verify the
 Pages build, revert on failure. Python 3.14, standard library only, no
 network (the publish script's git/gh calls are its only outbound surface).
+One external tool is required for one section: `tokei` measures the language
+distribution, and its absence degrades that section to a note instead of
+failing the run.
 
 ## Load-bearing distinction
 

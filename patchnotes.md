@@ -1,5 +1,26 @@
 # Patchnotes
 
+## v0.1.2 (2026-10-09)
+
+The languages: a new section between the dashboard and the record.
+
+- **Measurement**: code lines per language from the installed `tokei`
+  (one JSON call per repo). Data formats and prose in tokei's output are
+  dropped, so the distribution counts programming and build/scripting
+  languages only. A missing tokei degrades the section to a note, never a
+  failure.
+- **Fork exclusion**: `[languages]` exclude drops repos from this section
+  only; Carrel-calibre-web's checkout carries upstream calibre-web's
+  131k lines of JavaScript, which said nothing about this workspace's
+  languages. Commits and releases still count it exactly as before.
+- **Display**: a stacked proportion bar with a distinct shade character per
+  top language (█ ▓ ▒ ░, interpunct tail) and largest-remainder rounding so
+  segments sum exactly to the width, then a ranked table of the top twelve
+  languages plus `other`, each with share, code lines, and repo count.
+
+420,286 lines of code across 27 languages in the first rendering:
+Rust 39%, Python 35%, GDScript 12%, C 6%. 51 tests green, ruff clean.
+
 ## v0.1.1 (2026-10-09)
 
 The site edition: the record gains a published twin and loses its last

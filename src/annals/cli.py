@@ -11,6 +11,7 @@ from . import __version__
 from .config import Config, load_config
 from .discover import discover
 from .gitstats import repo_stats, tag_dates
+from .languages import repo_languages
 from .parse import Entry, parse_patchnotes, resolve_dates
 from .render import Record, RepoRecord, render, render_site
 
@@ -26,8 +27,17 @@ def build(config: Config) -> Record:
             text = (repo.path / "patchnotes.md").read_text(encoding="utf-8")
             entries, dupes = parse_patchnotes(repo.name, text)
             resolve_dates(entries, tag_dates(repo.path), stats.first if stats else None)
+        languages = (
+            None if repo.name in config.language_exclude else repo_languages(repo.path)
+        )
         records.append(
-            RepoRecord(name=repo.name, entries=entries, dupes=dupes, stats=stats)
+            RepoRecord(
+                name=repo.name,
+                entries=entries,
+                dupes=dupes,
+                stats=stats,
+                languages=languages,
+            )
         )
     anchored = [e.resolved for rec in records for e in rec.entries if e.resolved]
     activity = [r.stats.last for r in records if r.stats and r.stats.last]

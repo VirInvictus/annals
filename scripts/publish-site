@@ -24,7 +24,9 @@ fi
 
 cd "$SITE"
 git pull --ff-only -q
-if git diff --quiet -- patchnotes.md; then
+# porcelain, not git diff: it also catches the untracked-file case (the very
+# first publish, before patchnotes.md is tracked).
+if [[ -z $(git status --porcelain -- patchnotes.md) ]]; then
   print -r -- "annals: site copy unchanged; nothing to publish"
   exit 0
 fi
