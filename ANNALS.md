@@ -8,9 +8,9 @@ remain canonical; this file is a projection, reproducible with
 
 ## The shape of the work
 
-- **41 repositories tracked · 1470 releases recorded · 4,705 commits, authored by larocque.brandon@gmail.com**
+- **41 repositories tracked · 1472 releases recorded · 4,714 commits, authored by larocque.brandon@gmail.com**
 - Span: 2025-08-10 to 2026-10-09
-- This month (2026-10): 112 releases across 18 repos · 548 commits
+- This month (2026-10): 114 releases across 18 repos · 557 commits
 
 | Repository | Releases | Latest | Last release | Commits | Active since |
 |---|---:|---|---|---:|---|
@@ -45,13 +45,13 @@ remain canonical; this file is a projection, reproducible with
 | AudiobookTools | 6 | 0.3.0 | 2026-09-15 | 36 | 2026-05-28 |
 | Foyer | 6 | 0.2.0 | 2026-09-15 | 31 | 2026-07-17 |
 | dragon-agents | 6 | 0.6.0 | 2026-10-05 | 13 | 2026-09-03 |
+| saforums.koplugin | 5 | 0.5.0 | 2026-10-09 | 55 | 2026-10-08 |
 | annals | 4 | 0.1.3 | 2026-10-09 | 5 | 2026-10-09 |
-| saforums.koplugin | 3 | 0.3.0 | 2026-10-09 | 47 | 2026-10-08 |
 | dragon-themer | 2 | 0.1.0 | 2026-10-07 | 33 | 2026-07-28 |
 | 1-timezone | 0 | - | - | 6 | 2026-07-05 |
 | Coffer | 0 | - | - | 8 | 2026-06-28 |
 | VirInvictus | 0 | - | - | 90 | 2026-06-22 |
-| VirInvictus.github.io | 0 | - | - | 159 | 2026-04-16 |
+| VirInvictus.github.io | 0 | - | - | 160 | 2026-04-16 |
 | dead-reckoning-bookend-preset | 0 | - | - | 14 | 2026-07-03 |
 | project-void | 0 | - | - | 15 | 2026-04-17 |
 | project-yeschef | 0 | - | - | 5 | 2026-05-23 |
@@ -71,11 +71,11 @@ remain canonical; this file is a projection, reproducible with
 | 2026-07 | ▇▇▇▇▇▇▇▇▇▇▇▇ 154 | ▇▇▇▇▇▇▇▇ 476 |
 | 2026-08 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 165 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 776 |
 | 2026-09 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 350 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 1,729 |
-| 2026-10 | ▇▇▇▇▇▇▇▇▇ 112 | ▇▇▇▇▇▇▇▇▇ 548 |
+| 2026-10 | ▇▇▇▇▇▇▇▇▇ 114 | ▇▇▇▇▇▇▇▇▇ 557 |
 
 ## The languages
 
-420,307 lines of code · 27 languages · 40 repos
+421,323 lines of code · 27 languages · 40 repos
 
 ```
 ████████████████▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒░░···
@@ -84,19 +84,19 @@ remain canonical; this file is a projection, reproducible with
 
 | Language | Share | Code lines | Repos |
 |---|---|---:|---:|
-| Rust | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 39.3% | 165,316 | 10 |
-| Python | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 34.7% | 145,822 | 20 |
+| Rust | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 39.2% | 165,316 | 10 |
+| Python | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 34.6% | 145,822 | 20 |
 | GDScript | ▇▇▇▇▇▇▇ 11.8% | 49,508 | 6 |
 | C | ▇▇▇ 6.2% | 26,147 | 2 |
-| Lua | ▇▇ 2.7% | 11,439 | 5 |
+| Lua | ▇▇ 2.9% | 12,423 | 5 |
 | CSS | ▇ 1.4% | 5,906 | 6 |
 | Ruby | ▇ 0.8% | 3,572 | 2 |
 | Autoconf | ▇ 0.8% | 3,356 | 4 |
 | Emacs Lisp | ▇ 0.6% | 2,320 | 2 |
 | Shell | ▇ 0.3% | 1,359 | 10 |
-| C Header | ▇ 0.3% | 1,051 | 4 |
+| C Header | ▇ 0.2% | 1,051 | 4 |
 | SQL | ▇ 0.2% | 899 | 2 |
-| other | ▇ 0.9% | 3,612 | - |
+| other | ▇ 0.9% | 3,644 | - |
 
 ## The record
 
@@ -114,6 +114,8 @@ remain canonical; this file is a projection, reproducible with
 - **10-09 · annals 0.1.1**
 - **10-09 · annals 0.1.0**
 - **10-09 · cquarry 1.26.2** · Mirroring Calibre 9.16: the first parity-watch audit lane
+- **10-09 · saforums.koplugin 0.5.0**
+- **10-09 · saforums.koplugin 0.4.0**
 - **10-09 · saforums.koplugin 0.3.0**
 - **10-08 · Conservatory 0.9.0** · the real-library gate and the browse interaction lane
 - **10-08 · Quire 1.5.2**
@@ -1263,7 +1265,7 @@ that are not this workspace's work.
 | project-void | 0 | 0 | 0 | 0 | 0 | 0 |
 | project-yeschef | 0 | 0 | 0 | 0 | 0 | 0 |
 | raindrop-cli | 11 | 11 | 0 | 0 | 0 | 0 |
-| saforums.koplugin | 3 | 0 | 2 | 0 | 1 | 0 |
+| saforums.koplugin | 5 | 0 | 4 | 0 | 1 | 0 |
 | vir-gtk | 12 | 12 | 0 | 0 | 0 | 0 |
 | vir-search | 12 | 12 | 0 | 0 | 0 | 0 |
 | vir-tui | 8 | 8 | 0 | 0 | 0 | 0 |
