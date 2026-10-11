@@ -8,9 +8,9 @@ remain canonical; this file is a projection, reproducible with
 
 ## The shape of the work
 
-- **41 repositories tracked · 1472 releases recorded · 4,714 commits, authored by larocque.brandon@gmail.com**
-- Span: 2025-08-10 to 2026-10-09
-- This month (2026-10): 114 releases across 18 repos · 557 commits
+- **41 repositories tracked · 1473 releases recorded · 4,720 commits, authored by larocque.brandon@gmail.com**
+- Span: 2025-08-10 to 2026-10-11
+- This month (2026-10): 115 releases across 18 repos · 563 commits
 
 | Repository | Releases | Latest | Last release | Commits | Active since |
 |---|---:|---|---|---:|---|
@@ -21,7 +21,7 @@ remain canonical; this file is a projection, reproducible with
 | Catagotchi | 104 | 4.51.0 | 2026-09-18 | 164 | 2026-07-10 |
 | Hearth | 101 | 0.13.68 | 2026-09-15 | 128 | 2026-06-14 |
 | Framework | 97 | 1.0.2 | 2026-09-16 | 169 | 2026-04-06 |
-| CalibreQuarry | 94 | 3.61.0 | 2026-10-09 | 352 | 2026-03-27 |
+| CalibreQuarry | 95 | 3.62.0 | 2026-10-10 | 354 | 2026-03-27 |
 | bindery-cli | 72 | 0.48.2 | 2026-10-06 | 265 | 2026-06-09 |
 | Hermitage | 49 | 1.8.6 | 2026-10-02 | 116 | 2026-04-10 |
 | cquarry | 40 | 1.26.2 | 2026-10-09 | 251 | 2026-08-23 |
@@ -46,12 +46,12 @@ remain canonical; this file is a projection, reproducible with
 | Foyer | 6 | 0.2.0 | 2026-09-15 | 31 | 2026-07-17 |
 | dragon-agents | 6 | 0.6.0 | 2026-10-05 | 13 | 2026-09-03 |
 | saforums.koplugin | 5 | 0.5.0 | 2026-10-09 | 55 | 2026-10-08 |
-| annals | 4 | 0.1.3 | 2026-10-09 | 5 | 2026-10-09 |
+| annals | 4 | 0.1.3 | 2026-10-09 | 6 | 2026-10-09 |
 | dragon-themer | 2 | 0.1.0 | 2026-10-07 | 33 | 2026-07-28 |
 | 1-timezone | 0 | - | - | 6 | 2026-07-05 |
 | Coffer | 0 | - | - | 8 | 2026-06-28 |
-| VirInvictus | 0 | - | - | 90 | 2026-06-22 |
-| VirInvictus.github.io | 0 | - | - | 160 | 2026-04-16 |
+| VirInvictus | 0 | - | - | 91 | 2026-06-22 |
+| VirInvictus.github.io | 0 | - | - | 162 | 2026-04-16 |
 | dead-reckoning-bookend-preset | 0 | - | - | 14 | 2026-07-03 |
 | project-void | 0 | - | - | 15 | 2026-04-17 |
 | project-yeschef | 0 | - | - | 5 | 2026-05-23 |
@@ -71,11 +71,11 @@ remain canonical; this file is a projection, reproducible with
 | 2026-07 | ▇▇▇▇▇▇▇▇▇▇▇▇ 154 | ▇▇▇▇▇▇▇▇ 476 |
 | 2026-08 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 165 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 776 |
 | 2026-09 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 350 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 1,729 |
-| 2026-10 | ▇▇▇▇▇▇▇▇▇ 114 | ▇▇▇▇▇▇▇▇▇ 557 |
+| 2026-10 | ▇▇▇▇▇▇▇▇▇ 115 | ▇▇▇▇▇▇▇▇▇ 563 |
 
 ## The languages
 
-421,323 lines of code · 27 languages · 40 repos
+421,630 lines of code · 27 languages · 40 repos
 
 ```
 ████████████████▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒░░···
@@ -85,8 +85,8 @@ remain canonical; this file is a projection, reproducible with
 | Language | Share | Code lines | Repos |
 |---|---|---:|---:|
 | Rust | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 39.2% | 165,316 | 10 |
-| Python | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 34.6% | 145,822 | 20 |
-| GDScript | ▇▇▇▇▇▇▇ 11.8% | 49,508 | 6 |
+| Python | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 34.7% | 146,129 | 20 |
+| GDScript | ▇▇▇▇▇▇▇ 11.7% | 49,508 | 6 |
 | C | ▇▇▇ 6.2% | 26,147 | 2 |
 | Lua | ▇▇ 2.9% | 12,423 | 5 |
 | CSS | ▇ 1.4% | 5,906 | 6 |
@@ -104,6 +104,7 @@ remain canonical; this file is a projection, reproducible with
 
 #### October 2026
 
+- **10-10 · CalibreQuarry 3.62.0** · The within-batch screen reads filename-shaped records (issue #5)
 - **10-09 · CalibreQuarry 3.61.0** · The EPUB3 dc:date round-trip fix (issue #4)
 - **10-09 · Quire 1.5.3**
 - **10-09 · Viaduct 4.3.0** · the bug-hunt harvest
@@ -1232,7 +1233,7 @@ that are not this workspace's work.
 | 2-kobo-style-sleepscreen-banner-prettified | 8 | 0 | 2 | 0 | 6 | 0 |
 | Atrium | 173 | 163 | 0 | 2 | 8 | 1 |
 | AudiobookTools | 6 | 6 | 0 | 0 | 0 | 0 |
-| CalibreQuarry | 94 | 94 | 0 | 0 | 0 | 0 |
+| CalibreQuarry | 95 | 95 | 0 | 0 | 0 | 0 |
 | Carrel | 20 | 20 | 0 | 0 | 0 | 0 |
 | Carrel-calibre-web | 19 | 18 | 0 | 1 | 0 | 0 |
 | Catagotchi | 104 | 104 | 0 | 0 | 0 | 0 |
