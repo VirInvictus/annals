@@ -8,6 +8,13 @@
 
 set -euo pipefail
 
+# One runner at a time: a second scheduler firing mid-run skips quietly.
+exec 9>"$HOME/.cache/annals-publish.lock"
+command flock -n 9 || {
+  print -r -- "annals: another run is in progress; skipping"
+  exit 0
+}
+
 ANNALS=$HOME/.gitrepos/annals
 SITE=$HOME/.gitrepos/VirInvictus.github.io
 REMOTE=VirInvictus/VirInvictus.github.io
