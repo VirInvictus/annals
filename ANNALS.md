@@ -8,9 +8,9 @@ remain canonical; this file is a projection, reproducible with
 
 ## The shape of the work
 
-- **41 repositories tracked · 1473 releases recorded · 4,722 commits, authored by larocque.brandon@gmail.com**
+- **41 repositories tracked · 1473 releases recorded · 4,724 commits, authored by larocque.brandon@gmail.com**
 - Span: 2025-08-10 to 2026-10-11
-- This month (2026-10): 115 releases across 18 repos · 565 commits
+- This month (2026-10): 115 releases across 18 repos · 567 commits
 
 | Repository | Releases | Latest | Last release | Commits | Active since |
 |---|---:|---|---|---:|---|
@@ -46,12 +46,12 @@ remain canonical; this file is a projection, reproducible with
 | Foyer | 6 | 0.2.0 | 2026-09-15 | 31 | 2026-07-17 |
 | dragon-agents | 6 | 0.6.0 | 2026-10-05 | 13 | 2026-09-03 |
 | saforums.koplugin | 5 | 0.5.0 | 2026-10-09 | 55 | 2026-10-08 |
-| annals | 4 | 0.1.3 | 2026-10-09 | 7 | 2026-10-09 |
+| annals | 4 | 0.1.3 | 2026-10-09 | 8 | 2026-10-09 |
 | dragon-themer | 2 | 0.1.0 | 2026-10-07 | 33 | 2026-07-28 |
 | 1-timezone | 0 | - | - | 6 | 2026-07-05 |
 | Coffer | 0 | - | - | 8 | 2026-06-28 |
 | VirInvictus | 0 | - | - | 91 | 2026-06-22 |
-| VirInvictus.github.io | 0 | - | - | 163 | 2026-04-16 |
+| VirInvictus.github.io | 0 | - | - | 164 | 2026-04-16 |
 | dead-reckoning-bookend-preset | 0 | - | - | 14 | 2026-07-03 |
 | project-void | 0 | - | - | 15 | 2026-04-17 |
 | project-yeschef | 0 | - | - | 5 | 2026-05-23 |
@@ -71,7 +71,7 @@ remain canonical; this file is a projection, reproducible with
 | 2026-07 | ▇▇▇▇▇▇▇▇▇▇▇▇ 154 | ▇▇▇▇▇▇▇▇ 476 |
 | 2026-08 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 165 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 776 |
 | 2026-09 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 350 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 1,729 |
-| 2026-10 | ▇▇▇▇▇▇▇▇▇ 115 | ▇▇▇▇▇▇▇▇▇ 565 |
+| 2026-10 | ▇▇▇▇▇▇▇▇▇ 115 | ▇▇▇▇▇▇▇▇▇ 567 |
 
 ## The languages
 
