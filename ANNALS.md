@@ -8,15 +8,15 @@ remain canonical; this file is a projection, reproducible with
 
 ## The shape of the work
 
-- **41 repositories tracked · 1483 releases recorded · 4,768 commits, authored by larocque.brandon@gmail.com**
+- **41 repositories tracked · 1484 releases recorded · 4,776 commits, authored by larocque.brandon@gmail.com**
 - Span: 2025-08-10 to 2026-10-11
-- This month (2026-10): 125 releases across 18 repos · 611 commits
+- This month (2026-10): 126 releases across 18 repos · 619 commits
 
 | Repository | Releases | Latest | Last release | Commits | Active since |
 |---|---:|---|---|---:|---|
 | Atrium | 173 | 0.76.0 | 2026-09-14 | 358 | 2026-05-05 |
 | Conservatory | 160 | 0.9.1 | 2026-10-11 | 293 | 2026-05-27 |
-| Viaduct | 125 | 4.3.0 | 2026-10-09 | 250 | 2026-04-19 |
+| Viaduct | 126 | 4.3.1 | 2026-10-11 | 251 | 2026-04-19 |
 | lattice-music | 107 | 6.4.1 | 2026-10-11 | 335 | 2025-08-10 |
 | Catagotchi | 104 | 4.51.0 | 2026-09-18 | 164 | 2026-07-10 |
 | Hearth | 101 | 0.13.68 | 2026-09-15 | 128 | 2026-06-14 |
@@ -46,12 +46,12 @@ remain canonical; this file is a projection, reproducible with
 | Foyer | 6 | 0.2.0 | 2026-09-15 | 31 | 2026-07-17 |
 | dragon-agents | 6 | 0.6.0 | 2026-10-05 | 13 | 2026-09-03 |
 | saforums.koplugin | 5 | 0.5.0 | 2026-10-09 | 55 | 2026-10-08 |
-| annals | 4 | 0.1.3 | 2026-10-09 | 14 | 2026-10-09 |
+| annals | 4 | 0.1.3 | 2026-10-09 | 15 | 2026-10-09 |
 | dragon-themer | 2 | 0.1.0 | 2026-10-07 | 33 | 2026-07-28 |
 | 1-timezone | 0 | - | - | 6 | 2026-07-05 |
 | Coffer | 0 | - | - | 8 | 2026-06-28 |
-| VirInvictus | 0 | - | - | 96 | 2026-06-22 |
-| VirInvictus.github.io | 0 | - | - | 171 | 2026-04-16 |
+| VirInvictus | 0 | - | - | 99 | 2026-06-22 |
+| VirInvictus.github.io | 0 | - | - | 174 | 2026-04-16 |
 | dead-reckoning-bookend-preset | 0 | - | - | 14 | 2026-07-03 |
 | project-void | 0 | - | - | 15 | 2026-04-17 |
 | project-yeschef | 0 | - | - | 5 | 2026-05-23 |
@@ -71,11 +71,11 @@ remain canonical; this file is a projection, reproducible with
 | 2026-07 | ▇▇▇▇▇▇▇▇▇▇▇▇ 154 | ▇▇▇▇▇▇▇▇ 476 |
 | 2026-08 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 165 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 776 |
 | 2026-09 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 350 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 1,729 |
-| 2026-10 | ▇▇▇▇▇▇▇▇▇▇ 125 | ▇▇▇▇▇▇▇▇▇▇ 611 |
+| 2026-10 | ▇▇▇▇▇▇▇▇▇▇ 126 | ▇▇▇▇▇▇▇▇▇▇ 619 |
 
 ## The languages
 
-423,384 lines of code · 27 languages · 40 repos
+423,478 lines of code · 27 languages · 40 repos
 
 ```
 ████████████████▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒░░···
@@ -84,7 +84,7 @@ remain canonical; this file is a projection, reproducible with
 
 | Language | Share | Code lines | Repos |
 |---|---|---:|---:|
-| Rust | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 39.0% | 165,311 | 10 |
+| Rust | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 39.1% | 165,405 | 10 |
 | Python | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 34.9% | 147,888 | 20 |
 | GDScript | ▇▇▇▇▇▇▇ 11.7% | 49,508 | 6 |
 | C | ▇▇▇ 6.2% | 26,147 | 2 |
@@ -110,6 +110,7 @@ remain canonical; this file is a projection, reproducible with
 - **10-11 · CalibreQuarry 3.62.2** · Every text-mode spawn decodes lossily (issue #9)
 - **10-11 · CalibreQuarry 3.62.1** · check_pdf: a hung battery degrades per file (issue #8)
 - **10-11 · Conservatory 0.9.1** · the browse follow-ups
+- **10-11 · Viaduct 4.3.1** · proxied Slashdot, numeric titles
 - **10-11 · cquarry 1.27.0** · The author display-form parity wave (the three issue #5 follow-ups)
 - **10-11 · cquarry 1.26.3** · set_authors resolves piped author rows instead of colliding with them (issue #5)
 - **10-11 · lattice-music 6.4.1** · The rating-protection guard: --apply refuses a protected tree
@@ -1259,7 +1260,7 @@ that are not this workspace's work.
 | Quire | 22 | 22 | 0 | 0 | 0 | 0 |
 | Topograph | 11 | 11 | 0 | 0 | 0 | 0 |
 | Vestibule | 12 | 12 | 0 | 0 | 0 | 0 |
-| Viaduct | 125 | 26 | 1 | 53 | 45 | 1 |
+| Viaduct | 126 | 27 | 1 | 53 | 45 | 1 |
 | VirInvictus | 0 | 0 | 0 | 0 | 0 | 0 |
 | VirInvictus.github.io | 0 | 0 | 0 | 0 | 0 | 0 |
 | annals | 4 | 4 | 0 | 0 | 0 | 0 |
