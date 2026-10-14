@@ -8,9 +8,9 @@ remain canonical; this file is a projection, reproducible with
 
 ## The shape of the work
 
-- **42 repositories tracked · 1489 releases recorded · 4,842 commits, authored by larocque.brandon@gmail.com**
+- **42 repositories tracked · 1495 releases recorded · 4,864 commits, authored by larocque.brandon@gmail.com**
 - Span: 2025-08-10 to 2026-10-13
-- This month (2026-10): 131 releases across 19 repos · 685 commits
+- This month (2026-10): 137 releases across 19 repos · 707 commits
 
 | Repository | Releases | Latest | Last release | Commits | Active since |
 |---|---:|---|---|---:|---|
@@ -18,11 +18,11 @@ remain canonical; this file is a projection, reproducible with
 | Conservatory | 160 | 0.9.1 | 2026-10-11 | 294 | 2026-05-27 |
 | Viaduct | 126 | 4.3.1 | 2026-10-11 | 252 | 2026-04-19 |
 | lattice-music | 107 | 6.4.1 | 2026-10-11 | 337 | 2025-08-10 |
+| CalibreQuarry | 106 | 3.64.0 | 2026-10-13 | 378 | 2026-03-27 |
 | Catagotchi | 104 | 4.51.0 | 2026-09-18 | 166 | 2026-07-10 |
-| CalibreQuarry | 102 | 3.63.4 | 2026-10-12 | 369 | 2026-03-27 |
 | Hearth | 101 | 0.13.68 | 2026-09-15 | 129 | 2026-06-14 |
 | Framework | 97 | 1.0.2 | 2026-09-16 | 170 | 2026-04-06 |
-| bindery-cli | 72 | 0.48.2 | 2026-10-06 | 266 | 2026-06-09 |
+| bindery-cli | 73 | 0.49.0 | 2026-10-13 | 268 | 2026-06-09 |
 | Hermitage | 49 | 1.8.6 | 2026-10-02 | 117 | 2026-04-10 |
 | cquarry | 43 | 1.28.0 | 2026-10-11 | 265 | 2026-08-23 |
 | deadbeef-cui | 40 | 2.0.1 | 2026-10-06 | 192 | 2026-04-09 |
@@ -46,13 +46,13 @@ remain canonical; this file is a projection, reproducible with
 | Foyer | 6 | 0.2.0 | 2026-09-15 | 32 | 2026-07-17 |
 | dragon-agents | 6 | 0.6.0 | 2026-10-05 | 14 | 2026-09-03 |
 | saforums.koplugin | 5 | 0.5.0 | 2026-10-09 | 56 | 2026-10-08 |
-| annals | 4 | 0.1.3 | 2026-10-09 | 20 | 2026-10-09 |
-| Docket | 2 | 0.2.0 | 2026-10-12 | 10 | 2026-10-12 |
+| annals | 4 | 0.1.3 | 2026-10-09 | 21 | 2026-10-09 |
+| Docket | 3 | 0.3.0 | 2026-10-13 | 17 | 2026-10-12 |
 | dragon-themer | 2 | 0.1.0 | 2026-10-07 | 34 | 2026-07-28 |
 | 1-timezone | 0 | - | - | 7 | 2026-07-05 |
 | Coffer | 0 | - | - | 9 | 2026-06-28 |
-| VirInvictus | 0 | - | - | 99 | 2026-06-22 |
-| VirInvictus.github.io | 0 | - | - | 179 | 2026-04-16 |
+| VirInvictus | 0 | - | - | 100 | 2026-06-22 |
+| VirInvictus.github.io | 0 | - | - | 181 | 2026-04-16 |
 | dead-reckoning-bookend-preset | 0 | - | - | 15 | 2026-07-03 |
 | project-void | 0 | - | - | 16 | 2026-04-17 |
 | project-yeschef | 0 | - | - | 6 | 2026-05-23 |
@@ -72,23 +72,23 @@ remain canonical; this file is a projection, reproducible with
 | 2026-07 | ▇▇▇▇▇▇▇▇▇▇▇▇ 154 | ▇▇▇▇▇▇▇▇ 476 |
 | 2026-08 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 165 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 776 |
 | 2026-09 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 350 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 1,729 |
-| 2026-10 | ▇▇▇▇▇▇▇▇▇▇ 131 | ▇▇▇▇▇▇▇▇▇▇▇ 685 |
+| 2026-10 | ▇▇▇▇▇▇▇▇▇▇▇ 137 | ▇▇▇▇▇▇▇▇▇▇▇ 707 |
 
 ## The languages
 
-428,870 lines of code · 27 languages · 41 repos
+432,248 lines of code · 27 languages · 41 repos
 
 ```
 ████████████████▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒░░···
-█ Rust 40%  ▓ Python 35%  ▒ GDScript 12%  ░ C 6%  · other 8%
+█ Rust 40%  ▓ Python 35%  ▒ GDScript 11%  ░ C 6%  · other 8%
 ```
 
 | Language | Share | Code lines | Repos |
 |---|---|---:|---:|
-| Rust | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 39.5% | 169,593 | 11 |
-| Python | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 34.8% | 149,091 | 20 |
+| Rust | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 39.7% | 171,670 | 11 |
+| Python | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 34.8% | 150,392 | 21 |
 | GDScript | ▇▇▇▇▇▇ 11.5% | 49,509 | 6 |
-| C | ▇▇▇ 6.1% | 26,147 | 2 |
+| C | ▇▇▇ 6.0% | 26,147 | 2 |
 | Lua | ▇▇ 2.9% | 12,423 | 5 |
 | CSS | ▇ 1.4% | 5,906 | 6 |
 | Ruby | ▇ 0.8% | 3,572 | 2 |
@@ -105,6 +105,12 @@ remain canonical; this file is a projection, reproducible with
 
 #### October 2026
 
+- **10-13 · CalibreQuarry 3.64.0** · The evening-wave batch: edition-tag stripping, the refusal-split detail, and the preempted-consent record (issues #17, #18, #19)
+- **10-13 · CalibreQuarry 3.63.7** · The duplicate-screen keypair and imprint batch (issue #13)
+- **10-13 · CalibreQuarry 3.63.6** · The unreadable classification fix (issue #15)
+- **10-13 · CalibreQuarry 3.63.5** · The default-namespace EPUB3 fix (issue #16)
+- **10-13 · Docket 0.3.0**
+- **10-13 · bindery-cli 0.49.0** · The single-file repair probe writes nothing (issue #7)
 - **10-12 · CalibreQuarry 3.63.4** · The cquarry 1.28.0 floor (the entity case-change wave)
 - **10-12 · Docket 0.2.0**
 - **10-12 · Docket 0.1.0**
@@ -1250,14 +1256,14 @@ that are not this workspace's work.
 | 2-kobo-style-sleepscreen-banner-prettified | 8 | 0 | 2 | 0 | 6 | 0 |
 | Atrium | 173 | 163 | 0 | 2 | 8 | 1 |
 | AudiobookTools | 6 | 6 | 0 | 0 | 0 | 0 |
-| CalibreQuarry | 102 | 102 | 0 | 0 | 0 | 0 |
+| CalibreQuarry | 106 | 106 | 0 | 0 | 0 | 0 |
 | Carrel | 20 | 20 | 0 | 0 | 0 | 0 |
 | Carrel-calibre-web | 19 | 18 | 0 | 1 | 0 | 0 |
 | Catagotchi | 104 | 104 | 0 | 0 | 0 | 0 |
 | Coffer | 0 | 0 | 0 | 0 | 0 | 0 |
 | Colophon | 33 | 33 | 0 | 0 | 0 | 0 |
 | Conservatory | 160 | 13 | 2 | 54 | 91 | 0 |
-| Docket | 2 | 2 | 0 | 0 | 0 | 0 |
+| Docket | 3 | 3 | 0 | 0 | 0 | 0 |
 | Foyer | 6 | 3 | 0 | 0 | 3 | 0 |
 | Framework | 97 | 97 | 0 | 0 | 0 | 2 |
 | Haveli | 28 | 0 | 4 | 0 | 24 | 0 |
@@ -1271,7 +1277,7 @@ that are not this workspace's work.
 | VirInvictus | 0 | 0 | 0 | 0 | 0 | 0 |
 | VirInvictus.github.io | 0 | 0 | 0 | 0 | 0 | 0 |
 | annals | 4 | 4 | 0 | 0 | 0 | 0 |
-| bindery-cli | 72 | 70 | 1 | 1 | 0 | 0 |
+| bindery-cli | 73 | 71 | 1 | 1 | 0 | 0 |
 | cquarry | 43 | 43 | 0 | 0 | 0 | 0 |
 | crash-course | 19 | 19 | 0 | 0 | 0 | 0 |
 | dead-reckoning-bookend-preset | 0 | 0 | 0 | 0 | 0 | 0 |
