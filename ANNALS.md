@@ -8,21 +8,21 @@ remain canonical; this file is a projection, reproducible with
 
 ## The shape of the work
 
-- **42 repositories tracked · 1501 releases recorded · 4,885 commits, authored by larocque.brandon@gmail.com**
-- Span: 2025-08-10 to 2026-10-16
-- This month (2026-10): 143 releases across 19 repos · 728 commits
+- **42 repositories tracked · 1503 releases recorded · 4,892 commits, authored by larocque.brandon@gmail.com**
+- Span: 2025-08-10 to 2026-10-17
+- This month (2026-10): 145 releases across 19 repos · 735 commits
 
 | Repository | Releases | Latest | Last release | Commits | Active since |
 |---|---:|---|---|---:|---|
 | Atrium | 173 | 0.76.0 | 2026-09-14 | 359 | 2026-05-05 |
 | Conservatory | 160 | 0.9.1 | 2026-10-11 | 294 | 2026-05-27 |
 | Viaduct | 126 | 4.3.1 | 2026-10-11 | 252 | 2026-04-19 |
-| CalibreQuarry | 110 | 3.68.0 | 2026-10-15 | 383 | 2026-03-27 |
+| CalibreQuarry | 111 | 3.69.0 | 2026-10-17 | 384 | 2026-03-27 |
 | lattice-music | 107 | 6.4.1 | 2026-10-11 | 337 | 2025-08-10 |
 | Catagotchi | 104 | 4.51.0 | 2026-09-18 | 166 | 2026-07-10 |
 | Hearth | 101 | 0.13.68 | 2026-09-15 | 129 | 2026-06-14 |
 | Framework | 97 | 1.0.2 | 2026-09-16 | 170 | 2026-04-06 |
-| bindery-cli | 74 | 0.50.0 | 2026-10-14 | 269 | 2026-06-09 |
+| bindery-cli | 75 | 0.51.0 | 2026-10-17 | 271 | 2026-06-09 |
 | Hermitage | 49 | 1.8.6 | 2026-10-02 | 117 | 2026-04-10 |
 | cquarry | 43 | 1.28.0 | 2026-10-11 | 265 | 2026-08-23 |
 | deadbeef-cui | 40 | 2.0.1 | 2026-10-06 | 192 | 2026-04-09 |
@@ -47,12 +47,12 @@ remain canonical; this file is a projection, reproducible with
 | dragon-agents | 6 | 0.6.0 | 2026-10-05 | 14 | 2026-09-03 |
 | saforums.koplugin | 5 | 0.5.0 | 2026-10-09 | 56 | 2026-10-08 |
 | Docket | 4 | 1.0.0 | 2026-10-13 | 19 | 2026-10-12 |
-| annals | 4 | 0.1.3 | 2026-10-09 | 27 | 2026-10-09 |
+| annals | 4 | 0.1.3 | 2026-10-09 | 28 | 2026-10-09 |
 | dragon-themer | 2 | 0.1.0 | 2026-10-07 | 34 | 2026-07-28 |
 | 1-timezone | 0 | - | - | 7 | 2026-07-05 |
 | Coffer | 0 | - | - | 9 | 2026-06-28 |
-| VirInvictus | 0 | - | - | 101 | 2026-06-22 |
-| VirInvictus.github.io | 0 | - | - | 187 | 2026-04-16 |
+| VirInvictus | 0 | - | - | 102 | 2026-06-22 |
+| VirInvictus.github.io | 0 | - | - | 189 | 2026-04-16 |
 | dead-reckoning-bookend-preset | 0 | - | - | 15 | 2026-07-03 |
 | project-void | 0 | - | - | 16 | 2026-04-17 |
 | project-yeschef | 0 | - | - | 6 | 2026-05-23 |
@@ -72,11 +72,11 @@ remain canonical; this file is a projection, reproducible with
 | 2026-07 | ▇▇▇▇▇▇▇▇▇▇▇▇ 154 | ▇▇▇▇▇▇▇▇ 476 |
 | 2026-08 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 165 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 776 |
 | 2026-09 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 350 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 1,729 |
-| 2026-10 | ▇▇▇▇▇▇▇▇▇▇▇ 143 | ▇▇▇▇▇▇▇▇▇▇▇▇ 728 |
+| 2026-10 | ▇▇▇▇▇▇▇▇▇▇▇▇ 145 | ▇▇▇▇▇▇▇▇▇▇▇▇ 735 |
 
 ## The languages
 
-436,718 lines of code · 27 languages · 41 repos
+437,292 lines of code · 27 languages · 41 repos
 
 ```
 ████████████████▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒░░···
@@ -85,8 +85,8 @@ remain canonical; this file is a projection, reproducible with
 
 | Language | Share | Code lines | Repos |
 |---|---|---:|---:|
-| Rust | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 39.6% | 172,851 | 11 |
-| Python | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 35.2% | 153,681 | 21 |
+| Rust | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 39.5% | 172,851 | 11 |
+| Python | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 35.3% | 154,255 | 21 |
 | GDScript | ▇▇▇▇▇▇ 11.3% | 49,509 | 6 |
 | C | ▇▇▇ 6.0% | 26,147 | 2 |
 | Lua | ▇▇ 2.8% | 12,423 | 5 |
@@ -105,6 +105,8 @@ remain canonical; this file is a projection, reproducible with
 
 #### October 2026
 
+- **10-17 · CalibreQuarry 3.69.0** · The identifier residual batch: the reconcile diff collapses identifier whitespace on both sides, and the package-slot rewrite no longer skips uuid-typed slots (issue #31)
+- **10-17 · bindery-cli 0.51.0** · The unbound-prefix repair: the Calibre embed scar comes off the OPF (issue #9)
 - **10-15 · CalibreQuarry 3.68.0** · The duplicate-triage batch: identifier bindings shape-gated, match evidence in every refusal detail, and the wave stamp driver as a tool (issues #28, #29, #30)
 - **10-14 · CalibreQuarry 3.67.0** · The triage batch: machine-format stdout hygiene for the ISBN audit, the fetch-apply seam pinned field-limited, and the provenance stamp proven live (issues #25, #26, #27)
 - **10-14 · CalibreQuarry 3.66.0** · The wave-lessons batch: the research extractor stops being hand-rolled, the PDF stamper heals bad xrefs and arbitrates blind read-backs, and bare-name provenance seeds Z-Lib (issues #21, #22, #23, #24)
@@ -1262,7 +1264,7 @@ that are not this workspace's work.
 | 2-kobo-style-sleepscreen-banner-prettified | 8 | 0 | 2 | 0 | 6 | 0 |
 | Atrium | 173 | 163 | 0 | 2 | 8 | 1 |
 | AudiobookTools | 6 | 6 | 0 | 0 | 0 | 0 |
-| CalibreQuarry | 110 | 110 | 0 | 0 | 0 | 0 |
+| CalibreQuarry | 111 | 111 | 0 | 0 | 0 | 0 |
 | Carrel | 20 | 20 | 0 | 0 | 0 | 0 |
 | Carrel-calibre-web | 19 | 18 | 0 | 1 | 0 | 0 |
 | Catagotchi | 104 | 104 | 0 | 0 | 0 | 0 |
@@ -1283,7 +1285,7 @@ that are not this workspace's work.
 | VirInvictus | 0 | 0 | 0 | 0 | 0 | 0 |
 | VirInvictus.github.io | 0 | 0 | 0 | 0 | 0 | 0 |
 | annals | 4 | 4 | 0 | 0 | 0 | 0 |
-| bindery-cli | 74 | 72 | 1 | 1 | 0 | 0 |
+| bindery-cli | 75 | 73 | 1 | 1 | 0 | 0 |
 | cquarry | 43 | 43 | 0 | 0 | 0 | 0 |
 | crash-course | 19 | 19 | 0 | 0 | 0 | 0 |
 | dead-reckoning-bookend-preset | 0 | 0 | 0 | 0 | 0 | 0 |
