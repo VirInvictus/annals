@@ -8,9 +8,9 @@ remain canonical; this file is a projection, reproducible with
 
 ## The shape of the work
 
-- **42 repositories tracked · 1501 releases recorded · 4,884 commits, authored by larocque.brandon@gmail.com**
-- Span: 2025-08-10 to 2026-10-15
-- This month (2026-10): 143 releases across 19 repos · 727 commits
+- **42 repositories tracked · 1501 releases recorded · 4,885 commits, authored by larocque.brandon@gmail.com**
+- Span: 2025-08-10 to 2026-10-16
+- This month (2026-10): 143 releases across 19 repos · 728 commits
 
 | Repository | Releases | Latest | Last release | Commits | Active since |
 |---|---:|---|---|---:|---|
@@ -47,7 +47,7 @@ remain canonical; this file is a projection, reproducible with
 | dragon-agents | 6 | 0.6.0 | 2026-10-05 | 14 | 2026-09-03 |
 | saforums.koplugin | 5 | 0.5.0 | 2026-10-09 | 56 | 2026-10-08 |
 | Docket | 4 | 1.0.0 | 2026-10-13 | 19 | 2026-10-12 |
-| annals | 4 | 0.1.3 | 2026-10-09 | 26 | 2026-10-09 |
+| annals | 4 | 0.1.3 | 2026-10-09 | 27 | 2026-10-09 |
 | dragon-themer | 2 | 0.1.0 | 2026-10-07 | 34 | 2026-07-28 |
 | 1-timezone | 0 | - | - | 7 | 2026-07-05 |
 | Coffer | 0 | - | - | 9 | 2026-06-28 |
@@ -72,7 +72,7 @@ remain canonical; this file is a projection, reproducible with
 | 2026-07 | ▇▇▇▇▇▇▇▇▇▇▇▇ 154 | ▇▇▇▇▇▇▇▇ 476 |
 | 2026-08 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 165 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 776 |
 | 2026-09 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 350 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 1,729 |
-| 2026-10 | ▇▇▇▇▇▇▇▇▇▇▇ 143 | ▇▇▇▇▇▇▇▇▇▇▇▇ 727 |
+| 2026-10 | ▇▇▇▇▇▇▇▇▇▇▇ 143 | ▇▇▇▇▇▇▇▇▇▇▇▇ 728 |
 
 ## The languages
 
