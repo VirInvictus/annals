@@ -8,9 +8,9 @@ remain canonical; this file is a projection, reproducible with
 
 ## The shape of the work
 
-- **42 repositories tracked · 1503 releases recorded · 4,892 commits, authored by larocque.brandon@gmail.com**
+- **42 repositories tracked · 1504 releases recorded · 4,895 commits, authored by larocque.brandon@gmail.com**
 - Span: 2025-08-10 to 2026-10-17
-- This month (2026-10): 145 releases across 19 repos · 735 commits
+- This month (2026-10): 146 releases across 19 repos · 738 commits
 
 | Repository | Releases | Latest | Last release | Commits | Active since |
 |---|---:|---|---|---:|---|
@@ -32,7 +32,7 @@ remain canonical; this file is a projection, reproducible with
 | opends | 27 | darkfix-ds1 0.1.3 | 2026-10-07 | 418 | 2026-05-03 |
 | Quire | 22 | 1.5.3 | 2026-10-09 | 114 | 2026-10-05 |
 | Carrel | 20 | 0.9.10 | 2026-09-15 | 71 | 2026-06-11 |
-| Carrel-calibre-web | 19 | 0.6.44 | 2026-10-07 | 117 | 2026-06-11 |
+| Carrel-calibre-web | 20 | 0.6.45 | 2026-10-17 | 118 | 2026-06-11 |
 | crash-course | 19 | 0.18.0 | 2026-10-07 | 31 | 2026-10-04 |
 | Vestibule | 12 | 0.11.0 | 2026-09-15 | 55 | 2026-07-25 |
 | vir-gtk | 12 | 1.4.3 | 2026-10-06 | 51 | 2026-08-23 |
@@ -47,12 +47,12 @@ remain canonical; this file is a projection, reproducible with
 | dragon-agents | 6 | 0.6.0 | 2026-10-05 | 14 | 2026-09-03 |
 | saforums.koplugin | 5 | 0.5.0 | 2026-10-09 | 56 | 2026-10-08 |
 | Docket | 4 | 1.0.0 | 2026-10-13 | 19 | 2026-10-12 |
-| annals | 4 | 0.1.3 | 2026-10-09 | 28 | 2026-10-09 |
+| annals | 4 | 0.1.3 | 2026-10-09 | 29 | 2026-10-09 |
 | dragon-themer | 2 | 0.1.0 | 2026-10-07 | 34 | 2026-07-28 |
 | 1-timezone | 0 | - | - | 7 | 2026-07-05 |
 | Coffer | 0 | - | - | 9 | 2026-06-28 |
 | VirInvictus | 0 | - | - | 102 | 2026-06-22 |
-| VirInvictus.github.io | 0 | - | - | 189 | 2026-04-16 |
+| VirInvictus.github.io | 0 | - | - | 190 | 2026-04-16 |
 | dead-reckoning-bookend-preset | 0 | - | - | 15 | 2026-07-03 |
 | project-void | 0 | - | - | 16 | 2026-04-17 |
 | project-yeschef | 0 | - | - | 6 | 2026-05-23 |
@@ -72,7 +72,7 @@ remain canonical; this file is a projection, reproducible with
 | 2026-07 | ▇▇▇▇▇▇▇▇▇▇▇▇ 154 | ▇▇▇▇▇▇▇▇ 476 |
 | 2026-08 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 165 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 776 |
 | 2026-09 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 350 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 1,729 |
-| 2026-10 | ▇▇▇▇▇▇▇▇▇▇▇▇ 145 | ▇▇▇▇▇▇▇▇▇▇▇▇ 735 |
+| 2026-10 | ▇▇▇▇▇▇▇▇▇▇▇▇ 146 | ▇▇▇▇▇▇▇▇▇▇▇▇ 738 |
 
 ## The languages
 
@@ -106,6 +106,7 @@ remain canonical; this file is a projection, reproducible with
 #### October 2026
 
 - **10-17 · CalibreQuarry 3.69.0** · The identifier residual batch: the reconcile diff collapses identifier whitespace on both sides, and the package-slot rewrite no longer skips uuid-typed slots (issue #31)
+- **10-17 · Carrel-calibre-web 0.6.45** · The Continue Reading row retires
 - **10-17 · bindery-cli 0.51.0** · The unbound-prefix repair: the Calibre embed scar comes off the OPF (issue #9)
 - **10-15 · CalibreQuarry 3.68.0** · The duplicate-triage batch: identifier bindings shape-gated, match evidence in every refusal detail, and the wave stamp driver as a tool (issues #28, #29, #30)
 - **10-14 · CalibreQuarry 3.67.0** · The triage batch: machine-format stdout hygiene for the ISBN audit, the fetch-apply seam pinned field-limited, and the provenance stamp proven live (issues #25, #26, #27)
@@ -1266,7 +1267,7 @@ that are not this workspace's work.
 | AudiobookTools | 6 | 6 | 0 | 0 | 0 | 0 |
 | CalibreQuarry | 111 | 111 | 0 | 0 | 0 | 0 |
 | Carrel | 20 | 20 | 0 | 0 | 0 | 0 |
-| Carrel-calibre-web | 19 | 18 | 0 | 1 | 0 | 0 |
+| Carrel-calibre-web | 20 | 19 | 0 | 1 | 0 | 0 |
 | Catagotchi | 104 | 104 | 0 | 0 | 0 | 0 |
 | Coffer | 0 | 0 | 0 | 0 | 0 | 0 |
 | Colophon | 33 | 33 | 0 | 0 | 0 | 0 |
