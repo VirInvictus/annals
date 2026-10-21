@@ -8,21 +8,21 @@ remain canonical; this file is a projection, reproducible with
 
 ## The shape of the work
 
-- **42 repositories tracked · 1504 releases recorded · 4,901 commits, authored by larocque.brandon@gmail.com**
-- Span: 2025-08-10 to 2026-10-20
-- This month (2026-10): 146 releases across 19 repos · 744 commits
+- **42 repositories tracked · 1506 releases recorded · 4,909 commits, authored by larocque.brandon@gmail.com**
+- Span: 2025-08-10 to 2026-10-21
+- This month (2026-10): 148 releases across 19 repos · 752 commits
 
 | Repository | Releases | Latest | Last release | Commits | Active since |
 |---|---:|---|---|---:|---|
 | Atrium | 173 | 0.76.0 | 2026-09-14 | 359 | 2026-05-05 |
 | Conservatory | 160 | 0.9.1 | 2026-10-11 | 294 | 2026-05-27 |
 | Viaduct | 126 | 4.3.1 | 2026-10-11 | 252 | 2026-04-19 |
-| CalibreQuarry | 111 | 3.69.0 | 2026-10-17 | 384 | 2026-03-27 |
+| CalibreQuarry | 112 | 3.70.0 | 2026-10-21 | 385 | 2026-03-27 |
 | lattice-music | 107 | 6.4.1 | 2026-10-11 | 337 | 2025-08-10 |
 | Catagotchi | 104 | 4.51.0 | 2026-09-18 | 166 | 2026-07-10 |
 | Hearth | 101 | 0.13.68 | 2026-09-15 | 129 | 2026-06-14 |
 | Framework | 97 | 1.0.2 | 2026-09-16 | 170 | 2026-04-06 |
-| bindery-cli | 75 | 0.51.0 | 2026-10-17 | 271 | 2026-06-09 |
+| bindery-cli | 76 | 0.52.0 | 2026-10-21 | 274 | 2026-06-09 |
 | Hermitage | 49 | 1.8.6 | 2026-10-02 | 117 | 2026-04-10 |
 | cquarry | 43 | 1.28.0 | 2026-10-11 | 265 | 2026-08-23 |
 | deadbeef-cui | 40 | 2.0.1 | 2026-10-06 | 192 | 2026-04-09 |
@@ -47,12 +47,12 @@ remain canonical; this file is a projection, reproducible with
 | dragon-agents | 6 | 0.6.0 | 2026-10-05 | 14 | 2026-09-03 |
 | saforums.koplugin | 5 | 0.5.0 | 2026-10-09 | 56 | 2026-10-08 |
 | Docket | 4 | 1.0.0 | 2026-10-13 | 19 | 2026-10-12 |
-| annals | 4 | 0.1.3 | 2026-10-09 | 32 | 2026-10-09 |
+| annals | 4 | 0.1.3 | 2026-10-09 | 33 | 2026-10-09 |
 | dragon-themer | 2 | 0.1.0 | 2026-10-07 | 34 | 2026-07-28 |
 | 1-timezone | 0 | - | - | 7 | 2026-07-05 |
 | Coffer | 0 | - | - | 9 | 2026-06-28 |
-| VirInvictus | 0 | - | - | 102 | 2026-06-22 |
-| VirInvictus.github.io | 0 | - | - | 193 | 2026-04-16 |
+| VirInvictus | 0 | - | - | 103 | 2026-06-22 |
+| VirInvictus.github.io | 0 | - | - | 195 | 2026-04-16 |
 | dead-reckoning-bookend-preset | 0 | - | - | 15 | 2026-07-03 |
 | project-void | 0 | - | - | 16 | 2026-04-17 |
 | project-yeschef | 0 | - | - | 6 | 2026-05-23 |
@@ -72,25 +72,25 @@ remain canonical; this file is a projection, reproducible with
 | 2026-07 | ▇▇▇▇▇▇▇▇▇▇▇▇ 154 | ▇▇▇▇▇▇▇▇ 476 |
 | 2026-08 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 165 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 776 |
 | 2026-09 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 350 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 1,729 |
-| 2026-10 | ▇▇▇▇▇▇▇▇▇▇▇▇ 146 | ▇▇▇▇▇▇▇▇▇▇▇▇ 744 |
+| 2026-10 | ▇▇▇▇▇▇▇▇▇▇▇▇ 148 | ▇▇▇▇▇▇▇▇▇▇▇▇ 752 |
 
 ## The languages
 
-437,292 lines of code · 27 languages · 41 repos
+437,637 lines of code · 27 languages · 41 repos
 
 ```
 ████████████████▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒░░···
-█ Rust 40%  ▓ Python 35%  ▒ GDScript 11%  ░ C 6%  · other 8%
+█ Rust 39%  ▓ Python 35%  ▒ GDScript 11%  ░ C 6%  · other 8%
 ```
 
 | Language | Share | Code lines | Repos |
 |---|---|---:|---:|
 | Rust | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 39.5% | 172,851 | 11 |
-| Python | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 35.3% | 154,255 | 21 |
+| Python | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 35.3% | 154,600 | 21 |
 | GDScript | ▇▇▇▇▇▇ 11.3% | 49,509 | 6 |
 | C | ▇▇▇ 6.0% | 26,147 | 2 |
 | Lua | ▇▇ 2.8% | 12,423 | 5 |
-| CSS | ▇ 1.4% | 5,906 | 6 |
+| CSS | ▇ 1.3% | 5,906 | 6 |
 | Ruby | ▇ 0.8% | 3,572 | 2 |
 | Autoconf | ▇ 0.8% | 3,356 | 4 |
 | Emacs Lisp | ▇ 0.5% | 2,320 | 2 |
@@ -105,6 +105,8 @@ remain canonical; this file is a projection, reproducible with
 
 #### October 2026
 
+- **10-21 · CalibreQuarry 3.70.0** · The staging-dir batch: phase 1's inventory walk skips a populated completed/ under the vetted root (issue #32)
+- **10-21 · bindery-cli 0.52.0** · The repairer's own prune could destroy the book it was repairing (issue #10)
 - **10-17 · CalibreQuarry 3.69.0** · The identifier residual batch: the reconcile diff collapses identifier whitespace on both sides, and the package-slot rewrite no longer skips uuid-typed slots (issue #31)
 - **10-17 · Carrel-calibre-web 0.6.45** · The Continue Reading row retires
 - **10-17 · bindery-cli 0.51.0** · The unbound-prefix repair: the Calibre embed scar comes off the OPF (issue #9)
@@ -1265,7 +1267,7 @@ that are not this workspace's work.
 | 2-kobo-style-sleepscreen-banner-prettified | 8 | 0 | 2 | 0 | 6 | 0 |
 | Atrium | 173 | 163 | 0 | 2 | 8 | 1 |
 | AudiobookTools | 6 | 6 | 0 | 0 | 0 | 0 |
-| CalibreQuarry | 111 | 111 | 0 | 0 | 0 | 0 |
+| CalibreQuarry | 112 | 112 | 0 | 0 | 0 | 0 |
 | Carrel | 20 | 20 | 0 | 0 | 0 | 0 |
 | Carrel-calibre-web | 20 | 19 | 0 | 1 | 0 | 0 |
 | Catagotchi | 104 | 104 | 0 | 0 | 0 | 0 |
@@ -1286,7 +1288,7 @@ that are not this workspace's work.
 | VirInvictus | 0 | 0 | 0 | 0 | 0 | 0 |
 | VirInvictus.github.io | 0 | 0 | 0 | 0 | 0 | 0 |
 | annals | 4 | 4 | 0 | 0 | 0 | 0 |
-| bindery-cli | 75 | 73 | 1 | 1 | 0 | 0 |
+| bindery-cli | 76 | 74 | 1 | 1 | 0 | 0 |
 | cquarry | 43 | 43 | 0 | 0 | 0 | 0 |
 | crash-course | 19 | 19 | 0 | 0 | 0 | 0 |
 | dead-reckoning-bookend-preset | 0 | 0 | 0 | 0 | 0 | 0 |
