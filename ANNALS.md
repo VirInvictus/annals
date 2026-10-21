@@ -8,16 +8,16 @@ remain canonical; this file is a projection, reproducible with
 
 ## The shape of the work
 
-- **42 repositories tracked · 1506 releases recorded · 4,909 commits, authored by larocque.brandon@gmail.com**
+- **42 repositories tracked · 1507 releases recorded · 4,914 commits, authored by larocque.brandon@gmail.com**
 - Span: 2025-08-10 to 2026-10-21
-- This month (2026-10): 148 releases across 19 repos · 752 commits
+- This month (2026-10): 149 releases across 19 repos · 757 commits
 
 | Repository | Releases | Latest | Last release | Commits | Active since |
 |---|---:|---|---|---:|---|
 | Atrium | 173 | 0.76.0 | 2026-09-14 | 359 | 2026-05-05 |
 | Conservatory | 160 | 0.9.1 | 2026-10-11 | 294 | 2026-05-27 |
 | Viaduct | 126 | 4.3.1 | 2026-10-11 | 252 | 2026-04-19 |
-| CalibreQuarry | 112 | 3.70.0 | 2026-10-21 | 385 | 2026-03-27 |
+| CalibreQuarry | 113 | 3.71.0 | 2026-10-21 | 386 | 2026-03-27 |
 | lattice-music | 107 | 6.4.1 | 2026-10-11 | 337 | 2025-08-10 |
 | Catagotchi | 104 | 4.51.0 | 2026-09-18 | 166 | 2026-07-10 |
 | Hearth | 101 | 0.13.68 | 2026-09-15 | 129 | 2026-06-14 |
@@ -47,12 +47,12 @@ remain canonical; this file is a projection, reproducible with
 | dragon-agents | 6 | 0.6.0 | 2026-10-05 | 14 | 2026-09-03 |
 | saforums.koplugin | 5 | 0.5.0 | 2026-10-09 | 56 | 2026-10-08 |
 | Docket | 4 | 1.0.0 | 2026-10-13 | 19 | 2026-10-12 |
-| annals | 4 | 0.1.3 | 2026-10-09 | 33 | 2026-10-09 |
+| annals | 4 | 0.1.3 | 2026-10-09 | 34 | 2026-10-09 |
 | dragon-themer | 2 | 0.1.0 | 2026-10-07 | 34 | 2026-07-28 |
 | 1-timezone | 0 | - | - | 7 | 2026-07-05 |
 | Coffer | 0 | - | - | 9 | 2026-06-28 |
-| VirInvictus | 0 | - | - | 103 | 2026-06-22 |
-| VirInvictus.github.io | 0 | - | - | 195 | 2026-04-16 |
+| VirInvictus | 0 | - | - | 104 | 2026-06-22 |
+| VirInvictus.github.io | 0 | - | - | 197 | 2026-04-16 |
 | dead-reckoning-bookend-preset | 0 | - | - | 15 | 2026-07-03 |
 | project-void | 0 | - | - | 16 | 2026-04-17 |
 | project-yeschef | 0 | - | - | 6 | 2026-05-23 |
@@ -72,11 +72,11 @@ remain canonical; this file is a projection, reproducible with
 | 2026-07 | ▇▇▇▇▇▇▇▇▇▇▇▇ 154 | ▇▇▇▇▇▇▇▇ 476 |
 | 2026-08 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 165 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 776 |
 | 2026-09 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 350 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 1,729 |
-| 2026-10 | ▇▇▇▇▇▇▇▇▇▇▇▇ 148 | ▇▇▇▇▇▇▇▇▇▇▇▇ 752 |
+| 2026-10 | ▇▇▇▇▇▇▇▇▇▇▇▇ 149 | ▇▇▇▇▇▇▇▇▇▇▇▇ 757 |
 
 ## The languages
 
-437,637 lines of code · 27 languages · 41 repos
+438,058 lines of code · 27 languages · 41 repos
 
 ```
 ████████████████▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒░░···
@@ -86,7 +86,7 @@ remain canonical; this file is a projection, reproducible with
 | Language | Share | Code lines | Repos |
 |---|---|---:|---:|
 | Rust | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 39.5% | 172,851 | 11 |
-| Python | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 35.3% | 154,600 | 21 |
+| Python | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 35.4% | 155,021 | 21 |
 | GDScript | ▇▇▇▇▇▇ 11.3% | 49,509 | 6 |
 | C | ▇▇▇ 6.0% | 26,147 | 2 |
 | Lua | ▇▇ 2.8% | 12,423 | 5 |
@@ -105,6 +105,7 @@ remain canonical; this file is a projection, reproducible with
 
 #### October 2026
 
+- **10-21 · CalibreQuarry 3.71.0** · The notation-and-initials batch: the duplicate screen reads a 10-form and its 13-form as the ONE edition they are, and a middle initial no longer splits one author in two (issue #33)
 - **10-21 · CalibreQuarry 3.70.0** · The staging-dir batch: phase 1's inventory walk skips a populated completed/ under the vetted root (issue #32)
 - **10-21 · bindery-cli 0.52.0** · The repairer's own prune could destroy the book it was repairing (issue #10)
 - **10-17 · CalibreQuarry 3.69.0** · The identifier residual batch: the reconcile diff collapses identifier whitespace on both sides, and the package-slot rewrite no longer skips uuid-typed slots (issue #31)
@@ -1267,7 +1268,7 @@ that are not this workspace's work.
 | 2-kobo-style-sleepscreen-banner-prettified | 8 | 0 | 2 | 0 | 6 | 0 |
 | Atrium | 173 | 163 | 0 | 2 | 8 | 1 |
 | AudiobookTools | 6 | 6 | 0 | 0 | 0 | 0 |
-| CalibreQuarry | 112 | 112 | 0 | 0 | 0 | 0 |
+| CalibreQuarry | 113 | 113 | 0 | 0 | 0 | 0 |
 | Carrel | 20 | 20 | 0 | 0 | 0 | 0 |
 | Carrel-calibre-web | 20 | 19 | 0 | 1 | 0 | 0 |
 | Catagotchi | 104 | 104 | 0 | 0 | 0 | 0 |
