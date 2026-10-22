@@ -8,15 +8,15 @@ remain canonical; this file is a projection, reproducible with
 
 ## The shape of the work
 
-- **42 repositories tracked · 1507 releases recorded · 4,916 commits, authored by larocque.brandon@gmail.com**
-- Span: 2025-08-10 to 2026-10-21
-- This month (2026-10): 149 releases across 19 repos · 759 commits
+- **42 repositories tracked · 1508 releases recorded · 4,923 commits, authored by larocque.brandon@gmail.com**
+- Span: 2025-08-10 to 2026-10-22
+- This month (2026-10): 150 releases across 19 repos · 766 commits
 
 | Repository | Releases | Latest | Last release | Commits | Active since |
 |---|---:|---|---|---:|---|
 | Atrium | 173 | 0.76.0 | 2026-09-14 | 359 | 2026-05-05 |
 | Conservatory | 160 | 0.9.1 | 2026-10-11 | 294 | 2026-05-27 |
-| Viaduct | 126 | 4.3.1 | 2026-10-11 | 252 | 2026-04-19 |
+| Viaduct | 127 | 4.3.2 | 2026-10-22 | 253 | 2026-04-19 |
 | CalibreQuarry | 113 | 3.71.0 | 2026-10-21 | 386 | 2026-03-27 |
 | lattice-music | 107 | 6.4.1 | 2026-10-11 | 337 | 2025-08-10 |
 | Catagotchi | 104 | 4.51.0 | 2026-09-18 | 166 | 2026-07-10 |
@@ -47,12 +47,12 @@ remain canonical; this file is a projection, reproducible with
 | dragon-agents | 6 | 0.6.0 | 2026-10-05 | 14 | 2026-09-03 |
 | saforums.koplugin | 5 | 0.5.0 | 2026-10-09 | 56 | 2026-10-08 |
 | Docket | 4 | 1.0.0 | 2026-10-13 | 19 | 2026-10-12 |
-| annals | 4 | 0.1.3 | 2026-10-09 | 35 | 2026-10-09 |
+| annals | 4 | 0.1.3 | 2026-10-09 | 36 | 2026-10-09 |
 | dragon-themer | 2 | 0.1.0 | 2026-10-07 | 34 | 2026-07-28 |
 | 1-timezone | 0 | - | - | 7 | 2026-07-05 |
 | Coffer | 0 | - | - | 9 | 2026-06-28 |
-| VirInvictus | 0 | - | - | 104 | 2026-06-22 |
-| VirInvictus.github.io | 0 | - | - | 198 | 2026-04-16 |
+| VirInvictus | 0 | - | - | 106 | 2026-06-22 |
+| VirInvictus.github.io | 0 | - | - | 201 | 2026-04-16 |
 | dead-reckoning-bookend-preset | 0 | - | - | 15 | 2026-07-03 |
 | project-void | 0 | - | - | 16 | 2026-04-17 |
 | project-yeschef | 0 | - | - | 6 | 2026-05-23 |
@@ -72,11 +72,11 @@ remain canonical; this file is a projection, reproducible with
 | 2026-07 | ▇▇▇▇▇▇▇▇▇▇▇▇ 154 | ▇▇▇▇▇▇▇▇ 476 |
 | 2026-08 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 165 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 776 |
 | 2026-09 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 350 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 1,729 |
-| 2026-10 | ▇▇▇▇▇▇▇▇▇▇▇▇ 149 | ▇▇▇▇▇▇▇▇▇▇▇▇ 759 |
+| 2026-10 | ▇▇▇▇▇▇▇▇▇▇▇▇ 150 | ▇▇▇▇▇▇▇▇▇▇▇▇ 766 |
 
 ## The languages
 
-438,058 lines of code · 27 languages · 41 repos
+438,233 lines of code · 27 languages · 41 repos
 
 ```
 ████████████████▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒░░···
@@ -85,7 +85,7 @@ remain canonical; this file is a projection, reproducible with
 
 | Language | Share | Code lines | Repos |
 |---|---|---:|---:|
-| Rust | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 39.5% | 172,851 | 11 |
+| Rust | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 39.5% | 173,026 | 11 |
 | Python | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 35.4% | 155,021 | 21 |
 | GDScript | ▇▇▇▇▇▇ 11.3% | 49,509 | 6 |
 | C | ▇▇▇ 6.0% | 26,147 | 2 |
@@ -105,6 +105,7 @@ remain canonical; this file is a projection, reproducible with
 
 #### October 2026
 
+- **10-22 · Viaduct 4.3.2** · MacRumors cleanup, magnet links
 - **10-21 · CalibreQuarry 3.71.0** · The notation-and-initials batch: the duplicate screen reads a 10-form and its 13-form as the ONE edition they are, and a middle initial no longer splits one author in two (issue #33)
 - **10-21 · CalibreQuarry 3.70.0** · The staging-dir batch: phase 1's inventory walk skips a populated completed/ under the vetted root (issue #32)
 - **10-21 · bindery-cli 0.52.0** · The repairer's own prune could destroy the book it was repairing (issue #10)
@@ -1285,7 +1286,7 @@ that are not this workspace's work.
 | Quire | 22 | 22 | 0 | 0 | 0 | 0 |
 | Topograph | 11 | 11 | 0 | 0 | 0 | 0 |
 | Vestibule | 12 | 12 | 0 | 0 | 0 | 0 |
-| Viaduct | 126 | 27 | 1 | 53 | 45 | 1 |
+| Viaduct | 127 | 28 | 1 | 53 | 45 | 1 |
 | VirInvictus | 0 | 0 | 0 | 0 | 0 | 0 |
 | VirInvictus.github.io | 0 | 0 | 0 | 0 | 0 | 0 |
 | annals | 4 | 4 | 0 | 0 | 0 | 0 |
