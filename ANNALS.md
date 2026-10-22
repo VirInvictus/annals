@@ -8,9 +8,9 @@ remain canonical; this file is a projection, reproducible with
 
 ## The shape of the work
 
-- **42 repositories tracked · 1508 releases recorded · 4,923 commits, authored by larocque.brandon@gmail.com**
+- **42 repositories tracked · 1511 releases recorded · 4,931 commits, authored by larocque.brandon@gmail.com**
 - Span: 2025-08-10 to 2026-10-22
-- This month (2026-10): 150 releases across 19 repos · 766 commits
+- This month (2026-10): 153 releases across 19 repos · 774 commits
 
 | Repository | Releases | Latest | Last release | Commits | Active since |
 |---|---:|---|---|---:|---|
@@ -25,7 +25,7 @@ remain canonical; this file is a projection, reproducible with
 | bindery-cli | 76 | 0.52.0 | 2026-10-21 | 274 | 2026-06-09 |
 | Hermitage | 49 | 1.8.6 | 2026-10-02 | 117 | 2026-04-10 |
 | cquarry | 43 | 1.28.0 | 2026-10-11 | 265 | 2026-08-23 |
-| deadbeef-cui | 40 | 2.0.1 | 2026-10-06 | 192 | 2026-04-09 |
+| deadbeef-cui | 43 | 2.2.1 | 2026-10-22 | 198 | 2026-04-09 |
 | Hearthfall | 35 | 0.28.0 | 2026-09-15 | 91 | 2026-07-19 |
 | Colophon | 33 | 2.6.0 | 2026-09-15 | 98 | 2026-07-03 |
 | Haveli | 28 | 1.2.0 | 2026-09-15 | 66 | 2026-06-15 |
@@ -47,12 +47,12 @@ remain canonical; this file is a projection, reproducible with
 | dragon-agents | 6 | 0.6.0 | 2026-10-05 | 14 | 2026-09-03 |
 | saforums.koplugin | 5 | 0.5.0 | 2026-10-09 | 56 | 2026-10-08 |
 | Docket | 4 | 1.0.0 | 2026-10-13 | 19 | 2026-10-12 |
-| annals | 4 | 0.1.3 | 2026-10-09 | 36 | 2026-10-09 |
+| annals | 4 | 0.1.3 | 2026-10-09 | 37 | 2026-10-09 |
 | dragon-themer | 2 | 0.1.0 | 2026-10-07 | 34 | 2026-07-28 |
 | 1-timezone | 0 | - | - | 7 | 2026-07-05 |
 | Coffer | 0 | - | - | 9 | 2026-06-28 |
 | VirInvictus | 0 | - | - | 106 | 2026-06-22 |
-| VirInvictus.github.io | 0 | - | - | 201 | 2026-04-16 |
+| VirInvictus.github.io | 0 | - | - | 202 | 2026-04-16 |
 | dead-reckoning-bookend-preset | 0 | - | - | 15 | 2026-07-03 |
 | project-void | 0 | - | - | 16 | 2026-04-17 |
 | project-yeschef | 0 | - | - | 6 | 2026-05-23 |
@@ -72,11 +72,11 @@ remain canonical; this file is a projection, reproducible with
 | 2026-07 | ▇▇▇▇▇▇▇▇▇▇▇▇ 154 | ▇▇▇▇▇▇▇▇ 476 |
 | 2026-08 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 165 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 776 |
 | 2026-09 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 350 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 1,729 |
-| 2026-10 | ▇▇▇▇▇▇▇▇▇▇▇▇ 150 | ▇▇▇▇▇▇▇▇▇▇▇▇ 766 |
+| 2026-10 | ▇▇▇▇▇▇▇▇▇▇▇▇ 153 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 774 |
 
 ## The languages
 
-438,233 lines of code · 27 languages · 41 repos
+439,125 lines of code · 27 languages · 41 repos
 
 ```
 ████████████████▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒░░···
@@ -85,19 +85,19 @@ remain canonical; this file is a projection, reproducible with
 
 | Language | Share | Code lines | Repos |
 |---|---|---:|---:|
-| Rust | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 39.5% | 173,026 | 11 |
-| Python | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 35.4% | 155,021 | 21 |
+| Rust | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 39.4% | 173,026 | 11 |
+| Python | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 35.3% | 155,021 | 21 |
 | GDScript | ▇▇▇▇▇▇ 11.3% | 49,509 | 6 |
-| C | ▇▇▇ 6.0% | 26,147 | 2 |
+| C | ▇▇▇ 6.1% | 27,005 | 2 |
 | Lua | ▇▇ 2.8% | 12,423 | 5 |
 | CSS | ▇ 1.3% | 5,906 | 6 |
 | Ruby | ▇ 0.8% | 3,572 | 2 |
 | Autoconf | ▇ 0.8% | 3,356 | 4 |
 | Emacs Lisp | ▇ 0.5% | 2,320 | 2 |
 | Shell | ▇ 0.3% | 1,359 | 10 |
-| C Header | ▇ 0.2% | 1,051 | 4 |
+| C Header | ▇ 0.2% | 1,083 | 4 |
 | SQL | ▇ 0.2% | 899 | 2 |
-| other | ▇ 0.8% | 3,644 | - |
+| other | ▇ 0.8% | 3,646 | - |
 
 ## The record
 
@@ -106,6 +106,9 @@ remain canonical; this file is a projection, reproducible with
 #### October 2026
 
 - **10-22 · Viaduct 4.3.2** · MacRumors cleanup, magnet links
+- **10-22 · deadbeef-cui 2.2.1** · Bug fixes
+- **10-22 · deadbeef-cui 2.2.0** · Features
+- **10-22 · deadbeef-cui 2.1.0** · Features
 - **10-21 · CalibreQuarry 3.71.0** · The notation-and-initials batch: the duplicate screen reads a 10-form and its 13-form as the ONE edition they are, and a middle initial no longer splits one author in two (issue #33)
 - **10-21 · CalibreQuarry 3.70.0** · The staging-dir batch: phase 1's inventory walk skips a populated completed/ under the vetted root (issue #32)
 - **10-21 · bindery-cli 0.52.0** · The repairer's own prune could destroy the book it was repairing (issue #10)
@@ -1294,7 +1297,7 @@ that are not this workspace's work.
 | cquarry | 43 | 43 | 0 | 0 | 0 | 0 |
 | crash-course | 19 | 19 | 0 | 0 | 0 | 0 |
 | dead-reckoning-bookend-preset | 0 | 0 | 0 | 0 | 0 | 0 |
-| deadbeef-cui | 40 | 0 | 7 | 0 | 33 | 0 |
+| deadbeef-cui | 43 | 0 | 10 | 0 | 33 | 0 |
 | dragon-agents | 6 | 6 | 0 | 0 | 0 | 0 |
 | dragon-themer | 2 | 2 | 0 | 0 | 0 | 0 |
 | kanagawa-dragon-nvim-emacs | 7 | 7 | 0 | 0 | 0 | 0 |
