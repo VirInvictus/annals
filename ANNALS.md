@@ -8,9 +8,9 @@ remain canonical; this file is a projection, reproducible with
 
 ## The shape of the work
 
-- **44 repositories tracked · 1637 releases recorded · 5,046 commits, authored by larocque.brandon@gmail.com**
-- Span: 2025-08-10 to 2026-10-22
-- This month (2026-10): 163 releases across 21 repos · 785 commits
+- **44 repositories tracked · 1640 releases recorded · 5,060 commits, authored by larocque.brandon@gmail.com**
+- Span: 2025-08-10 to 2026-10-23
+- This month (2026-10): 166 releases across 21 repos · 799 commits
 
 | Repository | Releases | Latest | Last release | Commits | Active since |
 |---|---:|---|---|---:|---|
@@ -18,14 +18,14 @@ remain canonical; this file is a projection, reproducible with
 | Conservatory | 160 | 0.9.1 | 2026-10-11 | 294 | 2026-05-27 |
 | Viaduct | 127 | 4.3.2 | 2026-10-22 | 253 | 2026-04-19 |
 | meoweconomy | 120 | 0.15.0-alpha | 2026-10-07 | 104 | 2026-05-15 |
-| CalibreQuarry | 114 | 3.72.0 | 2026-10-22 | 387 | 2026-03-27 |
+| CalibreQuarry | 115 | 3.73.0 | 2026-10-23 | 388 | 2026-03-27 |
 | lattice-music | 107 | 6.4.1 | 2026-10-11 | 337 | 2025-08-10 |
 | Catagotchi | 104 | 4.51.0 | 2026-09-18 | 166 | 2026-07-10 |
 | Hearth | 101 | 0.13.68 | 2026-09-15 | 129 | 2026-06-14 |
 | Framework | 97 | 1.0.2 | 2026-09-16 | 170 | 2026-04-06 |
 | bindery-cli | 76 | 0.52.0 | 2026-10-21 | 274 | 2026-06-09 |
 | Hermitage | 49 | 1.8.6 | 2026-10-02 | 117 | 2026-04-10 |
-| cquarry | 43 | 1.28.0 | 2026-10-11 | 265 | 2026-08-23 |
+| cquarry | 44 | 1.28.1 | 2026-10-23 | 268 | 2026-08-23 |
 | deadbeef-cui | 43 | 2.2.1 | 2026-10-22 | 198 | 2026-04-09 |
 | Hearthfall | 35 | 0.28.0 | 2026-09-15 | 91 | 2026-07-19 |
 | Colophon | 33 | 2.6.0 | 2026-09-15 | 98 | 2026-07-03 |
@@ -46,15 +46,15 @@ remain canonical; this file is a projection, reproducible with
 | AudiobookTools | 6 | 0.3.0 | 2026-09-15 | 37 | 2026-05-28 |
 | Foyer | 6 | 0.2.0 | 2026-09-15 | 32 | 2026-07-17 |
 | dragon-agents | 6 | 0.6.0 | 2026-10-05 | 14 | 2026-09-03 |
+| whisker-street | 6 | 0.4.0 | 2026-10-23 | 8 | 2026-10-22 |
 | saforums.koplugin | 5 | 0.5.0 | 2026-10-09 | 56 | 2026-10-08 |
-| whisker-street | 5 | 0.3.0 | 2026-10-22 | 6 | 2026-10-22 |
 | Docket | 4 | 1.0.0 | 2026-10-13 | 19 | 2026-10-12 |
-| annals | 4 | 0.1.3 | 2026-10-09 | 39 | 2026-10-09 |
+| annals | 4 | 0.1.3 | 2026-10-09 | 40 | 2026-10-09 |
 | dragon-themer | 2 | 0.1.0 | 2026-10-07 | 34 | 2026-07-28 |
 | 1-timezone | 0 | - | - | 7 | 2026-07-05 |
 | Coffer | 0 | - | - | 9 | 2026-06-28 |
-| VirInvictus | 0 | - | - | 106 | 2026-06-22 |
-| VirInvictus.github.io | 0 | - | - | 204 | 2026-04-16 |
+| VirInvictus | 0 | - | - | 109 | 2026-06-22 |
+| VirInvictus.github.io | 0 | - | - | 208 | 2026-04-16 |
 | dead-reckoning-bookend-preset | 0 | - | - | 15 | 2026-07-03 |
 | project-void | 0 | - | - | 16 | 2026-04-17 |
 | project-yeschef | 0 | - | - | 6 | 2026-05-23 |
@@ -74,11 +74,11 @@ remain canonical; this file is a projection, reproducible with
 | 2026-07 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 160 | ▇▇▇▇▇▇▇▇ 476 |
 | 2026-08 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 167 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 776 |
 | 2026-09 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 354 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 1,729 |
-| 2026-10 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 163 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 785 |
+| 2026-10 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 166 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 799 |
 
 ## The languages
 
-488,917 lines of code · 27 languages · 43 repos
+489,109 lines of code · 27 languages · 43 repos
 
 ```
 █████████████████▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒░░···
@@ -87,7 +87,7 @@ remain canonical; this file is a projection, reproducible with
 
 | Language | Share | Code lines | Repos |
 |---|---|---:|---:|
-| Python | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 41.9% | 204,730 | 23 |
+| Python | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 41.9% | 204,922 | 23 |
 | Rust | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 35.4% | 173,026 | 11 |
 | GDScript | ▇▇▇▇▇ 10.1% | 49,509 | 6 |
 | C | ▇▇▇ 5.5% | 27,005 | 2 |
@@ -107,6 +107,9 @@ remain canonical; this file is a projection, reproducible with
 
 #### October 2026
 
+- **10-23 · CalibreQuarry 3.73.0** · The cquarry 1.28.1 floor: text-family custom-column writes preserve non-breaking spaces like the 9.17 GUI (issue #35)
+- **10-23 · cquarry 1.28.1** · The Calibre 9.17 watch audit: NBSP preservation and an atomic extra-file write
+- **10-23 · whisker-street 0.4.0**
 - **10-22 · CalibreQuarry 3.72.0** · The cover-import batch: `run phase2` extracts the EPUB's own declared cover at import, so verb-door imports land `has_cover=1` like the GUI door's (issue #34)
 - **10-22 · Viaduct 4.3.2** · MacRumors cleanup, magnet links
 - **10-22 · deadbeef-cui 2.2.1** · Bug fixes
@@ -1399,7 +1402,7 @@ that are not this workspace's work.
 | 2-kobo-style-sleepscreen-banner-prettified | 8 | 0 | 2 | 0 | 6 | 0 |
 | Atrium | 173 | 163 | 0 | 2 | 8 | 1 |
 | AudiobookTools | 6 | 6 | 0 | 0 | 0 | 0 |
-| CalibreQuarry | 114 | 114 | 0 | 0 | 0 | 0 |
+| CalibreQuarry | 115 | 115 | 0 | 0 | 0 | 0 |
 | Carrel | 20 | 20 | 0 | 0 | 0 | 0 |
 | Carrel-calibre-web | 20 | 19 | 0 | 1 | 0 | 0 |
 | Catagotchi | 104 | 104 | 0 | 0 | 0 | 0 |
@@ -1421,7 +1424,7 @@ that are not this workspace's work.
 | VirInvictus.github.io | 0 | 0 | 0 | 0 | 0 | 0 |
 | annals | 4 | 4 | 0 | 0 | 0 | 0 |
 | bindery-cli | 76 | 74 | 1 | 1 | 0 | 0 |
-| cquarry | 43 | 43 | 0 | 0 | 0 | 0 |
+| cquarry | 44 | 44 | 0 | 0 | 0 | 0 |
 | crash-course | 19 | 19 | 0 | 0 | 0 | 0 |
 | dead-reckoning-bookend-preset | 0 | 0 | 0 | 0 | 0 | 0 |
 | deadbeef-cui | 43 | 0 | 10 | 0 | 33 | 0 |
@@ -1438,7 +1441,7 @@ that are not this workspace's work.
 | vir-gtk | 12 | 12 | 0 | 0 | 0 | 0 |
 | vir-search | 12 | 12 | 0 | 0 | 0 | 0 |
 | vir-tui | 8 | 8 | 0 | 0 | 0 | 0 |
-| whisker-street | 5 | 5 | 0 | 0 | 0 | 0 |
+| whisker-street | 6 | 6 | 0 | 0 | 0 | 0 |
 
 ### Undated records
 
