@@ -8,16 +8,17 @@ remain canonical; this file is a projection, reproducible with
 
 ## The shape of the work
 
-- **42 repositories tracked · 1511 releases recorded · 4,931 commits, authored by larocque.brandon@gmail.com**
+- **44 repositories tracked · 1635 releases recorded · 5,041 commits, authored by larocque.brandon@gmail.com**
 - Span: 2025-08-10 to 2026-10-22
-- This month (2026-10): 153 releases across 19 repos · 774 commits
+- This month (2026-10): 161 releases across 21 repos · 780 commits
 
 | Repository | Releases | Latest | Last release | Commits | Active since |
 |---|---:|---|---|---:|---|
 | Atrium | 173 | 0.76.0 | 2026-09-14 | 359 | 2026-05-05 |
 | Conservatory | 160 | 0.9.1 | 2026-10-11 | 294 | 2026-05-27 |
 | Viaduct | 127 | 4.3.2 | 2026-10-22 | 253 | 2026-04-19 |
-| CalibreQuarry | 113 | 3.71.0 | 2026-10-21 | 386 | 2026-03-27 |
+| meoweconomy | 120 | 0.15.0-alpha | 2026-10-07 | 104 | 2026-05-15 |
+| CalibreQuarry | 114 | 3.72.0 | 2026-10-22 | 387 | 2026-03-27 |
 | lattice-music | 107 | 6.4.1 | 2026-10-11 | 337 | 2025-08-10 |
 | Catagotchi | 104 | 4.51.0 | 2026-09-18 | 166 | 2026-07-10 |
 | Hearth | 101 | 0.13.68 | 2026-09-15 | 129 | 2026-06-14 |
@@ -47,12 +48,13 @@ remain canonical; this file is a projection, reproducible with
 | dragon-agents | 6 | 0.6.0 | 2026-10-05 | 14 | 2026-09-03 |
 | saforums.koplugin | 5 | 0.5.0 | 2026-10-09 | 56 | 2026-10-08 |
 | Docket | 4 | 1.0.0 | 2026-10-13 | 19 | 2026-10-12 |
-| annals | 4 | 0.1.3 | 2026-10-09 | 37 | 2026-10-09 |
+| annals | 4 | 0.1.3 | 2026-10-09 | 38 | 2026-10-09 |
+| whisker-street | 3 | 0.1.2 | 2026-10-22 | 3 | 2026-10-22 |
 | dragon-themer | 2 | 0.1.0 | 2026-10-07 | 34 | 2026-07-28 |
 | 1-timezone | 0 | - | - | 7 | 2026-07-05 |
 | Coffer | 0 | - | - | 9 | 2026-06-28 |
 | VirInvictus | 0 | - | - | 106 | 2026-06-22 |
-| VirInvictus.github.io | 0 | - | - | 202 | 2026-04-16 |
+| VirInvictus.github.io | 0 | - | - | 203 | 2026-04-16 |
 | dead-reckoning-bookend-preset | 0 | - | - | 15 | 2026-07-03 |
 | project-void | 0 | - | - | 16 | 2026-04-17 |
 | project-yeschef | 0 | - | - | 6 | 2026-05-23 |
@@ -67,36 +69,36 @@ remain canonical; this file is a projection, reproducible with
 | 2026-01 | · | ▇ 7 |
 | 2026-03 | ▇ 1 | ▇ 13 |
 | 2026-04 | ▇▇▇▇▇ 66 | ▇▇▇▇▇▇ 373 |
-| 2026-05 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 197 | ▇▇▇▇▇▇▇▇ 485 |
-| 2026-06 | ▇▇▇ 43 | ▇▇▇▇ 218 |
-| 2026-07 | ▇▇▇▇▇▇▇▇▇▇▇▇ 154 | ▇▇▇▇▇▇▇▇ 476 |
-| 2026-08 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 165 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 776 |
-| 2026-09 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 350 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 1,729 |
-| 2026-10 | ▇▇▇▇▇▇▇▇▇▇▇▇ 153 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 774 |
+| 2026-05 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 296 | ▇▇▇▇▇▇▇▇▇▇ 588 |
+| 2026-06 | ▇▇▇▇ 47 | ▇▇▇▇ 219 |
+| 2026-07 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 160 | ▇▇▇▇▇▇▇▇ 476 |
+| 2026-08 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 167 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 776 |
+| 2026-09 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 354 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 1,729 |
+| 2026-10 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 161 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 780 |
 
 ## The languages
 
-439,125 lines of code · 27 languages · 41 repos
+485,193 lines of code · 27 languages · 43 repos
 
 ```
-████████████████▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒░░···
-█ Rust 39%  ▓ Python 35%  ▒ GDScript 11%  ░ C 6%  · other 8%
+█████████████████▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒░░···
+█ Python 41%  ▓ Rust 36%  ▒ GDScript 10%  ░ C 6%  · other 7%
 ```
 
 | Language | Share | Code lines | Repos |
 |---|---|---:|---:|
-| Rust | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 39.4% | 173,026 | 11 |
-| Python | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 35.3% | 155,021 | 21 |
-| GDScript | ▇▇▇▇▇▇ 11.3% | 49,509 | 6 |
-| C | ▇▇▇ 6.1% | 27,005 | 2 |
-| Lua | ▇▇ 2.8% | 12,423 | 5 |
-| CSS | ▇ 1.3% | 5,906 | 6 |
-| Ruby | ▇ 0.8% | 3,572 | 2 |
-| Autoconf | ▇ 0.8% | 3,356 | 4 |
+| Python | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 41.4% | 201,006 | 23 |
+| Rust | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 35.7% | 173,026 | 11 |
+| GDScript | ▇▇▇▇▇ 10.2% | 49,509 | 6 |
+| C | ▇▇▇ 5.6% | 27,005 | 2 |
+| Lua | ▇ 2.6% | 12,423 | 5 |
+| CSS | ▇ 1.2% | 5,906 | 6 |
+| Ruby | ▇ 0.7% | 3,572 | 2 |
+| Autoconf | ▇ 0.7% | 3,356 | 4 |
 | Emacs Lisp | ▇ 0.5% | 2,320 | 2 |
-| Shell | ▇ 0.3% | 1,359 | 10 |
+| Shell | ▇ 0.3% | 1,422 | 11 |
 | C Header | ▇ 0.2% | 1,083 | 4 |
-| SQL | ▇ 0.2% | 899 | 2 |
+| SQL | ▇ 0.2% | 919 | 3 |
 | other | ▇ 0.8% | 3,646 | - |
 
 ## The record
@@ -105,10 +107,14 @@ remain canonical; this file is a projection, reproducible with
 
 #### October 2026
 
+- **10-22 · CalibreQuarry 3.72.0** · The cover-import batch: `run phase2` extracts the EPUB's own declared cover at import, so verb-door imports land `has_cover=1` like the GUI door's (issue #34)
 - **10-22 · Viaduct 4.3.2** · MacRumors cleanup, magnet links
 - **10-22 · deadbeef-cui 2.2.1** · Bug fixes
 - **10-22 · deadbeef-cui 2.2.0** · Features
 - **10-22 · deadbeef-cui 2.1.0** · Features
+- **10-22 · whisker-street 0.1.2**
+- **10-22 · whisker-street 0.1.1**
+- **10-22 · whisker-street 0.1.0**
 - **10-21 · CalibreQuarry 3.71.0** · The notation-and-initials batch: the duplicate screen reads a 10-form and its 13-form as the ONE edition they are, and a middle initial no longer splits one author in two (issue #33)
 - **10-21 · CalibreQuarry 3.70.0** · The staging-dir batch: phase 1's inventory walk skips a populated completed/ under the vetted root (issue #32)
 - **10-21 · bindery-cli 0.52.0** · The repairer's own prune could destroy the book it was repairing (issue #10)
@@ -186,6 +192,10 @@ remain canonical; this file is a projection, reproducible with
 - **10-07 · Topograph 0.4.0**
 - **10-07 · crash-course 0.18.0**
 - **10-07 · dragon-themer 0.1.0**
+- **10-07 · meoweconomy 0.15.0-alpha** · /burn
+- **10-07 · meoweconomy 0.14.2-alpha** · coins stop at 9 quintillion instead of failing
+- **10-07 · meoweconomy 0.14.1-alpha** · Meow Quintillionaire title
+- **10-07 · meoweconomy 0.14.0-alpha** · economy rebalance
 - **10-07 · opends darkfix-ds1 0.1.3**
 - **10-07 · opends darkfix-ds2 0.1.2**
 - **10-07 · opends opcode-fuzz 0.3.1**
@@ -262,6 +272,7 @@ remain canonical; this file is a projection, reproducible with
 #### September 2026
 
 - **09-26 · CalibreQuarry 3.54.0** · The multi-author seed fix and the stamp_pdf parse-crash recovery
+- **09-25 · meoweconomy 0.13.7-alpha** · cat log paging stays on the page list
 - **09-22 · CalibreQuarry 3.53.0** · stamp_epub: the pre-stamp ritual gets its EPUB tool (mandatory for ALL filetypes)
 - **09-21 · CalibreQuarry 3.52.0** · The duplicate-screen semantics fix: the 2026-09-21 waves' false refusals and the silent masked duplicate, plus the ISBN and pubdate guards
 - **09-21 · CalibreQuarry 3.51.0** · The bindery structured-fix records adoption: lossy consent reads data, with a version gate on the PATH binary
@@ -444,6 +455,8 @@ remain canonical; this file is a projection, reproducible with
 - **09-10 · bindery-cli 0.34.0** · Brandon's three calls: partial books are trouble, the contract reconciled, the daemon decision informed
 - **09-10 · bindery-cli 0.33.0** · Phase 14 hardening: the apply path, the audit, and the safety contract's tests
 - **09-10 · bindery-cli 0.32.0** · The four Bug Reports fixes (2026-09-08 sweep) and the anchored-attribute cluster
+- **09-10 · meoweconomy 0.13.6-alpha** · DMs get logged and answered instead of crashing
+- **09-10 · meoweconomy 0.13.5-alpha** · Profile pickers no longer die at exactly 25 items
 - **09-10 · vir-gtk 1.2.0**
 - **09-09 · CalibreQuarry 3.33.0** · Batch B: the run verbs and the write path (Phase 18)
 - **09-09 · CalibreQuarry 3.32.0** · The four P0s from the deep-dive backlog (Phase 18, batch A)
@@ -546,6 +559,7 @@ remain canonical; this file is a projection, reproducible with
 - **09-05 · Hearth 0.13.22**
 - **09-05 · Viaduct 1.6.0** · Stable
 - **09-05 · bindery-cli 0.28.0** · Phase 12: repairs for the top epubcheck error codes
+- **09-05 · meoweconomy 0.13.4-alpha** · The fishing lock can't strand you any more
 - **09-04 · Atrium 0.72.1**
 - **09-04 · Atrium 0.72.0** · the vault stops losing things, and narrow tiles get usable
 - **09-04 · Atrium 0.71.1** · the note-body serif resolves on fresh installs
@@ -614,6 +628,7 @@ remain canonical; this file is a projection, reproducible with
 
 #### August 2026
 
+- **08-31 · meoweconomy 0.13.3-alpha** · Pick your own wager, drop things for other people, and a catch-up sweep
 - **08-30 · CalibreQuarry 3.25.0**
 - **08-30 · CalibreQuarry 3.24.0**
 - **08-30 · CalibreQuarry 3.23.1**
@@ -699,6 +714,7 @@ remain canonical; this file is a projection, reproducible with
 - **08-23 · cquarry 1.0.1** · Performance
 - **08-23 · cquarry 1.0.0** · Extract & Launch
 - **08-23 · lattice-music 4.15.0**
+- **08-23 · meoweconomy 0.13.2-alpha** · Hangman selects disable on timeout
 - **08-23 · raindrop-cli 0.5.1**
 - **08-23 · vir-gtk 1.0.1**
 - **08-23 · vir-search 1.0.1**
@@ -785,13 +801,18 @@ remain canonical; this file is a projection, reproducible with
 - **07-31 · CalibreQuarry 3.7.1**
 - **07-31 · CalibreQuarry 3.7.0** · Fixes
 - **07-29 · Atrium 0.66.0** · Automatic theme follows the desktop again
+- **07-26 · meoweconomy 0.13.1-alpha** · Nothing Gets Lost
 - **07-25 · Catagotchi 4.5.1** · Debug Grants That Keep Up
 - **07-25 · Catagotchi 4.5.0** · Know Thy Game
+- **07-25 · meoweconomy 0.13.0-alpha** · Poker Night
+- **07-25 · meoweconomy 0.12.15-alpha** · Fewer Broken Buttons
 - **07-24 · Carrel 0.9.0**
 - **07-24 · Carrel 0.8.0**
 - **07-24 · Carrel 0.7.0**
 - **07-24 · Carrel 0.6.1**
+- **07-21 · meoweconomy 0.12.14-alpha** · No More Waiting Rooms
 - **07-20 · Hearthfall 0.1.0**
+- **07-20 · meoweconomy 0.12.13-alpha** · The Big Clearance Sale
 - **07-19 · Atrium 0.65.1** · re-ground the Phase 21 audit against the post-de-adwaita code
 - **07-19 · Catagotchi 4.4.3** · More Elbow Room
 - **07-19 · Catagotchi 4.4.2** · A Tidier Chronicle
@@ -814,6 +835,7 @@ remain canonical; this file is a projection, reproducible with
 - **07-19 · Catagotchi 3.0.0** · The Renaissance Loop
 - **07-19 · Catagotchi 2.1.1** · Shippable
 - **07-19 · Hearthfall 0.0.1**
+- **07-19 · meoweconomy 0.12.12-alpha** · The Bouncer at the Counting Club
 - **07-18 · raindrop-cli 0.3.0** · Added
 - **07-18 · raindrop-cli 0.2.0** · Added
 - **07-18 · raindrop-cli 0.1.1** · Fixed
@@ -941,6 +963,7 @@ remain canonical; this file is a projection, reproducible with
 
 - **06-30 · CalibreQuarry 3.3.1** · Fixes
 - **06-30 · CalibreQuarry 3.3.0** · New Features
+- **06-28 · meoweconomy 0.12.11-alpha** · Gone Fishing (For Real This Time
 - **06-25 · CalibreQuarry 3.2.1** · Fixes
 - **06-23 · CalibreQuarry 3.2.0** · New Features
 - **06-23 · CalibreQuarry 3.1.1** · Fixes
@@ -960,6 +983,8 @@ remain canonical; this file is a projection, reproducible with
 - **06-20 · CalibreQuarry 3.1.0** · Changes
 - **06-20 · CalibreQuarry 3.0.3** · New Features
 - **06-20 · lattice-music** · cleaner.py v1.2.0
+- **06-19 · meoweconomy 0.12.10-alpha** · The Happy Little Fixes
+- **06-18 · meoweconomy 0.12.9-alpha** · Database outage resilience: per-message circuit breakers, fast-fail pool timeout
 - **06-15 · lattice-music** · apestrip.py v1.1.0
 - **06-15 · lattice-music** · apestrip.py v1.0.0
 - **06-14 · CalibreQuarry 3.0.2** · New Features
@@ -973,6 +998,7 @@ remain canonical; this file is a projection, reproducible with
 - **06-11 · Carrel 0.1.0**
 - **06-11 · bindery-cli 0.4.2**
 - **06-11 · bindery-cli 0.4.1**
+- **06-11 · meoweconomy 0.12.8-alpha** · Runtime hygiene: bare excepts eliminated, event-loop file I/O moved off-thread
 - **06-10 · lattice-music 4.8.1**
 - **06-10 · opends** · dialog-extract v0.7.1, gpl-asm v0.8.1
 - **06-09 · bindery-cli 0.4.0**
@@ -1038,7 +1064,106 @@ remain canonical; this file is a projection, reproducible with
 - **05-26 · lattice-music 4.4.2** · Integrity scanning: fewer false alarms, severity tiers
 - **05-26 · lattice-music 4.4.1** · Bug Fixes
 - **05-18 · opends** · Phase 5 tools mature (save editing, the assembler, atlas, fuzz
+- **05-17 · meoweconomy 0.12.7-alpha** · Games hub: blackjack payout label fixed
+- **05-16 · meoweconomy 0.12.6-alpha** · Boss reward race, fishing crash, leaderboard cog, and a tightened ship gate
 - **05-16 · opends** · the harness and rendering phases (repro, region-render, image-extract, dialog-extract, opcode-fuzz, exe-re
+- **05-15 · meoweconomy 0.12.5-alpha** · Blackjack: Vegas-standard payouts
+- **05-15 · meoweconomy 0.12.4-alpha** · Fix parallel /fish sessions
+- **05-15 · meoweconomy 0.12.3-alpha** · Two operator-reported startup/runtime bugfixes
+- **05-15 · meoweconomy 0.12.2-alpha** · /bossconfig (consolidated admin menu
+- **05-15 · meoweconomy 0.12.1-alpha** · Two operator-reported bugfixes
+- **05-15 · meoweconomy 0.12.0-alpha** · Phase 11 close
+- **05-15 · meoweconomy 0.11.23-alpha** · Phase 11.E: small doc fixes
+- **05-15 · meoweconomy 0.10.2-alpha** · patchnotes amendment
+- **05-15 · meoweconomy 0.11.22-alpha** · Phase 11.E: spec.md §3 + §4 refreshed
+- **05-15 · meoweconomy 0.11.21-alpha** · Phase 11.E: README.md refreshed
+- **05-15 · meoweconomy 0.11.20-alpha** · Phase 11.H: prune layout-pin shim tests
+- **05-15 · meoweconomy 0.11.19-alpha** · Phase 11.H: globalshop upsert + cats-found backfill tests
+- **05-15 · meoweconomy 0.11.18-alpha** · Phase 11.H: command-level tests (economy_core
+- **05-15 · meoweconomy 0.11.17-alpha** · Phase 11.F: comment audit sweep
+- **05-15 · meoweconomy 0.11.16-alpha** · Phase 11.G: broad-except audit
+- **05-15 · meoweconomy 0.11.15-alpha** · Phase 11.G: logging-coverage standard
+- **05-15 · meoweconomy 0.11.14-alpha** · Phase 11.C: /status surfaces last-session exit
+- **05-15 · meoweconomy 0.11.13-alpha** · Phase 11.C: bot.py on_ready extracted
+- **05-15 · meoweconomy 0.11.12-alpha** · Phase 11.C: @handle_command_errors retired
+- **05-15 · meoweconomy 0.11.11-alpha** · Phase 11.C: Database session-handling unified
+- **05-15 · meoweconomy 0.11.10-alpha** · Phase 11.A: activity_streak_days dropped (with Phase 12 plan
+- **05-15 · meoweconomy 0.11.9-alpha** · Phase 11.A: fail-fast on db init + visible migration errors
+- **05-15 · meoweconomy 0.11.8-alpha** · Phase 11.A: coin_boost column wired
+- **05-15 · meoweconomy 0.11.7-alpha** · Phase 11.A: /work payout reconciliation
+- **05-15 · meoweconomy 0.11.6-alpha** · Phase 11.D step 4: Phase-6 shims retired
+- **05-15 · meoweconomy 0.11.5-alpha** · Phase 11.D step 3: lootbox_service → services/lootbox.py
+- **05-15 · meoweconomy 0.11.4-alpha** · Phase 11.D step 2: ShopService → services/shop.py
+- **05-15 · meoweconomy 0.11.3-alpha** · Phase 11.D step 1: root cleanup
+- **05-15 · meoweconomy 0.11.2-alpha** · Phase 11.B: bot.py dead-code sweep
+- **05-15 · meoweconomy 0.11.1-alpha** · Phase 11.C: single entry point + CLAUDE.md
+- **05-15 · meoweconomy 0.11.0-alpha** · Phase 10 close: roadmap + minor bump
+- **05-15 · meoweconomy 0.10.6-alpha** · Phase 10.6: LICENSE
+- **05-15 · meoweconomy 0.10.5-alpha** · Phase 10.5: /help cleanup pass
+- **05-15 · meoweconomy 0.10.4-alpha** · Phase 10.4: /metrics (admin
+- **05-15 · meoweconomy 0.10.3-alpha** · Phase 10.3: /server_info
+- **05-15 · meoweconomy 0.10.1-alpha** · Phase 10.1: /info
+- **05-15 · meoweconomy 0.10.0-alpha** · Phase 9 close: path tests + roadmap
+- **05-15 · meoweconomy 0.9.5-alpha** · Phase 9.5: pyproject.toml is the canonical dep source
+- **05-15 · meoweconomy 0.9.4-alpha** · Phase 9.4: scripts → scripts/
+- **05-15 · meoweconomy 0.9.3-alpha** · Phase 9.3: globalshop.json + boss_drops.json → data/
+- **05-15 · meoweconomy 0.9.2-alpha** · Phase 9.2: bosses/ + fonts/ + car.png → assets/
+- **05-15 · meoweconomy 0.9.1-alpha** · Phase 9.1: globalitems/ → assets/
+- **05-15 · meoweconomy 0.9.0-alpha** · Phase 8 close: roadmap + acceptance
+- **05-15 · meoweconomy 0.8.3-alpha** · Phase 8.3: rate_limit_tracker → core/rate_limit
+- **05-15 · meoweconomy 0.8.2-alpha** · Phase 8.2: extract boss
+- **05-15 · meoweconomy 0.8.1-alpha** · Phase 8.1: extract fishing
+- **05-15 · meoweconomy 0.8.0-alpha** · Phase 7 close: delete games.py
+- **05-15 · meoweconomy 0.7.8-alpha** · Phase 7.8: extract /games launcher
+- **05-15 · meoweconomy 0.7.7-alpha** · Phase 7.7: extract /hangman
+- **05-15 · meoweconomy 0.7.6-alpha** · Phase 7.6: extract /blackjack
+- **05-15 · meoweconomy 0.7.5-alpha** · Phase 7.5: extract slots engine + view
+- **05-15 · meoweconomy 0.7.4-alpha** · Phase 7.4: extract /9livesgrid
+- **05-15 · meoweconomy 0.7.3-alpha** · Phase 7.3: extract /rps and /challenge
+- **05-15 · meoweconomy 0.7.2-alpha** · Phase 7.2: extract /diceroll
+- **05-15 · meoweconomy 0.7.1-alpha** · Phase 7.1: extract /coinflip
+- **05-15 · meoweconomy 0.7.0-alpha** · Phase 6 close: EconomyBot and Phase 5 shims removed
+- **05-15 · meoweconomy 0.6.10-alpha** · Phase 6.10: place the last three commands
+- **05-15 · meoweconomy 0.6.9-alpha** · Phase 6.9: extract /shop, /buy, /previewitem
+- **05-15 · meoweconomy 0.6.8-alpha** · Phase 6.8: extract /inventory and /sell
+- **05-15 · meoweconomy 0.6.7-alpha** · Phase 6.7: extract /profile, /profileset
+- **05-15 · meoweconomy 0.6.6-alpha** · Phase 6.6: extract economy core commands
+- **05-15 · meoweconomy 0.6.5-alpha** · Phase 6.5: extract /openlootbox
+- **05-15 · meoweconomy 0.6.4-alpha** · Phase 6.4: extract admin commands
+- **05-15 · meoweconomy 0.6.3-alpha** · Phase 6.3: extract /help and /catguide
+- **05-15 · meoweconomy 0.6.2-alpha** · Phase 6.2: extract /stats into its own subsystem
+- **05-15 · meoweconomy 0.6.1-alpha** · Phase 6.1: hoist services into setup_bot
+- **05-15 · meoweconomy 0.6.0-alpha** · Phase 5 close: data-driven cog loader, Phase 6 begins
+- **05-15 · meoweconomy 0.5.9-alpha** · Phase 5.9: extract 67-reactor → subsystems/reactions/
+- **05-15 · meoweconomy 0.5.8-alpha** · Phase 5.8: random_drops → subsystems/random_drops/
+- **05-15 · meoweconomy 0.5.7-alpha** · Phase 5.7: steal_cog → subsystems/steal/
+- **05-15 · meoweconomy 0.5.6-alpha** · Phase 5.6: birthday_cog → subsystems/birthday/
+- **05-15 · meoweconomy 0.5.5-alpha** · Phase 5.5: passive_income → subsystems/passive_income/
+- **05-15 · meoweconomy 0.5.4-alpha** · Phase 5.4: counting → subsystems/counting/
+- **05-15 · meoweconomy 0.5.3-alpha** · Phase 5.3: collection_cog → subsystems/collection/
+- **05-15 · meoweconomy 0.5.2-alpha** · Phase 5.2: leaderboard_cog → subsystems/leaderboard/
+- **05-15 · meoweconomy 0.5.1-alpha** · Phase 5.1: firebase_stats_cog → subsystems/firebase_stats/
+- **05-15 · meoweconomy 0.5.0-alpha** · Phase 4 close: services + helpers + ui done, Phase 5 begins
+- **05-15 · meoweconomy 0.4.4-alpha** · Phase 4.4: ui/ package + services layering fix
+- **05-15 · meoweconomy 0.4.3-alpha** · Phase 4.3: helpers/ package
+- **05-15 · meoweconomy 0.4.2.1-alpha** · Patchnotes fix-up for v0.4.2-alpha
+- **05-15 · meoweconomy 0.4.2-alpha** · Phase 4.2: profile.py → services/profile/
+- **05-15 · meoweconomy 0.4.1-alpha** · Phase 4.1: services/ package — three verbatim moves
+- **05-15 · meoweconomy 0.4.0-alpha** · Phase 3 close: core infrastructure done, Phase 4 begins
+- **05-15 · meoweconomy 0.3.5-alpha** · Phase 3.5: decorator-metrics integration + bot.metrics
+- **05-15 · meoweconomy 0.3.4-alpha** · Phase 3.4: print → logger conversion sweep
+- **05-15 · meoweconomy 0.3.3-alpha** · Phase 3.3: core/metrics.py
+- **05-15 · meoweconomy 0.3.2-alpha** · Phase 3.2: core/session.py + wiring
+- **05-15 · meoweconomy 0.3.1-alpha** · Phase 3.1: core/errors.py
+- **05-15 · meoweconomy 0.3.0-alpha** · Phase 2 close: named-queries audit, Phase 3 begins
+- **05-15 · meoweconomy 0.2.4-alpha** · Phase 2.4: repo cleanup
+- **05-15 · meoweconomy 0.2.3-alpha** · Phase 2.3: migrations consolidated
+- **05-15 · meoweconomy 0.2.2-alpha** · Phase 2.2: models.py split into database/models/
+- **05-15 · meoweconomy 0.2.1-alpha** · Phase 2.1: database.py → database/engine.py
+- **05-15 · meoweconomy 0.2.0-alpha** · Phase 1: stop-the-bleeding + recalibrate around Melodie's commit
+- **05-15 · meoweconomy 0.1.2-alpha** · Phase 0: lift core/ from manager + rewrite placeholder
+- **05-15 · meoweconomy 0.1.1-alpha** · Phase 0: `rate_limit_tracker` placeholder
+- **05-15 · meoweconomy 0.1.0-alpha** · Phase 0: documentation baseline
 - **05-14 · kanagawa-dragon-nvim-emacs 0.1.2**
 - **05-14 · kanagawa-dragon-nvim-emacs 0.1.1**
 - **05-14 · lattice-music 4.4.0** · New Features
@@ -1272,7 +1397,7 @@ that are not this workspace's work.
 | 2-kobo-style-sleepscreen-banner-prettified | 8 | 0 | 2 | 0 | 6 | 0 |
 | Atrium | 173 | 163 | 0 | 2 | 8 | 1 |
 | AudiobookTools | 6 | 6 | 0 | 0 | 0 | 0 |
-| CalibreQuarry | 113 | 113 | 0 | 0 | 0 | 0 |
+| CalibreQuarry | 114 | 114 | 0 | 0 | 0 | 0 |
 | Carrel | 20 | 20 | 0 | 0 | 0 | 0 |
 | Carrel-calibre-web | 20 | 19 | 0 | 1 | 0 | 0 |
 | Catagotchi | 104 | 104 | 0 | 0 | 0 | 0 |
@@ -1302,6 +1427,7 @@ that are not this workspace's work.
 | dragon-themer | 2 | 2 | 0 | 0 | 0 | 0 |
 | kanagawa-dragon-nvim-emacs | 7 | 7 | 0 | 0 | 0 | 0 |
 | lattice-music | 107 | 107 | 0 | 0 | 0 | 0 |
+| meoweconomy | 120 | 118 | 1 | 1 | 0 | 3 |
 | opends | 27 | 26 | 1 | 0 | 0 | 0 |
 | project-void | 0 | 0 | 0 | 0 | 0 | 0 |
 | project-yeschef | 0 | 0 | 0 | 0 | 0 | 0 |
@@ -1310,6 +1436,7 @@ that are not this workspace's work.
 | vir-gtk | 12 | 12 | 0 | 0 | 0 | 0 |
 | vir-search | 12 | 12 | 0 | 0 | 0 | 0 |
 | vir-tui | 8 | 8 | 0 | 0 | 0 | 0 |
+| whisker-street | 3 | 3 | 0 | 0 | 0 | 0 |
 
 ### Undated records
 
@@ -1731,6 +1858,10 @@ scattered across guessed months.
 - 0.1.2-alpha · Enhancements
 - 0.1.1-alpha · Enhancements
 - 0.1.0-alpha · Planning Stage
+
+#### meoweconomy
+
+- 6.10 · . Phase 6 close deleted the empty class and the
 
 #### saforums.koplugin
 
