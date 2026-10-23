@@ -8,9 +8,9 @@ remain canonical; this file is a projection, reproducible with
 
 ## The shape of the work
 
-- **44 repositories tracked · 1635 releases recorded · 5,041 commits, authored by larocque.brandon@gmail.com**
+- **44 repositories tracked · 1637 releases recorded · 5,046 commits, authored by larocque.brandon@gmail.com**
 - Span: 2025-08-10 to 2026-10-22
-- This month (2026-10): 161 releases across 21 repos · 780 commits
+- This month (2026-10): 163 releases across 21 repos · 785 commits
 
 | Repository | Releases | Latest | Last release | Commits | Active since |
 |---|---:|---|---|---:|---|
@@ -47,14 +47,14 @@ remain canonical; this file is a projection, reproducible with
 | Foyer | 6 | 0.2.0 | 2026-09-15 | 32 | 2026-07-17 |
 | dragon-agents | 6 | 0.6.0 | 2026-10-05 | 14 | 2026-09-03 |
 | saforums.koplugin | 5 | 0.5.0 | 2026-10-09 | 56 | 2026-10-08 |
+| whisker-street | 5 | 0.3.0 | 2026-10-22 | 6 | 2026-10-22 |
 | Docket | 4 | 1.0.0 | 2026-10-13 | 19 | 2026-10-12 |
-| annals | 4 | 0.1.3 | 2026-10-09 | 38 | 2026-10-09 |
-| whisker-street | 3 | 0.1.2 | 2026-10-22 | 3 | 2026-10-22 |
+| annals | 4 | 0.1.3 | 2026-10-09 | 39 | 2026-10-09 |
 | dragon-themer | 2 | 0.1.0 | 2026-10-07 | 34 | 2026-07-28 |
 | 1-timezone | 0 | - | - | 7 | 2026-07-05 |
 | Coffer | 0 | - | - | 9 | 2026-06-28 |
 | VirInvictus | 0 | - | - | 106 | 2026-06-22 |
-| VirInvictus.github.io | 0 | - | - | 203 | 2026-04-16 |
+| VirInvictus.github.io | 0 | - | - | 204 | 2026-04-16 |
 | dead-reckoning-bookend-preset | 0 | - | - | 15 | 2026-07-03 |
 | project-void | 0 | - | - | 16 | 2026-04-17 |
 | project-yeschef | 0 | - | - | 6 | 2026-05-23 |
@@ -74,24 +74,24 @@ remain canonical; this file is a projection, reproducible with
 | 2026-07 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 160 | ▇▇▇▇▇▇▇▇ 476 |
 | 2026-08 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 167 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 776 |
 | 2026-09 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 354 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 1,729 |
-| 2026-10 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 161 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 780 |
+| 2026-10 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 163 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 785 |
 
 ## The languages
 
-485,193 lines of code · 27 languages · 43 repos
+488,917 lines of code · 27 languages · 43 repos
 
 ```
 █████████████████▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒░░···
-█ Python 41%  ▓ Rust 36%  ▒ GDScript 10%  ░ C 6%  · other 7%
+█ Python 42%  ▓ Rust 35%  ▒ GDScript 10%  ░ C 6%  · other 7%
 ```
 
 | Language | Share | Code lines | Repos |
 |---|---|---:|---:|
-| Python | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 41.4% | 201,006 | 23 |
-| Rust | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 35.7% | 173,026 | 11 |
-| GDScript | ▇▇▇▇▇ 10.2% | 49,509 | 6 |
-| C | ▇▇▇ 5.6% | 27,005 | 2 |
-| Lua | ▇ 2.6% | 12,423 | 5 |
+| Python | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 41.9% | 204,730 | 23 |
+| Rust | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 35.4% | 173,026 | 11 |
+| GDScript | ▇▇▇▇▇ 10.1% | 49,509 | 6 |
+| C | ▇▇▇ 5.5% | 27,005 | 2 |
+| Lua | ▇ 2.5% | 12,423 | 5 |
 | CSS | ▇ 1.2% | 5,906 | 6 |
 | Ruby | ▇ 0.7% | 3,572 | 2 |
 | Autoconf | ▇ 0.7% | 3,356 | 4 |
@@ -99,7 +99,7 @@ remain canonical; this file is a projection, reproducible with
 | Shell | ▇ 0.3% | 1,422 | 11 |
 | C Header | ▇ 0.2% | 1,083 | 4 |
 | SQL | ▇ 0.2% | 919 | 3 |
-| other | ▇ 0.8% | 3,646 | - |
+| other | ▇ 0.7% | 3,646 | - |
 
 ## The record
 
@@ -112,6 +112,8 @@ remain canonical; this file is a projection, reproducible with
 - **10-22 · deadbeef-cui 2.2.1** · Bug fixes
 - **10-22 · deadbeef-cui 2.2.0** · Features
 - **10-22 · deadbeef-cui 2.1.0** · Features
+- **10-22 · whisker-street 0.3.0**
+- **10-22 · whisker-street 0.2.0**
 - **10-22 · whisker-street 0.1.2**
 - **10-22 · whisker-street 0.1.1**
 - **10-22 · whisker-street 0.1.0**
@@ -1436,7 +1438,7 @@ that are not this workspace's work.
 | vir-gtk | 12 | 12 | 0 | 0 | 0 | 0 |
 | vir-search | 12 | 12 | 0 | 0 | 0 | 0 |
 | vir-tui | 8 | 8 | 0 | 0 | 0 | 0 |
-| whisker-street | 3 | 3 | 0 | 0 | 0 | 0 |
+| whisker-street | 5 | 5 | 0 | 0 | 0 | 0 |
 
 ### Undated records
 
