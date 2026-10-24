@@ -8,9 +8,9 @@ remain canonical; this file is a projection, reproducible with
 
 ## The shape of the work
 
-- **44 repositories tracked · 1645 releases recorded · 5,076 commits, authored by larocque.brandon@gmail.com**
+- **44 repositories tracked · 1648 releases recorded · 5,092 commits, authored by larocque.brandon@gmail.com**
 - Span: 2025-08-10 to 2026-10-24
-- This month (2026-10): 171 releases across 21 repos · 815 commits
+- This month (2026-10): 174 releases across 21 repos · 831 commits
 
 | Repository | Releases | Latest | Last release | Commits | Active since |
 |---|---:|---|---|---:|---|
@@ -40,21 +40,21 @@ remain canonical; this file is a projection, reproducible with
 | vir-search | 12 | 1.4.3 | 2026-09-15 | 60 | 2026-08-23 |
 | Topograph | 11 | 0.4.1 | 2026-10-07 | 53 | 2026-08-14 |
 | raindrop-cli | 11 | 0.7.0 | 2026-09-15 | 53 | 2026-07-18 |
-| whisker-street | 10 | 0.6.2 | 2026-10-23 | 15 | 2026-10-22 |
+| whisker-street | 11 | 0.7.0 | 2026-10-24 | 16 | 2026-10-22 |
 | 2-kobo-style-sleepscreen-banner-prettified | 8 | 2.1.4 | 2026-09-14 | 29 | 2026-07-05 |
 | vir-tui | 8 | 2.5.0 | 2026-09-14 | 51 | 2026-08-23 |
 | kanagawa-dragon-nvim-emacs | 7 | 0.2.1 | 2026-09-15 | 34 | 2026-07-24 |
+| saforums.koplugin | 7 | 0.5.2 | 2026-10-24 | 59 | 2026-10-08 |
 | AudiobookTools | 6 | 0.3.0 | 2026-09-15 | 37 | 2026-05-28 |
 | Foyer | 6 | 0.2.0 | 2026-09-15 | 32 | 2026-07-17 |
 | dragon-agents | 6 | 0.6.0 | 2026-10-05 | 14 | 2026-09-03 |
-| saforums.koplugin | 5 | 0.5.0 | 2026-10-09 | 56 | 2026-10-08 |
 | Docket | 4 | 1.0.0 | 2026-10-13 | 19 | 2026-10-12 |
-| annals | 4 | 0.1.3 | 2026-10-09 | 44 | 2026-10-09 |
+| annals | 4 | 0.1.3 | 2026-10-09 | 45 | 2026-10-09 |
 | dragon-themer | 2 | 0.1.0 | 2026-10-07 | 34 | 2026-07-28 |
 | 1-timezone | 0 | - | - | 7 | 2026-07-05 |
 | Coffer | 0 | - | - | 9 | 2026-06-28 |
-| VirInvictus | 0 | - | - | 109 | 2026-06-22 |
-| VirInvictus.github.io | 0 | - | - | 212 | 2026-04-16 |
+| VirInvictus | 0 | - | - | 113 | 2026-06-22 |
+| VirInvictus.github.io | 0 | - | - | 219 | 2026-04-16 |
 | dead-reckoning-bookend-preset | 0 | - | - | 15 | 2026-07-03 |
 | project-void | 0 | - | - | 16 | 2026-04-17 |
 | project-yeschef | 0 | - | - | 6 | 2026-05-23 |
@@ -74,24 +74,24 @@ remain canonical; this file is a projection, reproducible with
 | 2026-07 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 160 | ▇▇▇▇▇▇▇▇ 476 |
 | 2026-08 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 167 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 776 |
 | 2026-09 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 354 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 1,729 |
-| 2026-10 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 171 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 815 |
+| 2026-10 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 174 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 831 |
 
 ## The languages
 
-490,485 lines of code · 27 languages · 43 repos
+492,457 lines of code · 27 languages · 43 repos
 
 ```
 █████████████████▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒░░···
-█ Python 42%  ▓ Rust 35%  ▒ GDScript 10%  ░ C 6%  · other 7%
+█ Python 42%  ▓ Rust 35%  ▒ GDScript 10%  ░ C 5%  · other 7%
 ```
 
 | Language | Share | Code lines | Repos |
 |---|---|---:|---:|
-| Python | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 42.1% | 206,298 | 23 |
-| Rust | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 35.3% | 173,026 | 11 |
+| Python | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 42.1% | 207,400 | 23 |
+| Rust | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 35.1% | 173,026 | 11 |
 | GDScript | ▇▇▇▇▇ 10.1% | 49,509 | 6 |
 | C | ▇▇▇ 5.5% | 27,005 | 2 |
-| Lua | ▇ 2.5% | 12,423 | 5 |
+| Lua | ▇ 2.7% | 13,293 | 5 |
 | CSS | ▇ 1.2% | 5,906 | 6 |
 | Ruby | ▇ 0.7% | 3,572 | 2 |
 | Autoconf | ▇ 0.7% | 3,356 | 4 |
@@ -107,6 +107,9 @@ remain canonical; this file is a projection, reproducible with
 
 #### October 2026
 
+- **10-24 · saforums.koplugin 0.5.2**
+- **10-24 · saforums.koplugin 0.5.1**
+- **10-24 · whisker-street 0.7.0**
 - **10-23 · CalibreQuarry 3.74.0** · fetch_library_codes: fragment work queries, throttled responses never cached, --refresh bypasses the cache, append-only misses worklist (issue #36)
 - **10-23 · CalibreQuarry 3.73.0** · The cquarry 1.28.1 floor: text-family custom-column writes preserve non-breaking spaces like the 9.17 GUI (issue #35)
 - **10-23 · cquarry 1.28.1** · The Calibre 9.17 watch audit: NBSP preservation and an atomic extra-file write
@@ -1442,11 +1445,11 @@ that are not this workspace's work.
 | project-void | 0 | 0 | 0 | 0 | 0 | 0 |
 | project-yeschef | 0 | 0 | 0 | 0 | 0 | 0 |
 | raindrop-cli | 11 | 11 | 0 | 0 | 0 | 0 |
-| saforums.koplugin | 5 | 0 | 4 | 0 | 1 | 0 |
+| saforums.koplugin | 7 | 0 | 6 | 0 | 1 | 0 |
 | vir-gtk | 12 | 12 | 0 | 0 | 0 | 0 |
 | vir-search | 12 | 12 | 0 | 0 | 0 | 0 |
 | vir-tui | 8 | 8 | 0 | 0 | 0 | 0 |
-| whisker-street | 10 | 10 | 0 | 0 | 0 | 0 |
+| whisker-street | 11 | 11 | 0 | 0 | 0 | 0 |
 
 ### Undated records
 
