@@ -8,22 +8,22 @@ remain canonical; this file is a projection, reproducible with
 
 ## The shape of the work
 
-- **44 repositories tracked · 1648 releases recorded · 5,092 commits, authored by larocque.brandon@gmail.com**
-- Span: 2025-08-10 to 2026-10-24
-- This month (2026-10): 174 releases across 21 repos · 831 commits
+- **44 repositories tracked · 1654 releases recorded · 5,110 commits, authored by larocque.brandon@gmail.com**
+- Span: 2025-08-10 to 2026-10-25
+- This month (2026-10): 180 releases across 21 repos · 849 commits
 
 | Repository | Releases | Latest | Last release | Commits | Active since |
 |---|---:|---|---|---:|---|
 | Atrium | 173 | 0.76.0 | 2026-09-14 | 359 | 2026-05-05 |
 | Conservatory | 160 | 0.9.1 | 2026-10-11 | 294 | 2026-05-27 |
-| Viaduct | 127 | 4.3.2 | 2026-10-22 | 253 | 2026-04-19 |
+| Viaduct | 128 | 4.4.0 | 2026-10-24 | 255 | 2026-04-19 |
 | meoweconomy | 120 | 0.15.0-alpha | 2026-10-07 | 104 | 2026-05-15 |
 | CalibreQuarry | 116 | 3.74.0 | 2026-10-23 | 389 | 2026-03-27 |
 | lattice-music | 107 | 6.4.1 | 2026-10-11 | 337 | 2025-08-10 |
 | Catagotchi | 104 | 4.51.0 | 2026-09-18 | 166 | 2026-07-10 |
 | Hearth | 101 | 0.13.68 | 2026-09-15 | 129 | 2026-06-14 |
 | Framework | 97 | 1.0.2 | 2026-09-16 | 170 | 2026-04-06 |
-| bindery-cli | 76 | 0.52.0 | 2026-10-21 | 274 | 2026-06-09 |
+| bindery-cli | 79 | 0.54.0 | 2026-10-24 | 278 | 2026-06-09 |
 | Hermitage | 49 | 1.8.6 | 2026-10-02 | 117 | 2026-04-10 |
 | cquarry | 44 | 1.28.1 | 2026-10-23 | 268 | 2026-08-23 |
 | deadbeef-cui | 43 | 2.2.1 | 2026-10-22 | 198 | 2026-04-09 |
@@ -41,20 +41,20 @@ remain canonical; this file is a projection, reproducible with
 | Topograph | 11 | 0.4.1 | 2026-10-07 | 53 | 2026-08-14 |
 | raindrop-cli | 11 | 0.7.0 | 2026-09-15 | 53 | 2026-07-18 |
 | whisker-street | 11 | 0.7.0 | 2026-10-24 | 16 | 2026-10-22 |
+| saforums.koplugin | 9 | 0.5.4 | 2026-10-24 | 63 | 2026-10-08 |
 | 2-kobo-style-sleepscreen-banner-prettified | 8 | 2.1.4 | 2026-09-14 | 29 | 2026-07-05 |
 | vir-tui | 8 | 2.5.0 | 2026-09-14 | 51 | 2026-08-23 |
 | kanagawa-dragon-nvim-emacs | 7 | 0.2.1 | 2026-09-15 | 34 | 2026-07-24 |
-| saforums.koplugin | 7 | 0.5.2 | 2026-10-24 | 59 | 2026-10-08 |
 | AudiobookTools | 6 | 0.3.0 | 2026-09-15 | 37 | 2026-05-28 |
 | Foyer | 6 | 0.2.0 | 2026-09-15 | 32 | 2026-07-17 |
 | dragon-agents | 6 | 0.6.0 | 2026-10-05 | 14 | 2026-09-03 |
 | Docket | 4 | 1.0.0 | 2026-10-13 | 19 | 2026-10-12 |
-| annals | 4 | 0.1.3 | 2026-10-09 | 45 | 2026-10-09 |
+| annals | 4 | 0.1.3 | 2026-10-09 | 46 | 2026-10-09 |
 | dragon-themer | 2 | 0.1.0 | 2026-10-07 | 34 | 2026-07-28 |
 | 1-timezone | 0 | - | - | 7 | 2026-07-05 |
 | Coffer | 0 | - | - | 9 | 2026-06-28 |
-| VirInvictus | 0 | - | - | 113 | 2026-06-22 |
-| VirInvictus.github.io | 0 | - | - | 219 | 2026-04-16 |
+| VirInvictus | 0 | - | - | 116 | 2026-06-22 |
+| VirInvictus.github.io | 0 | - | - | 223 | 2026-04-16 |
 | dead-reckoning-bookend-preset | 0 | - | - | 15 | 2026-07-03 |
 | project-void | 0 | - | - | 16 | 2026-04-17 |
 | project-yeschef | 0 | - | - | 6 | 2026-05-23 |
@@ -74,11 +74,11 @@ remain canonical; this file is a projection, reproducible with
 | 2026-07 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 160 | ▇▇▇▇▇▇▇▇ 476 |
 | 2026-08 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 167 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 776 |
 | 2026-09 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 354 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 1,729 |
-| 2026-10 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 174 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 831 |
+| 2026-10 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 180 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 849 |
 
 ## The languages
 
-492,457 lines of code · 27 languages · 43 repos
+494,082 lines of code · 27 languages · 43 repos
 
 ```
 █████████████████▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒░░···
@@ -87,11 +87,11 @@ remain canonical; this file is a projection, reproducible with
 
 | Language | Share | Code lines | Repos |
 |---|---|---:|---:|
-| Python | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 42.1% | 207,400 | 23 |
-| Rust | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 35.1% | 173,026 | 11 |
-| GDScript | ▇▇▇▇▇ 10.1% | 49,509 | 6 |
+| Python | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 42.2% | 208,438 | 23 |
+| Rust | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 35.1% | 173,483 | 11 |
+| GDScript | ▇▇▇▇▇ 10.0% | 49,509 | 6 |
 | C | ▇▇▇ 5.5% | 27,005 | 2 |
-| Lua | ▇ 2.7% | 13,293 | 5 |
+| Lua | ▇ 2.7% | 13,423 | 5 |
 | CSS | ▇ 1.2% | 5,906 | 6 |
 | Ruby | ▇ 0.7% | 3,572 | 2 |
 | Autoconf | ▇ 0.7% | 3,356 | 4 |
@@ -107,6 +107,12 @@ remain canonical; this file is a projection, reproducible with
 
 #### October 2026
 
+- **10-24 · Viaduct 4.4.0** · the roadmap harvest
+- **10-24 · bindery-cli 0.54.0** · The error-code surgery fixes: the core pass stopped breaking valid books
+- **10-24 · bindery-cli 0.53.1** · The .observe artifact now carries its per-book census rows
+- **10-24 · bindery-cli 0.53.0** · `bindery observe`: the whole-library census, one artifact per run
+- **10-24 · saforums.koplugin 0.5.4**
+- **10-24 · saforums.koplugin 0.5.3**
 - **10-24 · saforums.koplugin 0.5.2**
 - **10-24 · saforums.koplugin 0.5.1**
 - **10-24 · whisker-street 0.7.0**
@@ -1427,11 +1433,11 @@ that are not this workspace's work.
 | Quire | 22 | 22 | 0 | 0 | 0 | 0 |
 | Topograph | 11 | 11 | 0 | 0 | 0 | 0 |
 | Vestibule | 12 | 12 | 0 | 0 | 0 | 0 |
-| Viaduct | 127 | 28 | 1 | 53 | 45 | 1 |
+| Viaduct | 128 | 29 | 1 | 53 | 45 | 1 |
 | VirInvictus | 0 | 0 | 0 | 0 | 0 | 0 |
 | VirInvictus.github.io | 0 | 0 | 0 | 0 | 0 | 0 |
 | annals | 4 | 4 | 0 | 0 | 0 | 0 |
-| bindery-cli | 76 | 74 | 1 | 1 | 0 | 0 |
+| bindery-cli | 79 | 77 | 1 | 1 | 0 | 0 |
 | cquarry | 44 | 44 | 0 | 0 | 0 | 0 |
 | crash-course | 19 | 19 | 0 | 0 | 0 | 0 |
 | dead-reckoning-bookend-preset | 0 | 0 | 0 | 0 | 0 | 0 |
@@ -1445,7 +1451,7 @@ that are not this workspace's work.
 | project-void | 0 | 0 | 0 | 0 | 0 | 0 |
 | project-yeschef | 0 | 0 | 0 | 0 | 0 | 0 |
 | raindrop-cli | 11 | 11 | 0 | 0 | 0 | 0 |
-| saforums.koplugin | 7 | 0 | 6 | 0 | 1 | 0 |
+| saforums.koplugin | 9 | 0 | 8 | 0 | 1 | 0 |
 | vir-gtk | 12 | 12 | 0 | 0 | 0 | 0 |
 | vir-search | 12 | 12 | 0 | 0 | 0 | 0 |
 | vir-tui | 8 | 8 | 0 | 0 | 0 | 0 |
@@ -1884,6 +1890,6 @@ scattered across guessed months.
 
 No `patchnotes.md`, not in `stats_only`, not excluded by name:
 
-`TaskPaper`, `birch-outline`, `taskpaper-mode`, `vscode-todo-plus`
+`OpenArcanum`, `TaskPaper`, `arcanum-ce`, `birch-outline`, `taskpaper-mode`, `unity-arcanum`, `vscode-todo-plus`
 
 Owned ones belong in `stats_only`; everything else in `exclude`.
