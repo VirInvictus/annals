@@ -24,9 +24,13 @@ dropped.
 
 ### Entry shapes
 
-The parser reads headings of level 1-3 in `patchnotes.md`. A line is an entry
-when it matches one of these shapes (all verified against every
-release-cutting repo in the workspace on 2026-10-09):
+The parser reads headings of level 1-2 in `patchnotes.md`. A level-3
+version line is a subtitle, never an entry (re-verified against every
+release-cutting repo in the workspace on 2026-10-25: every observed `###`
+version line in the corpus is a subtitle, and the one repo whose releases
+rode `###` headings has left the tracked set; treating level 3 as entries
+minted phantom releases). A line is an entry when it matches one of these
+shapes (all verified against the workspace corpus):
 
 1. **Version-led**: optional component word, optional `v`, dotted version with
    optional pre-release suffix. The component must be two or more characters
@@ -47,9 +51,23 @@ release-cutting repo in the workspace on 2026-10-09):
    release, without one a batch. The Carrel-calibre-web fork shape:
    `## The sealing lane (2026-10-07, 0.6.44)`.
 
-Anything else is not an entry (title lines, prose headlines). A version-led
-entry whose heading carries no headline takes the first `### ` line before
-the next entry heading as its headline.
+Anything else is not an entry (title lines, prose headlines, fenced code
+blocks: nothing inside a ``` fence is ever matched). A version-led entry
+whose heading carries no headline takes the first headline its body offers,
+scanning before the next entry heading and skipping fenced blocks and
+thematic breaks (`---`):
+
+1. The first `### ` line, when it is not a keep-a-changelog category label
+   (a corpus-driven set: Added, Changed, Fixed, Bug Fixes, the house
+   dialects, and bare acronyms like `TUI`). The cquarry / bindery shape.
+2. The first prose paragraph. When it opens with a bold or italic run, the
+   run's inner text is the headline (the Hearth / Hearthfall / Framework
+   shapes), extended through the sentence's end when the run closes on a
+   colon label (the lattice shape); a plain paragraph is quoted whole,
+   soft-wraps joined (the saforums / Colophon shape).
+3. The first bullet, cut at its sentence end, under the same run rules
+   (approved 2026-10-25). The bullet is body rather than an authored
+   summary; it headlines because a naked version number serves nobody.
 
 Parenthesized text that is not an ISO date is headline text, never a date.
 
@@ -86,7 +104,9 @@ last commit, and a per-month commit histogram (author date, `%as`). Commit
 counts are filtered to the configured author identities (`[stats] authors`,
 git `--author` patterns, OR) so fork histories count only this workspace's
 work; an empty list counts every commit. A repo with no matching commits
-contributes nothing.
+contributes nothing. The attribution line the record prints comes from
+`[stats] authors_display` when set (a display name, so the raw filter
+identities stay machine-side and out of the published page).
 
 ### The languages
 
@@ -96,7 +116,11 @@ JSON, TOML, YAML, XML, SVG, CSV, Markdown, Org, Plain Text, PO files — are
 dropped; what remains are programming and build/scripting languages. Repos
 named in `[languages]` exclude are omitted from this section only: fork
 checkouts carry upstream code that is not this workspace's work. When tokei
-is unavailable the section renders a note instead of failing the run.
+is unavailable the section renders a note instead of failing the run. The
+section states its method in one line (tokei over tracked trees, forks and
+reference clones excluded, lockfiles and data formats not counted, a
+snapshot of the trees rather than a measure of authorship pace) so the
+total is not misread as a velocity claim.
 
 The section renders a stacked proportion bar (a distinct shade character
 per top language, an interpunct tail, largest-remainder rounding so the
@@ -111,10 +135,13 @@ of repos using it.
 1. Masthead: what the file is, the generator version, and the
    canonical-source note.
 2. Dashboard: totals (repos, releases, commits, span), this-month numbers,
-   a per-repo table (releases, latest version, last release, commits, active
-   since) sorted by release count, and a month-by-month table with inline
-   bar charts for releases and commits. The last-release cell carries `≈`
-   when even the repo's newest entry is approximate.
+   a per-repo table (one-line description, releases, latest version, last
+   release, commits, active since) sorted by release count, and a
+   month-by-month table with inline bar charts for releases and commits.
+   The description column comes from the `[descriptions]` config map; a
+   repo named in `[links]` (public repos only) renders its name as a
+   GitHub link. The last-release cell carries `≈` when even the repo's
+   newest entry is approximate.
 3. The record: newest-first timeline of exactly dated entries grouped by
    year then month; one line per entry: date, repo, component and/or
    version, headline verbatim from the source.

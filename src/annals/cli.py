@@ -47,7 +47,10 @@ def build(config: Config) -> Record:
         ignored=ignored,
         generator=f"annals {__version__}",
         authors=config.authors,
+        authors_display=config.authors_display,
         latest=latest,
+        descriptions=config.descriptions,
+        links=config.links,
     )
 
 

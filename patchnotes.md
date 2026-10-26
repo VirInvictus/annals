@@ -1,5 +1,45 @@
 # Patchnotes
 
+## v0.2.0 (2026-10-26)
+
+The parser repair and the public-page grounding: every entry now carries
+its source's headline, the dashboard says what each repo is, and the page
+stops handing scrapers the raw email.
+
+- **Parser**: entries start at heading levels 1-2 only (re-verified against
+  the corpus 2026-10-25; the old level-3 rule minted phantom releases:
+  "bindery-cli The 0.41.0" was live on the public page, Hermitage's six
+  "cquarry x.y" subtitles were entries, and a python fence in meoweconomy
+  produced a "through 6.10"). The headline harvest extends past the `###`
+  subtitle: bold and italic lead runs (the Hearth, Hearthfall, and
+  Framework shapes), colon-label runs extended to their sentence end (the
+  lattice shape), plain summary paragraphs (the saforums, Colophon, and
+  lattice shapes), keep-a-changelog category labels and bare acronym
+  section labels looking through as structure, thematic breaks transparent,
+  fenced code blocks never contributing, and a first-bullet fallback
+  (approved 2026-10-25) that headlines bullet-led sources at their
+  sentence boundary. 643 of 1,660 entries rendered bare before; zero do
+  now. Two source typos the repair surfaced went back to their repos:
+  CalibreQuarry's v3.75.0 entry was dated one day after its own tag, and
+  lattice-music's v6.4.0 heading carried its date twice.
+- **Dashboard grounding**: a "What it is" column carries a one-line
+  description per repo from the new `[descriptions]` config table (43
+  entries), and public repos' names link to GitHub through the `[links]`
+  table (31 of the 42 repos with remotes; private repos stay plain text).
+- **Attribution**: `[stats] authors_display` puts "Brandon LaRocque" on
+  the masthead and the Coverage footnote; the raw git filter email stays
+  machine-side, off the published page.
+- **Languages**: one method line under the section states what tokei
+  counts (tracked trees, forks and reference clones excluded, no
+  lockfiles, a snapshot rather than a pace claim), so the total is not
+  misread as a velocity number.
+- **Config**: meoweconomy moves to `exclude` (retired from the portfolio
+  record on 2026-08-08; its remote is not VirInvictus), dropping its 118
+  entries and ~45k Python lines from the public counts.
+
+First run at 0.2.0: 43 repos, 1,531 entries, 3 duplicates collapsed,
+every entry carrying a headline; 67 tests green, ruff clean.
+
 ## v0.1.3 (2026-10-09)
 
 The stacked language bar moves into a fenced code block: display fix, no

@@ -3,12 +3,13 @@
 from __future__ import annotations
 
 import tomllib
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 
 # Fallbacks when no annals.toml exists. The exclusion list mirrors the
-# workspace catalog: reference clones by policy, plus the two local-only
-# audit repos. stats_only is the owned set without a patchnotes.md.
+# workspace catalog: reference clones by policy, the two local-only audit
+# repos, and the retired community-bot repo. stats_only is the owned set
+# without a patchnotes.md.
 DEFAULT_EXCLUDE = frozenset(
     {
         "annas-archive-outter",
@@ -28,6 +29,7 @@ DEFAULT_EXCLUDE = frozenset(
         "kalker",
         "koreader",
         "llama.cpp",
+        "meoweconomy",
         "notecalc3",
         "numbat",
         "quickshell-refs",
@@ -76,8 +78,11 @@ class Config:
     exclude: frozenset[str]
     stats_only: frozenset[str]
     authors: tuple[str, ...] = DEFAULT_AUTHORS
+    authors_display: str = ""
     site: SiteTarget | None = None
     language_exclude: frozenset[str] = frozenset()
+    descriptions: dict[str, str] = field(default_factory=dict)
+    links: dict[str, str] = field(default_factory=dict)
 
 
 def repo_root() -> Path:
@@ -112,6 +117,7 @@ def load_config(path: Path | None = None) -> Config:
         exclude=frozenset(ws.get("exclude", DEFAULT_EXCLUDE)),
         stats_only=frozenset(ws.get("stats_only", DEFAULT_STATS_ONLY)),
         authors=tuple(stats.get("authors", DEFAULT_AUTHORS)),
+        authors_display=stats.get("authors_display", ""),
         site=SiteTarget(
             path=Path(site_path).expanduser(),
             front_matter=site.get("front_matter", DEFAULT_SITE_FRONT_MATTER),
@@ -119,4 +125,6 @@ def load_config(path: Path | None = None) -> Config:
         if site_path
         else None,
         language_exclude=frozenset(langs.get("exclude", ())),
+        descriptions=dict(data.get("descriptions", {})),
+        links=dict(data.get("links", {})),
     )

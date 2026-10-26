@@ -8,8 +8,11 @@ from dataclasses import dataclass
 # Version-led heading. The component word needs two or more characters
 # starting with a letter so a leading "v" is never eaten as one; the version
 # is dotted digits with an optional pre-release suffix (v0.1.0-alpha).
+# Entries start at heading levels 1-2 only: a level-3 version line is a
+# subtitle (re-verified against the corpus 2026-10-25; treating ### lines as
+# entries minted phantom releases).
 _VERSION_LED = re.compile(
-    r"^#{1,3}\s+"
+    r"^#{1,2}\s+"
     r"(?:(?P<component>[A-Za-z][A-Za-z0-9_-]+)\s+)?"
     r"v?(?P<version>\d+(?:\.\d+)+(?:-[0-9A-Za-z.]+)?)"
     r"(?P<rest>.*)$"
@@ -21,19 +24,70 @@ _DASH_SPLIT = re.compile(r"[—–]")
 # Date-led heading: batch entries (opends waves, no-bump notes). A trailing
 # /NN on the date is a day range; the lead date anchors the entry.
 _DATE_LED = re.compile(
-    r"^#{1,3}\s+(?P<date>\d{4}-\d{2}-\d{2})(?:/\d{1,2})?\s*[:—–-]?\s*(?P<rest>.*)$"
+    r"^#{1,2}\s+(?P<date>\d{4}-\d{2}-\d{2})(?:/\d{1,2})?\s*[:—–-]?\s*(?P<rest>.*)$"
 )
 # Prose-led heading ending in a parenthesized date, optionally followed by a
 # version: the Carrel-calibre-web fork shape
 # ("## The sealing lane (2026-10-07, 0.6.44)").
 _PROSE_PAREN = re.compile(
-    r"^#{1,3}\s+(?P<title>.+?)\s*\((?P<date>\d{4}-\d{2}-\d{2})(?P<tail>[^)]*)\)\s*$"
+    r"^#{1,2}\s+(?P<title>.+?)\s*\((?P<date>\d{4}-\d{2}-\d{2})(?P<tail>[^)]*)\)\s*$"
 )
 _VERSION_IN_TAIL = re.compile(r"v?\d+(?:\.\d+)+(?:-[0-9A-Za-z.]+)?")
 _SUBTITLE = re.compile(r"^###\s+(?P<text>\S.*)$")
-# A h1/h2 line always ends a subtitle scan (next title or entry); a line that
-# itself parses as an entry does too, whatever its heading level.
+# A h1/h2 line always ends a headline scan (next title or entry).
 _HEADING = re.compile(r"^#{1,2}(?:\s|$)")
+_FENCE = re.compile(r"^```")
+# Table rows never carry a summary line (an entry opened by a table stays
+# bare); bullets do, through the first-bullet fallback.
+_TABLE = re.compile(r"^\|")
+# A paragraph that opens with a bold run (possibly spanning soft-wrapped
+# lines): the run's inner text is the headline (the Hearth / Hearthfall
+# shapes). Plain paragraphs are headlines whole (the saforums shape).
+_BOLD_RUN = re.compile(r"^\*\*(.+?)\*\*", re.DOTALL)
+# The Framework shape: an italic lead annotation in single asterisks.
+_ITALIC_RUN = re.compile(r"^\*([^*]+?)\*(?!\*)", re.DOTALL)
+# Thematic breaks bracket sections in the older house shapes
+# (CalibreQuarry 2.x, deadbeef-cui); they are transparent to the scan.
+_THEMATIC = re.compile(r"^(?:-{3,}|\*{3,}|_{3,})\s*$")
+# Keep-a-changelog section labels are structure, never headlines; the scan
+# looks through them for the prose underneath. The set is corpus-driven:
+# the stock categories plus the house dialects observed on 2026-10-25.
+_CATEGORIES = frozenset(
+    {
+        "added",
+        "changed",
+        "deprecated",
+        "removed",
+        "fixed",
+        "fixes",
+        "security",
+        "features",
+        "new features",
+        "bug fixes",
+        "performance",
+        "breaking",
+        "breaking changes",
+        "improvements",
+        "internal",
+        "documentation",
+        "structural improvements",
+        "dead code removed",
+        "new features & improvements",
+        "bug fixes & improvements",
+        "tests",
+        "requirements",
+        "repository",
+        "tui",
+        "cli",
+    }
+)
+# A bullet's text: the marker stripped; soft-wrapped continuation lines join.
+_BULLET_START = re.compile(r"^(?:[-*+]|\d+[.)])\s+(?P<text>\S.*)$")
+
+
+# Bare acronym labels (TUI, CLI) are section structure, not titles.
+def _is_category_label(text: str) -> bool:
+    return text.lower() in _CATEGORIES or (text.isupper() and len(text) <= 5)
 
 
 @dataclass
@@ -62,7 +116,13 @@ def parse_patchnotes(repo: str, text: str) -> tuple[list[Entry], int]:
     entries: list[Entry] = []
     dupes = 0
     seen: set[tuple[str | None, str]] = set()
+    in_fence = False
     for i, line in enumerate(lines):
+        if _FENCE.match(line):
+            in_fence = not in_fence
+            continue
+        if in_fence:
+            continue
         entry = (
             _match_version_led(line)
             or _match_date_led(line)
@@ -71,7 +131,7 @@ def parse_patchnotes(repo: str, text: str) -> tuple[list[Entry], int]:
         if entry is None:
             continue
         if entry.headline == "":
-            entry.headline = _subtitle_after(lines, i)
+            entry.headline = _headline_after(lines, i)
         if entry.kind == "release":
             key = (entry.component, entry.version or "")
             if key in seen:
@@ -172,20 +232,94 @@ def _clean(text: str) -> str:
     return text.strip(" \t:—–-").strip("()").strip()
 
 
-def _subtitle_after(lines: list[str], start: int) -> str:
-    """The first ### line before the next entry heading, when an entry's own
-    heading carries no headline (the cquarry shape)."""
-    for line in lines[start + 1 :]:
+def _headline_after(lines: list[str], start: int) -> str:
+    """An entry's headline when its own heading carries none.
+
+    Order: the first `### ` line before the next entry heading (the cquarry
+    shape; keep-a-changelog labels and bare acronyms look through as
+    structure), else the first prose paragraph, else the first bullet. A
+    paragraph opening with a bold or italic run headlines with the run's
+    inner text (the Hearth / Hearthfall / Framework shapes), extended
+    through the sentence's end when the run closes on a colon label (the
+    lattice shape); a plain paragraph headlines whole, soft-wraps joined
+    (the saforums / Colophon shape). A first bullet headlines its sentence
+    under the same run rules (approved 2026-10-25: the bullet is body, not
+    an authored summary, but a naked version number serves nobody).
+    Thematic breaks and fenced blocks never contribute; a table row straight
+    after the heading leaves the entry bare.
+    """
+    paragraph: list[str] = []
+    in_fence = False
+    for i, line in enumerate(lines[start + 1 :], start + 1):
+        if _FENCE.match(line):
+            if paragraph:
+                break
+            in_fence = not in_fence
+            continue
+        if in_fence:
+            continue
+        if _THEMATIC.match(line):
+            continue
         if _HEADING.match(line):
-            return ""
-        if _match_version_led(line) is not None or _match_date_led(line) is not None:
-            return ""
-        if _match_prose_paren(line) is not None:
-            return ""
+            break
         sm = _SUBTITLE.match(line)
         if sm is not None:
-            return sm["text"].strip()
-    return ""
+            text = sm["text"].strip()
+            if not _is_category_label(text):
+                return text
+            continue
+        if not line.strip():
+            if paragraph:
+                break
+            continue
+        if _TABLE.match(line):
+            break
+        bm = _BULLET_START.match(line)
+        if bm is not None:
+            if paragraph:
+                break
+            return _headline_from_text(_bullet_text(lines, i, bm["text"]))
+        paragraph.append(line.strip())
+    if not paragraph:
+        return ""
+    return _headline_from_text(" ".join(paragraph), cut_sentence=False)
+
+
+def _bullet_text(lines: list[str], start: int, first: str) -> str:
+    """One bullet's text: its marker-stripped first line plus soft-wrapped
+    continuation lines (indented), until a blank or structural line."""
+    parts = [first]
+    for line in lines[start + 1 :]:
+        if not line.strip():
+            break
+        if _BULLET_START.match(line) or _HEADING.match(line) or _FENCE.match(line):
+            break
+        if line[0] in " \t":
+            parts.append(line.strip())
+        else:
+            break
+    return " ".join(parts)
+
+
+def _headline_from_text(text: str, cut_sentence: bool = True) -> str:
+    """Run-aware headline extraction from one block of prose. Bullets cut at
+    the sentence boundary; summary paragraphs are quoted whole."""
+    joined = " ".join(text.split())
+    run = _BOLD_RUN.match(joined) or _ITALIC_RUN.match(joined)
+    if run is None:
+        if not cut_sentence:
+            return joined
+        sent = re.search(r"[.!?](?:\s|$)", joined)
+        return joined[: sent.end()].rstrip() if sent else joined
+    inner = " ".join(run.group(1).split())
+    if not inner.endswith(":"):
+        return inner
+    rest = joined[run.end() :].strip()
+    if not rest:
+        return inner
+    sent = re.search(r"[.!?](?:\s|$)", rest)
+    tail = rest[: sent.end()].strip() if sent else rest
+    return " ".join(f"{inner} {tail}".split())
 
 
 def _tag_lookup(entry: Entry, tags: dict[str, str]) -> str | None:

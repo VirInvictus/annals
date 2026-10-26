@@ -55,7 +55,26 @@ class Record:
     ignored: list[str] = field(default_factory=list)
     generator: str = ""
     authors: tuple[str, ...] = ()
+    authors_display: str = ""  # the attribution line; raw emails stay machine-side
     latest: str = ""  # newest activity date; anchors the span and "this month"
+    descriptions: dict[str, str] = field(default_factory=dict)
+    links: dict[str, str] = field(default_factory=dict)
+
+    def attribution(self) -> str:
+        return (
+            f", authored by {self.attribution_name()}"
+            if self.attribution_name()
+            else ""
+        )
+
+    def attribution_name(self) -> str:
+        return self.authors_display or ", ".join(self.authors)
+
+    def repo_cell(self, name: str) -> str:
+        """The dashboard's first cell: a linked name when the repo is
+        public, the bare name otherwise."""
+        url = self.links.get(name)
+        return f"[{name}]({url})" if url else name
 
 
 def render(record: Record) -> str:
@@ -99,7 +118,7 @@ def _dashboard(record: Record) -> list[str]:
     month_repos = len({e.repo for e in month_entries})
     month_commits = sum(r.stats.monthly.get(month, 0) for r in record.repos if r.stats)
 
-    attribution = f", authored by {', '.join(record.authors)}" if record.authors else ""
+    attribution = record.attribution()
     out = [
         "## The shape of the work",
         "",
@@ -109,8 +128,8 @@ def _dashboard(record: Record) -> list[str]:
         f"- This month ({month}): {len(month_entries)} releases across"
         f" {month_repos} repos · {month_commits:,} commits",
         "",
-        "| Repository | Releases | Latest | Last release | Commits | Active since |",
-        "|---|---:|---|---|---:|---|",
+        "| Repository | What it is | Releases | Latest | Last release | Commits | Active since |",
+        "|---|---|---:|---|---|---:|---|",
     ]
     for r in sorted(record.repos, key=lambda r: (-len(r.entries), r.name)):
         latest, last_date = "-", "-"
@@ -123,9 +142,10 @@ def _dashboard(record: Record) -> list[str]:
                 last_date = f"≈{last_date}"
         commits_cell = f"{r.stats.commits:,}" if r.stats else "-"
         since = r.stats.first if r.stats and r.stats.first else "-"
+        description = record.descriptions.get(r.name, "")
         out.append(
-            f"| {r.name} | {len(r.entries)} | {latest} | {last_date}"
-            f" | {commits_cell} | {since} |"
+            f"| {record.repo_cell(r.name)} | {description} | {len(r.entries)}"
+            f" | {latest} | {last_date} | {commits_cell} | {since} |"
         )
 
     rel: Counter[str] = Counter(e.resolved[:7] for e in dated)
@@ -189,7 +209,16 @@ def _languages(record: Record) -> list[str]:
     out.append(
         f"{total:,} lines of code · {len(ranked)} languages · {repo_count} repos"
     )
-    out += ["", *_stacked_bar(ranked, total), ""]
+    out += [
+        "",
+        "Code lines measured by `tokei` over each tracked repo's tree:"
+        " reference clones and fork checkouts (the `[languages]` exclude)"
+        " never count, and neither do lockfiles or data formats. A snapshot"
+        " of the trees as they stand, not a measure of authorship pace.",
+        "",
+        *_stacked_bar(ranked, total),
+        "",
+    ]
     out += ["| Language | Share | Code lines | Repos |", "|---|---|---:|---:|"]
     shown, rest = ranked[:_LANG_TABLE_ROWS], ranked[_LANG_TABLE_ROWS:]
     for lang, lines in shown:
@@ -289,8 +318,8 @@ def _coverage(record: Record) -> list[str]:
     if record.authors:
         out += [
             "Commit counts include only commits authored by"
-            f" {', '.join(record.authors)}: fork histories carry upstream commits",
-            "that are not this workspace's work.",
+            f" {record.attribution_name()}: fork histories carry upstream",
+            "commits that are not this workspace's work.",
             "",
         ]
     out += [

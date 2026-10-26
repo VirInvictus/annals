@@ -9,3 +9,7 @@
   `scripts/publish-site`, the daily automation's `--check` gate)
 - [x] Phase 6: the language distribution (tokei measurement, fork exclusion,
   stacked shade bar + ranked table)
+- [x] Phase 7: the parser repair and the public-page grounding (heading
+  levels 1-2, the full headline harvest with the bullet fallback, the
+  descriptions and links columns, display attribution, the languages
+  method note, meoweconomy excluded)

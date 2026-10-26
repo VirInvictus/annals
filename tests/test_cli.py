@@ -99,6 +99,11 @@ def make_config(ws: Path, output: Path) -> Path:
         f'output = "{output}"\n'
         "\n[stats]\n"
         'authors = ["test@example.com"]\n'
+        'authors_display = "Test Author"\n'
+        "\n[descriptions]\n"
+        '"repo-a" = "The first repo"\n'
+        "\n[links]\n"
+        '"repo-a" = "https://example.com/repo-a"\n'
         "\n[site]\n"
         f'path = "{site_out}"\n'
         'front_matter = "---\\nlayout: default\\npermalink: /patchnotes/\\n---"\n',
@@ -117,6 +122,9 @@ def test_config_load_and_output_resolution(tmp_path: Path) -> None:
     assert config.exclude == {"calibre"}
     assert config.stats_only == {"sb"}
     assert config.authors == ("test@example.com",)
+    assert config.authors_display == "Test Author"
+    assert config.descriptions == {"repo-a": "The first repo"}
+    assert config.links == {"repo-a": "https://example.com/repo-a"}
     assert config.language_exclude == frozenset()
     assert config.site is not None
     assert config.site.path == tmp_path / "site" / "patchnotes.md"
@@ -135,8 +143,10 @@ def test_defaults_when_config_missing(tmp_path: Path) -> None:
     config = load_config(tmp_path / "missing.toml")
     assert config.workspace.name == ".gitrepos"
     assert "calibre" in config.exclude
+    assert "meoweconomy" in config.exclude
     assert "Coffer" in config.stats_only
     assert config.authors == ("larocque.brandon@gmail.com",)
+    assert config.authors_display == ""
     assert config.site is None
 
 
@@ -150,7 +160,13 @@ def test_cli_stdout_end_to_end(tmp_path: Path, capsys) -> None:
     text, summary = captured.out, captured.err
 
     assert "# The Annals" in text
-    assert "| repo-a | 2 | 1.1.0 | 2026-03-05 | 1 | 2026-01-01 |" in text
+    assert (
+        "| [repo-a](https://example.com/repo-a) | The first repo | 2 | 1.1.0"
+        " | 2026-03-05 | 1 | 2026-01-01 |" in text
+    )
+    assert "authored by Test Author" in text
+    assert "larocque.brandon@gmail.com" not in text
+    assert "test@example.com" not in text
     assert "- **03-05 · repo-a 1.1.0** · Two" in text
     assert "- **01-01 · repo-a 1.0.0** · One" in text
     assert "calibre" not in text

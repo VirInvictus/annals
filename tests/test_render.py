@@ -82,6 +82,9 @@ def test_dashboard_timeline_and_coverage() -> None:
         ignored=["stray-dir"],
         latest="2026-10-09",
         generator="annals 0.1.0",
+        descriptions={"busy": "The busy one", "stats-only": "Commits only"},
+        links={"busy": "https://example.com/busy"},
+        authors_display="Brandon LaRocque",
     )
     text = render(record)
 
@@ -92,9 +95,13 @@ def test_dashboard_timeline_and_coverage() -> None:
 
     # Dashboard: totals, per-repo table sorted by releases desc, latest column
     assert "4 repositories tracked · 4 releases recorded · 1,240 commits" in text
-    assert "| busy | 2 | 2.0.0 | 2026-10-09 | 1,234 | 2026-05-01 |" in text
-    assert "| approx-repo | 1 | 0.2.0 | ≈2026-01-01 | 3 | 2026-01-01 |" in text
-    assert "| stats-only | 0 | - | - | 2 | 2026-02-01 |" in text
+    assert "authored by Brandon LaRocque" in text
+    assert (
+        "| [busy](https://example.com/busy) | The busy one | 2 | 2.0.0"
+        " | 2026-10-09 | 1,234 | 2026-05-01 |" in text
+    )
+    assert "| approx-repo |  | 1 | 0.2.0 | ≈2026-01-01 | 3 | 2026-01-01 |" in text
+    assert "| stats-only | Commits only | 0 | - | - | 2 | 2026-02-01 |" in text
     assert busy_line_position(text) < approx_line_position(text)
     assert "This month (2026-10): 1 releases across 1 repos · 12 commits" in text
 
@@ -125,7 +132,7 @@ def test_dashboard_timeline_and_coverage() -> None:
 
 
 def busy_line_position(text: str) -> int:
-    return text.index("| busy |")
+    return text.index("| [busy](")
 
 
 def approx_line_position(text: str) -> int:
