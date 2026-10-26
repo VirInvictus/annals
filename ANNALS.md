@@ -8,9 +8,9 @@ remain canonical; this file is a projection, reproducible with
 
 ## The shape of the work
 
-- **43 repositories tracked · 1532 releases recorded · 5,025 commits, authored by Brandon LaRocque**
+- **43 repositories tracked · 1532 releases recorded · 5,026 commits, authored by Brandon LaRocque**
 - Span: 2025-08-10 to 2026-10-26
-- This month (2026-10): 183 releases across 20 repos · 868 commits
+- This month (2026-10): 183 releases across 20 repos · 869 commits
 
 | Repository | What it is | Releases | Latest | Last release | Commits | Active since |
 |---|---|---:|---|---|---:|---|
@@ -47,7 +47,7 @@ remain canonical; this file is a projection, reproducible with
 | [AudiobookTools](https://github.com/VirInvictus/AudiobookTools) | Declarative tag-and-folder normalizer for the audiobook library; dry-run default, reversible --apply, never re-encodes. | 6 | 0.3.0 | 2026-09-15 | 37 | 2026-05-28 |
 | Foyer | Shared front door to Hearth and Haveli: game launcher plus LAN lobby; holds no game rules. | 6 | 0.2.0 | 2026-09-15 | 32 | 2026-07-17 |
 | [dragon-agents](https://github.com/VirInvictus/dragon-agents) | Local ZCode plugin of twenty-three read-only research subagents: repo mapping, release audits, CI triage, markets and finance briefs. | 6 | 0.6.0 | 2026-10-05 | 14 | 2026-09-03 |
-| annals | This generator: the workspace's whole work record, rendered from every repo's patchnotes and git history. | 5 | 0.2.0 | 2026-10-26 | 48 | 2026-10-09 |
+| annals | This generator: the workspace's whole work record, rendered from every repo's patchnotes and git history. | 5 | 0.2.0 | 2026-10-26 | 49 | 2026-10-09 |
 | [Docket](https://github.com/VirInvictus/Docket) | Native GTK4 plain-text task editor, clean-room faithful to the TaskPaper 3 format and query language. | 4 | 1.0.0 | 2026-10-13 | 19 | 2026-10-12 |
 | dragon-themer | Theme engine for the whole machine: one palette rendered into every colour-bearing config. | 2 | 0.1.0 | 2026-10-07 | 34 | 2026-07-28 |
 | [1-timezone](https://github.com/VirInvictus/1-timezone) | KOReader user patch forcing a correct POSIX TZ inside the process. | 0 | - | - | 7 | 2026-07-05 |
@@ -73,7 +73,7 @@ remain canonical; this file is a projection, reproducible with
 | 2026-07 | ▇▇▇▇▇▇▇▇▇▇▇▇ 154 | ▇▇▇▇▇▇▇▇ 476 |
 | 2026-08 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 165 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 776 |
 | 2026-09 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 349 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 1,729 |
-| 2026-10 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 183 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 868 |
+| 2026-10 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 183 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 869 |
 
 ## The languages
 
