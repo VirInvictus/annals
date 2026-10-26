@@ -8,22 +8,22 @@ remain canonical; this file is a projection, reproducible with
 
 ## The shape of the work
 
-- **44 repositories tracked · 1654 releases recorded · 5,110 commits, authored by larocque.brandon@gmail.com**
-- Span: 2025-08-10 to 2026-10-25
-- This month (2026-10): 180 releases across 21 repos · 849 commits
+- **44 repositories tracked · 1660 releases recorded · 5,125 commits, authored by larocque.brandon@gmail.com**
+- Span: 2025-08-10 to 2026-10-26
+- This month (2026-10): 186 releases across 21 repos · 864 commits
 
 | Repository | Releases | Latest | Last release | Commits | Active since |
 |---|---:|---|---|---:|---|
 | Atrium | 173 | 0.76.0 | 2026-09-14 | 359 | 2026-05-05 |
 | Conservatory | 160 | 0.9.1 | 2026-10-11 | 294 | 2026-05-27 |
-| Viaduct | 128 | 4.4.0 | 2026-10-24 | 255 | 2026-04-19 |
+| Viaduct | 129 | 4.4.1 | 2026-10-25 | 256 | 2026-04-19 |
 | meoweconomy | 120 | 0.15.0-alpha | 2026-10-07 | 104 | 2026-05-15 |
-| CalibreQuarry | 116 | 3.74.0 | 2026-10-23 | 389 | 2026-03-27 |
+| CalibreQuarry | 117 | 3.75.0 | 2026-10-26 | 391 | 2026-03-27 |
 | lattice-music | 107 | 6.4.1 | 2026-10-11 | 337 | 2025-08-10 |
 | Catagotchi | 104 | 4.51.0 | 2026-09-18 | 166 | 2026-07-10 |
 | Hearth | 101 | 0.13.68 | 2026-09-15 | 129 | 2026-06-14 |
 | Framework | 97 | 1.0.2 | 2026-09-16 | 170 | 2026-04-06 |
-| bindery-cli | 79 | 0.54.0 | 2026-10-24 | 278 | 2026-06-09 |
+| bindery-cli | 83 | 0.57.1 | 2026-10-25 | 283 | 2026-06-09 |
 | Hermitage | 49 | 1.8.6 | 2026-10-02 | 117 | 2026-04-10 |
 | cquarry | 44 | 1.28.1 | 2026-10-23 | 268 | 2026-08-23 |
 | deadbeef-cui | 43 | 2.2.1 | 2026-10-22 | 198 | 2026-04-09 |
@@ -49,12 +49,12 @@ remain canonical; this file is a projection, reproducible with
 | Foyer | 6 | 0.2.0 | 2026-09-15 | 32 | 2026-07-17 |
 | dragon-agents | 6 | 0.6.0 | 2026-10-05 | 14 | 2026-09-03 |
 | Docket | 4 | 1.0.0 | 2026-10-13 | 19 | 2026-10-12 |
-| annals | 4 | 0.1.3 | 2026-10-09 | 46 | 2026-10-09 |
+| annals | 4 | 0.1.3 | 2026-10-09 | 47 | 2026-10-09 |
 | dragon-themer | 2 | 0.1.0 | 2026-10-07 | 34 | 2026-07-28 |
 | 1-timezone | 0 | - | - | 7 | 2026-07-05 |
 | Coffer | 0 | - | - | 9 | 2026-06-28 |
-| VirInvictus | 0 | - | - | 116 | 2026-06-22 |
-| VirInvictus.github.io | 0 | - | - | 223 | 2026-04-16 |
+| VirInvictus | 0 | - | - | 118 | 2026-06-22 |
+| VirInvictus.github.io | 0 | - | - | 227 | 2026-04-16 |
 | dead-reckoning-bookend-preset | 0 | - | - | 15 | 2026-07-03 |
 | project-void | 0 | - | - | 16 | 2026-04-17 |
 | project-yeschef | 0 | - | - | 6 | 2026-05-23 |
@@ -74,11 +74,11 @@ remain canonical; this file is a projection, reproducible with
 | 2026-07 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 160 | ▇▇▇▇▇▇▇▇ 476 |
 | 2026-08 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 167 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 776 |
 | 2026-09 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 354 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 1,729 |
-| 2026-10 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 180 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 849 |
+| 2026-10 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 186 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 864 |
 
 ## The languages
 
-494,082 lines of code · 27 languages · 43 repos
+496,289 lines of code · 27 languages · 43 repos
 
 ```
 █████████████████▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒░░···
@@ -87,10 +87,10 @@ remain canonical; this file is a projection, reproducible with
 
 | Language | Share | Code lines | Repos |
 |---|---|---:|---:|
-| Python | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 42.2% | 208,438 | 23 |
-| Rust | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 35.1% | 173,483 | 11 |
+| Python | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 42.4% | 210,498 | 23 |
+| Rust | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 35.0% | 173,630 | 11 |
 | GDScript | ▇▇▇▇▇ 10.0% | 49,509 | 6 |
-| C | ▇▇▇ 5.5% | 27,005 | 2 |
+| C | ▇▇▇ 5.4% | 27,005 | 2 |
 | Lua | ▇ 2.7% | 13,423 | 5 |
 | CSS | ▇ 1.2% | 5,906 | 6 |
 | Ruby | ▇ 0.7% | 3,572 | 2 |
@@ -107,6 +107,12 @@ remain canonical; this file is a projection, reproducible with
 
 #### October 2026
 
+- **10-26 · CalibreQuarry 3.75.0** · reconcile: the embed's NCX scar is healed by a third pass and the scars it cannot heal are on the record (issue #37)
+- **10-25 · Viaduct 4.4.1** · plain text renders as HTML
+- **10-25 · bindery-cli 0.57.1** · The prefixed dtb:uid sync: the issue #22 specimen's last finding
+- **10-25 · bindery-cli 0.57.0** · Issue #22: the embed scar's element half, and the end of the silent equal
+- **10-25 · bindery-cli 0.56.0** · The two boxed recipes, built: the OPF-030 wiring and the CSS-007 font half
+- **10-25 · bindery-cli 0.55.0** · The issue batch: the 2026-10-24 surgery's follow-ups, #11 through #16
 - **10-24 · Viaduct 4.4.0** · the roadmap harvest
 - **10-24 · bindery-cli 0.54.0** · The error-code surgery fixes: the core pass stopped breaking valid books
 - **10-24 · bindery-cli 0.53.1** · The .observe artifact now carries its per-book census rows
@@ -1416,7 +1422,7 @@ that are not this workspace's work.
 | 2-kobo-style-sleepscreen-banner-prettified | 8 | 0 | 2 | 0 | 6 | 0 |
 | Atrium | 173 | 163 | 0 | 2 | 8 | 1 |
 | AudiobookTools | 6 | 6 | 0 | 0 | 0 | 0 |
-| CalibreQuarry | 116 | 116 | 0 | 0 | 0 | 0 |
+| CalibreQuarry | 117 | 117 | 0 | 0 | 0 | 0 |
 | Carrel | 20 | 20 | 0 | 0 | 0 | 0 |
 | Carrel-calibre-web | 20 | 19 | 0 | 1 | 0 | 0 |
 | Catagotchi | 104 | 104 | 0 | 0 | 0 | 0 |
@@ -1433,11 +1439,11 @@ that are not this workspace's work.
 | Quire | 22 | 22 | 0 | 0 | 0 | 0 |
 | Topograph | 11 | 11 | 0 | 0 | 0 | 0 |
 | Vestibule | 12 | 12 | 0 | 0 | 0 | 0 |
-| Viaduct | 128 | 29 | 1 | 53 | 45 | 1 |
+| Viaduct | 129 | 30 | 1 | 53 | 45 | 1 |
 | VirInvictus | 0 | 0 | 0 | 0 | 0 | 0 |
 | VirInvictus.github.io | 0 | 0 | 0 | 0 | 0 | 0 |
 | annals | 4 | 4 | 0 | 0 | 0 | 0 |
-| bindery-cli | 79 | 77 | 1 | 1 | 0 | 0 |
+| bindery-cli | 83 | 81 | 1 | 1 | 0 | 0 |
 | cquarry | 44 | 44 | 0 | 0 | 0 | 0 |
 | crash-course | 19 | 19 | 0 | 0 | 0 | 0 |
 | dead-reckoning-bookend-preset | 0 | 0 | 0 | 0 | 0 | 0 |
