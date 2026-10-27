@@ -6,6 +6,8 @@ import os
 import subprocess
 from pathlib import Path
 
+import pytest
+
 from annals.cli import main
 from annals.config import load_config
 
@@ -90,6 +92,7 @@ def make_workspace(tmp_path: Path) -> Path:
 def make_config(ws: Path, output: Path) -> Path:
     cfg = ws.parent / "annals.toml"
     site_out = ws.parent / "site" / "patchnotes.md"
+    ledger_out = ws.parent / "site" / "_includes" / "ledger.md"
     cfg.write_text(
         "[workspace]\n"
         f'root = "{ws}"\n'
@@ -106,7 +109,9 @@ def make_config(ws: Path, output: Path) -> Path:
         '"repo-a" = "https://example.com/repo-a"\n'
         "\n[site]\n"
         f'path = "{site_out}"\n'
-        'front_matter = "---\\nlayout: default\\npermalink: /patchnotes/\\n---"\n',
+        'front_matter = "---\\nlayout: default\\npermalink: /patchnotes/\\n---"\n'
+        "\n[ledger]\n"
+        f'path = "{ledger_out}"\n',
         encoding="utf-8",
     )
     return cfg
@@ -129,6 +134,8 @@ def test_config_load_and_output_resolution(tmp_path: Path) -> None:
     assert config.site is not None
     assert config.site.path == tmp_path / "site" / "patchnotes.md"
     assert config.site.front_matter.startswith("---\n")
+    assert config.ledger is not None
+    assert config.ledger.path == tmp_path / "site" / "_includes" / "ledger.md"
 
 
 def test_config_without_site_section(tmp_path: Path) -> None:
@@ -137,6 +144,7 @@ def test_config_without_site_section(tmp_path: Path) -> None:
     cfg.write_text(f'[workspace]\nroot = "{ws}"\n', encoding="utf-8")
     config = load_config(cfg)
     assert config.site is None
+    assert config.ledger is None
 
 
 def test_defaults_when_config_missing(tmp_path: Path) -> None:
@@ -148,6 +156,7 @@ def test_defaults_when_config_missing(tmp_path: Path) -> None:
     assert config.authors == ("larocque.brandon@gmail.com",)
     assert config.authors_display == ""
     assert config.site is None
+    assert config.ledger is None
 
 
 def test_cli_stdout_end_to_end(tmp_path: Path, capsys) -> None:
@@ -174,6 +183,7 @@ def test_cli_stdout_end_to_end(tmp_path: Path, capsys) -> None:
     assert "stray" in summary
     assert not output.exists()
     assert not (tmp_path / "site" / "patchnotes.md").exists()
+    assert not (tmp_path / "site" / "_includes" / "ledger.md").exists()
 
 
 def test_cli_write_then_check(tmp_path: Path, capsys) -> None:
@@ -188,9 +198,19 @@ def test_cli_write_then_check(tmp_path: Path, capsys) -> None:
     assert site_text.startswith("---\nlayout: default\npermalink: /patchnotes/\n---\n")
     assert "{% raw %}" in site_text and "{% endraw %}" in site_text
     assert "# The Annals" in site_text
+    ledger_out = tmp_path / "site" / "_includes" / "ledger.md"
+    ledger_text = ledger_out.read_text(encoding="utf-8")
+    assert ledger_text.startswith("As of ")
+    assert ledger_text.endswith("own log.\n")
+    assert "{% raw %}" not in ledger_text
     capsys.readouterr()
 
     assert main(["--config", str(cfg), "--check"]) == 0
+    capsys.readouterr()
+
+    before = ledger_out.read_text(encoding="utf-8")
+    assert main(["--config", str(cfg)]) == 0
+    assert ledger_out.read_text(encoding="utf-8") == before
     capsys.readouterr()
 
     output.write_text(
@@ -200,3 +220,10 @@ def test_cli_write_then_check(tmp_path: Path, capsys) -> None:
 
     output.unlink()
     assert main(["--config", str(cfg), "--check"]) == 1
+
+
+def test_config_rejects_non_table_ledger(tmp_path: Path) -> None:
+    cfg = tmp_path / "bad.toml"
+    cfg.write_text('ledger = true\n[workspace]\nroot = "."\n', encoding="utf-8")
+    with pytest.raises(ValueError, match="ledger"):
+        load_config(cfg)

@@ -64,11 +64,21 @@ DEFAULT_SITE_FRONT_MATTER = (
     "---\nlayout: default\ntitle: Patchnotes\npermalink: /patchnotes/\n---"
 )
 
+# The front-page ledger line: a generator-owned include the site README
+# renders with a Liquid include tag. Same sanctioned write family as the
+# site copy; no [ledger] section means no write.
+DEFAULT_LEDGER_PATH = "~/.gitrepos/VirInvictus.github.io/_includes/ledger.md"
+
 
 @dataclass(frozen=True)
 class SiteTarget:
     path: Path
     front_matter: str
+
+
+@dataclass(frozen=True)
+class LedgerTarget:
+    path: Path
 
 
 @dataclass(frozen=True)
@@ -80,6 +90,7 @@ class Config:
     authors: tuple[str, ...] = DEFAULT_AUTHORS
     authors_display: str = ""
     site: SiteTarget | None = None
+    ledger: LedgerTarget | None = None
     language_exclude: frozenset[str] = frozenset()
     descriptions: dict[str, str] = field(default_factory=dict)
     links: dict[str, str] = field(default_factory=dict)
@@ -108,6 +119,11 @@ def load_config(path: Path | None = None) -> Config:
     run = data.get("run", {})
     stats = data.get("stats", {})
     site = data.get("site", {})
+    ledger = data.get("ledger")
+    if ledger is not None and not isinstance(ledger, dict):
+        raise ValueError(
+            f"[ledger] must be a table, got {type(ledger).__name__}; check annals.toml"
+        )
     langs = data.get("languages", {})
     out = Path(run.get("output", "ANNALS.md"))
     site_path = site.get("path", DEFAULT_SITE_PATH) if site else None
@@ -124,6 +140,13 @@ def load_config(path: Path | None = None) -> Config:
         )
         if site_path
         else None,
+        ledger=(
+            LedgerTarget(
+                path=Path(ledger.get("path", DEFAULT_LEDGER_PATH)).expanduser()
+            )
+            if ledger is not None
+            else None
+        ),
         language_exclude=frozenset(langs.get("exclude", ())),
         descriptions=dict(data.get("descriptions", {})),
         links=dict(data.get("links", {})),

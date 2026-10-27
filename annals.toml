@@ -140,3 +140,9 @@ layout: default
 title: Patchnotes
 permalink: /patchnotes/
 ---"""
+
+[ledger]
+# The front-page stat line: one generator-authored paragraph written to
+# the site's generator-owned include, which the README renders with a
+# Liquid include tag. Remove this section to skip the write.
+path = "~/.gitrepos/VirInvictus.github.io/_includes/ledger.md"

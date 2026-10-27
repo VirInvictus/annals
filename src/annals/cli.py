@@ -13,7 +13,13 @@ from .discover import discover
 from .gitstats import repo_stats, tag_dates
 from .languages import repo_languages
 from .parse import Entry, parse_patchnotes, resolve_dates
-from .render import Record, RepoRecord, render, render_site
+from .render import (
+    Record,
+    RepoRecord,
+    render,
+    render_ledger,
+    render_site,
+)
 
 
 def build(config: Config) -> Record:
@@ -93,6 +99,10 @@ def main(argv: list[str] | None = None) -> int:
         config.site.path.parent.mkdir(parents=True, exist_ok=True)
         config.site.path.write_text(site_text, encoding="utf-8")
         print(f"annals: wrote {config.site.path}")
+    if config.ledger is not None:
+        config.ledger.path.parent.mkdir(parents=True, exist_ok=True)
+        config.ledger.path.write_text(render_ledger(record), encoding="utf-8")
+        print(f"annals: wrote {config.ledger.path}")
     _summarize(record, sys.stdout)
     return 0
 

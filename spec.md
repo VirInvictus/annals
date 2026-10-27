@@ -9,8 +9,9 @@ represent, and what is its shape over time? It renders a single record,
 - each owned repo's `patchnotes.md` (the release log),
 - each repo's git history (commits, tags).
 
-annals is read-only against the workspace. Its only write is `ANNALS.md`
-inside its own repo.
+annals is read-only against the workspace. Its writes are `ANNALS.md`
+inside its own repo and, when configured, the two published site
+artifacts: the patchnotes copy and the front-page ledger include.
 
 ## Semantics
 
@@ -165,18 +166,31 @@ path, wrapped in Jekyll front matter (the VirInvictus site page at
 break the site build. The site copy is a pure projection: identical body,
 different wrapper.
 
+### The ledger line
+
+When `[ledger]` is configured, the run also writes one paragraph to the
+target file: the VirInvictus site's `_includes/ledger.md`, a
+generator-owned include the site README renders with a Liquid include
+tag. The paragraph carries the dashboard totals, the month's shape, and
+the patchnotes link. It anchors to the newest activity date and carries
+no em-dashes, like all generator-authored prose. The file belongs to the
+same write family as the site copy: created when missing, overwritten
+every run, never a hand-authored page.
+
 ## CLI
 
 - `annals` (default): regenerate `ANNALS.md`, write it, write the site copy
-  when `[site]` is configured, and print a summary (repos tracked, entries,
-  duplicates collapsed, approximations, ignored directories).
+  when `[site]` is configured, write the ledger include when `[ledger]` is
+  configured, and print a summary (repos tracked, entries, duplicates
+  collapsed, approximations, ignored directories).
 - `annals --stdout`: print the record to stdout; write nothing.
 - `annals --check`: regenerate in memory and compare; exit 0 when
   `ANNALS.md` is current, exit 1 when stale or missing.
 - `annals --config PATH`: use an alternate configuration file. Default:
   `annals.toml` in the current directory, else the one at the repo root.
 
-The tool never commits, never pushes, and never writes outside its own repo.
+The tool never commits and never pushes. Its only writes are `ANNALS.md`
+and the configured site artifacts.
 
 ## Non-goals
 

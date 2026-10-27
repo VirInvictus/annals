@@ -13,3 +13,6 @@
   levels 1-2, the full headline harvest with the bullet fallback, the
   descriptions and links columns, display attribution, the languages
   method note, meoweconomy excluded)
+- [x] Phase 8: the front-page ledger line (`[ledger]` target, the
+  generator-owned include the README renders, publish-site staging
+  both generator-owned site artifacts)

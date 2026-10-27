@@ -1,10 +1,10 @@
 #!/usr/bin/env zsh
-# annals daily publish: regenerate the record, then push the site copy when
-# its content changed, verifying the Pages build and reverting the commit if
-# the build fails. The annals repo gets a local commit when its own record
-# changed (it has no remote and is never pushed). Read-only everywhere else;
-# never force-pushes; never deletes. Exit 0: published or quiet day. Exit 1:
-# build failed/reverted or timed out.
+# annals daily publish: regenerate the record, then push the site copy and
+# the ledger include when their content changed, verifying the Pages build
+# and reverting the commit if the build fails. The annals repo gets a local
+# commit when its own record changed (it has no remote and is never pushed).
+# Read-only everywhere else; never force-pushes; never deletes.
+# Exit 0: published or quiet day. Exit 1: build failed/reverted or timed out.
 
 set -euo pipefail
 
@@ -32,13 +32,15 @@ fi
 cd "$SITE"
 git pull --ff-only -q
 # porcelain, not git diff: it also catches the untracked-file case (the very
-# first publish, before patchnotes.md is tracked).
-if [[ -z $(git status --porcelain -- patchnotes.md) ]]; then
+# first publish, before patchnotes.md is tracked). Both staged files are
+# generator-owned, so blind staging can never sweep hand edits into a daily
+# refresh.
+if [[ -z $(git status --porcelain -- patchnotes.md _includes/ledger.md) ]]; then
   print -r -- "annals: site copy unchanged; nothing to publish"
   exit 0
 fi
 
-git add patchnotes.md
+git add patchnotes.md _includes/ledger.md
 git commit -q -m "docs: annals refresh, $TODAY"
 SHA=$(git rev-parse HEAD)
 git push -q

@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from annals.gitstats import RepoStats
 from annals.parse import Entry
-from annals.render import Record, RepoRecord, render, render_site
+from annals.render import Record, RepoRecord, render, render_ledger, render_site
 
 
 def entry(
@@ -156,3 +156,31 @@ def test_render_site_wraps_in_front_matter_and_raw() -> None:
     assert site_text.count("{% raw %}") == 1
     assert site_text.rstrip().endswith("{% endraw %}")
     assert "# The Annals" in site_text.split("{% raw %}")[1]
+
+
+def test_render_ledger_totals_month_and_link() -> None:
+    busy = RepoRecord(
+        name="busy",
+        entries=[
+            entry("busy", "2.0.0", "2026-10-09", headline="The big one", index=0),
+            entry("busy", "1.9.0", "2026-09-14", headline="Steady", index=1),
+        ],
+        stats=stats("2026-05-01", "2026-10-09", {"2026-10": 12}, 12_345),
+    )
+    record = Record(repos=[busy], latest="2026-10-09", generator="annals 0.3.0")
+    line = render_ledger(record)
+
+    assert line.startswith("As of 2026-10-09 the ledger reads")
+    assert "**1 repository · 2 releases · 12,345 commits**" in line
+    assert "October 2026 added 1 release across 1 of them" in line
+    assert "[the patchnotes](" in line
+    assert "{{ '/patchnotes/' | relative_url }}" in line
+    assert line.endswith("own log.\n")
+    assert "—" not in line
+    assert "–" not in line
+
+
+def test_render_ledger_tolerates_a_default_record() -> None:
+    line = render_ledger(Record(repos=[]))
+    assert "0 repositories · 0 releases · 0 commits" in line
+    assert "—" not in line

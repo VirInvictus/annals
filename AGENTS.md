@@ -6,16 +6,18 @@ Guidance for any coding agent working in this repository.
 
 `annals` is the workspace work-record generator: it walks every repo under
 `~/.gitrepos/`, reads each owned repo's `patchnotes.md` and git history, and
-renders two files: `ANNALS.md` at this repo's root (the canonical projection)
-and the site copy at `~/.gitrepos/VirInvictus.github.io/patchnotes.md` (the
-same record wrapped in Jekyll front matter and a Liquid raw block, published
-at `/patchnotes/`). `scripts/publish-site` is the daily pipeline: regenerate,
-commit locally, commit and push the site copy when it changed, verify the
-Pages build, revert on failure. Python 3.14, standard library only, no
-network (the publish script's git/gh calls are its only outbound surface).
-One external tool is required for one section: `tokei` measures the language
-distribution, and its absence degrades that section to a note instead of
-failing the run.
+renders `ANNALS.md` at this repo's root (the canonical projection), the site
+copy at `~/.gitrepos/VirInvictus.github.io/patchnotes.md` (the same record
+wrapped in Jekyll front matter and a Liquid raw block, published at
+`/patchnotes/`), and the front-page ledger line written to the site's
+`_includes/ledger.md` (a generator-owned include the README renders with a
+Liquid include tag). `scripts/publish-site` is the daily pipeline:
+regenerate, commit locally, commit and push the site artifacts when they
+changed, verify the Pages build, revert on failure. Python 3.14, standard
+library only, no network (the publish script's git/gh calls are its only
+outbound surface). One external tool is required for one section: `tokei`
+measures the language distribution, and its absence degrades that section
+to a note instead of failing the run.
 
 ## Load-bearing distinction
 
@@ -29,9 +31,12 @@ rename any of the three files.
 ## Read-only guarantee
 
 The tool only ever reads member repos (`patchnotes.md`, `git log`,
-`git for-each-ref`). It writes exactly one file: `ANNALS.md` in this repo.
-It never commits, never pushes, and never writes under the workspace root.
-Any change that breaks this guarantee is a spec violation, not a refactor.
+`git for-each-ref`). It writes `ANNALS.md` in this repo plus the two
+configured site artifacts (the patchnotes copy and the ledger include),
+both generator-owned: hand-authored site pages are never touched. It
+never commits, never pushes, and touches nothing else under the workspace
+root; the publish script owns git. Any change that breaks this guarantee
+is a spec violation, not a refactor.
 
 ## Commands
 

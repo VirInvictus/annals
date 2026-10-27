@@ -94,6 +94,39 @@ def render_site(record: Record, front_matter: str) -> str:
     return f"{front_matter}\n\n{{% raw %}}\n{render(record)}{{% endraw %}}\n"
 
 
+def _count(n: int, singular: str, plural: str) -> str:
+    return f"{n:,} {singular if n == 1 else plural}"
+
+
+def render_ledger(record: Record) -> str:
+    """The front-page stat line: the dashboard totals as one paragraph,
+    written to the site's generator-owned include and rendered by the
+    README. Anchored to the newest activity date like the rest of the
+    record, so a quiet workspace regenerates byte-identical prose.
+    Generator-authored, so no em-dashes."""
+    dated = [e for r in record.repos for e in _anchored(r.entries)]
+    total_entries = sum(len(r.entries) for r in record.repos)
+    commits = sum(r.stats.commits for r in record.repos if r.stats)
+    month = record.latest[:7]
+    month_entries = [e for e in dated if e.resolved[:7] == month]
+    month_repos = len({e.repo for e in month_entries})
+    month_name = (
+        f"{_MONTH_NAMES[int(month[5:7])]} {month[:4]}" if len(month) == 7 else month
+    )
+    repos_part = _count(len(record.repos), "repository", "repositories")
+    releases_part = _count(total_entries, "release", "releases")
+    commits_part = _count(commits, "commit", "commits")
+    month_part = _count(len(month_entries), "release", "releases")
+    link = "{{ '/patchnotes/' | relative_url }}"
+    return (
+        f"As of {record.latest} the ledger reads **{repos_part} · "
+        f"{releases_part} · {commits_part}**; {month_name} added {month_part}"
+        f" across {month_repos} of them. The whole record lands in"
+        f" [the patchnotes]({link}), regenerated nightly from each repo's"
+        " own log.\n"
+    )
+
+
 def _masthead(record: Record) -> list[str]:
     return [
         "# The Annals",

@@ -1,5 +1,27 @@
 # Patchnotes
 
+## v0.3.0 (2026-10-27)
+
+The front-page ledger: the workspace totals now surface on the site's
+front door, one paragraph above the fold, not only on the patchnotes page.
+
+- **Ledger line**: a new `[ledger]` target. Each run writes one
+  generator-authored paragraph (the totals, the month's shape, the
+  patchnotes link) to the site's `_includes/ledger.md`, which the site
+  README renders with a Liquid include tag. The file is generator-owned
+  like the site copy: created when missing, overwritten every run, so a
+  quiet workspace stays byte-identical and hand-authored pages are never
+  touched. The paragraph anchors to the newest activity date like the
+  rest of the record, and carries no em-dashes, like all
+  generator-authored prose.
+- **publish-site**: stages the include alongside patchnotes.md, so a
+  ledger change ships in the same daily commit. Both staged files are
+  generator-owned; blind staging can never sweep hand edits into a daily
+  refresh.
+- **Config**: a non-table `[ledger]` value is a loud error instead of a
+  silent skip, and singular counts pluralize correctly on the front
+  page ("1 repository", not "1 repositories").
+
 ## v0.2.0 (2026-10-26)
 
 The parser repair and the public-page grounding: every entry now carries
