@@ -8,9 +8,9 @@ remain canonical; this file is a projection, reproducible with
 
 ## The shape of the work
 
-- **43 repositories tracked · 1533 releases recorded · 5,032 commits, authored by Brandon LaRocque**
+- **43 repositories tracked · 1533 releases recorded · 5,034 commits, authored by Brandon LaRocque**
 - Span: 2025-08-10 to 2026-10-26
-- This month (2026-10): 184 releases across 20 repos · 875 commits
+- This month (2026-10): 184 releases across 20 repos · 877 commits
 
 | Repository | What it is | Releases | Latest | Last release | Commits | Active since |
 |---|---|---:|---|---|---:|---|
@@ -47,13 +47,13 @@ remain canonical; this file is a projection, reproducible with
 | [AudiobookTools](https://github.com/VirInvictus/AudiobookTools) | Declarative tag-and-folder normalizer for the audiobook library; dry-run default, reversible --apply, never re-encodes. | 6 | 0.3.0 | 2026-09-15 | 37 | 2026-05-28 |
 | Foyer | Shared front door to Hearth and Haveli: game launcher plus LAN lobby; holds no game rules. | 6 | 0.2.0 | 2026-09-15 | 32 | 2026-07-17 |
 | [dragon-agents](https://github.com/VirInvictus/dragon-agents) | Local ZCode plugin of twenty-three read-only research subagents: repo mapping, release audits, CI triage, markets and finance briefs. | 6 | 0.6.0 | 2026-10-05 | 14 | 2026-09-03 |
-| annals | This generator: the workspace's whole work record, rendered from every repo's patchnotes and git history. | 5 | 0.2.0 | 2026-10-26 | 51 | 2026-10-09 |
+| annals | This generator: the workspace's whole work record, rendered from every repo's patchnotes and git history. | 5 | 0.2.0 | 2026-10-26 | 52 | 2026-10-09 |
 | [Docket](https://github.com/VirInvictus/Docket) | Native GTK4 plain-text task editor, clean-room faithful to the TaskPaper 3 format and query language. | 4 | 1.0.0 | 2026-10-13 | 19 | 2026-10-12 |
 | dragon-themer | Theme engine for the whole machine: one palette rendered into every colour-bearing config. | 2 | 0.1.0 | 2026-10-07 | 34 | 2026-07-28 |
 | [1-timezone](https://github.com/VirInvictus/1-timezone) | KOReader user patch forcing a correct POSIX TZ inside the process. | 0 | - | - | 7 | 2026-07-05 |
 | Coffer | Native GTK4 envelope-budgeting app over a plain-text hledger journal (the journal is the database). | 0 | - | - | 9 | 2026-06-28 |
 | [VirInvictus](https://github.com/VirInvictus/VirInvictus) | The GitHub profile README repo: one line and a shipping status per project. | 0 | - | - | 118 | 2026-06-22 |
-| [VirInvictus.github.io](https://github.com/VirInvictus/VirInvictus.github.io) | This site: static Jekyll on GitHub Pages; /patchnotes/ serves the annals record. | 0 | - | - | 230 | 2026-04-16 |
+| [VirInvictus.github.io](https://github.com/VirInvictus/VirInvictus.github.io) | This site: static Jekyll on GitHub Pages; /patchnotes/ serves the annals record. | 0 | - | - | 231 | 2026-04-16 |
 | [dead-reckoning-bookend-preset](https://github.com/VirInvictus/dead-reckoning-bookend-preset) | One-file KOReader preset: session pace, chapter ETA, projected finish. | 0 | - | - | 15 | 2026-07-03 |
 | project-void | Party-based isometric CRPG in the Dark Sun / Fallout 2 lineage on lethal Cairn combat math (pre-development). | 0 | - | - | 16 | 2026-04-17 |
 | project-yeschef | Grand-strategy restaurant sim in the CK3 / Victoria 3 lineage; you play the General Manager (pre-development). | 0 | - | - | 6 | 2026-05-23 |
@@ -73,7 +73,7 @@ remain canonical; this file is a projection, reproducible with
 | 2026-07 | ▇▇▇▇▇▇▇▇▇▇▇▇ 154 | ▇▇▇▇▇▇▇▇ 476 |
 | 2026-08 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 165 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 776 |
 | 2026-09 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 349 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 1,729 |
-| 2026-10 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 184 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 875 |
+| 2026-10 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 184 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 877 |
 
 ## The languages
 
