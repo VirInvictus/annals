@@ -146,3 +146,12 @@ permalink: /patchnotes/
 # the site's generator-owned include, which the README renders with a
 # Liquid include tag. Remove this section to skip the write.
 path = "~/.gitrepos/VirInvictus.github.io/_includes/ledger.md"
+
+[feed]
+# The Atom artifact: the newest 50 exactly-dated entries, written where
+# Jekyll copies it verbatim so the site serves it at /patchnotes/feed.xml.
+# site_url must match the site's _config.yml url (feed links are absolute);
+# remove this section to skip the write.
+path = "~/.gitrepos/VirInvictus.github.io/patchnotes/feed.xml"
+site_url = "https://virinvictus.github.io"
+limit = 50

@@ -2,11 +2,14 @@
 
 from __future__ import annotations
 
+import hashlib
 from collections import Counter
 from dataclasses import dataclass, field
+from urllib.parse import urlparse
+from xml.sax.saxutils import escape as _xml_escape
 
 from .gitstats import RepoStats
-from .parse import Entry
+from .parse import Entry, unlogged_tags
 
 _MONTH_NAMES = [
     "",
@@ -40,6 +43,8 @@ class RepoRecord:
     dupes: int = 0
     stats: RepoStats | None = None
     languages: dict[str, int] | None = None
+    tags: dict[str, str] = field(default_factory=dict)  # name -> creatordate
+    has_patchnotes: bool = True  # stats-only repos audit no tags
 
 
 def _anchored(entries: list[Entry]) -> list[Entry]:
@@ -94,8 +99,75 @@ def render_site(record: Record, front_matter: str) -> str:
     return f"{front_matter}\n\n{{% raw %}}\n{render(record)}{{% endraw %}}\n"
 
 
+_FEED_ENTRY_LIMIT = 50
+
+
+def render_feed(record: Record, site_url: str, limit: int = _FEED_ENTRY_LIMIT) -> str:
+    """The Atom artifact: the newest exactly-dated entries, published
+    alongside the site copy. `updated` anchors to the newest activity date
+    like the rest of the record, never the generation time, so a quiet
+    workspace regenerates byte-identical XML."""
+    page = f"{site_url.rstrip('/')}/patchnotes/"
+    feed_url = f"{page}feed.xml"
+    host = urlparse(site_url).netloc or site_url
+    out = [
+        '<?xml version="1.0" encoding="utf-8"?>',
+        '<feed xmlns="http://www.w3.org/2005/Atom">',
+        "  <title>The Annals</title>",
+        "  <subtitle>Every release entry from the Vir Invictus workspace's"
+        " patchnotes, newest first.</subtitle>",
+        f"  <id>tag:{host},2026:/patchnotes/</id>",
+        f"  <updated>{record.latest}T00:00:00Z</updated>",
+        f'  <link rel="alternate" href="{_xml_text(page)}"/>',
+        f'  <link rel="self" href="{_xml_text(feed_url)}"/>',
+        f"  <generator>{_xml_text(record.generator)}</generator>",
+    ]
+    dated = _timeline_order([e for r in record.repos for e in _anchored(r.entries)])
+    for e in dated[:limit]:
+        name = _entry_name(e)
+        title = f"{name}: {e.headline}" if e.headline else name
+        key = (
+            e.version
+            or hashlib.sha1((e.headline or str(e.index)).encode("utf-8")).hexdigest()[
+                :12
+            ]
+        )
+        ident = f"tag:{host},{e.resolved[:4]}:{e.resolved}/{e.repo}/{key}"
+        out += [
+            "  <entry>",
+            f"    <id>{_xml_text(ident)}</id>",
+            f"    <title>{_xml_text(title)}</title>",
+            f"    <updated>{e.resolved}T00:00:00Z</updated>",
+            f'    <link rel="alternate" href="{_xml_text(page)}"/>',
+            "  </entry>",
+        ]
+    out.append("</feed>")
+    return "\n".join(out) + "\n"
+
+
+def _xml_text(text: str) -> str:
+    """XML element/attribute text: & < > and the attribute quote."""
+    return _xml_escape(text, {'"': "&quot;"})
+
+
 def _count(n: int, singular: str, plural: str) -> str:
     return f"{n:,} {singular if n == 1 else plural}"
+
+
+def _timeline_order(dated: list[Entry]) -> list[Entry]:
+    """The record's ordering: newest first, same-day entries in their
+    patchnotes file order (stable sorts). Shared by the timeline, the feed,
+    and the ledger's newest-entry line so they can never diverge."""
+    ordered = list(dated)
+    ordered.sort(key=lambda e: (e.repo, e.index))
+    ordered.sort(key=lambda e: e.resolved, reverse=True)
+    return ordered
+
+
+def _entry_name(e: Entry) -> str:
+    who = e.repo + (f" {e.component}" if e.component else "")
+    what = e.label or e.version or ""
+    return f"{who} {what}".strip()
 
 
 def render_ledger(record: Record) -> str:
@@ -117,11 +189,17 @@ def render_ledger(record: Record) -> str:
     releases_part = _count(total_entries, "release", "releases")
     commits_part = _count(commits, "commit", "commits")
     month_part = _count(len(month_entries), "release", "releases")
+    newest = _timeline_order(dated)[0] if dated else None
+    newest_part = (
+        f" The newest entry is **{_entry_name(newest)}** ({newest.resolved[5:]})."
+        if newest is not None
+        else ""
+    )
     link = "{{ '/patchnotes/' | relative_url }}"
     return (
         f"As of {record.latest} the ledger reads **{repos_part} · "
         f"{releases_part} · {commits_part}**; {month_name} added {month_part}"
-        f" across {month_repos} of them. The whole record lands in"
+        f" across {month_repos} of them.{newest_part} The whole record lands in"
         f" [the patchnotes]({link}), regenerated nightly from each repo's"
         " own log.\n"
     )
@@ -155,10 +233,10 @@ def _dashboard(record: Record) -> list[str]:
     out = [
         "## The shape of the work",
         "",
-        f"- **{len(record.repos)} repositories tracked · {total_entries} releases"
+        f"- **{len(record.repos)} repositories tracked · {total_entries:,} releases"
         f" recorded · {commits:,} commits{attribution}**",
         f"- Span: {span_start} to {record.latest}",
-        f"- This month ({month}): {len(month_entries)} releases across"
+        f"- This month ({month}): {len(month_entries):,} releases across"
         f" {month_repos} repos · {month_commits:,} commits",
         "",
         "| Repository | What it is | Releases | Latest | Last release | Commits | Active since |",
@@ -307,11 +385,7 @@ def _largest_remainder(weights: list[int], width: int) -> list[int]:
 
 
 def _timeline(record: Record) -> list[str]:
-    dated = [e for r in record.repos for e in _anchored(r.entries)]
-    # Stable sorts: file order within a repo first, then date descending, so
-    # same-day entries keep their patchnotes order.
-    dated.sort(key=lambda e: (e.repo, e.index))
-    dated.sort(key=lambda e: e.resolved, reverse=True)
+    dated = _timeline_order([e for r in record.repos for e in _anchored(r.entries)])
 
     out = ["## The record", ""]
     if not dated:
@@ -331,9 +405,7 @@ def _timeline(record: Record) -> list[str]:
 
 
 def _timeline_line(e: Entry) -> str:
-    who = e.repo + (f" {e.component}" if e.component else "")
-    what = e.label or e.version or ""
-    name = f"{who} {what}".strip()
+    name = _entry_name(e)
     head = f" · {e.headline}" if e.headline else ""
     return f"- **{e.resolved[5:]} · {name}**{head}"
 
@@ -345,7 +417,10 @@ def _coverage(record: Record) -> list[str]:
         "Date sources per entry: **inline** (heading carried the date), **tag**",
         "(resolved from the release tag), **neighbor** (approximated from the next",
         "older entry, marked ≈), and **first-commit** (approximated from the",
-        "repo's first commit, marked ≈).",
+        "repo's first commit, marked ≈). **Unlogged** counts release-shaped",
+        "tags, audited from the repo's first workspace-authored commit onward,",
+        "that match no entry in this file; versions named inside batch entries",
+        "count as logged.",
         "",
     ]
     if record.authors:
@@ -356,15 +431,21 @@ def _coverage(record: Record) -> list[str]:
             "",
         ]
     out += [
-        "| Repository | Entries | Inline | Tag | Neighbor | First commit | Duplicates |",
-        "|---|---:|---:|---:|---:|---:|---:|",
+        "| Repository | Entries | Inline | Tag | Neighbor | First commit | Duplicates | Unlogged |",
+        "|---|---:|---:|---:|---:|---:|---:|---:|",
     ]
+    unlogged_by_repo: dict[str, list[str]] = {}
     for r in sorted(record.repos, key=lambda r: r.name):
         counts = Counter(e.source for e in r.entries)
+        cutoff = r.stats.first if r.stats else None
+        unlogged = unlogged_tags(r.entries, r.tags, cutoff) if r.has_patchnotes else []
+        if unlogged:
+            unlogged_by_repo[r.name] = unlogged
+        cell = "-" if not r.has_patchnotes else str(len(unlogged))
         out.append(
             f"| {r.name} | {len(r.entries)} | {counts.get('inline', 0)}"
             f" | {counts.get('tag', 0)} | {counts.get('neighbor', 0)}"
-            f" | {counts.get('first-commit', 0)} | {r.dupes} |"
+            f" | {counts.get('first-commit', 0)} | {r.dupes} | {cell} |"
         )
     out.append("")
 
@@ -389,6 +470,23 @@ def _coverage(record: Record) -> list[str]:
                 what = e.label or e.version or ""
                 head = f" · {e.headline}" if e.headline else ""
                 out.append(f"- {what}{head}".rstrip())
+            out.append("")
+
+    if unlogged_by_repo:
+        out += [
+            "### Tags without entries",
+            "",
+            "Release-shaped tags whose version matches no entry above: a release",
+            "was tagged but never logged, or the entry's version and the tag",
+            "disagree.",
+            "",
+        ]
+        for r in sorted(record.repos, key=lambda r: r.name):
+            names = unlogged_by_repo.get(r.name)
+            if not names:
+                continue
+            out += [f"#### {r.name}", ""]
+            out += [f"- {name} ({r.tags[name]})" for name in names]
             out.append("")
 
     if record.ignored:

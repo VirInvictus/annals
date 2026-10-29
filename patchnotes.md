@@ -1,5 +1,42 @@
 # Patchnotes
 
+## v0.4.0 (2026-10-29)
+
+The audited record and the feed: the record now checks its own completeness
+against git, publishes as Atom, and its headlines stopped quoting whole
+paragraphs.
+
+- **Headline cap**: a harvested headline is verbatim while it is
+  headline-sized (250 characters or fewer); a longer plain paragraph or
+  bold/italic run is body prose, not a summary, and cuts at its first
+  sentence end. crash-course's entries were rendering at up to 2,154
+  characters, several ending in the literal `VERSION -> x.y.z.` stamp, and
+  69 of ~1,160 timeline entries ran over 300 characters. Short summaries
+  (the saforums and Colophon shapes) are byte-identical.
+- **Tag reconciliation**: the coverage table gains an Unlogged column and a
+  "Tags without entries" section: release-shaped tags that match no parsed
+  entry, per repo, dated. The record's completeness claim is now checked
+  against `git for-each-ref`, not asserted. The audit runs from each repo's
+  first workspace-authored commit onward (a fork checkout's inherited
+  upstream tags are not this workspace's unlogged releases), and versions
+  named inside batch entries count as logged, including an a.b.c-d.e.f
+  patch run (the opends wave shape). Stats-only repos show a dash: no log
+  to audit.
+- **The feed**: a third generator-owned site artifact, `patchnotes/feed.xml`:
+  the newest 50 exactly-dated entries as Atom, anchored to the newest
+  activity date like the record, byte-stable on quiet days. publish-site
+  stages it with the other two; entry ids are `tag:` URIs keyed on date,
+  repo, and version, and titles are XML-escaped timeline lines.
+- **Ledger**: the front-page line names the newest entry ("The newest entry
+  is **bindery-cli 0.59.0** (10-28)." as of this writing), from the same
+  ordering helper the timeline and feed share, so the three can never
+  disagree about what is newest.
+- **Display**: masthead and month counts carry thousands separators like
+  every other number in the record ("1,535 releases", not "1535" beside
+  "5,048 commits").
+
+86 tests green (up from 70), ruff clean.
+
 ## v0.3.0 (2026-10-27)
 
 The front-page ledger: the workspace totals now surface on the site's

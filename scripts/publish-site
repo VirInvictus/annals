@@ -32,15 +32,15 @@ fi
 cd "$SITE"
 git pull --ff-only -q
 # porcelain, not git diff: it also catches the untracked-file case (the very
-# first publish, before patchnotes.md is tracked). Both staged files are
+# first publish, before patchnotes.md is tracked). All staged files are
 # generator-owned, so blind staging can never sweep hand edits into a daily
 # refresh.
-if [[ -z $(git status --porcelain -- patchnotes.md _includes/ledger.md) ]]; then
+if [[ -z $(git status --porcelain -- patchnotes.md _includes/ledger.md patchnotes/feed.xml) ]]; then
   print -r -- "annals: site copy unchanged; nothing to publish"
   exit 0
 fi
 
-git add patchnotes.md _includes/ledger.md
+git add patchnotes.md _includes/ledger.md patchnotes/feed.xml
 git commit -q -m "docs: annals refresh, $TODAY"
 SHA=$(git rev-parse HEAD)
 git push -q

@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import re
+from collections.abc import Iterator
 from dataclasses import dataclass
 
 # Version-led heading. The component word needs two or more characters
@@ -83,6 +84,18 @@ _CATEGORIES = frozenset(
 )
 # A bullet's text: the marker stripped; soft-wrapped continuation lines join.
 _BULLET_START = re.compile(r"^(?:[-*+]|\d+[.)])\s+(?P<text>\S.*)$")
+# A release-shaped tag: optional component prefix, optional v, dotted
+# version, optional pre-release suffix; the whole name (the reverse check
+# for unlogged_tags).
+_TAG_VERSION = re.compile(
+    r"^(?:(?P<component>[A-Za-z][A-Za-z0-9_-]*?)-)?"
+    r"v?(?P<version>\d+(?:\.\d+)+(?:-[0-9A-Za-z.]+)?)$"
+)
+# A harvested headline quotes its source verbatim only while it is
+# headline-sized; a longer plain paragraph or run is body prose, not a
+# summary, and cuts at its first sentence end (the crash-course shape,
+# 2026-10-29: entries rendering at up to 2,154 characters).
+_SUMMARY_CAP = 250
 
 
 # Bare acronym labels (TUI, CLI) are section structure, not titles.
@@ -241,12 +254,13 @@ def _headline_after(lines: list[str], start: int) -> str:
     paragraph opening with a bold or italic run headlines with the run's
     inner text (the Hearth / Hearthfall / Framework shapes), extended
     through the sentence's end when the run closes on a colon label (the
-    lattice shape); a plain paragraph headlines whole, soft-wraps joined
-    (the saforums / Colophon shape). A first bullet headlines its sentence
-    under the same run rules (approved 2026-10-25: the bullet is body, not
-    an authored summary, but a naked version number serves nobody).
-    Thematic breaks and fenced blocks never contribute; a table row straight
-    after the heading leaves the entry bare.
+    lattice shape); a plain paragraph headlines whole while headline-sized,
+    soft-wraps joined (the saforums / Colophon shape), and cuts at its first
+    sentence end when longer (the crash-course shape). A first bullet
+    headlines its sentence under the same run rules (approved 2026-10-25:
+    the bullet is body, not an authored summary, but a naked version number
+    serves nobody). Thematic breaks and fenced blocks never contribute; a
+    table row straight after the heading leaves the entry bare.
     """
     paragraph: list[str] = []
     in_fence = False
@@ -303,23 +317,103 @@ def _bullet_text(lines: list[str], start: int, first: str) -> str:
 
 def _headline_from_text(text: str, cut_sentence: bool = True) -> str:
     """Run-aware headline extraction from one block of prose. Bullets cut at
-    the sentence boundary; summary paragraphs are quoted whole."""
+    the sentence boundary; whole-quote paths (summary paragraphs, bare runs)
+    stay verbatim while headline-sized (see _SUMMARY_CAP) and cut at the
+    first sentence end when longer."""
     joined = " ".join(text.split())
     run = _BOLD_RUN.match(joined) or _ITALIC_RUN.match(joined)
     if run is None:
-        if not cut_sentence:
-            return joined
-        sent = re.search(r"[.!?](?:\s|$)", joined)
-        return joined[: sent.end()].rstrip() if sent else joined
+        if cut_sentence or len(joined) > _SUMMARY_CAP:
+            return _first_sentence(joined)
+        return joined
     inner = " ".join(run.group(1).split())
     if not inner.endswith(":"):
-        return inner
+        return inner if len(inner) <= _SUMMARY_CAP else _first_sentence(inner)
     rest = joined[run.end() :].strip()
     if not rest:
         return inner
-    sent = re.search(r"[.!?](?:\s|$)", rest)
-    tail = rest[: sent.end()].strip() if sent else rest
+    tail = _first_sentence(rest)
     return " ".join(f"{inner} {tail}".split())
+
+
+def _first_sentence(text: str) -> str:
+    sent = re.search(r"[.!?](?:\s|$)", text)
+    return text[: sent.end()].rstrip() if sent else text
+
+
+def unlogged_tags(
+    entries: list[Entry], tags: dict[str, str], cutoff: str | None = None
+) -> list[str]:
+    """Release-shaped tags that match no parsed entry, newest first.
+
+    The reverse of _tag_lookup: a tag is logged when some release entry's
+    (component, version) produces it as a candidate, or when a batch
+    entry's headline names the version in prose (the opends wave shape;
+    an a.b.c-d.e.f run expands across its patches). A tag predating the
+    repo's first workspace-authored commit is inherited history (fork
+    checkouts carry upstream tags) and is never audited; with no cutoff,
+    everything is.
+    """
+    candidates: set[str] = set()
+    for entry in entries:
+        if entry.kind == "release":
+            if entry.version is None:
+                continue
+            v = entry.version
+            candidates.update((f"v{v}", v))
+            if entry.component:
+                candidates.update((f"{entry.component}-v{v}", f"{entry.component}-{v}"))
+        else:
+            candidates.update(_batch_version_candidates(entry.headline))
+    return [
+        name
+        for date, name in sorted(
+            (
+                (date, name)
+                for name, date in tags.items()
+                if _TAG_VERSION.match(name)
+                and name not in candidates
+                and (cutoff is None or date >= cutoff)
+            ),
+            reverse=True,
+        )
+    ]
+
+
+_BATCH_VERSION = re.compile(
+    r"(?:(?P<component>[A-Za-z][A-Za-z0-9_-]*)\s+)?"
+    r"v?(?P<first>\d+(?:\.\d+)+)"
+    r"(?:-(?P<second>\d+(?:\.\d+)+))?"
+)
+
+
+def _batch_version_candidates(headline: str) -> Iterator[str]:
+    """Every tag name a batch headline could be logging: each version token
+    (with its preceding component word, when it has one), and both ends of
+    an a.b.c-d.e.f patch run."""
+    for m in _BATCH_VERSION.finditer(headline):
+        component = m["component"]
+        for v in _expand_version_range(m["first"], m["second"]):
+            yield v
+            yield f"v{v}"
+            if component:
+                yield f"{component}-v{v}"
+                yield f"{component}-{v}"
+
+
+def _expand_version_range(first: str, second: str | None) -> list[str]:
+    """A batch wave's version run: 0.3.1-0.3.3 expands to 0.3.1, 0.3.2,
+    0.3.3 when the endpoints share major.minor and differ in patch only
+    (bounded, so a typo cannot mint thousands); anything else contributes
+    its endpoints."""
+    if second is None:
+        return [first]
+    a, b = first.split("."), second.split(".")
+    if len(a) == len(b) == 3 and a[:2] == b[:2]:
+        lo, hi = int(a[2]), int(b[2])
+        if 0 <= hi - lo <= 50:
+            return [f"{a[0]}.{a[1]}.{p}" for p in range(lo, hi + 1)]
+    return [first, second]
 
 
 def _tag_lookup(entry: Entry, tags: dict[str, str]) -> str | None:

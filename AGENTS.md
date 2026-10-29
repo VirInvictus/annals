@@ -9,9 +9,11 @@ Guidance for any coding agent working in this repository.
 renders `ANNALS.md` at this repo's root (the canonical projection), the site
 copy at `~/.gitrepos/VirInvictus.github.io/patchnotes.md` (the same record
 wrapped in Jekyll front matter and a Liquid raw block, published at
-`/patchnotes/`), and the front-page ledger line written to the site's
+`/patchnotes/`), the front-page ledger line written to the site's
 `_includes/ledger.md` (a generator-owned include the README renders with a
-Liquid include tag). `scripts/publish-site` is the daily pipeline:
+Liquid include tag), and the Atom feed at the site's
+`patchnotes/feed.xml` (a static file Jekyll copies verbatim; served at
+`/patchnotes/feed.xml`). `scripts/publish-site` is the daily pipeline:
 regenerate, commit locally, commit and push the site artifacts when they
 changed, verify the Pages build, revert on failure. Python 3.14, standard
 library only, no network (the publish script's git/gh calls are its only
@@ -31,9 +33,10 @@ rename any of the three files.
 ## Read-only guarantee
 
 The tool only ever reads member repos (`patchnotes.md`, `git log`,
-`git for-each-ref`). It writes `ANNALS.md` in this repo plus the two
-configured site artifacts (the patchnotes copy and the ledger include),
-both generator-owned: hand-authored site pages are never touched. It
+`git for-each-ref`). It writes `ANNALS.md` in this repo plus the three
+configured site artifacts (the patchnotes copy, the ledger include, and
+the Atom feed), all generator-owned: hand-authored site pages are never
+touched. It
 never commits, never pushes, and touches nothing else under the workspace
 root; the publish script owns git. Any change that breaks this guarantee
 is a spec violation, not a refactor.

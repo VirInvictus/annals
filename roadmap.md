@@ -16,3 +16,7 @@
 - [x] Phase 8: the front-page ledger line (`[ledger]` target, the
   generator-owned include the README renders, publish-site staging
   both generator-owned site artifacts)
+- [x] Phase 9: the audited record and the feed (the headline cap for
+  oversized plain paragraphs and runs, tag reconciliation in the coverage
+  appendix, the Atom feed artifact, the ledger's newest-entry line,
+  thousands separators in the dashboard)

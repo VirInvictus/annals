@@ -4,7 +4,14 @@ from __future__ import annotations
 
 from annals.gitstats import RepoStats
 from annals.parse import Entry
-from annals.render import Record, RepoRecord, render, render_ledger, render_site
+from annals.render import (
+    Record,
+    RepoRecord,
+    render,
+    render_feed,
+    render_ledger,
+    render_site,
+)
 
 
 def entry(
@@ -42,6 +49,7 @@ def test_dashboard_timeline_and_coverage() -> None:
             entry("busy", "1.9.0", "2026-09-14", headline="Steady", index=1),
         ],
         stats=stats("2026-05-01", "2026-10-09", {"2026-09": 40, "2026-10": 12}, 1_234),
+        tags={"v0.9.0": "2026-07-01"},  # tagged, never logged (after the cutoff)
     )
     approx_repo = RepoRecord(
         name="approx-repo",
@@ -76,6 +84,7 @@ def test_dashboard_timeline_and_coverage() -> None:
         name="stats-only",
         entries=[],
         stats=stats("2026-02-01", "2026-02-02", {"2026-02": 2}, 2),
+        has_patchnotes=False,
     )
     record = Record(
         repos=[busy, approx_repo, undated, stats_only],
@@ -125,9 +134,14 @@ def test_dashboard_timeline_and_coverage() -> None:
     assert "#### approx-repo" in text
     assert "- 0.2.0 · Guessed" in text
 
-    # Coverage: source counts and ignored directories
-    assert "| busy | 2 | 2 | 0 | 0 | 0 | 0 |" in text
-    assert "| approx-repo | 1 | 0 | 0 | 1 | 0 | 0 |" in text
+    # Coverage: source counts, ignored directories, and unlogged tags
+    assert "| busy | 2 | 2 | 0 | 0 | 0 | 0 | 1 |" in text
+    assert "| approx-repo | 1 | 0 | 0 | 1 | 0 | 0 | 0 |" in text
+    assert "| stats-only | 0 | 0 | 0 | 0 | 0 | 0 | - |" in text
+    assert "**Unlogged** counts release-shaped" in text
+    assert "### Tags without entries" in text
+    assert "#### busy" in text
+    assert "- v0.9.0 (2026-07-01)" in text
     assert "`stray-dir`" in text
 
 
@@ -173,11 +187,75 @@ def test_render_ledger_totals_month_and_link() -> None:
     assert line.startswith("As of 2026-10-09 the ledger reads")
     assert "**1 repository · 2 releases · 12,345 commits**" in line
     assert "October 2026 added 1 release across 1 of them" in line
+    assert "The newest entry is **busy 2.0.0** (10-09)." in line
     assert "[the patchnotes](" in line
     assert "{{ '/patchnotes/' | relative_url }}" in line
     assert line.endswith("own log.\n")
     assert "—" not in line
-    assert "–" not in line
+
+
+def test_render_ledger_without_dated_entries_has_no_newest() -> None:
+    record = Record(repos=[], latest="2026-10-09", generator="annals 0.4.0")
+    line = render_ledger(record)
+    assert "The newest entry" not in line
+
+
+def test_render_feed_structure_order_and_determinism() -> None:
+    busy = RepoRecord(
+        name="busy",
+        entries=[
+            entry("busy", "2.0.0", "2026-10-09", headline="The big one", index=0),
+            entry("busy", "1.9.0", "2026-09-14", headline="Steady", index=1),
+            entry(
+                "busy",
+                None,
+                "2026-08-01",
+                headline="A batch",
+                kind="batch",
+                index=2,
+            ),
+        ],
+        stats=stats("2026-05-01", "2026-10-09", {"2026-10": 12}, 12),
+    )
+    record = Record(repos=[busy], latest="2026-10-09", generator="annals 0.4.0")
+
+    feed = render_feed(record, "https://example.com", limit=2)
+
+    assert feed.startswith('<?xml version="1.0" encoding="utf-8"?>')
+    assert '<feed xmlns="http://www.w3.org/2005/Atom">' in feed
+    assert "<title>The Annals</title>" in feed
+    assert "<id>tag:example.com,2026:/patchnotes/</id>" in feed
+    assert "<updated>2026-10-09T00:00:00Z</updated>" in feed
+    assert '<link rel="self" href="https://example.com/patchnotes/feed.xml"/>' in feed
+    assert '<link rel="alternate" href="https://example.com/patchnotes/"/>' in feed
+    assert feed.count("<entry>") == 2
+    # Newest first, limit respected: the batch entry is cut.
+    assert feed.index("busy 2.0.0") < feed.index("busy 1.9.0")
+    assert "A batch" not in feed
+    assert "<id>tag:example.com,2026:2026-10-09/busy/2.0.0</id>" in feed
+    assert feed.endswith("</feed>\n")
+    # Byte-stable regeneration, the same determinism rule as the record.
+    assert render_feed(record, "https://example.com", limit=2) == feed
+
+
+def test_render_feed_escapes_xml() -> None:
+    busy = RepoRecord(
+        name="busy",
+        entries=[
+            entry(
+                "busy",
+                "1.0.0",
+                "2026-10-09",
+                headline='Fish & <chips>: "quoted"',
+                index=0,
+            )
+        ],
+        stats=stats("2026-10-01", "2026-10-09", {"2026-10": 1}, 1),
+    )
+    record = Record(repos=[busy], latest="2026-10-09", generator="annals 0.4.0")
+    feed = render_feed(record, "https://example.com")
+    assert "Fish &amp; &lt;chips&gt;: &quot;quoted&quot;" in feed
+    assert "<chips>" not in feed
 
 
 def test_render_ledger_tolerates_a_default_record() -> None:

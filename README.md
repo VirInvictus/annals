@@ -20,12 +20,15 @@ so the volume and shape of the work is visible in one place.
 - Renders `ANNALS.md`: totals, a per-repo table, monthly activity bars, a
   stacked language-distribution bar plus ranked table, a newest-first
   timeline of every release grouped by month, and a coverage appendix
-  reporting exactly how each date was resolved.
+  reporting exactly how each date was resolved, plus release-shaped git
+  tags that match no entry (the audit for tagged-but-never-logged work).
 
 The per-repo `patchnotes.md` files remain canonical. annals only reads them;
 `ANNALS.md` is a projection, always reproducible with one command. With a
 `[site]` target configured, the same record is also written as a Jekyll page
-for publication (the Vir Invictus site serves it at `/patchnotes/`).
+for publication (the Vir Invictus site serves it at `/patchnotes/`), beside
+two smaller generator-owned artifacts: the front-page ledger include and an
+Atom feed of the newest releases at `/patchnotes/feed.xml`.
 
 ## Usage
 

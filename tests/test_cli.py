@@ -93,6 +93,7 @@ def make_config(ws: Path, output: Path) -> Path:
     cfg = ws.parent / "annals.toml"
     site_out = ws.parent / "site" / "patchnotes.md"
     ledger_out = ws.parent / "site" / "_includes" / "ledger.md"
+    feed_out = ws.parent / "site" / "patchnotes" / "feed.xml"
     cfg.write_text(
         "[workspace]\n"
         f'root = "{ws}"\n'
@@ -111,7 +112,11 @@ def make_config(ws: Path, output: Path) -> Path:
         f'path = "{site_out}"\n'
         'front_matter = "---\\nlayout: default\\npermalink: /patchnotes/\\n---"\n'
         "\n[ledger]\n"
-        f'path = "{ledger_out}"\n',
+        f'path = "{ledger_out}"\n'
+        "\n[feed]\n"
+        f'path = "{feed_out}"\n'
+        'site_url = "https://example.com"\n'
+        "limit = 1\n",
         encoding="utf-8",
     )
     return cfg
@@ -136,6 +141,10 @@ def test_config_load_and_output_resolution(tmp_path: Path) -> None:
     assert config.site.front_matter.startswith("---\n")
     assert config.ledger is not None
     assert config.ledger.path == tmp_path / "site" / "_includes" / "ledger.md"
+    assert config.feed is not None
+    assert config.feed.path == tmp_path / "site" / "patchnotes" / "feed.xml"
+    assert config.feed.site_url == "https://example.com"
+    assert config.feed.limit == 1
 
 
 def test_config_without_site_section(tmp_path: Path) -> None:
@@ -145,6 +154,7 @@ def test_config_without_site_section(tmp_path: Path) -> None:
     config = load_config(cfg)
     assert config.site is None
     assert config.ledger is None
+    assert config.feed is None
 
 
 def test_defaults_when_config_missing(tmp_path: Path) -> None:
@@ -157,6 +167,7 @@ def test_defaults_when_config_missing(tmp_path: Path) -> None:
     assert config.authors_display == ""
     assert config.site is None
     assert config.ledger is None
+    assert config.feed is None
 
 
 def test_cli_stdout_end_to_end(tmp_path: Path, capsys) -> None:
@@ -184,6 +195,7 @@ def test_cli_stdout_end_to_end(tmp_path: Path, capsys) -> None:
     assert not output.exists()
     assert not (tmp_path / "site" / "patchnotes.md").exists()
     assert not (tmp_path / "site" / "_includes" / "ledger.md").exists()
+    assert not (tmp_path / "site" / "patchnotes" / "feed.xml").exists()
 
 
 def test_cli_write_then_check(tmp_path: Path, capsys) -> None:
@@ -203,14 +215,21 @@ def test_cli_write_then_check(tmp_path: Path, capsys) -> None:
     assert ledger_text.startswith("As of ")
     assert ledger_text.endswith("own log.\n")
     assert "{% raw %}" not in ledger_text
+    feed_out = tmp_path / "site" / "patchnotes" / "feed.xml"
+    feed_text = feed_out.read_text(encoding="utf-8")
+    assert feed_text.startswith('<?xml version="1.0" encoding="utf-8"?>')
+    assert feed_text.count("<entry>") == 1  # the [feed] limit
+    assert "<id>tag:example.com,2026:2026-03-05/repo-a/1.1.0</id>" in feed_text
     capsys.readouterr()
 
     assert main(["--config", str(cfg), "--check"]) == 0
     capsys.readouterr()
 
-    before = ledger_out.read_text(encoding="utf-8")
+    before_ledger = ledger_out.read_text(encoding="utf-8")
+    before_feed = feed_out.read_text(encoding="utf-8")
     assert main(["--config", str(cfg)]) == 0
-    assert ledger_out.read_text(encoding="utf-8") == before
+    assert ledger_out.read_text(encoding="utf-8") == before_ledger
+    assert feed_out.read_text(encoding="utf-8") == before_feed
     capsys.readouterr()
 
     output.write_text(
@@ -226,4 +245,11 @@ def test_config_rejects_non_table_ledger(tmp_path: Path) -> None:
     cfg = tmp_path / "bad.toml"
     cfg.write_text('ledger = true\n[workspace]\nroot = "."\n', encoding="utf-8")
     with pytest.raises(ValueError, match="ledger"):
+        load_config(cfg)
+
+
+def test_config_rejects_non_table_feed(tmp_path: Path) -> None:
+    cfg = tmp_path / "bad.toml"
+    cfg.write_text('feed = 50\n[workspace]\nroot = "."\n', encoding="utf-8")
+    with pytest.raises(ValueError, match="feed"):
         load_config(cfg)

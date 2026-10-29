@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from annals.parse import parse_patchnotes, resolve_dates
+from annals.parse import parse_patchnotes, resolve_dates, unlogged_tags
 
 
 def one(text: str):
@@ -388,6 +388,45 @@ def test_colon_label_bold_extends_to_sentence_end() -> None:
     )
 
 
+def test_oversized_plain_paragraph_cuts_at_sentence() -> None:
+    # The crash-course shape: no subtitle, and the first paragraph is the
+    # whole entry, ending in the VERSION stamp. Body prose, not a summary:
+    # the headline cuts at its first sentence end (2026-10-29).
+    entry = one(
+        "## v0.18.0 - 2026-10-07\n"
+        "\n"
+        "Phase 14: The Fleet. Seven airframes, all data: the starter 747 stays\n"
+        "as Flight 1401, and the catalog adds the regional jet, the aerobatic\n"
+        "single, the cargo hauler, the widebody double-decker, plus the absurd\n"
+        "tier: Route 12, the school bus with wings, and a riding mower. Every\n"
+        "airframe is one catalog entry plus one blocked-in mesh builder, and\n"
+        "the proof pass found real defects, fixed here. VERSION -> 0.18.0.\n"
+    )
+    assert entry.headline == "Phase 14: The Fleet."
+
+
+def test_plain_paragraph_at_the_cap_stays_whole() -> None:
+    body = "B" * 243 + ". Tail."
+    assert len(body) == 250
+    entry = one(f"## v1.0.0\n\n{body}\n")
+    assert entry.headline == body
+
+
+def test_plain_paragraph_over_the_cap_cuts() -> None:
+    body = "B" * 244 + ". Tail."
+    assert len(body) == 251
+    entry = one(f"## v1.0.0\n\n{body}\n")
+    assert entry.headline == "B" * 244 + "."
+
+
+def test_oversized_bold_run_cuts_at_sentence() -> None:
+    # The run path quotes its inner text verbatim, but only while it is
+    # headline-sized; a monster run is body too.
+    run = "The audit found one real defect. " + "x " * 130
+    entry = one(f"## v0.13.68\n\n**{run.rstrip()}** More prose beyond it.\n")
+    assert entry.headline == "The audit found one real defect."
+
+
 def test_duplicate_versions_collapse() -> None:
     text = "## v1.0.0: The Wayland Release\n\n## v0.9.0 (2026-01-01)\n\n## v1.0.0: Stable\n"
     entries, dupes = parse_patchnotes("repo", text)
@@ -479,3 +518,83 @@ def test_resolve_first_commit_bottom_anchor() -> None:
     assert all(
         e.resolved == "2025-12-01" and e.source == "first-commit" for e in entries
     )
+
+
+# --- tag reconciliation ---
+
+
+def _entries(text: str):
+    entries, _ = parse_patchnotes("repo", text)
+    return entries
+
+
+def test_unlogged_tags_reports_version_shaped_only() -> None:
+    entries = _entries("## v1.1.0 (2026-02-02)\n\n## v1.0.0 (2026-01-01)\n")
+    tags = {
+        "v1.1.0": "2026-02-02",
+        "v1.0.0": "2026-01-01",
+        "v0.9.0": "2025-12-31",
+        "nightly": "2025-11-01",
+    }
+    assert unlogged_tags(entries, tags) == ["v0.9.0"]
+
+
+def test_unlogged_tags_newest_first() -> None:
+    entries = _entries("## v1.0.0 (2026-01-01)\n")
+    tags = {"v0.8.0": "2025-11-11", "v0.9.0": "2025-12-31"}
+    assert unlogged_tags(entries, tags) == ["v0.9.0", "v0.8.0"]
+
+
+def test_unlogged_tags_component_candidates() -> None:
+    # The opends shape: component-prefixed tags match their own entries and
+    # never another component's.
+    entries = _entries("## darkfix-ds1 v0.1.3 (2026-10-07)\n")
+    tags = {"darkfix-ds1-v0.1.3": "2026-10-07", "darkfix-ds2-v0.1.3": "2026-10-07"}
+    assert unlogged_tags(entries, tags) == ["darkfix-ds2-v0.1.3"]
+
+
+def test_unlogged_tags_bare_and_v_names_match() -> None:
+    entries = _entries("## 0.9.10\n")
+    assert unlogged_tags(entries, {"0.9.10": "2026-09-15"}) == []
+    assert unlogged_tags(entries, {"v0.9.10": "2026-09-15"}) == []
+
+
+def test_unlogged_tags_batches_never_match() -> None:
+    # A batch entry carries no version, so it can log no tag; every
+    # version-shaped tag in a batch-only repo is unlogged.
+    entries = _entries("## 2026-09-06 hardening batch: tools\n")
+    tags = {"v1.0.0": "2026-09-06"}
+    assert unlogged_tags(entries, tags) == ["v1.0.0"]
+
+
+def test_unlogged_tags_batch_headline_logs_component_versions() -> None:
+    # The opends wave shape: tool releases logged as a dated batch entry.
+    # The headline's component-plus-version tokens count as logged.
+    entries = _entries(
+        "## 2026-09-06 hardening batch: save-inspect v0.9.6, ovr-map v0.3.1-0.3.3\n"
+    )
+    tags = {
+        "save-inspect-v0.9.6": "2026-09-06",
+        "ovr-map-v0.3.1": "2026-09-06",
+        "ovr-map-v0.3.2": "2026-09-06",
+        "ovr-map-v0.3.3": "2026-09-06",
+    }
+    assert unlogged_tags(entries, tags) == []
+
+
+def test_unlogged_tags_batch_range_expands_patches_only() -> None:
+    # An a.b.c-d.e.f run in a batch headline expands across its patches
+    # when the endpoints share major.minor; other versions stay unlogged.
+    entries = _entries("## 2026-09-06 wave: ovr-map v0.3.1-0.3.3\n")
+    tags = {"ovr-map-v0.3.1": "2026-09-06", "ovr-map-v0.4.0": "2026-09-06"}
+    assert unlogged_tags(entries, tags) == ["ovr-map-v0.4.0"]
+
+
+def test_unlogged_tags_cutoff_skips_inherited_history() -> None:
+    # The Carrel-calibre-web shape: a fork checkout carries upstream tags
+    # predating the workspace's first authored commit. They are inherited
+    # history, not this workspace's unlogged releases.
+    entries = _entries("## 0.6.45 (2026-10-17)\n")
+    tags = {"0.6.26": "2026-02-06", "0.6.46": "2026-10-20"}
+    assert unlogged_tags(entries, tags, cutoff="2026-06-11") == ["0.6.46"]
+    assert unlogged_tags(entries, tags) == ["0.6.46", "0.6.26"]

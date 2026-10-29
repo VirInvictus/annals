@@ -10,8 +10,9 @@ represent, and what is its shape over time? It renders a single record,
 - each repo's git history (commits, tags).
 
 annals is read-only against the workspace. Its writes are `ANNALS.md`
-inside its own repo and, when configured, the two published site
-artifacts: the patchnotes copy and the front-page ledger include.
+inside its own repo and, when configured, the three published site
+artifacts: the patchnotes copy, the front-page ledger include, and the
+Atom feed.
 
 ## Semantics
 
@@ -65,7 +66,10 @@ thematic breaks (`---`):
    run's inner text is the headline (the Hearth / Hearthfall / Framework
    shapes), extended through the sentence's end when the run closes on a
    colon label (the lattice shape); a plain paragraph is quoted whole,
-   soft-wraps joined (the saforums / Colophon shape).
+   soft-wraps joined, while it is headline-sized (250 characters or fewer;
+   the saforums / Colophon shape). A harvested headline longer than the cap
+   is body prose, not a summary, and cuts at its first sentence end (the
+   crash-course shape).
 3. The first bullet, cut at its sentence end, under the same run rules
    (approved 2026-10-25). The bullet is body rather than an authored
    summary; it headlines because a naked version number serves nobody.
@@ -147,8 +151,12 @@ of repos using it.
    year then month; one line per entry: date, repo, component and/or
    version, headline verbatim from the source.
 4. Coverage appendix: per-repo date-source counts (inline, tag, neighbor,
-   first-commit, duplicates), the Undated records (approximate entries in
-   file order), and the ignored directories.
+   first-commit, duplicates, and unlogged release-shaped tags), the
+   Tags without entries section, the Undated records (approximate entries
+   in file order), and the ignored directories. The unlogged audit runs
+   from each repo's first workspace-authored commit onward (inherited fork
+   history is not this workspace's), and versions named inside batch
+   entries, including an a.b.c-d.e.f patch run, count as logged.
 
 Headlines are quoted verbatim from member patchnotes and may contain
 anything, including em-dashes. Prose the generator itself authors contains
@@ -171,18 +179,34 @@ different wrapper.
 When `[ledger]` is configured, the run also writes one paragraph to the
 target file: the VirInvictus site's `_includes/ledger.md`, a
 generator-owned include the site README renders with a Liquid include
-tag. The paragraph carries the dashboard totals, the month's shape, and
-the patchnotes link. It anchors to the newest activity date and carries
-no em-dashes, like all generator-authored prose. The file belongs to the
-same write family as the site copy: created when missing, overwritten
-every run, never a hand-authored page.
+tag. The paragraph carries the dashboard totals, the month's shape, the
+newest entry, and the patchnotes link. It anchors to the newest activity
+date and carries no em-dashes, like all generator-authored prose. The file
+belongs to the same write family as the site copy: created when missing,
+overwritten every run, never a hand-authored page.
+
+### The feed
+
+When `[feed]` is configured, the run also writes an Atom 1.0 document to
+the target path: the VirInvictus site's `patchnotes/feed.xml`, a static
+file Jekyll copies verbatim, so the site serves it at
+`/patchnotes/feed.xml`. The newest `limit` exactly-dated entries, in the
+timeline's own ordering, become `<entry>` elements whose titles are the
+timeline lines without markdown. Absolute links derive from
+`[feed] site_url`, which must match the site's own `_config.yml` url.
+`updated` anchors to the newest activity date at a fixed midnight UTC,
+never the generation time, so a quiet workspace regenerates byte-identical
+XML; entry ids are `tag:` URIs keyed on date, repo, and version (a
+headline digest when the entry carries no version). The file belongs to
+the same write family as the site copy and the ledger.
 
 ## CLI
 
 - `annals` (default): regenerate `ANNALS.md`, write it, write the site copy
   when `[site]` is configured, write the ledger include when `[ledger]` is
-  configured, and print a summary (repos tracked, entries, duplicates
-  collapsed, approximations, ignored directories).
+  configured, write the Atom feed when `[feed]` is configured, and print a
+  summary (repos tracked, entries, duplicates collapsed, approximations,
+  ignored directories).
 - `annals --stdout`: print the record to stdout; write nothing.
 - `annals --check`: regenerate in memory and compare; exit 0 when
   `ANNALS.md` is current, exit 1 when stale or missing.

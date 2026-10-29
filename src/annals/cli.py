@@ -17,6 +17,7 @@ from .render import (
     Record,
     RepoRecord,
     render,
+    render_feed,
     render_ledger,
     render_site,
 )
@@ -27,12 +28,13 @@ def build(config: Config) -> Record:
     records: list[RepoRecord] = []
     for repo in repos:
         stats = repo_stats(repo.path, config.authors)
+        tags = tag_dates(repo.path)
         entries: list[Entry] = []
         dupes = 0
         if repo.has_patchnotes:
             text = (repo.path / "patchnotes.md").read_text(encoding="utf-8")
             entries, dupes = parse_patchnotes(repo.name, text)
-            resolve_dates(entries, tag_dates(repo.path), stats.first if stats else None)
+            resolve_dates(entries, tags, stats.first if stats else None)
         languages = (
             None if repo.name in config.language_exclude else repo_languages(repo.path)
         )
@@ -43,6 +45,8 @@ def build(config: Config) -> Record:
                 dupes=dupes,
                 stats=stats,
                 languages=languages,
+                tags=tags,
+                has_patchnotes=repo.has_patchnotes,
             )
         )
     anchored = [e.resolved for rec in records for e in rec.entries if e.resolved]
@@ -103,6 +107,11 @@ def main(argv: list[str] | None = None) -> int:
         config.ledger.path.parent.mkdir(parents=True, exist_ok=True)
         config.ledger.path.write_text(render_ledger(record), encoding="utf-8")
         print(f"annals: wrote {config.ledger.path}")
+    if config.feed is not None:
+        config.feed.path.parent.mkdir(parents=True, exist_ok=True)
+        feed_text = render_feed(record, config.feed.site_url, config.feed.limit)
+        config.feed.path.write_text(feed_text, encoding="utf-8")
+        print(f"annals: wrote {config.feed.path}")
     _summarize(record, sys.stdout)
     return 0
 

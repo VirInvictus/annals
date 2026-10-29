@@ -69,6 +69,14 @@ DEFAULT_SITE_FRONT_MATTER = (
 # site copy; no [ledger] section means no write.
 DEFAULT_LEDGER_PATH = "~/.gitrepos/VirInvictus.github.io/_includes/ledger.md"
 
+# The Atom feed: a third generator-owned artifact, written where Jekyll
+# copies it verbatim so it serves at /patchnotes/feed.xml. site_url must
+# match the site's own _config.yml url (absolute links in a feed); limit
+# caps the entry count.
+DEFAULT_FEED_PATH = "~/.gitrepos/VirInvictus.github.io/patchnotes/feed.xml"
+DEFAULT_FEED_SITE_URL = "https://virinvictus.github.io"
+DEFAULT_FEED_LIMIT = 50
+
 
 @dataclass(frozen=True)
 class SiteTarget:
@@ -82,6 +90,13 @@ class LedgerTarget:
 
 
 @dataclass(frozen=True)
+class FeedTarget:
+    path: Path
+    site_url: str
+    limit: int
+
+
+@dataclass(frozen=True)
 class Config:
     workspace: Path
     output: Path
@@ -91,6 +106,7 @@ class Config:
     authors_display: str = ""
     site: SiteTarget | None = None
     ledger: LedgerTarget | None = None
+    feed: FeedTarget | None = None
     language_exclude: frozenset[str] = frozenset()
     descriptions: dict[str, str] = field(default_factory=dict)
     links: dict[str, str] = field(default_factory=dict)
@@ -124,6 +140,11 @@ def load_config(path: Path | None = None) -> Config:
         raise ValueError(
             f"[ledger] must be a table, got {type(ledger).__name__}; check annals.toml"
         )
+    feed = data.get("feed")
+    if feed is not None and not isinstance(feed, dict):
+        raise ValueError(
+            f"[feed] must be a table, got {type(feed).__name__}; check annals.toml"
+        )
     langs = data.get("languages", {})
     out = Path(run.get("output", "ANNALS.md"))
     site_path = site.get("path", DEFAULT_SITE_PATH) if site else None
@@ -145,6 +166,15 @@ def load_config(path: Path | None = None) -> Config:
                 path=Path(ledger.get("path", DEFAULT_LEDGER_PATH)).expanduser()
             )
             if ledger is not None
+            else None
+        ),
+        feed=(
+            FeedTarget(
+                path=Path(feed.get("path", DEFAULT_FEED_PATH)).expanduser(),
+                site_url=str(feed.get("site_url", DEFAULT_FEED_SITE_URL)),
+                limit=int(feed.get("limit", DEFAULT_FEED_LIMIT)),
+            )
+            if feed is not None
             else None
         ),
         language_exclude=frozenset(langs.get("exclude", ())),
