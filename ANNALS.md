@@ -8,9 +8,9 @@ remain canonical; this file is a projection, reproducible with
 
 ## The shape of the work
 
-- **43 repositories tracked · 1535 releases recorded · 5,047 commits, authored by Brandon LaRocque**
-- Span: 2025-08-10 to 2026-10-28
-- This month (2026-10): 186 releases across 20 repos · 890 commits
+- **43 repositories tracked · 1535 releases recorded · 5,048 commits, authored by Brandon LaRocque**
+- Span: 2025-08-10 to 2026-10-29
+- This month (2026-10): 186 releases across 20 repos · 891 commits
 
 | Repository | What it is | Releases | Latest | Last release | Commits | Active since |
 |---|---|---:|---|---|---:|---|
@@ -46,7 +46,7 @@ remain canonical; this file is a projection, reproducible with
 | [kanagawa-dragon-nvim-emacs](https://github.com/VirInvictus/kanagawa-dragon-nvim-emacs) | Faithful Emacs deftheme port of the Kanagawa Dragon palette, mapping every Emacs 29+ tree-sitter face. | 7 | 0.2.1 | 2026-09-15 | 34 | 2026-07-24 |
 | [AudiobookTools](https://github.com/VirInvictus/AudiobookTools) | Declarative tag-and-folder normalizer for the audiobook library; dry-run default, reversible --apply, never re-encodes. | 6 | 0.3.0 | 2026-09-15 | 37 | 2026-05-28 |
 | Foyer | Shared front door to Hearth and Haveli: game launcher plus LAN lobby; holds no game rules. | 6 | 0.2.0 | 2026-09-15 | 32 | 2026-07-17 |
-| annals | This generator: the workspace's whole work record, rendered from every repo's patchnotes and git history. | 6 | 0.3.0 | 2026-10-27 | 55 | 2026-10-09 |
+| annals | This generator: the workspace's whole work record, rendered from every repo's patchnotes and git history. | 6 | 0.3.0 | 2026-10-27 | 56 | 2026-10-09 |
 | [dragon-agents](https://github.com/VirInvictus/dragon-agents) | Local ZCode plugin of twenty-three read-only research subagents: repo mapping, release audits, CI triage, markets and finance briefs. | 6 | 0.6.0 | 2026-10-05 | 14 | 2026-09-03 |
 | [Docket](https://github.com/VirInvictus/Docket) | Native GTK4 plain-text task editor, clean-room faithful to the TaskPaper 3 format and query language. | 4 | 1.0.0 | 2026-10-13 | 19 | 2026-10-12 |
 | dragon-themer | Theme engine for the whole machine: one palette rendered into every colour-bearing config. | 2 | 0.1.0 | 2026-10-07 | 34 | 2026-07-28 |
@@ -73,7 +73,7 @@ remain canonical; this file is a projection, reproducible with
 | 2026-07 | ▇▇▇▇▇▇▇▇▇▇▇▇ 154 | ▇▇▇▇▇▇▇▇ 476 |
 | 2026-08 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 165 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 776 |
 | 2026-09 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 349 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 1,729 |
-| 2026-10 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 186 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 890 |
+| 2026-10 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 186 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 891 |
 
 ## The languages
 
