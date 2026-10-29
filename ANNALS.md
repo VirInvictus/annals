@@ -8,22 +8,22 @@ remain canonical; this file is a projection, reproducible with
 
 ## The shape of the work
 
-- **43 repositories tracked · 1,536 releases recorded · 5,051 commits, authored by Brandon LaRocque**
+- **43 repositories tracked · 1,539 releases recorded · 5,065 commits, authored by Brandon LaRocque**
 - Span: 2025-08-10 to 2026-10-29
-- This month (2026-10): 187 releases across 20 repos · 894 commits
+- This month (2026-10): 190 releases across 20 repos · 908 commits
 
 | Repository | What it is | Releases | Latest | Last release | Commits | Active since |
 |---|---|---:|---|---|---:|---|
 | [Atrium](https://github.com/VirInvictus/Atrium) | Native Linux task manager: Org-mode internals, Things 3 / OmniFocus surface, local-first SQLite. | 172 | 0.76.0 | 2026-09-14 | 359 | 2026-05-05 |
 | [Conservatory](https://github.com/VirInvictus/Conservatory) | Calibre for audio: a native library manager that owns and moves music, podcasts, and audiobooks on disk, with a libmpv player. | 160 | 0.9.1 | 2026-10-11 | 294 | 2026-05-27 |
 | [Viaduct](https://github.com/VirInvictus/Viaduct) | Linux port of NetNewsWire: local-first RSS reader, single-writer SQLite, FTS5 search, Inoreader sync. | 129 | 4.4.1 | 2026-10-25 | 256 | 2026-04-19 |
-| [CalibreQuarry](https://github.com/VirInvictus/CalibreQuarry) | CLI toolkit over Calibre's metadata.db: catalogs, stats, audits, parity search, and a pre-import curation screen. | 117 | 3.75.0 | 2026-10-25 | 392 | 2026-03-27 |
+| [CalibreQuarry](https://github.com/VirInvictus/CalibreQuarry) | CLI toolkit over Calibre's metadata.db: catalogs, stats, audits, parity search, and a pre-import curation screen. | 119 | 3.77.0 | 2026-10-29 | 394 | 2026-03-27 |
 | [lattice-music](https://github.com/VirInvictus/lattice-music) | CLI/TUI for music collections: ~30 read-only audit and visualization modes with the filesystem as source of truth; writes are explicit and opt-in. | 107 | 6.4.1 | 2026-10-11 | 338 | 2025-08-10 |
 | Catagotchi | Cozy cat tamagotchi wrapped around an idle empire; everything on screen is generated in code (Godot). | 104 | 4.51.0 | 2026-09-18 | 166 | 2026-07-10 |
 | Hearth | Two-player LAN digital build of A Feast for Odin on the same engine shape (private: the faithful dataset is git-ignored). | 101 | 0.13.68 | 2026-09-15 | 129 | 2026-06-14 |
 | [Framework](https://github.com/VirInvictus/Framework) | Native GTK4 document viewer for PDF, DjVu, comics, and EPUB-class ebooks, on twin render pipelines. | 97 | 1.0.2 | 2026-09-16 | 170 | 2026-04-06 |
 | [bindery-cli](https://github.com/VirInvictus/bindery-cli) | CLI that repairs broken EPUBs with deterministic, epubcheck-gated fixes, atomically and in place inside a Calibre library. | 83 | 0.59.0 | 2026-10-28 | 287 | 2026-06-09 |
-| [cquarry](https://github.com/VirInvictus/cquarry) | Canonical read-only Calibre database layer with a faithful port of Calibre's search grammar; the opt-in write module is the one sanctioned mutation path. | 44 | 1.28.1 | 2026-10-23 | 268 | 2026-08-23 |
+| [cquarry](https://github.com/VirInvictus/cquarry) | Canonical read-only Calibre database layer with a faithful port of Calibre's search grammar; the opt-in write module is the one sanctioned mutation path. | 45 | 1.28.2 | 2026-10-29 | 271 | 2026-08-23 |
 | [Hermitage](https://github.com/VirInvictus/Hermitage) | Visually immersive GTK4 gallery browser for Calibre libraries, reading metadata.db read-only; ships a Flatpak. | 43 | 1.8.6 | 2026-10-02 | 117 | 2026-04-10 |
 | [deadbeef-cui](https://github.com/VirInvictus/deadbeef-cui) | Faceted library-browser plugin for DeaDBeeF in the Columns UI style, on medialib and scriptable presets. | 43 | 2.2.1 | 2026-10-22 | 198 | 2026-04-09 |
 | [Hearthfall](https://github.com/VirInvictus/Hearthfall) | Grimdark clan-survival terminal game: stdlib-only engine, single seeded RNG, Textual TUI. | 35 | 0.28.0 | 2026-09-15 | 91 | 2026-07-19 |
@@ -43,7 +43,7 @@ remain canonical; this file is a projection, reproducible with
 | [saforums.koplugin](https://github.com/VirInvictus/saforums.koplugin) | KOReader plugin reading the Something Awful Forums as native e-reader widgets: login, unread tracking, bookmarks. | 9 | 0.5.4 | 2026-10-24 | 63 | 2026-10-08 |
 | [2-kobo-style-sleepscreen-banner-prettified](https://github.com/VirInvictus/2-kobo-style-sleepscreen-banner-prettified) | KOReader user patch redrawing the sleep screen as a Kobo-style floating card (prettified fork). | 8 | 2.1.4 | 2026-09-14 | 29 | 2026-07-05 |
 | [vir-tui](https://github.com/VirInvictus/vir-tui) | TUI primitive library (curses menus, prompts, progress, mouse plus type-to-filter) powering the Python CLI toolchain. | 8 | 2.5.0 | 2026-09-14 | 51 | 2026-08-23 |
-| annals | This generator: the workspace's whole work record, rendered from every repo's patchnotes and git history. | 7 | 0.4.0 | 2026-10-29 | 58 | 2026-10-09 |
+| annals | This generator: the workspace's whole work record, rendered from every repo's patchnotes and git history. | 7 | 0.4.0 | 2026-10-29 | 59 | 2026-10-09 |
 | [kanagawa-dragon-nvim-emacs](https://github.com/VirInvictus/kanagawa-dragon-nvim-emacs) | Faithful Emacs deftheme port of the Kanagawa Dragon palette, mapping every Emacs 29+ tree-sitter face. | 7 | 0.2.1 | 2026-09-15 | 34 | 2026-07-24 |
 | [AudiobookTools](https://github.com/VirInvictus/AudiobookTools) | Declarative tag-and-folder normalizer for the audiobook library; dry-run default, reversible --apply, never re-encodes. | 6 | 0.3.0 | 2026-09-15 | 37 | 2026-05-28 |
 | Foyer | Shared front door to Hearth and Haveli: game launcher plus LAN lobby; holds no game rules. | 6 | 0.2.0 | 2026-09-15 | 32 | 2026-07-17 |
@@ -52,8 +52,8 @@ remain canonical; this file is a projection, reproducible with
 | dragon-themer | Theme engine for the whole machine: one palette rendered into every colour-bearing config. | 2 | 0.1.0 | 2026-10-07 | 34 | 2026-07-28 |
 | [1-timezone](https://github.com/VirInvictus/1-timezone) | KOReader user patch forcing a correct POSIX TZ inside the process. | 0 | - | - | 7 | 2026-07-05 |
 | Coffer | Native GTK4 envelope-budgeting app over a plain-text hledger journal (the journal is the database). | 0 | - | - | 9 | 2026-06-28 |
-| [VirInvictus](https://github.com/VirInvictus/VirInvictus) | The GitHub profile README repo: one line and a shipping status per project. | 0 | - | - | 119 | 2026-06-22 |
-| [VirInvictus.github.io](https://github.com/VirInvictus/VirInvictus.github.io) | This site: static Jekyll on GitHub Pages; /patchnotes/ serves the annals record. | 0 | - | - | 239 | 2026-04-16 |
+| [VirInvictus](https://github.com/VirInvictus/VirInvictus) | The GitHub profile README repo: one line and a shipping status per project. | 0 | - | - | 121 | 2026-06-22 |
+| [VirInvictus.github.io](https://github.com/VirInvictus/VirInvictus.github.io) | This site: static Jekyll on GitHub Pages; /patchnotes/ serves the annals record. | 0 | - | - | 245 | 2026-04-16 |
 | [dead-reckoning-bookend-preset](https://github.com/VirInvictus/dead-reckoning-bookend-preset) | One-file KOReader preset: session pace, chapter ETA, projected finish. | 0 | - | - | 15 | 2026-07-03 |
 | project-void | Party-based isometric CRPG in the Dark Sun / Fallout 2 lineage on lethal Cairn combat math (pre-development). | 0 | - | - | 16 | 2026-04-17 |
 | project-yeschef | Grand-strategy restaurant sim in the CK3 / Victoria 3 lineage; you play the General Manager (pre-development). | 0 | - | - | 6 | 2026-05-23 |
@@ -73,11 +73,11 @@ remain canonical; this file is a projection, reproducible with
 | 2026-07 | ▇▇▇▇▇▇▇▇▇▇▇▇ 154 | ▇▇▇▇▇▇▇▇ 476 |
 | 2026-08 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 165 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 776 |
 | 2026-09 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 349 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 1,729 |
-| 2026-10 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 187 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 894 |
+| 2026-10 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 190 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 908 |
 
 ## The languages
 
-452,485 lines of code · 27 languages · 42 repos
+452,774 lines of code · 27 languages · 42 repos
 
 Code lines measured by `tokei` over each tracked repo's tree: reference clones and fork checkouts (the `[languages]` exclude) never count, and neither do lockfiles or data formats. A snapshot of the trees as they stand, not a measure of authorship pace.
 
@@ -88,8 +88,8 @@ Code lines measured by `tokei` over each tracked repo's tree: reference clones a
 
 | Language | Share | Code lines | Repos |
 |---|---|---:|---:|
-| Rust | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 38.4% | 173,630 | 11 |
-| Python | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 36.9% | 166,768 | 22 |
+| Rust | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 38.3% | 173,630 | 11 |
+| Python | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 36.9% | 167,057 | 22 |
 | GDScript | ▇▇▇▇▇▇ 10.9% | 49,509 | 6 |
 | C | ▇▇▇ 6.0% | 27,005 | 2 |
 | Lua | ▇▇ 3.0% | 13,423 | 5 |
@@ -108,7 +108,10 @@ Code lines measured by `tokei` over each tracked repo's tree: reference clones a
 
 #### October 2026
 
+- **10-29 · CalibreQuarry 3.77.0** · the cquarry 1.28.2 floor: the format-row setters refuse extension-carrying names (issue #42)
+- **10-29 · CalibreQuarry 3.76.0** · screen + evidence extractor: the parenthetical series annotation joins the strip list, and the copyright page's tail reaches the evidence row (issues #40, #41)
 - **10-29 · annals 0.4.0** · The audited record and the feed: the record now checks its own completeness against git, publishes as Atom, and its headlines stopped quoting whole paragraphs.
+- **10-29 · cquarry 1.28.2** · The set_format extension-name guard (issue #9)
 - **10-28 · bindery-cli 0.59.0** · Issue #23: the dangling NCX navPoint, pruned and re-sequenced in one gate
 - **10-27 · annals 0.3.0** · The front-page ledger: the workspace totals now surface on the site's front door, one paragraph above the fold, not only on the patchnotes page.
 - **10-26 · annals 0.2.0** · The parser repair and the public-page grounding: every entry now carries its source's headline, the dashboard says what each repo is, and the page stops handing scrapers the raw email.
@@ -1311,7 +1314,7 @@ commits that are not this workspace's work.
 | 2-kobo-style-sleepscreen-banner-prettified | 8 | 0 | 2 | 0 | 6 | 0 | 1 |
 | Atrium | 172 | 163 | 0 | 1 | 8 | 0 | 0 |
 | AudiobookTools | 6 | 6 | 0 | 0 | 0 | 0 | 0 |
-| CalibreQuarry | 117 | 117 | 0 | 0 | 0 | 0 | 0 |
+| CalibreQuarry | 119 | 119 | 0 | 0 | 0 | 0 | 0 |
 | Carrel | 20 | 20 | 0 | 0 | 0 | 0 | 0 |
 | Carrel-calibre-web | 20 | 19 | 0 | 1 | 0 | 0 | 0 |
 | Catagotchi | 104 | 104 | 0 | 0 | 0 | 0 | 0 |
@@ -1333,7 +1336,7 @@ commits that are not this workspace's work.
 | VirInvictus.github.io | 0 | 0 | 0 | 0 | 0 | 0 | - |
 | annals | 7 | 7 | 0 | 0 | 0 | 0 | 0 |
 | bindery-cli | 83 | 83 | 0 | 0 | 0 | 0 | 0 |
-| cquarry | 44 | 44 | 0 | 0 | 0 | 0 | 0 |
+| cquarry | 45 | 45 | 0 | 0 | 0 | 0 | 0 |
 | crash-course | 19 | 19 | 0 | 0 | 0 | 0 | 0 |
 | dead-reckoning-bookend-preset | 0 | 0 | 0 | 0 | 0 | 0 | - |
 | deadbeef-cui | 43 | 0 | 10 | 0 | 33 | 0 | 0 |
