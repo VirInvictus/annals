@@ -8,9 +8,9 @@ remain canonical; this file is a projection, reproducible with
 
 ## The shape of the work
 
-- **43 repositories tracked · 1,542 releases recorded · 5,077 commits, authored by Brandon LaRocque**
-- Span: 2025-08-10 to 2026-10-30
-- This month (2026-10): 193 releases across 20 repos · 920 commits
+- **43 repositories tracked · 1,542 releases recorded · 5,087 commits, authored by Brandon LaRocque**
+- Span: 2025-08-10 to 2026-10-31
+- This month (2026-10): 193 releases across 20 repos · 930 commits
 
 | Repository | What it is | Releases | Latest | Last release | Commits | Active since |
 |---|---|---:|---|---|---:|---|
@@ -44,7 +44,7 @@ remain canonical; this file is a projection, reproducible with
 | [2-kobo-style-sleepscreen-banner-prettified](https://github.com/VirInvictus/2-kobo-style-sleepscreen-banner-prettified) | KOReader user patch redrawing the sleep screen as a Kobo-style floating card (prettified fork). | 8 | 2.1.4 | 2026-09-14 | 29 | 2026-07-05 |
 | [dragon-agents](https://github.com/VirInvictus/dragon-agents) | Local ZCode plugin of twenty-three read-only research subagents: repo mapping, release audits, CI triage, markets and finance briefs. | 8 | 0.7.1 | 2026-10-30 | 18 | 2026-09-03 |
 | [vir-tui](https://github.com/VirInvictus/vir-tui) | TUI primitive library (curses menus, prompts, progress, mouse plus type-to-filter) powering the Python CLI toolchain. | 8 | 2.5.0 | 2026-09-14 | 51 | 2026-08-23 |
-| annals | This generator: the workspace's whole work record, rendered from every repo's patchnotes and git history. | 7 | 0.4.0 | 2026-10-29 | 62 | 2026-10-09 |
+| annals | This generator: the workspace's whole work record, rendered from every repo's patchnotes and git history. | 7 | 0.4.0 | 2026-10-29 | 63 | 2026-10-09 |
 | [kanagawa-dragon-nvim-emacs](https://github.com/VirInvictus/kanagawa-dragon-nvim-emacs) | Faithful Emacs deftheme port of the Kanagawa Dragon palette, mapping every Emacs 29+ tree-sitter face. | 7 | 0.2.1 | 2026-09-15 | 34 | 2026-07-24 |
 | [AudiobookTools](https://github.com/VirInvictus/AudiobookTools) | Declarative tag-and-folder normalizer for the audiobook library; dry-run default, reversible --apply, never re-encodes. | 6 | 0.3.0 | 2026-09-15 | 37 | 2026-05-28 |
 | Foyer | Shared front door to Hearth and Haveli: game launcher plus LAN lobby; holds no game rules. | 6 | 0.2.0 | 2026-09-15 | 32 | 2026-07-17 |
@@ -53,7 +53,7 @@ remain canonical; this file is a projection, reproducible with
 | [1-timezone](https://github.com/VirInvictus/1-timezone) | KOReader user patch forcing a correct POSIX TZ inside the process. | 0 | - | - | 7 | 2026-07-05 |
 | Coffer | Native GTK4 envelope-budgeting app over a plain-text hledger journal (the journal is the database). | 0 | - | - | 9 | 2026-06-28 |
 | [VirInvictus](https://github.com/VirInvictus/VirInvictus) | The GitHub profile README repo: one line and a shipping status per project. | 0 | - | - | 121 | 2026-06-22 |
-| [VirInvictus.github.io](https://github.com/VirInvictus/VirInvictus.github.io) | This site: static Jekyll on GitHub Pages; /patchnotes/ serves the annals record. | 0 | - | - | 248 | 2026-04-16 |
+| [VirInvictus.github.io](https://github.com/VirInvictus/VirInvictus.github.io) | This site: static Jekyll on GitHub Pages; /patchnotes/ serves the annals record. | 0 | - | - | 257 | 2026-04-16 |
 | [dead-reckoning-bookend-preset](https://github.com/VirInvictus/dead-reckoning-bookend-preset) | One-file KOReader preset: session pace, chapter ETA, projected finish. | 0 | - | - | 15 | 2026-07-03 |
 | project-void | Party-based isometric CRPG in the Dark Sun / Fallout 2 lineage on lethal Cairn combat math (pre-development). | 0 | - | - | 16 | 2026-04-17 |
 | project-yeschef | Grand-strategy restaurant sim in the CK3 / Victoria 3 lineage; you play the General Manager (pre-development). | 0 | - | - | 6 | 2026-05-23 |
@@ -73,11 +73,11 @@ remain canonical; this file is a projection, reproducible with
 | 2026-07 | ▇▇▇▇▇▇▇▇▇▇▇▇ 154 | ▇▇▇▇▇▇▇▇ 476 |
 | 2026-08 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 165 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 776 |
 | 2026-09 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 349 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 1,729 |
-| 2026-10 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 193 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 920 |
+| 2026-10 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 193 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 930 |
 
 ## The languages
 
-452,977 lines of code · 27 languages · 42 repos
+453,010 lines of code · 27 languages · 42 repos
 
 Code lines measured by `tokei` over each tracked repo's tree: reference clones and fork checkouts (the `[languages]` exclude) never count, and neither do lockfiles or data formats. A snapshot of the trees as they stand, not a measure of authorship pace.
 
@@ -100,7 +100,7 @@ Code lines measured by `tokei` over each tracked repo's tree: reference clones a
 | Shell | ▇ 0.3% | 1,359 | 10 |
 | C Header | ▇ 0.2% | 1,083 | 4 |
 | SQL | ▇ 0.2% | 899 | 2 |
-| other | ▇ 0.8% | 3,655 | - |
+| other | ▇ 0.8% | 3,688 | - |
 
 ## The record
 
