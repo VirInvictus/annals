@@ -17,11 +17,21 @@ command flock -n 9 || {
 
 ANNALS=$HOME/.gitrepos/annals
 SITE=$HOME/.gitrepos/VirInvictus.github.io
+ATHENAEUM=$HOME/docs/website-backups/athenaeum
 REMOTE=VirInvictus/VirInvictus.github.io
 TODAY=$(date +%F)
 
 cd "$ANNALS"
 uv run annals >/dev/null
+
+# The Stacks rides the same publish: athenaeum's scanner emits the public
+# library page straight into the site repo. Its bytes are deterministic with a
+# data-derived as-of stamp, so a quiet library leaves the tree clean and the
+# change gate below stays honest. Generator-owned like the three artifacts
+# above; never hand-edit the emitted file.
+if [[ -x "$ATHENAEUM/scripts/gen_stacks.py" || -f "$ATHENAEUM/scripts/gen_stacks.py" ]]; then
+  python3 "$ATHENAEUM/scripts/gen_stacks.py" --output "$SITE/stacks.md" --quiet
+fi
 
 if ! git diff --quiet -- ANNALS.md; then
   git add ANNALS.md
@@ -35,12 +45,12 @@ git pull --ff-only -q
 # first publish, before patchnotes.md is tracked). All staged files are
 # generator-owned, so blind staging can never sweep hand edits into a daily
 # refresh.
-if [[ -z $(git status --porcelain -- patchnotes.md _includes/ledger.md patchnotes/feed.xml) ]]; then
+if [[ -z $(git status --porcelain -- patchnotes.md _includes/ledger.md patchnotes/feed.xml stacks.md) ]]; then
   print -r -- "annals: site copy unchanged; nothing to publish"
   exit 0
 fi
 
-git add patchnotes.md _includes/ledger.md patchnotes/feed.xml
+git add patchnotes.md _includes/ledger.md patchnotes/feed.xml stacks.md
 git commit -q -m "docs: annals refresh, $TODAY"
 SHA=$(git rev-parse HEAD)
 git push -q

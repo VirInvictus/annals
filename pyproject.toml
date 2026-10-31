@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "annals"
-version = "0.4.0"
+version = "0.5.0"
 description = "The Vir Invictus workspace work record: renders every owned repo's patchnotes and git history into one ANNALS.md dashboard and timeline."
 readme = "README.md"
 requires-python = ">=3.14"

@@ -1,5 +1,23 @@
 # Patchnotes
 
+## v0.5.0 (2026-10-31)
+
+The Stacks rides the publish: athenaeum's library page joins the daily loop.
+
+- **New publish surface**: `scripts/publish-site` now invokes
+  `~/docs/website-backups/athenaeum/scripts/gen_stacks.py --output $SITE/stacks.md`
+  after the annals render and before the change gate, and stages `stacks.md`
+  beside the three generator-owned artifacts (porcelain check and blind add
+  both extended). The emitted page is athenaeum's product, deterministic with a
+  data-derived as-of stamp, so a quiet library leaves the tree clean and a
+  changed one publishes in the same commit, the same build-verify, and the
+  same auto-revert path as the record.
+- **Scope unchanged**: annals the renderer still writes exactly its three
+  configured artifacts; the fourth file is staged, never rendered, here.
+  No hand-edited site file is touched; the front-page topline is Brandon's.
+- 86 tests green, ruff clean; the publish script is shell and gains no test
+  harness beyond the daily run itself.
+
 ## v0.4.0 (2026-10-29)
 
 The audited record and the feed: the record now checks its own completeness
