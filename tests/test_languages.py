@@ -3,10 +3,21 @@
 from __future__ import annotations
 
 import json
+import shutil
 from pathlib import Path
+
+import pytest
 
 from annals.languages import parse_tokei, repo_languages
 from annals.render import Record, RepoRecord, render
+
+# Two tests below invoke the real tokei binary. tokei ships no prebuilt
+# release binaries (none attached since v13), so CI does not install it;
+# these skip where it is absent, matching the section's documented
+# degrade-to-a-note path, and run on every machine that has it.
+_needs_tokei = pytest.mark.skipif(
+    shutil.which("tokei") is None, reason="tokei is not installed"
+)
 
 
 def test_parse_tokei_drops_total_data_and_zero_code() -> None:
@@ -27,6 +38,7 @@ def test_repo_languages_none_on_missing_path(tmp_path: Path) -> None:
     assert repo_languages(tmp_path / "does-not-exist") is None
 
 
+@_needs_tokei
 def test_repo_languages_empty_on_prose_only_repo(tmp_path: Path) -> None:
     d = tmp_path / "prose"
     d.mkdir()
@@ -35,6 +47,7 @@ def test_repo_languages_empty_on_prose_only_repo(tmp_path: Path) -> None:
     assert repo_languages(d) == {}
 
 
+@_needs_tokei
 def test_repo_languages_counts_code(tmp_path: Path) -> None:
     d = tmp_path / "code"
     d.mkdir()
