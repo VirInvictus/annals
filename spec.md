@@ -2,8 +2,8 @@
 
 ## Purpose
 
-annals answers one question: how much work does the Vir Invictus workspace
-represent, and what is its shape over time? It renders a single record,
+annals answers one question: how much work does a workspace represent, and
+what is its shape over time? It renders a single record,
 `ANNALS.md`, from sources that already exist and stay canonical:
 
 - each owned repo's `patchnotes.md` (the release log),
@@ -15,6 +15,28 @@ artifacts: the patchnotes copy, the front-page ledger include, and the
 Atom feed.
 
 ## Semantics
+
+### Configuration
+
+Settings live in `annals.toml`, resolved in this order: an explicit
+`--config PATH` (which must exist), `annals.toml` in the current directory,
+the one at a source checkout's root, then
+`~/.config/annals/annals.toml` (`$XDG_CONFIG_HOME` honored). No file
+anywhere is a configuration error naming `annals init`, never a silent
+default. Configuration problems exit 2.
+
+`[workspace] root` is the one required key and must exist on disk. The
+machine-specific content is entirely the file's: exclusions, stats-only
+names, author identities, descriptions, links, and the optional `[site]`,
+`[ledger]`, and `[feed]` targets. The code carries no personal defaults. A
+`[run] intro` replaces the masthead paragraph verbatim (`{generator}`
+becomes the generator string); absent, a generic paragraph renders. The
+`[feed]` keys `title` (default `The Annals`), `subtitle` (a generic
+sentence from the display name), `page_url` (default: the `site_url`
+root), and `id` (a `tag:` URI derived from the page URL and the newest
+activity year) are overridable; `[ledger] link_url` is the "the
+patchnotes" link target (absent: plain text, no link). Only `[run] output`
+resolves relative paths against the config file's directory.
 
 ### Discovery
 
@@ -169,18 +191,18 @@ output and `--check` compares the whole file with no stamp exceptions.
 ### Site copy
 
 When `[site]` is configured, the same record is also written to the target
-path, wrapped in Jekyll front matter (the VirInvictus site page at
-`/patchnotes/`) and a Liquid `{% raw %}` block, so no future headline can
-break the site build. The site copy is a pure projection: identical body,
-different wrapper.
+path, wrapped in the configured front matter and a Liquid `{% raw %}`
+block, so no future headline can break the site build. The site copy is a
+pure projection: identical body, different wrapper.
 
 ### The ledger line
 
 When `[ledger]` is configured, the run also writes one paragraph to the
-target file: the VirInvictus site's `_includes/ledger.md`, a
-generator-owned include the site README renders with a Liquid include
-tag. The paragraph carries the dashboard totals, the month's shape, the
-newest entry, and the patchnotes link. It anchors to the newest activity
+target file: a generator-owned include (on the author's site, rendered by
+a Liquid include tag). The paragraph carries the dashboard totals, the
+month's shape, the newest entry, and the patchnotes link, whose target is
+`[ledger] link_url` verbatim (a template snippet is fine) or plain text
+without a link when the key is absent. It anchors to the newest activity
 date and carries no em-dashes, like all generator-authored prose. The file
 belongs to the same write family as the site copy: created when missing,
 overwritten every run, never a hand-authored page.
@@ -188,17 +210,18 @@ overwritten every run, never a hand-authored page.
 ### The feed
 
 When `[feed]` is configured, the run also writes an Atom 1.0 document to
-the target path: the VirInvictus site's `patchnotes/feed.xml`, a static
-file Jekyll copies verbatim, so the site serves it at
-`/patchnotes/feed.xml`. The newest `limit` exactly-dated entries, in the
-timeline's own ordering, become `<entry>` elements whose titles are the
-timeline lines without markdown. Absolute links derive from
-`[feed] site_url`, which must match the site's own `_config.yml` url.
-`updated` anchors to the newest activity date at a fixed midnight UTC,
-never the generation time, so a quiet workspace regenerates byte-identical
-XML; entry ids are `tag:` URIs keyed on date, repo, and version (a
-headline digest when the entry carries no version). The file belongs to
-the same write family as the site copy and the ledger.
+the target path (a static file a site generator copies verbatim). The
+newest `limit` exactly-dated entries, in the timeline's own ordering,
+become `<entry>` elements whose titles are the timeline lines without
+markdown. Absolute links derive from `[feed] page_url` (default: the
+`site_url` root); the feed `id` defaults to a `tag:` URI built from the
+page URL and the newest activity year and should be pinned once published,
+since readers treat a changed id as a new feed. `updated` anchors to the
+newest activity date at a fixed midnight UTC, never the generation time,
+so a quiet workspace regenerates byte-identical XML; entry ids are `tag:`
+URIs keyed on date, repo, and version (a headline digest when the entry
+carries no version). The file belongs to the same write family as the
+site copy and the ledger.
 
 ## CLI
 
@@ -210,8 +233,13 @@ the same write family as the site copy and the ledger.
 - `annals --stdout`: print the record to stdout; write nothing.
 - `annals --check`: regenerate in memory and compare; exit 0 when
   `ANNALS.md` is current, exit 1 when stale or missing.
-- `annals --config PATH`: use an alternate configuration file. Default:
-  `annals.toml` in the current directory, else the one at the repo root.
+- `annals --config PATH`: use an alternate configuration file, which must
+  exist. Default: the resolution order under Configuration.
+- `annals init [PATH]`: write a starter `annals.toml` (default
+  `./annals.toml`) from a short prompt sequence: workspace root, git
+  author identities, display name, output file, and optionally the three
+  site artifact targets. Refuses to overwrite without confirmation; aborts
+  cleanly on EOF.
 
 The tool never commits and never pushes. Its only writes are `ANNALS.md`
 and the configured site artifacts.

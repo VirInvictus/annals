@@ -20,3 +20,8 @@
   oversized plain paragraphs and runs, tag reconciliation in the coverage
   appendix, the Atom feed artifact, the ledger's newest-entry line,
   thousands separators in the dashboard)
+- [x] Phase 10: going public (config externalization with no personal
+  defaults left in the code, `annals init`, the strict config resolution
+  order with the XDG step, README/spec rewritten for new users, the
+  author's `annals.toml` and `scripts/publish-site` gitignored as
+  local-only files, house-hardened CI, the public repo)

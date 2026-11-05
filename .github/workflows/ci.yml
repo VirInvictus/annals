@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+# Defense in depth: the repo default is already read-only, but each
+# workflow declares its own floor.
+permissions:
+  contents: read
+
+# Redundant pushes supersede in favour of the newest commit on the ref.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: ruff + pytest
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      # Actions are pinned by SHA; dependabot keeps the pins current.
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.14"
+      # Pin ruff so a future release adding a lint rule cannot turn a green
+      # build red on its own. The pin matches the dev machine's ruff, so
+      # local format output agrees with CI.
+      - run: pip install . ruff==0.17.2 pytest
+      - run: ruff check src/ tests/
+      - run: ruff format --check src/ tests/
+      # PYTHONPATH=src tests the tree, not the pip-installed copy: a
+      # tree-only failure must surface here, not at tag time.
+      - run: PYTHONPATH=src pytest

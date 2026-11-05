@@ -1,5 +1,38 @@
 # Patchnotes
 
+## v0.6.0 (2026-11-04)
+
+Going public: the tool is config-driven end to end, and `annals init`
+writes the config for you.
+
+- **Config externalized**: every machine-specific default moved out of the
+  code into `annals.toml`. The built-in personal defaults (workspace
+  exclusions, author identity, the site artifact paths) are gone;
+  `[workspace] root` is the one required key and must exist. A missing
+  config anywhere is now an error naming `annals init` (exit 2) instead of
+  a silent fallback, and an explicit `--config` path that does not exist
+  is finally an error too.
+- **New config keys** express what used to be hardcoded: `[run] intro`
+  (the masthead paragraph, with a `{generator}` placeholder that keeps the
+  live version stamp), `[feed] title` / `subtitle` / `page_url` / `id`,
+  and `[ledger] link_url`. Defaults are generic and derived; output under
+  the migrated config is byte-identical to the old hardcoded one (verified
+  old code against new on the same sources).
+- **`annals init [PATH]`**: a short prompt sequence (workspace root, git
+  author identities with prefill from git config, display name, output
+  file, optionally the three site artifact targets) writes a commented
+  `annals.toml`, re-parses it before writing, refuses overwrites without
+  confirmation, and aborts cleanly on EOF.
+- **Config resolution order**: `--config`, then `./annals.toml`, then the
+  source checkout's root, then `~/.config/annals/annals.toml`
+  (`$XDG_CONFIG_HOME` honored). Documented in spec.md.
+- **Public-ready**: README rewritten for install, quickstart, and the full
+  config reference; the author's `annals.toml` and `scripts/publish-site`
+  are gitignored local files now; house-hardened CI (ruff check, ruff
+  format, pytest; SHA-pinned actions, least-privilege permissions,
+  concurrency, timeout) runs on push and PR.
+- 105 tests green (up from 86), ruff clean.
+
 ## v0.5.0 (2026-10-31)
 
 The Stacks rides the publish: athenaeum's library page joins the daily loop.

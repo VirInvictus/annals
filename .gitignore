@@ -11,3 +11,12 @@ dist/
 .pytest_cache/
 .ruff_cache/
 .venv/
+
+# Local-only files: the author's own config and nightly publish pipeline
+# stay on this machine, never in the public repo. `annals init` and the
+# README document the config schema for everyone else.
+/annals.toml
+/scripts/publish-site
+
+# Session artifacts from the coding agent
+.zcode/
