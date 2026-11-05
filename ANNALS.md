@@ -8,9 +8,9 @@ remain canonical; this file is a projection, reproducible with
 
 ## The shape of the work
 
-- **44 repositories tracked · 1,565 releases recorded · 5,188 commits, authored by Brandon LaRocque**
+- **44 repositories tracked · 1,565 releases recorded · 5,194 commits, authored by Brandon LaRocque**
 - Span: 2025-08-10 to 2026-11-05
-- This month (2026-11): 21 releases across 8 repos · 84 commits
+- This month (2026-11): 21 releases across 8 repos · 90 commits
 
 | Repository | What it is | Releases | Latest | Last release | Commits | Active since |
 |---|---|---:|---|---|---:|---|
@@ -40,7 +40,7 @@ remain canonical; this file is a projection, reproducible with
 | [Topograph](https://github.com/VirInvictus/Topograph) | Filesystem size explorer: lazy tree view plus a squarified cushion treemap (a qdirstat analog). | 11 | 0.4.1 | 2026-10-07 | 53 | 2026-08-14 |
 | [raindrop-cli](https://github.com/VirInvictus/raindrop-cli) | Dependency-free Raindrop.io CLI for bookmarks, collections, tags, and highlights, with a Pinboard backend and two-way sync. | 11 | 0.7.0 | 2026-09-15 | 53 | 2026-07-18 |
 | whisker-street | Discord stock market where the server members are the stocks: presence-driven prices and a CPMM market maker. | 11 | 0.7.0 | 2026-10-24 | 16 | 2026-10-22 |
-| annals | This generator: the workspace's whole work record, rendered from every repo's patchnotes and git history. | 9 | 0.6.0 | 2026-11-04 | 79 | 2026-10-09 |
+| annals | This generator: the workspace's whole work record, rendered from every repo's patchnotes and git history. | 9 | 0.6.0 | 2026-11-04 | 80 | 2026-10-09 |
 | [saforums.koplugin](https://github.com/VirInvictus/saforums.koplugin) | KOReader plugin reading the Something Awful Forums as native e-reader widgets: login, unread tracking, bookmarks. | 9 | 0.5.4 | 2026-10-24 | 63 | 2026-10-08 |
 | [2-kobo-style-sleepscreen-banner-prettified](https://github.com/VirInvictus/2-kobo-style-sleepscreen-banner-prettified) | KOReader user patch redrawing the sleep screen as a Kobo-style floating card (prettified fork). | 8 | 2.1.4 | 2026-09-14 | 29 | 2026-07-05 |
 | [dragon-agents](https://github.com/VirInvictus/dragon-agents) | Local ZCode plugin of twenty-three read-only research subagents: repo mapping, release audits, CI triage, markets and finance briefs. | 8 | 0.7.1 | 2026-10-30 | 18 | 2026-09-03 |
@@ -50,11 +50,11 @@ remain canonical; this file is a projection, reproducible with
 | Foyer | Shared front door to Hearth and Haveli: game launcher plus LAN lobby; holds no game rules. | 6 | 0.2.0 | 2026-09-15 | 32 | 2026-07-17 |
 | [Docket](https://github.com/VirInvictus/Docket) | Native GTK4 plain-text task editor, clean-room faithful to the TaskPaper 3 format and query language. | 4 | 1.0.0 | 2026-10-13 | 19 | 2026-10-12 |
 | dragon-themer | Theme engine for the whole machine: one palette rendered into every colour-bearing config. | 2 | 0.1.0 | 2026-10-07 | 34 | 2026-07-28 |
-| hex |  | 1 | 0.1.0 | 2026-11-05 | 11 | 2026-11-04 |
+| hex |  | 1 | 0.1.0 | 2026-11-05 | 15 | 2026-11-04 |
 | [1-timezone](https://github.com/VirInvictus/1-timezone) | KOReader user patch forcing a correct POSIX TZ inside the process. | 0 | - | - | 7 | 2026-07-05 |
 | Coffer | Native GTK4 envelope-budgeting app over a plain-text hledger journal (the journal is the database). | 0 | - | - | 9 | 2026-06-28 |
 | [VirInvictus](https://github.com/VirInvictus/VirInvictus) | The GitHub profile README repo: one line and a shipping status per project. | 0 | - | - | 126 | 2026-06-22 |
-| [VirInvictus.github.io](https://github.com/VirInvictus/VirInvictus.github.io) | This site: static Jekyll on GitHub Pages; /patchnotes/ serves the annals record. | 0 | - | - | 278 | 2026-04-16 |
+| [VirInvictus.github.io](https://github.com/VirInvictus/VirInvictus.github.io) | This site: static Jekyll on GitHub Pages; /patchnotes/ serves the annals record. | 0 | - | - | 279 | 2026-04-16 |
 | [dead-reckoning-bookend-preset](https://github.com/VirInvictus/dead-reckoning-bookend-preset) | One-file KOReader preset: session pace, chapter ETA, projected finish. | 0 | - | - | 15 | 2026-07-03 |
 | project-void | Party-based isometric CRPG in the Dark Sun / Fallout 2 lineage on lethal Cairn combat math (pre-development). | 0 | - | - | 16 | 2026-04-17 |
 | project-yeschef | Grand-strategy restaurant sim in the CK3 / Victoria 3 lineage; you play the General Manager (pre-development). | 0 | - | - | 6 | 2026-05-23 |
@@ -75,11 +75,11 @@ remain canonical; this file is a projection, reproducible with
 | 2026-08 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 165 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 776 |
 | 2026-09 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 349 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 1,729 |
 | 2026-10 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 195 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 947 |
-| 2026-11 | ▇▇ 21 | ▇ 84 |
+| 2026-11 | ▇▇ 21 | ▇ 90 |
 
 ## The languages
 
-459,763 lines of code · 27 languages · 43 repos
+459,942 lines of code · 27 languages · 43 repos
 
 Code lines measured by `tokei` over each tracked repo's tree: reference clones and fork checkouts (the `[languages]` exclude) never count, and neither do lockfiles or data formats. A snapshot of the trees as they stand, not a measure of authorship pace.
 
@@ -90,8 +90,8 @@ Code lines measured by `tokei` over each tracked repo's tree: reference clones a
 
 | Language | Share | Code lines | Repos |
 |---|---|---:|---:|
-| Rust | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 38.0% | 174,484 | 11 |
-| Python | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 37.4% | 171,949 | 23 |
+| Rust | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 37.9% | 174,484 | 11 |
+| Python | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 37.4% | 172,128 | 23 |
 | GDScript | ▇▇▇▇▇▇ 10.8% | 49,509 | 6 |
 | C | ▇▇▇ 5.9% | 27,005 | 2 |
 | Lua | ▇▇ 3.2% | 14,629 | 6 |
