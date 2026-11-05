@@ -8,9 +8,10 @@ from pathlib import Path
 from typing import TextIO
 
 from . import __version__
-from .config import Config, load_config
+from .config import Config, ConfigError, load_config
 from .discover import discover
 from .gitstats import repo_stats, tag_dates
+from .init import run_init
 from .languages import repo_languages
 from .parse import Entry, parse_patchnotes, resolve_dates
 from .render import (
@@ -59,6 +60,7 @@ def build(config: Config) -> Record:
         authors=config.authors,
         authors_display=config.authors_display,
         latest=latest,
+        intro=config.intro,
         descriptions=config.descriptions,
         links=config.links,
     )
@@ -73,7 +75,10 @@ def _today() -> str:
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
         prog="annals",
-        description="Render the Vir Invictus workspace work record (ANNALS.md).",
+        description=(
+            "Render a workspace work record (ANNALS.md) from patchnotes and"
+            " git history."
+        ),
     )
     parser.add_argument(
         "--config", type=Path, default=None, help="alternate annals.toml path"
@@ -84,9 +89,26 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument(
         "--check", action="store_true", help="exit 1 when ANNALS.md is stale"
     )
+    subparsers = parser.add_subparsers(dest="command")
+    init_parser = subparsers.add_parser(
+        "init", help="write a starter annals.toml by asking a few questions"
+    )
+    init_parser.add_argument(
+        "path",
+        nargs="?",
+        default=None,
+        help="where to write the config (default: ./annals.toml)",
+    )
     args = parser.parse_args(argv)
 
-    config = load_config(args.config)
+    if args.command == "init":
+        return run_init(args.path)
+
+    try:
+        config = load_config(args.config)
+    except ConfigError as exc:
+        print(f"annals: {exc}", file=sys.stderr)
+        return 2
     record = build(config)
     text = render(record)
 
@@ -105,11 +127,13 @@ def main(argv: list[str] | None = None) -> int:
         print(f"annals: wrote {config.site.path}")
     if config.ledger is not None:
         config.ledger.path.parent.mkdir(parents=True, exist_ok=True)
-        config.ledger.path.write_text(render_ledger(record), encoding="utf-8")
+        config.ledger.path.write_text(
+            render_ledger(record, config.ledger), encoding="utf-8"
+        )
         print(f"annals: wrote {config.ledger.path}")
     if config.feed is not None:
         config.feed.path.parent.mkdir(parents=True, exist_ok=True)
-        feed_text = render_feed(record, config.feed.site_url, config.feed.limit)
+        feed_text = render_feed(record, config.feed)
         config.feed.path.write_text(feed_text, encoding="utf-8")
         print(f"annals: wrote {config.feed.path}")
     _summarize(record, sys.stdout)
@@ -128,9 +152,7 @@ def _check(config: Config, text: str) -> int:
     if current == text:
         print("annals: ANNALS.md is current")
         return 0
-    print(
-        "annals: ANNALS.md is stale; regenerate with `uv run annals`", file=sys.stderr
-    )
+    print("annals: ANNALS.md is stale; regenerate with `annals`", file=sys.stderr)
     return 1
 
 

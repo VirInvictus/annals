@@ -3,11 +3,13 @@
 from __future__ import annotations
 
 import hashlib
+import textwrap
 from collections import Counter
 from dataclasses import dataclass, field
 from urllib.parse import urlparse
 from xml.sax.saxutils import escape as _xml_escape
 
+from .config import FeedTarget, LedgerTarget
 from .gitstats import RepoStats
 from .parse import Entry, unlogged_tags
 
@@ -62,6 +64,9 @@ class Record:
     authors: tuple[str, ...] = ()
     authors_display: str = ""  # the attribution line; raw emails stay machine-side
     latest: str = ""  # newest activity date; anchors the span and "this month"
+    # None -> the generic masthead paragraph; otherwise verbatim, with
+    # "{generator}" replaced by the generator string.
+    intro: str | None = None
     descriptions: dict[str, str] = field(default_factory=dict)
     links: dict[str, str] = field(default_factory=dict)
 
@@ -99,31 +104,37 @@ def render_site(record: Record, front_matter: str) -> str:
     return f"{front_matter}\n\n{{% raw %}}\n{render(record)}{{% endraw %}}\n"
 
 
-_FEED_ENTRY_LIMIT = 50
-
-
-def render_feed(record: Record, site_url: str, limit: int = _FEED_ENTRY_LIMIT) -> str:
+def render_feed(record: Record, feed: FeedTarget) -> str:
     """The Atom artifact: the newest exactly-dated entries, published
     alongside the site copy. `updated` anchors to the newest activity date
     like the rest of the record, never the generation time, so a quiet
     workspace regenerates byte-identical XML."""
-    page = f"{site_url.rstrip('/')}/patchnotes/"
+    base = (feed.page_url or feed.site_url).rstrip("/")
+    page = f"{base}/"
     feed_url = f"{page}feed.xml"
-    host = urlparse(site_url).netloc or site_url
+    host = urlparse(feed.site_url or feed.page_url).netloc or base
+    feed_id = feed.id or (
+        f"tag:{host},{record.latest[:4]}:{urlparse(page).path or '/'}"
+    )
+    name = record.attribution_name()
+    subtitle = feed.subtitle or (
+        f"Every release entry from {name}'s patchnotes, newest first."
+        if name
+        else "Every release entry from this workspace's patchnotes, newest first."
+    )
     out = [
         '<?xml version="1.0" encoding="utf-8"?>',
         '<feed xmlns="http://www.w3.org/2005/Atom">',
-        "  <title>The Annals</title>",
-        "  <subtitle>Every release entry from the Vir Invictus workspace's"
-        " patchnotes, newest first.</subtitle>",
-        f"  <id>tag:{host},2026:/patchnotes/</id>",
+        f"  <title>{_xml_text(feed.title)}</title>",
+        f"  <subtitle>{_xml_text(subtitle)}</subtitle>",
+        f"  <id>{_xml_text(feed_id)}</id>",
         f"  <updated>{record.latest}T00:00:00Z</updated>",
         f'  <link rel="alternate" href="{_xml_text(page)}"/>',
         f'  <link rel="self" href="{_xml_text(feed_url)}"/>',
         f"  <generator>{_xml_text(record.generator)}</generator>",
     ]
     dated = _timeline_order([e for r in record.repos for e in _anchored(r.entries)])
-    for e in dated[:limit]:
+    for e in dated[: feed.limit]:
         name = _entry_name(e)
         title = f"{name}: {e.headline}" if e.headline else name
         key = (
@@ -170,12 +181,11 @@ def _entry_name(e: Entry) -> str:
     return f"{who} {what}".strip()
 
 
-def render_ledger(record: Record) -> str:
+def render_ledger(record: Record, ledger: LedgerTarget) -> str:
     """The front-page stat line: the dashboard totals as one paragraph,
-    written to the site's generator-owned include and rendered by the
-    README. Anchored to the newest activity date like the rest of the
-    record, so a quiet workspace regenerates byte-identical prose.
-    Generator-authored, so no em-dashes."""
+    written to the configured include. Anchored to the newest activity
+    date like the rest of the record, so a quiet workspace regenerates
+    byte-identical prose. Generator-authored, so no em-dashes."""
     dated = [e for r in record.repos for e in _anchored(r.entries)]
     total_entries = sum(len(r.entries) for r in record.repos)
     commits = sum(r.stats.commits for r in record.repos if r.stats)
@@ -195,27 +205,33 @@ def render_ledger(record: Record) -> str:
         if newest is not None
         else ""
     )
-    link = "{{ '/patchnotes/' | relative_url }}"
+    link = (
+        f"[the patchnotes]({ledger.link_url})" if ledger.link_url else "the patchnotes"
+    )
     return (
         f"As of {record.latest} the ledger reads **{repos_part} · "
         f"{releases_part} · {commits_part}**; {month_name} added {month_part}"
         f" across {month_repos} of them.{newest_part} The whole record lands in"
-        f" [the patchnotes]({link}), regenerated nightly from each repo's"
-        " own log.\n"
+        f" {link}, regenerated nightly from each repo's own log.\n"
     )
 
 
 def _masthead(record: Record) -> list[str]:
-    return [
-        "# The Annals",
-        "",
-        "The work record of the Vir Invictus workspace: every release entry from",
-        "the owned repos' `patchnotes.md` files, plus each repo's git activity, in",
-        f"one place. Generated by {record.generator}. The per-repo patchnotes",
-        "remain canonical; this file is a projection, reproducible with",
-        "`uv run annals`.",
-        "",
-    ]
+    heading = ["# The Annals", ""]
+    if record.intro is not None:
+        return heading + [record.intro.replace("{generator}", record.generator), ""]
+    who = (
+        f" of {record.attribution_name()}'s workspace"
+        if record.attribution_name()
+        else " of this workspace"
+    )
+    paragraph = (
+        f"The work record{who}: every release entry from the tracked repos' "
+        "`patchnotes.md` files, plus each repo's git activity, in one place. "
+        f"Generated by {record.generator}. The per-repo patchnotes remain "
+        "canonical; this file is a projection, reproducible with `annals`."
+    )
+    return heading + [textwrap.fill(paragraph, width=76), ""]
 
 
 def _dashboard(record: Record) -> list[str]:
