@@ -17,8 +17,11 @@ Liquid include tag), and the Atom feed at the site's
 `patchnotes/feed.xml` (a static file Jekyll copies verbatim; served at
 `/patchnotes/feed.xml`). `scripts/publish-site` is the daily pipeline
 (local-only; see Config):
-regenerate, commit locally, commit and push the site artifacts when they
-changed, verify the Pages build, revert on failure. Python 3.14, standard
+regenerate, commit and push the record to origin (best-effort), commit and
+push the site artifacts when they changed, verify the Pages build, and
+revert only when the Jekyll build job itself failed (a deploy-stage failure
+can be pure GitHub-side, and the last good deploy serves either way).
+Python 3.14, standard
 library only, no network (the publish script's git/gh calls are its only
 outbound surface). One external tool is required for one section: `tokei`
 measures the language distribution, and its absence degrades that section
