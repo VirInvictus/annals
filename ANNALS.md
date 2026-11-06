@@ -8,9 +8,9 @@ remain canonical; this file is a projection, reproducible with
 
 ## The shape of the work
 
-- **44 repositories tracked · 1,586 releases recorded · 5,274 commits, authored by Brandon LaRocque**
+- **44 repositories tracked · 1,587 releases recorded · 5,279 commits, authored by Brandon LaRocque**
 - Span: 2025-08-10 to 2026-11-06
-- This month (2026-11): 42 releases across 8 repos · 170 commits
+- This month (2026-11): 43 releases across 8 repos · 175 commits
 
 | Repository | What it is | Releases | Latest | Last release | Commits | Active since |
 |---|---|---:|---|---|---:|---|
@@ -34,14 +34,14 @@ remain canonical; this file is a projection, reproducible with
 | [Quire](https://github.com/VirInvictus/Quire) | Soulver-style notepad calculator for Linux: plain-text sheets where prose and expressions share the page and answers fill a results column. | 22 | 1.5.3 | 2026-10-09 | 114 | 2026-10-05 |
 | [Carrel](https://github.com/VirInvictus/Carrel) | Contract and theme for a single-user Calibre reading room (CSS + docs; the code lives in the calibre-web fork). | 20 | 0.9.10 | 2026-09-15 | 72 | 2026-06-11 |
 | crash-course | Arcade aircraft-crash damage-maximizer (Burnout's crash mode rebuilt around airliners), built for my son. | 19 | 0.18.0 | 2026-10-07 | 31 | 2026-10-04 |
-| hex |  | 16 | 0.12.0 | 2026-11-06 | 68 | 2026-11-04 |
+| hex |  | 17 | 0.12.1-dbg | 2026-11-06 | 71 | 2026-11-04 |
 | Vestibule | One-directional Obsidian-vault to org-roam converter with a dry-run install. | 12 | 0.11.0 | 2026-09-15 | 55 | 2026-07-25 |
 | [vir-gtk](https://github.com/VirInvictus/vir-gtk) | Shared GTK4 styling and D-Bus portal layer for the Vir Invictus desktop suite (replaces libadwaita). | 12 | 1.4.3 | 2026-10-06 | 51 | 2026-08-23 |
 | [vir-search](https://github.com/VirInvictus/vir-search) | Domain-agnostic Rust library parsing Calibre-style search expressions into a typed AST. | 12 | 1.4.3 | 2026-09-15 | 60 | 2026-08-23 |
 | [Topograph](https://github.com/VirInvictus/Topograph) | Filesystem size explorer: lazy tree view plus a squarified cushion treemap (a qdirstat analog). | 11 | 0.4.1 | 2026-10-07 | 53 | 2026-08-14 |
 | [raindrop-cli](https://github.com/VirInvictus/raindrop-cli) | Dependency-free Raindrop.io CLI for bookmarks, collections, tags, and highlights, with a Pinboard backend and two-way sync. | 11 | 0.7.0 | 2026-09-15 | 53 | 2026-07-18 |
 | whisker-street | Discord stock market where the server members are the stocks: presence-driven prices and a CPMM market maker. | 11 | 0.7.0 | 2026-10-24 | 16 | 2026-10-22 |
-| annals | This generator: the workspace's whole work record, rendered from every repo's patchnotes and git history. | 9 | 0.6.0 | 2026-11-04 | 84 | 2026-10-09 |
+| annals | This generator: the workspace's whole work record, rendered from every repo's patchnotes and git history. | 9 | 0.6.0 | 2026-11-04 | 85 | 2026-10-09 |
 | [saforums.koplugin](https://github.com/VirInvictus/saforums.koplugin) | KOReader plugin reading the Something Awful Forums as native e-reader widgets: login, unread tracking, bookmarks. | 9 | 0.5.4 | 2026-10-24 | 63 | 2026-10-08 |
 | [2-kobo-style-sleepscreen-banner-prettified](https://github.com/VirInvictus/2-kobo-style-sleepscreen-banner-prettified) | KOReader user patch redrawing the sleep screen as a Kobo-style floating card (prettified fork). | 8 | 2.1.4 | 2026-09-14 | 29 | 2026-07-05 |
 | [dragon-agents](https://github.com/VirInvictus/dragon-agents) | Local ZCode plugin of twenty-three read-only research subagents: repo mapping, release audits, CI triage, markets and finance briefs. | 8 | 0.7.1 | 2026-10-30 | 18 | 2026-09-03 |
@@ -54,7 +54,7 @@ remain canonical; this file is a projection, reproducible with
 | [1-timezone](https://github.com/VirInvictus/1-timezone) | KOReader user patch forcing a correct POSIX TZ inside the process. | 0 | - | - | 7 | 2026-07-05 |
 | Coffer | Native GTK4 envelope-budgeting app over a plain-text hledger journal (the journal is the database). | 0 | - | - | 9 | 2026-06-28 |
 | [VirInvictus](https://github.com/VirInvictus/VirInvictus) | The GitHub profile README repo: one line and a shipping status per project. | 0 | - | - | 129 | 2026-06-22 |
-| [VirInvictus.github.io](https://github.com/VirInvictus/VirInvictus.github.io) | This site: static Jekyll on GitHub Pages; /patchnotes/ serves the annals record. | 0 | - | - | 286 | 2026-04-16 |
+| [VirInvictus.github.io](https://github.com/VirInvictus/VirInvictus.github.io) | This site: static Jekyll on GitHub Pages; /patchnotes/ serves the annals record. | 0 | - | - | 287 | 2026-04-16 |
 | [dead-reckoning-bookend-preset](https://github.com/VirInvictus/dead-reckoning-bookend-preset) | One-file KOReader preset: session pace, chapter ETA, projected finish. | 0 | - | - | 15 | 2026-07-03 |
 | project-void | Party-based isometric CRPG in the Dark Sun / Fallout 2 lineage on lethal Cairn combat math (pre-development). | 0 | - | - | 16 | 2026-04-17 |
 | project-yeschef | Grand-strategy restaurant sim in the CK3 / Victoria 3 lineage; you play the General Manager (pre-development). | 0 | - | - | 6 | 2026-05-23 |
@@ -75,11 +75,11 @@ remain canonical; this file is a projection, reproducible with
 | 2026-08 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 165 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 776 |
 | 2026-09 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 349 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 1,729 |
 | 2026-10 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 195 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 947 |
-| 2026-11 | ▇▇▇ 42 | ▇▇▇ 170 |
+| 2026-11 | ▇▇▇ 43 | ▇▇▇ 175 |
 
 ## The languages
 
-472,041 lines of code · 27 languages · 43 repos
+472,814 lines of code · 27 languages · 43 repos
 
 Code lines measured by `tokei` over each tracked repo's tree: reference clones and fork checkouts (the `[languages]` exclude) never count, and neither do lockfiles or data formats. A snapshot of the trees as they stand, not a measure of authorship pace.
 
@@ -90,12 +90,12 @@ Code lines measured by `tokei` over each tracked repo's tree: reference clones a
 
 | Language | Share | Code lines | Repos |
 |---|---|---:|---:|
-| Rust | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 37.0% | 174,484 | 11 |
-| Python | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 36.7% | 173,254 | 23 |
+| Rust | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 36.9% | 174,484 | 11 |
+| Python | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 36.6% | 173,254 | 23 |
 | GDScript | ▇▇▇▇▇▇ 10.5% | 49,509 | 6 |
 | C | ▇▇▇ 5.7% | 27,005 | 2 |
-| Lua | ▇▇▇ 5.4% | 25,416 | 6 |
-| CSS | ▇ 1.3% | 5,906 | 6 |
+| Lua | ▇▇▇ 5.5% | 26,189 | 6 |
+| CSS | ▇ 1.2% | 5,906 | 6 |
 | Ruby | ▇ 0.8% | 3,572 | 2 |
 | Autoconf | ▇ 0.7% | 3,356 | 4 |
 | Emacs Lisp | ▇ 0.5% | 2,320 | 2 |
@@ -110,6 +110,7 @@ Code lines measured by `tokei` over each tracked repo's tree: reference clones a
 
 #### November 2026
 
+- **11-06 · hex 0.12.1-dbg** · A debug release in the v0.5.2-dbg tradition: the capture lane comes back for one specific verification pass (the combat-monitor parse has never seen a real wire line), and `/doctor` ships as the new permanent fixture.
 - **11-06 · hex 0.12.0** · The golden engine's fourth layer: route goldens, committed at last now that the licensing call is settled (rooms.db derives from tt_dw's public-domain map, so the fixtures are clean to commit; Brandon confirmed).
 - **11-05 · CalibreQuarry 3.84.1** · the real-instrument screen test runs again (tests only; no behavior changes)
 - **11-05 · CalibreQuarry 3.84.0** · the cquarry 1.29.0 floor: the Calibre 9.18 date-search vocabulary (issue #49)
@@ -1394,7 +1395,7 @@ commits that are not this workspace's work.
 | deadbeef-cui | 43 | 0 | 10 | 0 | 33 | 0 | 0 |
 | dragon-agents | 8 | 8 | 0 | 0 | 0 | 0 | 2 |
 | dragon-themer | 2 | 2 | 0 | 0 | 0 | 0 | 0 |
-| hex | 16 | 16 | 0 | 0 | 0 | 0 | 0 |
+| hex | 17 | 17 | 0 | 0 | 0 | 0 | 0 |
 | kanagawa-dragon-nvim-emacs | 7 | 7 | 0 | 0 | 0 | 0 | 0 |
 | lattice-music | 107 | 107 | 0 | 0 | 0 | 0 | 0 |
 | opends | 29 | 28 | 1 | 0 | 0 | 0 | 3 |
