@@ -8,15 +8,15 @@ remain canonical; this file is a projection, reproducible with
 
 ## The shape of the work
 
-- **44 repositories tracked · 1,590 releases recorded · 5,294 commits, authored by Brandon LaRocque**
-- Span: 2025-08-10 to 2026-11-07
-- This month (2026-11): 46 releases across 8 repos · 190 commits
+- **44 repositories tracked · 1,599 releases recorded · 5,315 commits, authored by Brandon LaRocque**
+- Span: 2025-08-10 to 2026-11-08
+- This month (2026-11): 55 releases across 9 repos · 211 commits
 
 | Repository | What it is | Releases | Latest | Last release | Commits | Active since |
 |---|---|---:|---|---|---:|---|
 | [Atrium](https://github.com/VirInvictus/Atrium) | Native Linux task manager: Org-mode internals, Things 3 / OmniFocus surface, local-first SQLite. | 172 | 0.76.0 | 2026-09-14 | 362 | 2026-05-05 |
 | [Conservatory](https://github.com/VirInvictus/Conservatory) | Calibre for audio: a native library manager that owns and moves music, podcasts, and audiobooks on disk, with a libmpv player. | 160 | 0.9.1 | 2026-10-11 | 294 | 2026-05-27 |
-| [Viaduct](https://github.com/VirInvictus/Viaduct) | Linux port of NetNewsWire: local-first RSS reader, single-writer SQLite, FTS5 search, Inoreader sync. | 129 | 4.4.1 | 2026-10-25 | 256 | 2026-04-19 |
+| [Viaduct](https://github.com/VirInvictus/Viaduct) | Linux port of NetNewsWire: local-first RSS reader, single-writer SQLite, FTS5 search, Inoreader sync. | 130 | 4.4.2 | 2026-11-08 | 258 | 2026-04-19 |
 | [CalibreQuarry](https://github.com/VirInvictus/CalibreQuarry) | CLI toolkit over Calibre's metadata.db: catalogs, stats, audits, parity search, and a pre-import curation screen. | 127 | 3.84.1 | 2026-11-05 | 407 | 2026-03-27 |
 | [lattice-music](https://github.com/VirInvictus/lattice-music) | CLI/TUI for music collections: ~30 read-only audit and visualization modes with the filesystem as source of truth; writes are explicit and opt-in. | 107 | 6.4.1 | 2026-10-11 | 338 | 2025-08-10 |
 | Catagotchi | Cozy cat tamagotchi wrapped around an idle empire; everything on screen is generated in code (Godot). | 104 | 4.51.0 | 2026-09-18 | 166 | 2026-07-10 |
@@ -30,10 +30,10 @@ remain canonical; this file is a projection, reproducible with
 | [Colophon](https://github.com/VirInvictus/Colophon) | GTK4 statistics viewer for KOReader reading logs; imports a copy of statistics.sqlite3, Cairo charts. | 33 | 2.6.0 | 2026-09-15 | 98 | 2026-07-03 |
 | [opends](https://github.com/VirInvictus/opends) | Open toolkit and bugfix patches for SSI's Dark Sun CRPGs: save inspectors, format extractors, disassemblers, darkfixes. | 29 | ovr-carve 0.1.0 | 2026-11-01 | 423 | 2026-05-03 |
 | Haveli | Two-player LAN digital build of Jaipur on a content-agnostic deterministic engine (private: the faithful dataset is git-ignored). | 28 | 1.2.0 | 2026-09-15 | 66 | 2026-06-15 |
+| hex |  | 28 | 0.17.2 | 2026-11-08 | 90 | 2026-11-04 |
 | [Carrel-calibre-web](https://github.com/VirInvictus/Carrel-calibre-web) | Fork of calibre-web carrying Carrel's code: single-user, database attached read-only, reads through cquarry. | 23 | 0.6.48 | 2026-11-05 | 125 | 2026-06-11 |
 | [Quire](https://github.com/VirInvictus/Quire) | Soulver-style notepad calculator for Linux: plain-text sheets where prose and expressions share the page and answers fill a results column. | 22 | 1.5.3 | 2026-10-09 | 114 | 2026-10-05 |
 | [Carrel](https://github.com/VirInvictus/Carrel) | Contract and theme for a single-user Calibre reading room (CSS + docs; the code lives in the calibre-web fork). | 20 | 0.9.10 | 2026-09-15 | 72 | 2026-06-11 |
-| hex |  | 20 | 0.13.1 | 2026-11-06 | 77 | 2026-11-04 |
 | crash-course | Arcade aircraft-crash damage-maximizer (Burnout's crash mode rebuilt around airliners), built for my son. | 19 | 0.18.0 | 2026-10-07 | 31 | 2026-10-04 |
 | Vestibule | One-directional Obsidian-vault to org-roam converter with a dry-run install. | 12 | 0.11.0 | 2026-09-15 | 55 | 2026-07-25 |
 | [vir-gtk](https://github.com/VirInvictus/vir-gtk) | Shared GTK4 styling and D-Bus portal layer for the Vir Invictus desktop suite (replaces libadwaita). | 12 | 1.4.3 | 2026-10-06 | 51 | 2026-08-23 |
@@ -41,7 +41,7 @@ remain canonical; this file is a projection, reproducible with
 | [Topograph](https://github.com/VirInvictus/Topograph) | Filesystem size explorer: lazy tree view plus a squarified cushion treemap (a qdirstat analog). | 11 | 0.4.1 | 2026-10-07 | 53 | 2026-08-14 |
 | [raindrop-cli](https://github.com/VirInvictus/raindrop-cli) | Dependency-free Raindrop.io CLI for bookmarks, collections, tags, and highlights, with a Pinboard backend and two-way sync. | 11 | 0.7.0 | 2026-09-15 | 53 | 2026-07-18 |
 | whisker-street | Discord stock market where the server members are the stocks: presence-driven prices and a CPMM market maker. | 11 | 0.7.0 | 2026-10-24 | 16 | 2026-10-22 |
-| annals | This generator: the workspace's whole work record, rendered from every repo's patchnotes and git history. | 9 | 0.6.0 | 2026-11-04 | 90 | 2026-10-09 |
+| annals | This generator: the workspace's whole work record, rendered from every repo's patchnotes and git history. | 9 | 0.6.0 | 2026-11-04 | 91 | 2026-10-09 |
 | [saforums.koplugin](https://github.com/VirInvictus/saforums.koplugin) | KOReader plugin reading the Something Awful Forums as native e-reader widgets: login, unread tracking, bookmarks. | 9 | 0.5.4 | 2026-10-24 | 63 | 2026-10-08 |
 | [2-kobo-style-sleepscreen-banner-prettified](https://github.com/VirInvictus/2-kobo-style-sleepscreen-banner-prettified) | KOReader user patch redrawing the sleep screen as a Kobo-style floating card (prettified fork). | 8 | 2.1.4 | 2026-09-14 | 29 | 2026-07-05 |
 | [dragon-agents](https://github.com/VirInvictus/dragon-agents) | Local ZCode plugin of twenty-three read-only research subagents: repo mapping, release audits, CI triage, markets and finance briefs. | 8 | 0.7.1 | 2026-10-30 | 18 | 2026-09-03 |
@@ -53,8 +53,8 @@ remain canonical; this file is a projection, reproducible with
 | dragon-themer | Theme engine for the whole machine: one palette rendered into every colour-bearing config. | 2 | 0.1.0 | 2026-10-07 | 34 | 2026-07-28 |
 | [1-timezone](https://github.com/VirInvictus/1-timezone) | KOReader user patch forcing a correct POSIX TZ inside the process. | 0 | - | - | 7 | 2026-07-05 |
 | Coffer | Native GTK4 envelope-budgeting app over a plain-text hledger journal (the journal is the database). | 0 | - | - | 9 | 2026-06-28 |
-| [VirInvictus](https://github.com/VirInvictus/VirInvictus) | The GitHub profile README repo: one line and a shipping status per project. | 0 | - | - | 129 | 2026-06-22 |
-| [VirInvictus.github.io](https://github.com/VirInvictus/VirInvictus.github.io) | This site: static Jekyll on GitHub Pages; /patchnotes/ serves the annals record. | 0 | - | - | 291 | 2026-04-16 |
+| [VirInvictus](https://github.com/VirInvictus/VirInvictus) | The GitHub profile README repo: one line and a shipping status per project. | 0 | - | - | 131 | 2026-06-22 |
+| [VirInvictus.github.io](https://github.com/VirInvictus/VirInvictus.github.io) | This site: static Jekyll on GitHub Pages; /patchnotes/ serves the annals record. | 0 | - | - | 294 | 2026-04-16 |
 | [dead-reckoning-bookend-preset](https://github.com/VirInvictus/dead-reckoning-bookend-preset) | One-file KOReader preset: session pace, chapter ETA, projected finish. | 0 | - | - | 15 | 2026-07-03 |
 | project-void | Party-based isometric CRPG in the Dark Sun / Fallout 2 lineage on lethal Cairn combat math (pre-development). | 0 | - | - | 16 | 2026-04-17 |
 | project-yeschef | Grand-strategy restaurant sim in the CK3 / Victoria 3 lineage; you play the General Manager (pre-development). | 0 | - | - | 6 | 2026-05-23 |
@@ -75,11 +75,11 @@ remain canonical; this file is a projection, reproducible with
 | 2026-08 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 165 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 776 |
 | 2026-09 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 349 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 1,729 |
 | 2026-10 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 195 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 947 |
-| 2026-11 | ▇▇▇▇ 46 | ▇▇▇ 190 |
+| 2026-11 | ▇▇▇▇ 55 | ▇▇▇ 211 |
 
 ## The languages
 
-473,453 lines of code · 27 languages · 43 repos
+473,365 lines of code · 27 languages · 43 repos
 
 Code lines measured by `tokei` over each tracked repo's tree: reference clones and fork checkouts (the `[languages]` exclude) never count, and neither do lockfiles or data formats. A snapshot of the trees as they stand, not a measure of authorship pace.
 
@@ -90,11 +90,11 @@ Code lines measured by `tokei` over each tracked repo's tree: reference clones a
 
 | Language | Share | Code lines | Repos |
 |---|---|---:|---:|
-| Rust | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 36.9% | 174,484 | 11 |
+| Rust | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 36.9% | 174,526 | 11 |
 | Python | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 36.6% | 173,254 | 23 |
 | GDScript | ▇▇▇▇▇▇ 10.5% | 49,509 | 6 |
 | C | ▇▇▇ 5.7% | 27,005 | 2 |
-| Lua | ▇▇▇ 5.7% | 26,828 | 6 |
+| Lua | ▇▇▇ 5.6% | 26,698 | 6 |
 | CSS | ▇ 1.2% | 5,906 | 6 |
 | Ruby | ▇ 0.8% | 3,572 | 2 |
 | Autoconf | ▇ 0.7% | 3,356 | 4 |
@@ -110,6 +110,15 @@ Code lines measured by `tokei` over each tracked repo's tree: reference clones a
 
 #### November 2026
 
+- **11-08 · Viaduct 4.4.2** · link-looking titles can't forge feeds
+- **11-08 · hex 0.17.2** · The night-walk fix, for real this time: dark rooms push room.info WITHOUT the identifier field (you cannot identify a room you cannot see), and the walker was ignoring exactly those pushes, so a 38-step walk through dark countryside counted "step 0/38" the entire way while successfully moving Brandon every step.
+- **11-08 · hex 0.17.1** · Two small fixes from live use of the item commands:
+- **11-08 · hex 0.17.0** · Found live, twice in one night: `/goto` happily routes through climb-window shortcuts (the guild dorm wings connect to the ground floor over the rooftops), and an untrained level-4 student who follows one at spindlewinter night ends up stranded on a ledge with `[none]` exits, a burnt torch, and a full queue of "What?".
+- **11-08 · hex 0.16.1** · Two walker bugs from the first live night walk (a 32-step route over the guild rooftops, in the dark, on spindlewinter night; Brandon's Hex life is hard):
+- **11-08 · hex 0.16.0** · The chat capture finally met a real talker: Brandon joined the Conlegium Sicariorum and its wooden bracelet started chattering.
+- **11-08 · hex 0.15.0** · Brandon joined the Assassins' Guild on the wire (the captured sequence: application form from the black box in the foyer, south to the secretary, `say apply`), and the score-verbose clause confirmed it: "you are level 3 in the Assassins' Guild".
+- **11-08 · hex 0.14.1** · Hotfix, same evening: `/goto #1` crashed with "attempt to index a nil value (global 'deps')".
+- **11-08 · hex 0.14.0** · The big one, found the moment Brandon first stood somewhere real and typed `/goto foyer`: **`/goto` had never actually worked.** Every route call received the current room's 40-hex identifier (straight from GMCP via `need_start`), and the pathfinder indexed its graph by vnum only, so the Dijkstra never started, `/goto` printed its candidate list with every entry "unreachable", and no walk ever launched.
 - **11-06 · hex 0.13.1** · A live-found fix from Brandon's first walk in Ankh-Morpork: `/near market` from God Street listed five unreachable strangers in Genua and Ephebe while AM's own Job Market rooms never appeared.
 - **11-06 · hex 0.13.0** · Phase 8's core engineering piece: the fake-GMCP harness. The dead-vitals bug class is now a red CI run instead of a dead status bar at login.
 - **11-06 · hex 0.12.2-dbg** · The debug lane's mobile phase: Brandon is out in the real world, so the verification commands grow legs.
@@ -1387,7 +1396,7 @@ commits that are not this workspace's work.
 | Quire | 22 | 22 | 0 | 0 | 0 | 0 | 0 |
 | Topograph | 11 | 11 | 0 | 0 | 0 | 0 | 0 |
 | Vestibule | 12 | 12 | 0 | 0 | 0 | 0 | 0 |
-| Viaduct | 129 | 30 | 1 | 53 | 45 | 1 | 0 |
+| Viaduct | 130 | 31 | 1 | 53 | 45 | 1 | 0 |
 | VirInvictus | 0 | 0 | 0 | 0 | 0 | 0 | - |
 | VirInvictus.github.io | 0 | 0 | 0 | 0 | 0 | 0 | - |
 | annals | 9 | 9 | 0 | 0 | 0 | 0 | 0 |
@@ -1398,7 +1407,7 @@ commits that are not this workspace's work.
 | deadbeef-cui | 43 | 0 | 10 | 0 | 33 | 0 | 0 |
 | dragon-agents | 8 | 8 | 0 | 0 | 0 | 0 | 2 |
 | dragon-themer | 2 | 2 | 0 | 0 | 0 | 0 | 0 |
-| hex | 20 | 20 | 0 | 0 | 0 | 0 | 0 |
+| hex | 28 | 28 | 0 | 0 | 0 | 0 | 0 |
 | kanagawa-dragon-nvim-emacs | 7 | 7 | 0 | 0 | 0 | 0 | 0 |
 | lattice-music | 107 | 107 | 0 | 0 | 0 | 0 | 0 |
 | opends | 29 | 28 | 1 | 0 | 0 | 0 | 3 |
