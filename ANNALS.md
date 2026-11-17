@@ -8,41 +8,41 @@ remain canonical; this file is a projection, reproducible with
 
 ## The shape of the work
 
-- **44 repositories tracked · 1,642 releases recorded · 5,475 commits, authored by Brandon LaRocque**
+- **45 repositories tracked · 1,662 releases recorded · 5,544 commits, authored by Brandon LaRocque**
 - Span: 2025-08-10 to 2026-11-17
-- This month (2026-11): 98 releases across 13 repos · 371 commits
+- This month (2026-11): 118 releases across 14 repos · 440 commits
 
 | Repository | What it is | Releases | Latest | Last release | Commits | Active since |
 |---|---|---:|---|---|---:|---|
 | [Atrium](https://github.com/VirInvictus/Atrium) | Native Linux task manager: Org-mode internals, Things 3 / OmniFocus surface, local-first SQLite. | 172 | 0.76.0 | 2026-09-14 | 363 | 2026-05-05 |
 | [Conservatory](https://github.com/VirInvictus/Conservatory) | Calibre for audio: a native library manager that owns and moves music, podcasts, and audiobooks on disk, with a libmpv player. | 160 | 0.9.1 | 2026-10-11 | 295 | 2026-05-27 |
-| [CalibreQuarry](https://github.com/VirInvictus/CalibreQuarry) | CLI toolkit over Calibre's metadata.db: catalogs, stats, audits, parity search, and a pre-import curation screen. | 135 | 3.90.0 | 2026-11-16 | 425 | 2026-03-27 |
+| [CalibreQuarry](https://github.com/VirInvictus/CalibreQuarry) | CLI toolkit over Calibre's metadata.db: catalogs, stats, audits, parity search, and a pre-import curation screen. | 137 | 3.92.0 | 2026-11-17 | 427 | 2026-03-27 |
 | [Viaduct](https://github.com/VirInvictus/Viaduct) | Linux port of NetNewsWire: local-first RSS reader, single-writer SQLite, FTS5 search, Inoreader sync. | 131 | 4.4.3 | 2026-11-13 | 261 | 2026-04-19 |
 | [lattice-music](https://github.com/VirInvictus/lattice-music) | CLI/TUI for music collections: ~30 read-only audit and visualization modes with the filesystem as source of truth; writes are explicit and opt-in. | 110 | 6.5.0 | 2026-11-16 | 345 | 2025-08-10 |
 | Catagotchi | Cozy cat tamagotchi wrapped around an idle empire; everything on screen is generated in code (Godot). | 104 | 4.51.0 | 2026-09-18 | 167 | 2026-07-10 |
 | Hearth | Two-player LAN digital build of A Feast for Odin on the same engine shape (private: the faithful dataset is git-ignored). | 101 | 0.13.68 | 2026-09-15 | 130 | 2026-06-14 |
+| [bindery-cli](https://github.com/VirInvictus/bindery-cli) | CLI that repairs broken EPUBs with deterministic, epubcheck-gated fixes, atomically and in place inside a Calibre library. | 98 | 1.2.2 | 2026-11-17 | 321 | 2026-06-09 |
 | [Framework](https://github.com/VirInvictus/Framework) | Native GTK4 document viewer for PDF, DjVu, comics, and EPUB-class ebooks, on twin render pipelines. | 97 | 1.0.2 | 2026-09-16 | 173 | 2026-04-06 |
-| [bindery-cli](https://github.com/VirInvictus/bindery-cli) | CLI that repairs broken EPUBs with deterministic, epubcheck-gated fixes, atomically and in place inside a Calibre library. | 97 | 1.2.1 | 2026-11-16 | 319 | 2026-06-09 |
 | [cquarry](https://github.com/VirInvictus/cquarry) | Canonical read-only Calibre database layer with a faithful port of Calibre's search grammar; the opt-in write module is the one sanctioned mutation path. | 49 | 1.29.2 | 2026-11-16 | 287 | 2026-08-23 |
 | [Hermitage](https://github.com/VirInvictus/Hermitage) | Visually immersive GTK4 gallery browser for Calibre libraries, reading metadata.db read-only; ships a Flatpak. | 45 | 1.8.8 | 2026-11-01 | 122 | 2026-04-10 |
+| [opends](https://github.com/VirInvictus/opends) | Open toolkit and bugfix patches for SSI's Dark Sun CRPGs: save inspectors, format extractors, disassemblers, darkfixes. | 44 | darkfix-ds1 0.2.0-beta.4 | 2026-11-17 | 463 | 2026-05-03 |
 | [deadbeef-cui](https://github.com/VirInvictus/deadbeef-cui) | Faceted library-browser plugin for DeaDBeeF in the Columns UI style, on medialib and scriptable presets. | 43 | 2.2.1 | 2026-10-22 | 198 | 2026-04-09 |
 | [Hearthfall](https://github.com/VirInvictus/Hearthfall) | Grimdark clan-survival terminal game: stdlib-only engine, single seeded RNG, Textual TUI. | 35 | 0.28.0 | 2026-09-15 | 91 | 2026-07-19 |
 | hex |  | 35 | 0.23.0 | 2026-11-09 | 106 | 2026-11-04 |
 | [Colophon](https://github.com/VirInvictus/Colophon) | GTK4 statistics viewer for KOReader reading logs; imports a copy of statistics.sqlite3, Cairo charts. | 33 | 2.6.0 | 2026-09-15 | 99 | 2026-07-03 |
-| [opends](https://github.com/VirInvictus/opends) | Open toolkit and bugfix patches for SSI's Dark Sun CRPGs: save inspectors, format extractors, disassemblers, darkfixes. | 31 | darkfix-ds1 0.2.0-beta.1 | 2026-11-13 | 436 | 2026-05-03 |
 | Haveli | Two-player LAN digital build of Jaipur on a content-agnostic deterministic engine (private: the faithful dataset is git-ignored). | 28 | 1.2.0 | 2026-09-15 | 66 | 2026-06-15 |
 | [Quire](https://github.com/VirInvictus/Quire) | Soulver-style notepad calculator for Linux: plain-text sheets where prose and expressions share the page and answers fill a results column. | 25 | 1.5.6 | 2026-11-16 | 118 | 2026-10-05 |
 | [Carrel-calibre-web](https://github.com/VirInvictus/Carrel-calibre-web) | Fork of calibre-web carrying Carrel's code: single-user, database attached read-only, reads through cquarry. | 23 | 0.6.48 | 2026-11-05 | 126 | 2026-06-11 |
 | [Carrel](https://github.com/VirInvictus/Carrel) | Contract and theme for a single-user Calibre reading room (CSS + docs; the code lives in the calibre-web fork). | 20 | 0.9.10 | 2026-09-15 | 74 | 2026-06-11 |
 | crash-course | Arcade aircraft-crash damage-maximizer (Burnout's crash mode rebuilt around airliners), built for my son. | 19 | 0.18.0 | 2026-10-07 | 31 | 2026-10-04 |
-| [dragon-agents](https://github.com/VirInvictus/dragon-agents) | Local ZCode plugin of twenty-three read-only research subagents: repo mapping, release audits, CI triage, markets and finance briefs. | 18 | 1.3.2 | 2026-11-16 | 32 | 2026-09-03 |
+| [dragon-agents](https://github.com/VirInvictus/dragon-agents) | Local ZCode plugin of twenty-three read-only research subagents: repo mapping, release audits, CI triage, markets and finance briefs. | 19 | 1.3.3 | 2026-11-17 | 33 | 2026-09-03 |
 | Vestibule | One-directional Obsidian-vault to org-roam converter with a dry-run install. | 12 | 0.11.0 | 2026-09-15 | 55 | 2026-07-25 |
 | [vir-gtk](https://github.com/VirInvictus/vir-gtk) | Shared GTK4 styling and D-Bus portal layer for the Vir Invictus desktop suite (replaces libadwaita). | 12 | 1.4.3 | 2026-10-06 | 51 | 2026-08-23 |
 | [vir-search](https://github.com/VirInvictus/vir-search) | Domain-agnostic Rust library parsing Calibre-style search expressions into a typed AST. | 12 | 1.4.3 | 2026-09-15 | 61 | 2026-08-23 |
 | [Topograph](https://github.com/VirInvictus/Topograph) | Filesystem size explorer: lazy tree view plus a squarified cushion treemap (a qdirstat analog). | 11 | 0.4.1 | 2026-10-07 | 53 | 2026-08-14 |
 | [raindrop-cli](https://github.com/VirInvictus/raindrop-cli) | Dependency-free Raindrop.io CLI for bookmarks, collections, tags, and highlights, with a Pinboard backend and two-way sync. | 11 | 0.7.0 | 2026-09-15 | 53 | 2026-07-18 |
 | whisker-street | Discord stock market where the server members are the stocks: presence-driven prices and a CPMM market maker. | 11 | 0.7.0 | 2026-10-24 | 16 | 2026-10-22 |
-| annals | This generator: the workspace's whole work record, rendered from every repo's patchnotes and git history. | 9 | 0.6.0 | 2026-11-04 | 107 | 2026-10-09 |
+| annals | This generator: the workspace's whole work record, rendered from every repo's patchnotes and git history. | 9 | 0.6.0 | 2026-11-04 | 108 | 2026-10-09 |
 | [saforums.koplugin](https://github.com/VirInvictus/saforums.koplugin) | KOReader plugin reading the Something Awful Forums as native e-reader widgets: login, unread tracking, bookmarks. | 9 | 0.5.4 | 2026-10-24 | 63 | 2026-10-08 |
 | [2-kobo-style-sleepscreen-banner-prettified](https://github.com/VirInvictus/2-kobo-style-sleepscreen-banner-prettified) | KOReader user patch redrawing the sleep screen as a Kobo-style floating card (prettified fork). | 8 | 2.1.4 | 2026-09-14 | 29 | 2026-07-05 |
 | [vir-tui](https://github.com/VirInvictus/vir-tui) | TUI primitive library (curses menus, prompts, progress, mouse plus type-to-filter) powering the Python CLI toolchain. | 8 | 2.5.0 | 2026-09-14 | 51 | 2026-08-23 |
@@ -50,11 +50,12 @@ remain canonical; this file is a projection, reproducible with
 | [kanagawa-dragon-nvim-emacs](https://github.com/VirInvictus/kanagawa-dragon-nvim-emacs) | Faithful Emacs deftheme port of the Kanagawa Dragon palette, mapping every Emacs 29+ tree-sitter face. | 7 | 0.2.1 | 2026-09-15 | 34 | 2026-07-24 |
 | [AudiobookTools](https://github.com/VirInvictus/AudiobookTools) | Declarative tag-and-folder normalizer for the audiobook library; dry-run default, reversible --apply, never re-encodes. | 6 | 0.3.0 | 2026-09-15 | 37 | 2026-05-28 |
 | Foyer | Shared front door to Hearth and Haveli: game launcher plus LAN lobby; holds no game rules. | 6 | 0.2.0 | 2026-09-15 | 32 | 2026-07-17 |
+| Commonplace |  | 3 | 0.3.0 | 2026-11-17 | 33 | 2026-11-17 |
 | dragon-themer | Theme engine for the whole machine: one palette rendered into every colour-bearing config. | 2 | 0.1.0 | 2026-10-07 | 34 | 2026-07-28 |
 | [1-timezone](https://github.com/VirInvictus/1-timezone) | KOReader user patch forcing a correct POSIX TZ inside the process. | 0 | - | - | 7 | 2026-07-05 |
 | Coffer | Native GTK4 envelope-budgeting app over a plain-text hledger journal (the journal is the database). | 0 | - | - | 9 | 2026-06-28 |
-| [VirInvictus](https://github.com/VirInvictus/VirInvictus) | The GitHub profile README repo: one line and a shipping status per project. | 0 | - | - | 137 | 2026-06-22 |
-| [VirInvictus.github.io](https://github.com/VirInvictus/VirInvictus.github.io) | This site: static Jekyll on GitHub Pages; /patchnotes/ serves the annals record. | 0 | - | - | 319 | 2026-04-16 |
+| [VirInvictus](https://github.com/VirInvictus/VirInvictus) | The GitHub profile README repo: one line and a shipping status per project. | 0 | - | - | 139 | 2026-06-22 |
+| [VirInvictus.github.io](https://github.com/VirInvictus/VirInvictus.github.io) | This site: static Jekyll on GitHub Pages; /patchnotes/ serves the annals record. | 0 | - | - | 320 | 2026-04-16 |
 | [dead-reckoning-bookend-preset](https://github.com/VirInvictus/dead-reckoning-bookend-preset) | One-file KOReader preset: session pace, chapter ETA, projected finish. | 0 | - | - | 15 | 2026-07-03 |
 | project-void | Party-based isometric CRPG in the Dark Sun / Fallout 2 lineage on lethal Cairn combat math (pre-development). | 0 | - | - | 16 | 2026-04-17 |
 | project-yeschef | Grand-strategy restaurant sim in the CK3 / Victoria 3 lineage; you play the General Manager (pre-development). | 0 | - | - | 6 | 2026-05-23 |
@@ -75,26 +76,26 @@ remain canonical; this file is a projection, reproducible with
 | 2026-08 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 165 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 776 |
 | 2026-09 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 349 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 1,729 |
 | 2026-10 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 195 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 947 |
-| 2026-11 | ▇▇▇▇▇▇▇▇ 98 | ▇▇▇▇▇▇ 371 |
+| 2026-11 | ▇▇▇▇▇▇▇▇▇ 118 | ▇▇▇▇▇▇▇ 440 |
 
 ## The languages
 
-480,038 lines of code · 27 languages · 43 repos
+488,184 lines of code · 27 languages · 44 repos
 
 Code lines measured by `tokei` over each tracked repo's tree: reference clones and fork checkouts (the `[languages]` exclude) never count, and neither do lockfiles or data formats. A snapshot of the trees as they stand, not a measure of authorship pace.
 
 ```
 ███████████████▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒░░····
-█ Python 37%  ▓ Rust 37%  ▒ GDScript 10%  ░ Lua 6%  · other 10%
+█ Rust 37%  ▓ Python 37%  ▒ GDScript 10%  ░ Lua 6%  · other 10%
 ```
 
 | Language | Share | Code lines | Repos |
 |---|---|---:|---:|
-| Python | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 37.0% | 177,634 | 23 |
-| Rust | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 36.5% | 175,309 | 11 |
-| GDScript | ▇▇▇▇▇▇ 10.3% | 49,509 | 6 |
-| Lua | ▇▇▇ 5.9% | 28,208 | 6 |
-| C | ▇▇▇ 5.6% | 27,005 | 2 |
+| Rust | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 37.3% | 182,195 | 12 |
+| Python | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 36.6% | 178,894 | 23 |
+| GDScript | ▇▇▇▇▇▇ 10.1% | 49,509 | 6 |
+| Lua | ▇▇▇ 5.8% | 28,208 | 6 |
+| C | ▇▇▇ 5.5% | 27,005 | 2 |
 | CSS | ▇ 1.2% | 5,906 | 6 |
 | Ruby | ▇ 0.7% | 3,572 | 2 |
 | Autoconf | ▇ 0.7% | 3,356 | 4 |
@@ -110,6 +111,26 @@ Code lines measured by `tokei` over each tracked repo's tree: reference clones a
 
 #### November 2026
 
+- **11-17 · CalibreQuarry 3.92.0** · The duplicate screen learns print-shop junk seeds (issue #68)
+- **11-17 · CalibreQuarry 3.91.0** · The cover ladder grows a DJVU rung and a page-2 arm (issues #67 and #69)
+- **11-17 · Commonplace 0.3.0** · The write path and the tag/link layer, Phases 4-5 of the roadmap: the engine now writes notes with nvALT's file rules and carries the tag and link graph, still dependency-free and headless.
+- **11-17 · Commonplace 0.2.0** · The engine arc, Phases 1-3 of the roadmap: `commonplace-core` now loads a notes folder the way nvALT reads one and powers the find-as-you-type search headlessly.
+- **11-17 · Commonplace 0.1.0** · Initial skeleton: three-crate workspace (the `commonplace-core` engine, the `commonplace` GTK4 shell, `commonplace-cli`), CI shaped from Docket's hardened workflow, the committed research notes under `research/`, and the port roadmap in `roadmap.md`.
+- **11-17 · bindery-cli 1.2.2** · The half-spine veto (issue #35): the shell census read the wrong layout
+- **11-17 · dragon-agents 1.3.3** · Two latro charter patches from the standing debug-report duty, batched under the charter-patch policy.
+- **11-17 · opends darkfix-ds1 0.2.0-beta.4** · `darkfix-ds1` v0.2.0-beta.4
+- **11-17 · opends darkfix-ds1 0.2.0-beta.3** · `darkfix-ds1` v0.2.0-beta.3
+- **11-17 · opends darkfix-ds1 0.2.0-beta.2** · `darkfix-ds1` v0.2.0-beta.2
+- **11-17 · opends gpl-asm 0.10.0** · `gpl-asm` v0.10.0
+- **11-17 · opends region-render 0.9.0** · `region-render` v0.9.0
+- **11-17 · opends gpl-disasm 0.9.1** · / gpl-asm v0.10.1 / gpl-text v0.1.0
+- **11-17 · opends font-extract 0.1.0** · `font-extract` v0.1.0
+- **11-17 · opends gpl-disasm 0.9.0** · `gpl-disasm` v0.9.0
+- **11-17 · opends image-extract 0.5.1** · `image-extract` v0.5.1
+- **11-17 · opends gpl-asm 0.9.3** · `gpl-asm` v0.9.3
+- **11-17 · opends ovr-carve 0.1.1** · `ovr-carve` v0.1.1
+- **11-17 · opends save-inspect 0.9.7** · `save-inspect` v0.9.7
+- **11-17 · opends audio-extract 0.1.1** · `audio-extract` v0.1.1
 - **11-16 · CalibreQuarry 3.90.0** · Adopt cquarry 1.29.2: the audit-fix wave (issue #66)
 - **11-16 · CalibreQuarry 3.89.1** · Tests only: the tty-conditional phase-3 pin runs everywhere (issue #64)
 - **11-16 · CalibreQuarry 3.89.0** · The CLI-surface batch (issues #57, #58, #59)
@@ -1422,12 +1443,13 @@ commits that are not this workspace's work.
 | 2-kobo-style-sleepscreen-banner-prettified | 8 | 0 | 2 | 0 | 6 | 0 | 1 |
 | Atrium | 172 | 163 | 0 | 1 | 8 | 0 | 0 |
 | AudiobookTools | 6 | 6 | 0 | 0 | 0 | 0 | 0 |
-| CalibreQuarry | 135 | 135 | 0 | 0 | 0 | 0 | 0 |
+| CalibreQuarry | 137 | 137 | 0 | 0 | 0 | 0 | 0 |
 | Carrel | 20 | 20 | 0 | 0 | 0 | 0 | 0 |
 | Carrel-calibre-web | 23 | 22 | 0 | 1 | 0 | 0 | 0 |
 | Catagotchi | 104 | 104 | 0 | 0 | 0 | 0 | 0 |
 | Coffer | 0 | 0 | 0 | 0 | 0 | 0 | - |
 | Colophon | 33 | 33 | 0 | 0 | 0 | 0 | 0 |
+| Commonplace | 3 | 3 | 0 | 0 | 0 | 0 | 0 |
 | Conservatory | 160 | 13 | 2 | 54 | 91 | 0 | 0 |
 | Docket | 7 | 7 | 0 | 0 | 0 | 0 | 0 |
 | Foyer | 6 | 3 | 0 | 0 | 3 | 0 | 0 |
@@ -1443,17 +1465,17 @@ commits that are not this workspace's work.
 | VirInvictus | 0 | 0 | 0 | 0 | 0 | 0 | - |
 | VirInvictus.github.io | 0 | 0 | 0 | 0 | 0 | 0 | - |
 | annals | 9 | 9 | 0 | 0 | 0 | 0 | 0 |
-| bindery-cli | 97 | 97 | 0 | 0 | 0 | 0 | 0 |
+| bindery-cli | 98 | 98 | 0 | 0 | 0 | 0 | 0 |
 | cquarry | 49 | 49 | 0 | 0 | 0 | 0 | 0 |
 | crash-course | 19 | 19 | 0 | 0 | 0 | 0 | 0 |
 | dead-reckoning-bookend-preset | 0 | 0 | 0 | 0 | 0 | 0 | - |
 | deadbeef-cui | 43 | 0 | 10 | 0 | 33 | 0 | 0 |
-| dragon-agents | 18 | 18 | 0 | 0 | 0 | 0 | 2 |
+| dragon-agents | 19 | 19 | 0 | 0 | 0 | 0 | 2 |
 | dragon-themer | 2 | 2 | 0 | 0 | 0 | 0 | 0 |
 | hex | 35 | 35 | 0 | 0 | 0 | 0 | 0 |
 | kanagawa-dragon-nvim-emacs | 7 | 7 | 0 | 0 | 0 | 0 | 0 |
 | lattice-music | 110 | 110 | 0 | 0 | 0 | 0 | 0 |
-| opends | 31 | 30 | 1 | 0 | 0 | 0 | 3 |
+| opends | 44 | 43 | 1 | 0 | 0 | 0 | 5 |
 | project-void | 0 | 0 | 0 | 0 | 0 | 0 | - |
 | project-yeschef | 0 | 0 | 0 | 0 | 0 | 0 | - |
 | raindrop-cli | 11 | 11 | 0 | 0 | 0 | 0 | 0 |
@@ -1891,6 +1913,8 @@ disagree.
 
 #### opends
 
+- gpl-text-v0.1.0 (2026-11-17)
+- gpl-asm-v0.10.1 (2026-11-17)
 - region-render-v0.8.0 (2026-09-11)
 - ovr-map-v0.3.4 (2026-09-11)
 - gpl-disasm-v0.8.0 (2026-09-06)
@@ -1899,6 +1923,6 @@ disagree.
 
 No `patchnotes.md`, not in `stats_only`, not excluded by name:
 
-`Commonplace`, `DarkSunTools`, `OpenArcanum`, `TaskPaper`, `arcanum-ce`, `birch-outline`, `pka2xml`, `playDB-CNT`, `rea`, `taskpaper-mode`, `tt_dw`, `unhingedbot`, `unity-arcanum`, `vscode-todo-plus`, `yt-dlp`, `yuan-ti`
+`DarkSunTools`, `OpenArcanum`, `TaskPaper`, `arcanum-ce`, `birch-outline`, `pka2xml`, `playDB-CNT`, `rea`, `taskpaper-mode`, `tt_dw`, `unhingedbot`, `unity-arcanum`, `vscode-todo-plus`, `yt-dlp`, `yuan-ti`
 
 Owned ones belong in `stats_only`; everything else in `exclude`.
