@@ -8,9 +8,9 @@ remain canonical; this file is a projection, reproducible with
 
 ## The shape of the work
 
-- **45 repositories tracked · 1,674 releases recorded · 5,577 commits, authored by Brandon LaRocque**
+- **45 repositories tracked · 1,679 releases recorded · 5,592 commits, authored by Brandon LaRocque**
 - Span: 2025-08-10 to 2026-11-18
-- This month (2026-11): 130 releases across 20 repos · 473 commits
+- This month (2026-11): 135 releases across 21 repos · 488 commits
 
 | Repository | What it is | Releases | Latest | Last release | Commits | Active since |
 |---|---|---:|---|---|---:|---|
@@ -33,16 +33,16 @@ remain canonical; this file is a projection, reproducible with
 | Haveli | Two-player LAN digital build of Jaipur on a content-agnostic deterministic engine (private: the faithful dataset is git-ignored). | 28 | 1.2.0 | 2026-09-15 | 66 | 2026-06-15 |
 | [Quire](https://github.com/VirInvictus/Quire) | Soulver-style notepad calculator for Linux: plain-text sheets where prose and expressions share the page and answers fill a results column. | 25 | 1.5.6 | 2026-11-16 | 118 | 2026-10-05 |
 | [Carrel-calibre-web](https://github.com/VirInvictus/Carrel-calibre-web) | Fork of calibre-web carrying Carrel's code: single-user, database attached read-only, reads through cquarry. | 23 | 0.6.48 | 2026-11-05 | 126 | 2026-06-11 |
+| [dragon-agents](https://github.com/VirInvictus/dragon-agents) | Local ZCode plugin of twenty-three read-only research subagents: repo mapping, release audits, CI triage, markets and finance briefs. | 23 | 1.6.0 | 2026-11-18 | 39 | 2026-09-03 |
 | [Carrel](https://github.com/VirInvictus/Carrel) | Contract and theme for a single-user Calibre reading room (CSS + docs; the code lives in the calibre-web fork). | 20 | 0.9.10 | 2026-09-15 | 74 | 2026-06-11 |
 | crash-course | Arcade aircraft-crash damage-maximizer (Burnout's crash mode rebuilt around airliners), built for my son. | 19 | 0.18.0 | 2026-10-07 | 31 | 2026-10-04 |
-| [dragon-agents](https://github.com/VirInvictus/dragon-agents) | Local ZCode plugin of twenty-three read-only research subagents: repo mapping, release audits, CI triage, markets and finance briefs. | 19 | 1.3.3 | 2026-11-17 | 33 | 2026-09-03 |
 | Vestibule | One-directional Obsidian-vault to org-roam converter with a dry-run install. | 12 | 0.11.0 | 2026-09-15 | 55 | 2026-07-25 |
 | [vir-gtk](https://github.com/VirInvictus/vir-gtk) | Shared GTK4 styling and D-Bus portal layer for the Vir Invictus desktop suite (replaces libadwaita). | 12 | 1.4.3 | 2026-10-06 | 51 | 2026-08-23 |
 | [vir-search](https://github.com/VirInvictus/vir-search) | Domain-agnostic Rust library parsing Calibre-style search expressions into a typed AST. | 12 | 1.4.3 | 2026-09-15 | 61 | 2026-08-23 |
+| whisker-street | Discord stock market where the server members are the stocks: presence-driven prices and a CPMM market maker. | 12 | 0.8.0 | 2026-11-18 | 17 | 2026-10-22 |
 | [Topograph](https://github.com/VirInvictus/Topograph) | Filesystem size explorer: lazy tree view plus a squarified cushion treemap (a qdirstat analog). | 11 | 0.4.1 | 2026-10-07 | 53 | 2026-08-14 |
 | [raindrop-cli](https://github.com/VirInvictus/raindrop-cli) | Dependency-free Raindrop.io CLI for bookmarks, collections, tags, and highlights, with a Pinboard backend and two-way sync. | 11 | 0.7.0 | 2026-09-15 | 54 | 2026-07-18 |
-| whisker-street | Discord stock market where the server members are the stocks: presence-driven prices and a CPMM market maker. | 11 | 0.7.0 | 2026-10-24 | 16 | 2026-10-22 |
-| annals | This generator: the workspace's whole work record, rendered from every repo's patchnotes and git history. | 9 | 0.6.0 | 2026-11-04 | 110 | 2026-10-09 |
+| annals | This generator: the workspace's whole work record, rendered from every repo's patchnotes and git history. | 9 | 0.6.0 | 2026-11-04 | 111 | 2026-10-09 |
 | [saforums.koplugin](https://github.com/VirInvictus/saforums.koplugin) | KOReader plugin reading the Something Awful Forums as native e-reader widgets: login, unread tracking, bookmarks. | 9 | 0.5.4 | 2026-10-24 | 63 | 2026-10-08 |
 | [2-kobo-style-sleepscreen-banner-prettified](https://github.com/VirInvictus/2-kobo-style-sleepscreen-banner-prettified) | KOReader user patch redrawing the sleep screen as a Kobo-style floating card (prettified fork). | 8 | 2.1.4 | 2026-09-14 | 29 | 2026-07-05 |
 | [vir-tui](https://github.com/VirInvictus/vir-tui) | TUI primitive library (curses menus, prompts, progress, mouse plus type-to-filter) powering the Python CLI toolchain. | 8 | 2.5.0 | 2026-09-14 | 52 | 2026-08-23 |
@@ -54,8 +54,8 @@ remain canonical; this file is a projection, reproducible with
 | dragon-themer | Theme engine for the whole machine: one palette rendered into every colour-bearing config. | 2 | 0.1.0 | 2026-10-07 | 34 | 2026-07-28 |
 | [1-timezone](https://github.com/VirInvictus/1-timezone) | KOReader user patch forcing a correct POSIX TZ inside the process. | 0 | - | - | 7 | 2026-07-05 |
 | Coffer | Native GTK4 envelope-budgeting app over a plain-text hledger journal (the journal is the database). | 0 | - | - | 9 | 2026-06-28 |
-| [VirInvictus](https://github.com/VirInvictus/VirInvictus) | The GitHub profile README repo: one line and a shipping status per project. | 0 | - | - | 139 | 2026-06-22 |
-| [VirInvictus.github.io](https://github.com/VirInvictus/VirInvictus.github.io) | This site: static Jekyll on GitHub Pages; /patchnotes/ serves the annals record. | 0 | - | - | 323 | 2026-04-16 |
+| [VirInvictus](https://github.com/VirInvictus/VirInvictus) | The GitHub profile README repo: one line and a shipping status per project. | 0 | - | - | 142 | 2026-06-22 |
+| [VirInvictus.github.io](https://github.com/VirInvictus/VirInvictus.github.io) | This site: static Jekyll on GitHub Pages; /patchnotes/ serves the annals record. | 0 | - | - | 327 | 2026-04-16 |
 | [dead-reckoning-bookend-preset](https://github.com/VirInvictus/dead-reckoning-bookend-preset) | One-file KOReader preset: session pace, chapter ETA, projected finish. | 0 | - | - | 15 | 2026-07-03 |
 | project-void | Party-based isometric CRPG in the Dark Sun / Fallout 2 lineage on lethal Cairn combat math (pre-development). | 0 | - | - | 16 | 2026-04-17 |
 | project-yeschef | Grand-strategy restaurant sim in the CK3 / Victoria 3 lineage; you play the General Manager (pre-development). | 0 | - | - | 6 | 2026-05-23 |
@@ -76,11 +76,11 @@ remain canonical; this file is a projection, reproducible with
 | 2026-08 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 165 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 776 |
 | 2026-09 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 349 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 1,729 |
 | 2026-10 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 195 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 947 |
-| 2026-11 | ▇▇▇▇▇▇▇▇▇▇ 130 | ▇▇▇▇▇▇▇▇ 473 |
+| 2026-11 | ▇▇▇▇▇▇▇▇▇▇▇ 135 | ▇▇▇▇▇▇▇▇ 488 |
 
 ## The languages
 
-489,559 lines of code · 27 languages · 44 repos
+489,803 lines of code · 27 languages · 44 repos
 
 Code lines measured by `tokei` over each tracked repo's tree: reference clones and fork checkouts (the `[languages]` exclude) never count, and neither do lockfiles or data formats. A snapshot of the trees as they stand, not a measure of authorship pace.
 
@@ -92,7 +92,7 @@ Code lines measured by `tokei` over each tracked repo's tree: reference clones a
 | Language | Share | Code lines | Repos |
 |---|---|---:|---:|
 | Rust | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 37.4% | 183,126 | 12 |
-| Python | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 36.6% | 179,074 | 23 |
+| Python | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 36.6% | 179,318 | 23 |
 | GDScript | ▇▇▇▇▇▇ 10.1% | 49,568 | 6 |
 | Lua | ▇▇▇ 5.8% | 28,208 | 6 |
 | C | ▇▇▇ 5.6% | 27,205 | 2 |
@@ -111,6 +111,11 @@ Code lines measured by `tokei` over each tracked repo's tree: reference clones a
 
 #### November 2026
 
+- **11-18 · dragon-agents 1.6.0** · The comparative-design and marketing wave: one new read-only seat, the fleet's first in-repo authored skill, four charter patches from the comparative seat-design report, the evals convention, and a README rebuilt for readability.
+- **11-18 · dragon-agents 1.5.0** · The life-domains wave plus the fleet's first vendored skills: two new read-only seats, one shared charter line on every charter, and skills/ in the repo.
+- **11-18 · dragon-agents 1.4.0** · The issue-and-propagation wave: five new seats drafted by charter-architect from the roster-expansion campaign (a 28-source prior-art report, a full sweep of the workspace's workflow corpus, and usage mining), riding one release with a release-auditor method patch.
+- **11-18 · dragon-agents 1.3.4** · One shared charter line across all thirty agents, from the standing debug-report duty (issue #7): zsh shell discipline.
+- **11-18 · whisker-street 0.8.0** · The bot entry point answers `--help` and `--version` before the environment is read (issue #1): a machine with no `DISCORD_TOKEN` configured now gets the usage text or the version string instead of a `ConfigError` traceback.
 - **11-17 · Atrium 0.77.0** · fixture guard + consumer-wave catch-up
 - **11-17 · CalibreQuarry 3.93.0** · The evidence extractor widens past a late copyright leaf (issue #70)
 - **11-17 · CalibreQuarry 3.92.0** · The duplicate screen learns print-shop junk seeds (issue #68)
@@ -1482,7 +1487,7 @@ commits that are not this workspace's work.
 | crash-course | 19 | 19 | 0 | 0 | 0 | 0 | 0 |
 | dead-reckoning-bookend-preset | 0 | 0 | 0 | 0 | 0 | 0 | - |
 | deadbeef-cui | 43 | 0 | 10 | 0 | 33 | 0 | 0 |
-| dragon-agents | 19 | 19 | 0 | 0 | 0 | 0 | 2 |
+| dragon-agents | 23 | 23 | 0 | 0 | 0 | 0 | 2 |
 | dragon-themer | 2 | 2 | 0 | 0 | 0 | 0 | 0 |
 | hex | 35 | 35 | 0 | 0 | 0 | 0 | 0 |
 | kanagawa-dragon-nvim-emacs | 7 | 7 | 0 | 0 | 0 | 0 | 0 |
@@ -1495,7 +1500,7 @@ commits that are not this workspace's work.
 | vir-gtk | 12 | 12 | 0 | 0 | 0 | 0 | 0 |
 | vir-search | 12 | 12 | 0 | 0 | 0 | 0 | 0 |
 | vir-tui | 8 | 8 | 0 | 0 | 0 | 0 | 0 |
-| whisker-street | 11 | 11 | 0 | 0 | 0 | 0 | 0 |
+| whisker-street | 12 | 12 | 0 | 0 | 0 | 0 | 0 |
 
 ### Undated records
 
