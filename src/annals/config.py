@@ -42,6 +42,19 @@ class FeedTarget:
 
 
 @dataclass(frozen=True)
+class AdoptionTarget:
+    # The download-stat table. `cache` is written by scripts/fetch-adoption
+    # (the toolchain's one networked piece) and only read here; the
+    # generator itself stays network-free.
+    cache: Path
+    pypi: tuple[str, ...] = ()
+    crates: tuple[str, ...] = ()
+    # True renders mirror-inflated counts. The cache always stores both
+    # bases, so this flips at render time without refetching.
+    mirrors: bool = False
+
+
+@dataclass(frozen=True)
 class Config:
     workspace: Path
     output: Path
@@ -56,6 +69,7 @@ class Config:
     site: SiteTarget | None = None
     ledger: LedgerTarget | None = None
     feed: FeedTarget | None = None
+    adoption: AdoptionTarget | None = None
     language_exclude: frozenset[str] = frozenset()
     descriptions: dict[str, str] = field(default_factory=dict)
     links: dict[str, str] = field(default_factory=dict)
@@ -119,6 +133,7 @@ def load_config(path: Path | None = None) -> Config:
     site = _table(data, "site") or {}
     ledger = _table(data, "ledger")
     feed = _table(data, "feed")
+    adoption = _table(data, "adoption")
 
     root = ws.get("root")
     if not root:
@@ -152,6 +167,18 @@ def load_config(path: Path | None = None) -> Config:
             path=Path(ledger["path"]).expanduser(),
             link_url=ledger.get("link_url"),
         )
+    adoption_target = None
+    if adoption is not None:
+        pypi = tuple(adoption.get("pypi", ()))
+        crates = tuple(adoption.get("crates", ()))
+        if pypi or crates:
+            cache = Path(adoption.get("cache", "adoption.json")).expanduser()
+            adoption_target = AdoptionTarget(
+                cache=cache if cache.is_absolute() else resolved.parent / cache,
+                pypi=pypi,
+                crates=crates,
+                mirrors=bool(adoption.get("mirrors", False)),
+            )
     return Config(
         workspace=workspace,
         output=out if out.is_absolute() else resolved.parent / out,
@@ -170,6 +197,7 @@ def load_config(path: Path | None = None) -> Config:
         ),
         ledger=ledger_target,
         feed=feed_target,
+        adoption=adoption_target,
         language_exclude=frozenset(langs.get("exclude", ())),
         descriptions=dict(data.get("descriptions", {})),
         links=dict(data.get("links", {})),

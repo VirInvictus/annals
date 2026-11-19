@@ -28,7 +28,8 @@ default. Configuration problems exit 2.
 `[workspace] root` is the one required key and must exist on disk. The
 machine-specific content is entirely the file's: exclusions, stats-only
 names, author identities, descriptions, links, and the optional `[site]`,
-`[ledger]`, and `[feed]` targets. The code carries no personal defaults. A
+`[ledger]`, `[feed]`, and `[adoption]` sections. The code carries no
+personal defaults. A
 `[run] intro` replaces the masthead paragraph verbatim (`{generator}`
 becomes the generator string); absent, a generic paragraph renders. The
 `[feed]` keys `title` (default `The Annals`), `subtitle` (a generic
@@ -36,7 +37,8 @@ sentence from the display name), `page_url` (default: the `site_url`
 root), and `id` (a `tag:` URI derived from the page URL and the newest
 activity year) are overridable; `[ledger] link_url` is the "the
 patchnotes" link target (absent: plain text, no link). Only `[run] output`
-resolves relative paths against the config file's directory.
+and the `[adoption] cache` resolve relative paths against the config
+file's directory.
 
 ### Discovery
 
@@ -155,6 +157,34 @@ segments sum exactly to the bar width) and a ranked table: top twelve
 languages plus an `other` row, each with share, code lines, and the number
 of repos using it.
 
+### Adoption
+
+The download table measures package adoption from a JSON cache
+(`adoption.json` by default) that `scripts/fetch-adoption` refreshes: the
+one networked piece of the toolchain, run by automation before
+regeneration, never by the CLI. Per configured PyPI package the fetch
+merges pypistats.org's full daily history in one request, storing both
+mirror bases (the `/overall` endpoint interleaves them and has no
+per-basis URL variant). Per crates.io crate it appends one dated snapshot
+of the cumulative total, keeping the latest 400: crates.io publishes no
+time series, so crate windows are sample arithmetic and read `-` until
+their history accrues.
+
+The `[adoption]` config section lists the packages (`pypi`, `crates`; at
+least one entry required, a present but empty section renders nothing),
+the `cache` path (relative resolves against the config file's directory),
+and `mirrors` (default false: the rendered counts exclude mirror
+downloads, which inflate several-fold and are not installs; the toggle is
+render-time because both bases are stored). Windows are 7, 30, and 90
+days ending at the newest data day; a PyPI window sums its days, absent
+days counting zero, and a package younger than a window simply sums what
+exists.
+
+A missing, malformed, or empty cache degrades the section to a note
+instead of failing the run, like tokei's absence. The cache is generator
+input like the member patchnotes: the fetch script alone writes it
+(atomic, deterministic bytes), and nothing hand-edits it.
+
 ### Output contract
 
 `ANNALS.md` contains, in order:
@@ -169,10 +199,15 @@ of repos using it.
    repo named in `[links]` (public repos only) renders its name as a
    GitHub link. The last-release cell carries `≈` when even the repo's
    newest entry is approximate.
-3. The record: newest-first timeline of exactly dated entries grouped by
+3. The languages: the stacked proportion bar and ranked code-lines table
+   (measured by tokei; a note renders when tokei is unavailable).
+4. Adoption: the download table for the configured packages (a note
+   renders when the stats cache is missing or empty; nothing renders when
+   `[adoption]` is unconfigured).
+5. The record: newest-first timeline of exactly dated entries grouped by
    year then month; one line per entry: date, repo, component and/or
    version, headline verbatim from the source.
-4. Coverage appendix: per-repo date-source counts (inline, tag, neighbor,
+6. Coverage appendix: per-repo date-source counts (inline, tag, neighbor,
    first-commit, duplicates, and unlogged release-shaped tags), the
    Tags without entries section, the Undated records (approximate entries
    in file order), and the ignored directories. The unlogged audit runs
@@ -246,7 +281,10 @@ and the configured site artifacts.
 
 ## Non-goals
 
-- No network access. Everything is local files and local git.
+- No network access in the generator. Everything it reads is local files
+  and local git; the one networked piece is the companion
+  `scripts/fetch-adoption`, which automation runs before regeneration and
+  which is never part of the CLI.
 - No third-party dependencies; Python 3.14 standard library only.
 - No scheduling. Automation (cron, ZCode idle tasks) wraps the CLI; it is
   not part of annals.

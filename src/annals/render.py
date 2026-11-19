@@ -9,6 +9,7 @@ from dataclasses import dataclass, field
 from urllib.parse import urlparse
 from xml.sax.saxutils import escape as _xml_escape
 
+from .adoption import WINDOWS, AdoptionData
 from .config import FeedTarget, LedgerTarget
 from .gitstats import RepoStats
 from .parse import Entry, unlogged_tags
@@ -69,6 +70,8 @@ class Record:
     intro: str | None = None
     descriptions: dict[str, str] = field(default_factory=dict)
     links: dict[str, str] = field(default_factory=dict)
+    # None -> no [adoption] section configured (nothing renders).
+    adoption: AdoptionData | None = None
 
     def attribution(self) -> str:
         return (
@@ -92,6 +95,7 @@ def render(record: Record) -> str:
         _masthead(record),
         _dashboard(record),
         _languages(record),
+        _adoption(record),
         _timeline(record),
         _coverage(record),
     ]
@@ -398,6 +402,46 @@ def _largest_remainder(weights: list[int], width: int) -> list[int]:
     for i in range(width - sum(counts)):
         counts[order[i % len(order)]] += 1
     return counts
+
+
+def _adoption(record: Record) -> list[str]:
+    data = record.adoption
+    if data is None:
+        # No [adoption] section configured: nothing renders at all.
+        return []
+    out = ["## Adoption", ""]
+    if not data.has_data():
+        return out + [
+            "_(Adoption data unavailable: the download-stats cache is missing,"
+            " malformed, or empty. Run `scripts/fetch-adoption` to fill it.)_",
+            "",
+        ]
+    basis = "with" if data.mirrors else "without"
+    method = (
+        f"Package downloads from PyPI and crates.io, {basis} mirrors, as of"
+        f" {data.as_of}. The cache refreshes nightly via"
+        " `scripts/fetch-adoption`."
+    )
+    if any(row.registry == "crates.io" for row in data.rows):
+        method += (
+            " Crates windows accrue from daily samples and read `-` until"
+            " history exists."
+        )
+    out += [
+        method,
+        "",
+        "| Package | Registry |"
+        f" {' | '.join(name for name, _ in WINDOWS)} | Lifetime |",
+        "|---|---" + "|---:" * (len(WINDOWS) + 1) + "|",
+    ]
+    for row in data.rows:
+        cells = " | ".join("-" if w is None else f"{w:,}" for w in row.windows)
+        lifetime = "-" if row.lifetime is None else f"{row.lifetime:,}"
+        out.append(
+            f"| [{row.name}]({row.url}) | {row.registry} | {cells} | {lifetime} |"
+        )
+    out.append("")
+    return out
 
 
 def _timeline(record: Record) -> list[str]:

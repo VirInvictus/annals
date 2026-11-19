@@ -17,15 +17,20 @@ Liquid include tag), and the Atom feed at the site's
 `patchnotes/feed.xml` (a static file Jekyll copies verbatim; served at
 `/patchnotes/feed.xml`). `scripts/publish-site` is the daily pipeline
 (local-only; see Config):
-regenerate, commit and push the record to origin (best-effort), commit and
-push the site artifacts when they changed, verify the Pages build, and
-revert only when the Jekyll build job itself failed (a deploy-stage failure
-can be pure GitHub-side, and the last good deploy serves either way).
+fetch the adoption cache, regenerate, commit and push the record (and the
+cache; both are committed) to origin (best-effort), commit and push the
+site artifacts when they changed, verify the Pages build, and revert only
+when the Jekyll build job itself failed (a deploy-stage failure can be
+pure GitHub-side, and the last good deploy serves either way).
 Python 3.14, standard
-library only, no network (the publish script's git/gh calls are its only
-outbound surface). One external tool is required for one section: `tokei`
-measures the language distribution, and its absence degrades that section
-to a note instead of failing the run.
+library only, no network (the pipeline's git/gh calls and the
+`scripts/fetch-adoption` registry fetches are its only outbound surface;
+the generator itself stays network-free). One external tool is required
+for one section: `tokei` measures the language distribution, and its
+absence degrades that section to a note instead of failing the run. The
+Adoption section works the same way: it reads the committed JSON cache
+(`adoption.json`) that `scripts/fetch-adoption` refreshes, and a missing
+cache degrades it to a note.
 
 Since v0.6.0 the tool is public and config-driven: every machine-specific
 value lives in `annals.toml`, the code carries no personal defaults, and
@@ -43,7 +48,8 @@ rename any of the three files.
 ## Read-only guarantee
 
 The tool only ever reads member repos (`patchnotes.md`, `git log`,
-`git for-each-ref`). It writes `ANNALS.md` in this repo plus the three
+`git for-each-ref`) plus its own committed adoption cache
+(`adoption.json`). It writes `ANNALS.md` in this repo plus the three
 configured site artifacts (the patchnotes copy, the ledger include, and
 the Atom feed), all generator-owned: hand-authored site pages are never
 touched. It
@@ -57,6 +63,8 @@ is a spec violation, not a refactor.
 - `uv run annals --stdout`: print to stdout, write nothing.
 - `uv run annals --check`: exit 1 when `ANNALS.md` is stale (automation hook).
 - `uv run annals init`: write a starter `annals.toml` from prompts.
+- `uv run scripts/fetch-adoption`: refresh `adoption.json` from pypistats.org
+  and crates.io (the one networked script; the nightly pipeline runs it).
 - `uv run pytest`: test suite.
 - `uv run ruff check src tests` and `uv run ruff format --check src tests`.
 

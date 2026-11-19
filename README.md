@@ -17,6 +17,11 @@ is visible in one place.
   (read-only; member repos are never touched), and measures the language
   distribution by code lines with `tokei` (fork checkouts excludable per
   config; the section degrades gracefully when tokei is absent).
+- Renders an adoption table of package download totals (7/30/90-day and
+  lifetime windows) for configured PyPI and crates.io packages, from a
+  JSON cache refreshed by the tracked `scripts/fetch-adoption` helper; the
+  generator itself stays offline, and the section degrades to a note when
+  the cache is absent.
 - Renders `ANNALS.md`: totals, a per-repo table, monthly activity bars, a
   stacked language-distribution bar plus ranked table, a newest-first
   timeline of every release grouped by month, and a coverage appendix
@@ -65,6 +70,9 @@ at `annals init`, never a silent default.
 | `[stats]` | `authors` | git `--author` patterns (OR); empty counts every commit |
 | `[stats]` | `authors_display` | The attribution line the record prints |
 | `[languages]` | `exclude` | Repos omitted from the language distribution only |
+| `[adoption]` | `pypi`, `crates` | Package names for the download table (at least one entry; a present but empty section renders nothing) |
+| `[adoption]` | `mirrors` | Show mirror-inflated counts (default false: honest install counts) |
+| `[adoption]` | `cache` | Stats cache path (default `adoption.json`; written by `scripts/fetch-adoption`) |
 | `[descriptions]` | per repo | One-line dashboard descriptions |
 | `[links]` | per repo | Public repos only: the dashboard links these names |
 | `[site]` | `path`, `front_matter` | Page copy: the record wrapped in your front matter and a Liquid raw block |
@@ -97,6 +105,17 @@ the rest:
 - `[feed]`: an Atom 1.0 document whose `updated` anchors to the newest
   activity date, so a quiet workspace regenerates byte-identical XML. Pin
   `id` once published: feed readers treat a changed id as a new feed.
+
+## The adoption section
+
+`[adoption]` renders a download table for your published packages. Refresh
+the cache by running `uv run scripts/fetch-adoption` from a checkout of
+this repo (or run the script anywhere `annals` is importable). PyPI
+numbers come from pypistats.org's daily history, stored for both mirror
+bases so the `mirrors` toggle flips at render time; crates.io numbers are
+cumulative totals sampled nightly, because crates.io publishes no time
+series, so crate windows fill in as samples accrue. The generator never
+touches the network: a missing cache just degrades the section to a note.
 
 ## Development
 

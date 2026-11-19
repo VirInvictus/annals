@@ -8,6 +8,7 @@ from pathlib import Path
 from typing import TextIO
 
 from . import __version__
+from .adoption import load_adoption
 from .config import Config, ConfigError, load_config
 from .discover import discover
 from .gitstats import repo_stats, tag_dates
@@ -53,6 +54,16 @@ def build(config: Config) -> Record:
     anchored = [e.resolved for rec in records for e in rec.entries if e.resolved]
     activity = [r.stats.last for r in records if r.stats and r.stats.last]
     latest = max(activity + anchored) if activity + anchored else _today()
+    adoption = (
+        load_adoption(
+            config.adoption.cache,
+            config.adoption.pypi,
+            config.adoption.crates,
+            config.adoption.mirrors,
+        )
+        if config.adoption is not None
+        else None
+    )
     return Record(
         repos=records,
         ignored=ignored,
@@ -63,6 +74,7 @@ def build(config: Config) -> Record:
         intro=config.intro,
         descriptions=config.descriptions,
         links=config.links,
+        adoption=adoption,
     )
 
 

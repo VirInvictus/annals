@@ -66,6 +66,15 @@ def _template(
         "# stay plain text.",
         "# [links]",
         '# "repo-name" = "https://github.com/you/repo-name"',
+        "",
+        "# Download table (the Adoption section): PyPI and crates.io package",
+        "# names for the 7/30/90-day and lifetime download columns. Refresh",
+        "# the cache with scripts/fetch-adoption (run it from a checkout of",
+        "# this repo); the generator only reads the cache file it writes.",
+        "# [adoption]",
+        "# mirrors = false  # true shows mirror-inflated counts",
+        '# pypi = ["example-package"]',
+        '# crates = ["example-crate"]',
     ]
     if site is None:
         return "\n".join(lines) + "\n"

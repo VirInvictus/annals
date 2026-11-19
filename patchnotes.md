@@ -1,5 +1,44 @@
 # Patchnotes
 
+## v0.7.0 (2026-11-18)
+
+The Adoption section: package download totals in the record, so the work
+log shows reach alongside the work.
+
+- **New `## Adoption` section** between the languages and the record: one
+  table for both registries (Package, Registry, 7 days, 30 days,
+  3 months, Lifetime), names linked to their PyPI / crates.io pages,
+  counts comma-formatted, and an as-of line anchored to the newest data
+  day rather than the generation time, so a quiet cache regenerates
+  byte-identical output like the rest of the record.
+- **`[adoption]` config section**: `pypi` and `crates` name lists (at
+  least one entry; a present but empty section renders nothing), `mirrors`
+  (default false: rendered counts exclude mirror downloads, which inflate
+  several-fold and are not installs), and `cache` (default
+  `adoption.json`, resolved against the config file's directory like
+  `[run] output`).
+- **`scripts/fetch-adoption`** (tracked; the toolchain's one networked
+  piece, the generator stays offline): merges each PyPI package's full
+  daily history from pypistats.org, storing both mirror bases in one
+  request so the toggle flips at render time without refetching, and
+  appends one dated cumulative snapshot per crates.io crate (crates.io
+  publishes no time series, so crate windows accrue from nightly samples
+  and read `-` until history exists; the latest 400 are kept).
+  Per-package failures warn and keep the cached entry; the run exits 1 so
+  the nightly pipeline can log it and retry the next day.
+- **Cache contract**: `adoption.json` is generator input like the member
+  patchnotes, written only by the fetch script (atomically, with
+  deterministic sorted bytes), never hand-edited. Missing, malformed, or
+  empty cache degrades the section to a note instead of failing the run,
+  like tokei's absence. The nightly pipeline fetches before regenerating
+  and stages the cache alongside `ANNALS.md`.
+- **Docs**: spec.md gains the Adoption semantics, the Output contract now
+  lists the languages and Adoption sections (the languages item was
+  missing from the contract's numbered list), and the Non-goals no-network
+  clause is scoped to the generator; README documents the section and the
+  new config rows; `annals init` ships a commented `[adoption]` starter.
+- 121 tests green (up from 105), ruff clean.
+
 ## v0.6.0 (2026-11-04)
 
 Going public: the tool is config-driven end to end, and `annals init`

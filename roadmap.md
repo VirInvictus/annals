@@ -25,3 +25,8 @@
   order with the XDG step, README/spec rewritten for new users, the
   author's `annals.toml` and `scripts/publish-site` gitignored as
   local-only files, house-hardened CI, the public repo)
+- [x] Phase 11: the adoption section (the `[adoption]` config with the
+  render-time mirrors toggle, `scripts/fetch-adoption` as the toolchain's
+  one networked piece, the committed `adoption.json` cache with pypistats
+  daily histories and crates.io cumulative snapshots, degrade-to-note like
+  tokei)
