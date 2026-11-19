@@ -8,9 +8,9 @@ remain canonical; this file is a projection, reproducible with
 
 ## The shape of the work
 
-- **45 repositories tracked · 1,680 releases recorded · 5,595 commits, authored by Brandon LaRocque**
+- **45 repositories tracked · 1,680 releases recorded · 5,596 commits, authored by Brandon LaRocque**
 - Span: 2025-08-10 to 2026-11-18
-- This month (2026-11): 136 releases across 21 repos · 491 commits
+- This month (2026-11): 136 releases across 21 repos · 492 commits
 
 | Repository | What it is | Releases | Latest | Last release | Commits | Active since |
 |---|---|---:|---|---|---:|---|
@@ -42,7 +42,7 @@ remain canonical; this file is a projection, reproducible with
 | whisker-street | Discord stock market where the server members are the stocks: presence-driven prices and a CPMM market maker. | 12 | 0.8.0 | 2026-11-18 | 17 | 2026-10-22 |
 | [Topograph](https://github.com/VirInvictus/Topograph) | Filesystem size explorer: lazy tree view plus a squarified cushion treemap (a qdirstat analog). | 11 | 0.4.1 | 2026-10-07 | 53 | 2026-08-14 |
 | [raindrop-cli](https://github.com/VirInvictus/raindrop-cli) | Dependency-free Raindrop.io CLI for bookmarks, collections, tags, and highlights, with a Pinboard backend and two-way sync. | 11 | 0.7.0 | 2026-09-15 | 54 | 2026-07-18 |
-| annals | This generator: the workspace's whole work record, rendered from every repo's patchnotes and git history. | 10 | 0.7.0 | 2026-11-18 | 112 | 2026-10-09 |
+| annals | This generator: the workspace's whole work record, rendered from every repo's patchnotes and git history. | 10 | 0.7.0 | 2026-11-18 | 113 | 2026-10-09 |
 | [saforums.koplugin](https://github.com/VirInvictus/saforums.koplugin) | KOReader plugin reading the Something Awful Forums as native e-reader widgets: login, unread tracking, bookmarks. | 9 | 0.5.4 | 2026-10-24 | 63 | 2026-10-08 |
 | [2-kobo-style-sleepscreen-banner-prettified](https://github.com/VirInvictus/2-kobo-style-sleepscreen-banner-prettified) | KOReader user patch redrawing the sleep screen as a Kobo-style floating card (prettified fork). | 8 | 2.1.4 | 2026-09-14 | 29 | 2026-07-05 |
 | [vir-tui](https://github.com/VirInvictus/vir-tui) | TUI primitive library (curses menus, prompts, progress, mouse plus type-to-filter) powering the Python CLI toolchain. | 8 | 2.5.0 | 2026-09-14 | 52 | 2026-08-23 |
@@ -76,7 +76,7 @@ remain canonical; this file is a projection, reproducible with
 | 2026-08 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 165 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 776 |
 | 2026-09 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 349 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 1,729 |
 | 2026-10 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 195 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 947 |
-| 2026-11 | ▇▇▇▇▇▇▇▇▇▇▇ 136 | ▇▇▇▇▇▇▇▇ 491 |
+| 2026-11 | ▇▇▇▇▇▇▇▇▇▇▇ 136 | ▇▇▇▇▇▇▇▇ 492 |
 
 ## The languages
 
