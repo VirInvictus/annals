@@ -8,9 +8,9 @@ remain canonical; this file is a projection, reproducible with
 
 ## The shape of the work
 
-- **45 repositories tracked · 1,680 releases recorded · 5,596 commits, authored by Brandon LaRocque**
+- **45 repositories tracked · 1,680 releases recorded · 5,598 commits, authored by Brandon LaRocque**
 - Span: 2025-08-10 to 2026-11-18
-- This month (2026-11): 136 releases across 21 repos · 492 commits
+- This month (2026-11): 136 releases across 21 repos · 494 commits
 
 | Repository | What it is | Releases | Latest | Last release | Commits | Active since |
 |---|---|---:|---|---|---:|---|
@@ -42,7 +42,7 @@ remain canonical; this file is a projection, reproducible with
 | whisker-street | Discord stock market where the server members are the stocks: presence-driven prices and a CPMM market maker. | 12 | 0.8.0 | 2026-11-18 | 17 | 2026-10-22 |
 | [Topograph](https://github.com/VirInvictus/Topograph) | Filesystem size explorer: lazy tree view plus a squarified cushion treemap (a qdirstat analog). | 11 | 0.4.1 | 2026-10-07 | 53 | 2026-08-14 |
 | [raindrop-cli](https://github.com/VirInvictus/raindrop-cli) | Dependency-free Raindrop.io CLI for bookmarks, collections, tags, and highlights, with a Pinboard backend and two-way sync. | 11 | 0.7.0 | 2026-09-15 | 54 | 2026-07-18 |
-| annals | This generator: the workspace's whole work record, rendered from every repo's patchnotes and git history. | 10 | 0.7.0 | 2026-11-18 | 113 | 2026-10-09 |
+| annals | This generator: the workspace's whole work record, rendered from every repo's patchnotes and git history. | 10 | 0.7.0 | 2026-11-18 | 114 | 2026-10-09 |
 | [saforums.koplugin](https://github.com/VirInvictus/saforums.koplugin) | KOReader plugin reading the Something Awful Forums as native e-reader widgets: login, unread tracking, bookmarks. | 9 | 0.5.4 | 2026-10-24 | 63 | 2026-10-08 |
 | [2-kobo-style-sleepscreen-banner-prettified](https://github.com/VirInvictus/2-kobo-style-sleepscreen-banner-prettified) | KOReader user patch redrawing the sleep screen as a Kobo-style floating card (prettified fork). | 8 | 2.1.4 | 2026-09-14 | 29 | 2026-07-05 |
 | [vir-tui](https://github.com/VirInvictus/vir-tui) | TUI primitive library (curses menus, prompts, progress, mouse plus type-to-filter) powering the Python CLI toolchain. | 8 | 2.5.0 | 2026-09-14 | 52 | 2026-08-23 |
@@ -55,7 +55,7 @@ remain canonical; this file is a projection, reproducible with
 | [1-timezone](https://github.com/VirInvictus/1-timezone) | KOReader user patch forcing a correct POSIX TZ inside the process. | 0 | - | - | 7 | 2026-07-05 |
 | Coffer | Native GTK4 envelope-budgeting app over a plain-text hledger journal (the journal is the database). | 0 | - | - | 9 | 2026-06-28 |
 | [VirInvictus](https://github.com/VirInvictus/VirInvictus) | The GitHub profile README repo: one line and a shipping status per project. | 0 | - | - | 142 | 2026-06-22 |
-| [VirInvictus.github.io](https://github.com/VirInvictus/VirInvictus.github.io) | This site: static Jekyll on GitHub Pages; /patchnotes/ serves the annals record. | 0 | - | - | 328 | 2026-04-16 |
+| [VirInvictus.github.io](https://github.com/VirInvictus/VirInvictus.github.io) | This site: static Jekyll on GitHub Pages; /patchnotes/ serves the annals record. | 0 | - | - | 329 | 2026-04-16 |
 | [dead-reckoning-bookend-preset](https://github.com/VirInvictus/dead-reckoning-bookend-preset) | One-file KOReader preset: session pace, chapter ETA, projected finish. | 0 | - | - | 15 | 2026-07-03 |
 | project-void | Party-based isometric CRPG in the Dark Sun / Fallout 2 lineage on lethal Cairn combat math (pre-development). | 0 | - | - | 16 | 2026-04-17 |
 | project-yeschef | Grand-strategy restaurant sim in the CK3 / Victoria 3 lineage; you play the General Manager (pre-development). | 0 | - | - | 6 | 2026-05-23 |
@@ -76,7 +76,7 @@ remain canonical; this file is a projection, reproducible with
 | 2026-08 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 165 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 776 |
 | 2026-09 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 349 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 1,729 |
 | 2026-10 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 195 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 947 |
-| 2026-11 | ▇▇▇▇▇▇▇▇▇▇▇ 136 | ▇▇▇▇▇▇▇▇ 492 |
+| 2026-11 | ▇▇▇▇▇▇▇▇▇▇▇ 136 | ▇▇▇▇▇▇▇▇ 494 |
 
 ## The languages
 
@@ -107,14 +107,14 @@ Code lines measured by `tokei` over each tracked repo's tree: reference clones a
 
 ## Adoption
 
-Package downloads from PyPI and crates.io, without mirrors, as of 2026-11-17. The cache refreshes nightly via `scripts/fetch-adoption`.
+Package downloads from PyPI and crates.io, without mirrors, as of 2026-11-18. The cache refreshes nightly via `scripts/fetch-adoption`.
 
 | Package | Registry | 7 days | 30 days | 3 months | Lifetime |
 |---|---|---:|---:|---:|---:|
-| [bindery-cli](https://pypi.org/project/bindery-cli/) | PyPI | 537 | 3,109 | 6,935 | 6,935 |
-| [lattice-music](https://pypi.org/project/lattice-music/) | PyPI | 274 | 403 | 2,169 | 2,169 |
-| [calibrequarry](https://pypi.org/project/calibrequarry/) | PyPI | 982 | 3,501 | 10,194 | 10,194 |
-| [cquarry](https://pypi.org/project/cquarry/) | PyPI | 272 | 1,178 | 4,892 | 4,892 |
+| [bindery-cli](https://pypi.org/project/bindery-cli/) | PyPI | 547 | 3,051 | 6,953 | 6,953 |
+| [lattice-music](https://pypi.org/project/lattice-music/) | PyPI | 281 | 401 | 2,176 | 2,176 |
+| [calibrequarry](https://pypi.org/project/calibrequarry/) | PyPI | 1,038 | 3,527 | 10,273 | 10,273 |
+| [cquarry](https://pypi.org/project/cquarry/) | PyPI | 277 | 1,174 | 4,900 | 4,900 |
 
 ## The record
 
