@@ -8,9 +8,9 @@ remain canonical; this file is a projection, reproducible with
 
 ## The shape of the work
 
-- **51 repositories tracked · 1,696 releases recorded · 5,650 commits, authored by Brandon LaRocque**
+- **51 repositories tracked · 1,697 releases recorded · 5,654 commits, authored by Brandon LaRocque**
 - Span: 2025-08-10 to 2026-11-20
-- This month (2026-11): 147 releases across 23 repos · 546 commits
+- This month (2026-11): 148 releases across 23 repos · 550 commits
 
 | Repository | What it is | Releases | Latest | Last release | Commits | Active since |
 |---|---|---:|---|---|---:|---|
@@ -31,18 +31,18 @@ remain canonical; this file is a projection, reproducible with
 | [Hearthfall](https://github.com/VirInvictus/Hearthfall) | Grimdark clan-survival terminal game: stdlib-only engine, single seeded RNG, Textual TUI. | 35 | 0.28.0 | 2026-09-15 | 91 | 2026-07-19 |
 | hex |  | 35 | 0.23.0 | 2026-11-09 | 106 | 2026-11-04 |
 | Haveli | Two-player LAN digital build of Jaipur on a content-agnostic deterministic engine (private: the faithful dataset is git-ignored). | 28 | 1.2.0 | 2026-09-15 | 66 | 2026-06-15 |
-| [Quire](https://github.com/VirInvictus/Quire) | Soulver-style notepad calculator for Linux: plain-text sheets where prose and expressions share the page and answers fill a results column. | 25 | 1.5.6 | 2026-11-16 | 118 | 2026-10-05 |
+| [Quire](https://github.com/VirInvictus/Quire) | Soulver-style notepad calculator for Linux: plain-text sheets where prose and expressions share the page and answers fill a results column. | 26 | 1.5.7 | 2026-11-20 | 119 | 2026-10-05 |
 | [dragon-agents](https://github.com/VirInvictus/dragon-agents) | Local ZCode plugin of twenty-three read-only research subagents: repo mapping, release audits, CI triage, markets and finance briefs. | 25 | 1.6.2 | 2026-11-20 | 43 | 2026-09-03 |
 | [Carrel-calibre-web](https://github.com/VirInvictus/Carrel-calibre-web) | Fork of calibre-web carrying Carrel's code: single-user, database attached read-only, reads through cquarry. | 23 | 0.6.48 | 2026-11-05 | 126 | 2026-06-11 |
 | [Carrel](https://github.com/VirInvictus/Carrel) | Contract and theme for a single-user Calibre reading room (CSS + docs; the code lives in the calibre-web fork). | 20 | 0.9.10 | 2026-09-15 | 74 | 2026-06-11 |
 | crash-course | Arcade aircraft-crash damage-maximizer (Burnout's crash mode rebuilt around airliners), built for my son. | 19 | 0.18.0 | 2026-10-07 | 31 | 2026-10-04 |
-| [vir-gtk](https://github.com/VirInvictus/vir-gtk) | Shared GTK4 styling and D-Bus portal layer for the Vir Invictus desktop suite (replaces libadwaita). | 13 | 1.5.0 | 2026-11-20 | 54 | 2026-08-23 |
+| [vir-gtk](https://github.com/VirInvictus/vir-gtk) | Shared GTK4 styling and D-Bus portal layer for the Vir Invictus desktop suite (replaces libadwaita). | 13 | 1.5.0 | 2026-11-20 | 55 | 2026-08-23 |
 | Vestibule | One-directional Obsidian-vault to org-roam converter with a dry-run install. | 12 | 0.11.0 | 2026-09-15 | 55 | 2026-07-25 |
 | [vir-search](https://github.com/VirInvictus/vir-search) | Domain-agnostic Rust library parsing Calibre-style search expressions into a typed AST. | 12 | 1.4.3 | 2026-09-15 | 61 | 2026-08-23 |
 | whisker-street | Discord stock market where the server members are the stocks: presence-driven prices and a CPMM market maker. | 12 | 0.8.0 | 2026-11-18 | 17 | 2026-10-22 |
 | [Topograph](https://github.com/VirInvictus/Topograph) | Filesystem size explorer: lazy tree view plus a squarified cushion treemap (a qdirstat analog). | 11 | 0.4.1 | 2026-10-07 | 53 | 2026-08-14 |
 | [raindrop-cli](https://github.com/VirInvictus/raindrop-cli) | Dependency-free Raindrop.io CLI for bookmarks, collections, tags, and highlights, with a Pinboard backend and two-way sync. | 11 | 0.7.0 | 2026-09-15 | 54 | 2026-07-18 |
-| annals | This generator: the workspace's whole work record, rendered from every repo's patchnotes and git history. | 10 | 0.7.0 | 2026-11-18 | 116 | 2026-10-09 |
+| annals | This generator: the workspace's whole work record, rendered from every repo's patchnotes and git history. | 10 | 0.7.0 | 2026-11-18 | 117 | 2026-10-09 |
 | [saforums.koplugin](https://github.com/VirInvictus/saforums.koplugin) | KOReader plugin reading the Something Awful Forums as native e-reader widgets: login, unread tracking, bookmarks. | 9 | 0.5.4 | 2026-10-24 | 63 | 2026-10-08 |
 | [2-kobo-style-sleepscreen-banner-prettified](https://github.com/VirInvictus/2-kobo-style-sleepscreen-banner-prettified) | KOReader user patch redrawing the sleep screen as a Kobo-style floating card (prettified fork). | 8 | 2.1.4 | 2026-09-14 | 29 | 2026-07-05 |
 | [Docket](https://github.com/VirInvictus/Docket) | Native GTK4 plain-text task editor, clean-room faithful to the TaskPaper 3 format and query language. | 8 | 1.1.3 | 2026-11-20 | 27 | 2026-10-12 |
@@ -61,7 +61,7 @@ remain canonical; this file is a projection, reproducible with
 | [1-timezone](https://github.com/VirInvictus/1-timezone) | KOReader user patch forcing a correct POSIX TZ inside the process. | 0 | - | - | 7 | 2026-07-05 |
 | Coffer | Native GTK4 envelope-budgeting app over a plain-text hledger journal (the journal is the database). | 0 | - | - | 9 | 2026-06-28 |
 | [VirInvictus](https://github.com/VirInvictus/VirInvictus) | The GitHub profile README repo: one line and a shipping status per project. | 0 | - | - | 142 | 2026-06-22 |
-| [VirInvictus.github.io](https://github.com/VirInvictus/VirInvictus.github.io) | This site: static Jekyll on GitHub Pages; /patchnotes/ serves the annals record. | 0 | - | - | 331 | 2026-04-16 |
+| [VirInvictus.github.io](https://github.com/VirInvictus/VirInvictus.github.io) | This site: static Jekyll on GitHub Pages; /patchnotes/ serves the annals record. | 0 | - | - | 332 | 2026-04-16 |
 | [dead-reckoning-bookend-preset](https://github.com/VirInvictus/dead-reckoning-bookend-preset) | One-file KOReader preset: session pace, chapter ETA, projected finish. | 0 | - | - | 15 | 2026-07-03 |
 | project-void | Party-based isometric CRPG in the Dark Sun / Fallout 2 lineage on lethal Cairn combat math (pre-development). | 0 | - | - | 16 | 2026-04-17 |
 | project-yeschef | Grand-strategy restaurant sim in the CK3 / Victoria 3 lineage; you play the General Manager (pre-development). | 0 | - | - | 6 | 2026-05-23 |
@@ -82,7 +82,7 @@ remain canonical; this file is a projection, reproducible with
 | 2026-08 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 165 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 776 |
 | 2026-09 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 349 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 1,729 |
 | 2026-10 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 195 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 947 |
-| 2026-11 | ▇▇▇▇▇▇▇▇▇▇▇▇ 147 | ▇▇▇▇▇▇▇▇▇ 546 |
+| 2026-11 | ▇▇▇▇▇▇▇▇▇▇▇▇ 148 | ▇▇▇▇▇▇▇▇▇ 550 |
 
 ## The languages
 
@@ -134,6 +134,7 @@ Package downloads from PyPI and crates.io, without mirrors, as of 2026-11-20. Th
 - **11-20 · Commonplace 0.4.0** · The render boundary and export core, Phases 6-7 of the roadmap: with this release the engine is feature-complete (it loads, searches, sorts, filters, writes, tags, links, renders, and exports a notes folder, all headless), and the CLI and GUI arcs are next.
 - **11-20 · Docket 1.1.3** · vir-gtk lock moved 1.4.3 → 1.5.0 (`d37ef6e`): the shared base sheet's checked/active default went quiet (upstream issue #1; state display stops spending the accent).
 - **11-20 · Greyfall 0.1.0** · Project Seeded
+- **11-20 · Quire 1.5.7** · vir-gtk lock moved 1.4.3 → 1.5.0 (`d37ef6e`): the shared base sheet's checked/active default went quiet (upstream issue #1; state display stops spending the accent).
 - **11-20 · bindery-cli 1.2.4** · The cover analyzer resolves hrefs against the OPF (issue #36)
 - **11-20 · bindery-cli 1.2.3** · The census cap fix: observe against epubcheck 5.4.0
 - **11-20 · dragon-agents 1.6.2** · One charter patch from the standing debug-report duty (issue #12): the pixel-judge Bash allowlist gains `magick` (`convert` as the ImageMagick 6 name) so a dispatch can crop a capture region and print channel statistics instead of eyeballing a low-amplitude artifact (recorded live on a phase-10 window acceptance, where the seat could not quantify a faint ghost region because only full-file `identify` was allowlisted).
@@ -1505,7 +1506,7 @@ commits that are not this workspace's work.
 | Hearth | 103 | 0 | 49 | 0 | 54 | 0 | 0 |
 | Hearthfall | 35 | 35 | 0 | 0 | 0 | 0 | 0 |
 | Hermitage | 45 | 45 | 0 | 0 | 0 | 0 | 0 |
-| Quire | 25 | 25 | 0 | 0 | 0 | 0 | 0 |
+| Quire | 26 | 26 | 0 | 0 | 0 | 0 | 0 |
 | Topograph | 11 | 11 | 0 | 0 | 0 | 0 | 0 |
 | Vestibule | 12 | 12 | 0 | 0 | 0 | 0 | 0 |
 | Viaduct | 131 | 32 | 1 | 53 | 45 | 1 | 0 |
