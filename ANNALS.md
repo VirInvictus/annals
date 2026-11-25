@@ -8,9 +8,9 @@ remain canonical; this file is a projection, reproducible with
 
 ## The shape of the work
 
-- **52 repositories tracked · 1,728 releases recorded · 5,738 commits, authored by Brandon LaRocque**
+- **52 repositories tracked · 1,728 releases recorded · 5,746 commits, authored by Brandon LaRocque**
 - Span: 2025-08-10 to 2026-11-24
-- This month (2026-11): 178 releases across 24 repos · 634 commits
+- This month (2026-11): 178 releases across 24 repos · 642 commits
 
 | Repository | What it is | Releases | Latest | Last release | Commits | Active since |
 |---|---|---:|---|---|---:|---|
@@ -20,7 +20,7 @@ remain canonical; this file is a projection, reproducible with
 | [Viaduct](https://github.com/VirInvictus/Viaduct) | Linux port of NetNewsWire: local-first RSS reader, single-writer SQLite, FTS5 search, Inoreader sync. | 132 | 4.4.4 | 2026-11-23 | 264 | 2026-04-19 |
 | [lattice-music](https://github.com/VirInvictus/lattice-music) | CLI/TUI for music collections: ~30 read-only audit and visualization modes with the filesystem as source of truth; writes are explicit and opt-in. | 112 | - | 2026-11-24 | 350 | 2025-08-10 |
 | Catagotchi | Cozy cat tamagotchi wrapped around an idle empire; everything on screen is generated in code (Godot). | 106 | 4.51.2 | 2026-11-17 | 169 | 2026-07-10 |
-| [bindery-cli](https://github.com/VirInvictus/bindery-cli) | CLI that repairs broken EPUBs with deterministic, epubcheck-gated fixes, atomically and in place inside a Calibre library. | 105 | 1.2.9 | 2026-11-24 | 335 | 2026-06-09 |
+| [bindery-cli](https://github.com/VirInvictus/bindery-cli) | CLI that repairs broken EPUBs with deterministic, epubcheck-gated fixes, atomically and in place inside a Calibre library. | 105 | 1.2.9 | 2026-11-24 | 337 | 2026-06-09 |
 | Hearth | Two-player LAN digital build of A Feast for Odin on the same engine shape (private: the faithful dataset is git-ignored). | 103 | 0.13.70 | 2026-11-17 | 132 | 2026-06-14 |
 | [Framework](https://github.com/VirInvictus/Framework) | Native GTK4 document viewer for PDF, DjVu, comics, and EPUB-class ebooks, on twin render pipelines. | 98 | 1.0.3 | 2026-11-17 | 175 | 2026-04-06 |
 | [cquarry](https://github.com/VirInvictus/cquarry) | Canonical read-only Calibre database layer with a faithful port of Calibre's search grammar; the opt-in write module is the one sanctioned mutation path. | 49 | 1.29.2 | 2026-11-16 | 288 | 2026-08-23 |
@@ -42,7 +42,7 @@ remain canonical; this file is a projection, reproducible with
 | whisker-street | Discord stock market where the server members are the stocks: presence-driven prices and a CPMM market maker. | 12 | 0.8.0 | 2026-11-18 | 17 | 2026-10-22 |
 | [Topograph](https://github.com/VirInvictus/Topograph) | Filesystem size explorer: lazy tree view plus a squarified cushion treemap (a qdirstat analog). | 11 | 0.4.1 | 2026-10-07 | 53 | 2026-08-14 |
 | [raindrop-cli](https://github.com/VirInvictus/raindrop-cli) | Dependency-free Raindrop.io CLI for bookmarks, collections, tags, and highlights, with a Pinboard backend and two-way sync. | 11 | 0.7.0 | 2026-09-15 | 54 | 2026-07-18 |
-| annals | This generator: the workspace's whole work record, rendered from every repo's patchnotes and git history. | 10 | 0.7.0 | 2026-11-18 | 124 | 2026-10-09 |
+| annals | This generator: the workspace's whole work record, rendered from every repo's patchnotes and git history. | 10 | 0.7.0 | 2026-11-18 | 125 | 2026-10-09 |
 | cquarry-plugins |  | 9 | 0.5.2 | 2026-11-24 | 10 | 2026-11-23 |
 | [saforums.koplugin](https://github.com/VirInvictus/saforums.koplugin) | KOReader plugin reading the Something Awful Forums as native e-reader widgets: login, unread tracking, bookmarks. | 9 | 0.5.4 | 2026-10-24 | 63 | 2026-10-08 |
 | [2-kobo-style-sleepscreen-banner-prettified](https://github.com/VirInvictus/2-kobo-style-sleepscreen-banner-prettified) | KOReader user patch redrawing the sleep screen as a Kobo-style floating card (prettified fork). | 8 | 2.1.4 | 2026-09-14 | 29 | 2026-07-05 |
@@ -61,8 +61,8 @@ remain canonical; this file is a projection, reproducible with
 | quire-windows |  | 1 | 0.1.0 | ≈2026-11-20 | 1 | 2026-11-20 |
 | [1-timezone](https://github.com/VirInvictus/1-timezone) | KOReader user patch forcing a correct POSIX TZ inside the process. | 0 | - | - | 7 | 2026-07-05 |
 | Coffer | Native GTK4 envelope-budgeting app over a plain-text hledger journal (the journal is the database). | 0 | - | - | 9 | 2026-06-28 |
-| [VirInvictus](https://github.com/VirInvictus/VirInvictus) | The GitHub profile README repo: one line and a shipping status per project. | 0 | - | - | 146 | 2026-06-22 |
-| [VirInvictus.github.io](https://github.com/VirInvictus/VirInvictus.github.io) | This site: static Jekyll on GitHub Pages; /patchnotes/ serves the annals record. | 0 | - | - | 344 | 2026-04-16 |
+| [VirInvictus](https://github.com/VirInvictus/VirInvictus) | The GitHub profile README repo: one line and a shipping status per project. | 0 | - | - | 148 | 2026-06-22 |
+| [VirInvictus.github.io](https://github.com/VirInvictus/VirInvictus.github.io) | This site: static Jekyll on GitHub Pages; /patchnotes/ serves the annals record. | 0 | - | - | 347 | 2026-04-16 |
 | [dead-reckoning-bookend-preset](https://github.com/VirInvictus/dead-reckoning-bookend-preset) | One-file KOReader preset: session pace, chapter ETA, projected finish. | 0 | - | - | 15 | 2026-07-03 |
 | project-void | Party-based isometric CRPG in the Dark Sun / Fallout 2 lineage on lethal Cairn combat math (pre-development). | 0 | - | - | 16 | 2026-04-17 |
 | project-yeschef | Grand-strategy restaurant sim in the CK3 / Victoria 3 lineage; you play the General Manager (pre-development). | 0 | - | - | 6 | 2026-05-23 |
@@ -83,11 +83,11 @@ remain canonical; this file is a projection, reproducible with
 | 2026-08 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 165 | ▇▇▇▇▇▇▇▇▇▇▇▇▇ 776 |
 | 2026-09 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 349 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 1,729 |
 | 2026-10 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 195 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 947 |
-| 2026-11 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 178 | ▇▇▇▇▇▇▇▇▇▇ 634 |
+| 2026-11 | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 178 | ▇▇▇▇▇▇▇▇▇▇ 642 |
 
 ## The languages
 
-503,261 lines of code · 27 languages · 51 repos
+503,353 lines of code · 27 languages · 51 repos
 
 Code lines measured by `tokei` over each tracked repo's tree: reference clones and fork checkouts (the `[languages]` exclude) never count, and neither do lockfiles or data formats. A snapshot of the trees as they stand, not a measure of authorship pace.
 
@@ -98,8 +98,8 @@ Code lines measured by `tokei` over each tracked repo's tree: reference clones a
 
 | Language | Share | Code lines | Repos |
 |---|---|---:|---:|
-| Python | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 37.4% | 188,381 | 24 |
-| Rust | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 37.3% | 187,495 | 12 |
+| Python | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 37.4% | 188,473 | 24 |
+| Rust | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 37.2% | 187,495 | 12 |
 | GDScript | ▇▇▇▇▇▇ 9.8% | 49,568 | 6 |
 | Lua | ▇▇▇ 5.6% | 28,208 | 6 |
 | C | ▇▇▇ 5.4% | 27,205 | 2 |
@@ -114,14 +114,14 @@ Code lines measured by `tokei` over each tracked repo's tree: reference clones a
 
 ## Adoption
 
-Package downloads from PyPI and crates.io, without mirrors, as of 2026-11-23. The cache refreshes nightly via `scripts/fetch-adoption`.
+Package downloads from PyPI and crates.io, without mirrors, as of 2026-11-24. The cache refreshes nightly via `scripts/fetch-adoption`.
 
 | Package | Registry | 7 days | 30 days | 3 months | Lifetime |
 |---|---|---:|---:|---:|---:|
-| [bindery-cli](https://pypi.org/project/bindery-cli/) | PyPI | 862 | 3,415 | 7,474 | 7,474 |
-| [lattice-music](https://pypi.org/project/lattice-music/) | PyPI | 407 | 547 | 2,335 | 2,335 |
-| [calibrequarry](https://pypi.org/project/calibrequarry/) | PyPI | 906 | 3,009 | 10,489 | 10,489 |
-| [cquarry](https://pypi.org/project/cquarry/) | PyPI | 212 | 1,086 | 4,956 | 4,956 |
+| [bindery-cli](https://pypi.org/project/bindery-cli/) | PyPI | 823 | 3,267 | 7,758 | 7,758 |
+| [lattice-music](https://pypi.org/project/lattice-music/) | PyPI | 174 | 553 | 2,343 | 2,343 |
+| [calibrequarry](https://pypi.org/project/calibrequarry/) | PyPI | 1,018 | 3,709 | 11,212 | 11,212 |
+| [cquarry](https://pypi.org/project/cquarry/) | PyPI | 121 | 1,084 | 5,013 | 5,013 |
 
 ## The record
 
